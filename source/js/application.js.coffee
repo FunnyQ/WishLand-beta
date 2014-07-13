@@ -100,9 +100,6 @@ $ ->
   return
 
 # -------------------------------------
-#   blur
+#   Bootstrap tooltip
 # -------------------------------------
-# $ ->
-#   $('.overlay').blurjs
-#     source: $('.overlay').parent()
-#     radius: 10
+
