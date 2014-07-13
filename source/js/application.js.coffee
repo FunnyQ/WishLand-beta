@@ -115,11 +115,11 @@ $("#discover-trigger").click ->
 $(".wish-point, .event-point").click ->
   indexOverlay.fadeIn()
   # indexMap.addClass "blur"
-  indexDetail.removeClass "off-canvas"
+  indexDetail.fadeIn().removeClass "off-canvas"
   $(".overlay").click ->
     indexOverlay.fadeOut()
     # indexMap.removeClass "blur"
-    indexDetail.addClass "off-canvas"
+    indexDetail.fadeOut().addClass "off-canvas"
     return
   return
 
