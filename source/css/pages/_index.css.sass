@@ -7,11 +7,13 @@
 
 .site-header
   background-color: $wl-lightgrey
+  position: relative
   height: 3em
   padding-top: 0.7em
   border-bottom: 1px solid darken($wl-lightgrey, 5%)
   text-align: center
   font-weight: normal
+  z-index: index($elements, header)
   +breakpoint($b-mobile)
     height: 5em
     padding-top: 1.3em
@@ -30,16 +32,19 @@
 
 .site-footer
   height: 2em
+  position: relative
   background: darken($wl-pink, 5%) image-url('asset/footer-stripe.png')
   border-top: 2px solid lighten($wl-pink, 20%)
+  z-index: index($elements, footer)
   +breakpoint($b-mobile)
     height: 3em
 
 
 .index
-  .map
+  .main_map
     position: relative
     @extend #map
+    //壓地圖材質
 
   #map
     height: 300px
@@ -56,6 +61,13 @@
     @extend #map
     width: 100%
     background-color: rgba(black, 0.5)
+
+  #discover-trigger
+    width: 88px
+    height: 88px
+    +breakpoint($b-mobile)
+      width: 120px
+      height: 120px
 
   .avatar
     position: absolute
@@ -75,7 +87,6 @@
     @extend %overlay
     @extend #map
     width: 100%
-    display: table
 
     .login-button
       +sassy-button("flat", 5px, 1em, $btn-action, "inset")
@@ -90,8 +101,9 @@
       +breakpoint($b-mobile)
         margin-top: -20px
 
-  .fake
+  .isUser
     display: none
+    z-index: index($elements, ui)
     // pointer-events: none
     .username
       @extend %overlay
@@ -118,16 +130,24 @@
     .wish-point
       @extend %overlay
       @extend %point
-      background-color: rgba(black, 0.8)
+      background-color: rgba($color-wishPoint, 0.8)
       top: 55%
       left: 55%
 
     .event-point
       @extend %overlay
       @extend %point
-      background-color: rgba(red, 0.8)
+      background-color: rgba($color-eventPoint, 0.8)
       top: 35%
       left: 35%
+
+  .detail
+    @extend #map
+    position: relative
+    width: $w-mobile
+    background-color: $color-detailPanel
+    float: right
+    z-index: index($elements, detail-panel)
 
 
 

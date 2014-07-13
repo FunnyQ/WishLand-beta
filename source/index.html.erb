@@ -5,12 +5,17 @@ title: Wish.Land - 非會員頁面
 <!-- START from here! -->
 <div class="qrow index">
   <!-- main function view -->
-  <div class="map">
+  <div class="main_map">
     <!-- map -->
     <div id="map" class="blur trans-1s"></div>
-    <!-- overlay -->
+    <!-- black overlay -->
     <div class="overlay">
+      <!-- detail info panel -->
+      <div class="detail trans-1s off-canvas box-shadow">
+        <a href="#"><i class="fa fa-times-circle"></i></a>
+      </div>
     </div>
+    <!-- landing UI -->
     <div class="ui">
         <div class="avatar">
           <a id="discover-trigger" href="#">
@@ -19,7 +24,9 @@ title: Wish.Land - 非會員頁面
         </div>
         <a href="#" class="login-button">立即登入</a>
     </div>
-    <div class="fake">
+
+    <!-- isUser UI -->
+    <div class="isUser">
       <div class="avatar">
         <a href="#wish-category">
           <img src="<%= lorem.image('120x120', :text => "Avatar") %>" alt="" class="img-responsive img-circle box-shadow">
@@ -28,6 +35,7 @@ title: Wish.Land - 非會員頁面
       <div class="username">
         <span>FunnyQ</span>
       </div>
+      <!-- fake points -->
       <a href="#" class="wish-point" data-wish="wish001"><i class="fa fa-coffee"></i></a>
       <a href="#" class="event-point" data-event="event001"><i class="fa fa-cutlery"></i></a>
     </div>

@@ -96,27 +96,33 @@ $('.carousel').carousel
 
 
 # -------------------------------------
-#   Into Discover mode
+#   main UI
 # -------------------------------------
-$("#discover-trigger").click ->
-  ui = $(".map")
+pageIndex = $('.index')
+indexMap = $("#map")
+indexUI  = pageIndex.find('.ui')
+indexOverlay = pageIndex.find('.overlay')
+indexDetail = indexOverlay.find('.detail')
+indexIsUser = pageIndex.find('.isUser')
 
-  ui.find("#map").removeClass "blur"
-  ui.find(".ui").fadeOut()
-  ui.find(".overlay").fadeOut "slow"
-  ui.find(".fake").fadeIn "slow"
+$("#discover-trigger").click ->
+  indexMap.removeClass "blur"
+  indexUI.fadeOut()
+  indexOverlay.fadeOut "slow"
+  indexIsUser.fadeIn "slow"
   return
 
-# -------------------------------------
-#  call wish ui
-# -------------------------------------
 $(".wish-point, .event-point").click ->
-  ui = $(".map")
-
-  ui.find(".overlay").fadeIn()
-  ui.find("#map").addClass "blur"
+  indexOverlay.fadeIn()
+  # indexMap.addClass "blur"
+  indexDetail.removeClass "off-canvas"
   $(".overlay").click ->
-    $(".overlay").fadeOut()
-    $("#map").removeClass "blur"
+    indexOverlay.fadeOut()
+    # indexMap.removeClass "blur"
+    indexDetail.addClass "off-canvas"
     return
+  return
+
+$(".detail").click ->
+  alert "test"
   return
