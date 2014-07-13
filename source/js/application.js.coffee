@@ -10,11 +10,11 @@
 # -------------------------------------
 
 $("#map").tinyMap
-  center: "捷運忠孝復興站"
-  scrollwheel: false
-  panControl: false
+  center           : "捷運忠孝復興站"
+  scrollwheel      : false
+  panControl       : false
   streetViewControl: false
-  mapTypeControl: false
+  mapTypeControl   : false
 
   zoom: 14
   marker: [
@@ -116,13 +116,9 @@ $(".wish-point, .event-point").click ->
   indexOverlay.fadeIn()
   # indexMap.addClass "blur"
   indexDetail.fadeIn().removeClass "off-canvas"
-  $(".overlay").click ->
+  $(".panelNav").click ->
     indexOverlay.fadeOut()
     # indexMap.removeClass "blur"
     indexDetail.fadeOut().addClass "off-canvas"
     return
-  return
-
-$(".detail").click ->
-  alert "test"
   return

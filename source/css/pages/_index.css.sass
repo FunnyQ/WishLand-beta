@@ -141,7 +141,7 @@
       top: 35%
       left: 35%
 
-  .detail, .detail2
+  .detail
     @extend #map
     display: none
     position: relative
@@ -149,6 +149,16 @@
     background-color: $color-detailPanel
     float: right
     z-index: index($elements, detail-panel)
+
+    .back
+      +span(12)
+      background-color: lighten(black, 30%)
+      padding: 0.5em
+      a
+        color: darken($color-panelNav, 15%)
+        text-decoration: none
+        &:hover
+          color: $color-panelNav
 
 
 
