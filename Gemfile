@@ -23,3 +23,6 @@ gem 'font-awesome-middleman'
 
 # bootstrap
 gem "bootstrap-sass", require: false
+
+# sassy buttons
+gem "sassy-buttons"
