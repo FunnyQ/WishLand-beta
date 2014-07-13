@@ -98,3 +98,11 @@ $ ->
     interval: false
 
   return
+
+# -------------------------------------
+#   blur
+# -------------------------------------
+# $ ->
+#   $('.overlay').blurjs
+#     source: $('.overlay').parent()
+#     radius: 10

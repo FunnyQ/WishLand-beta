@@ -19,3 +19,4 @@
 #= require "bootstrap-sprockets"
 #= require "vendor/_jquery.tinyMap.min.js"
 #= require "vendor/_markerclusterer.js"
+#= require "vendor/_blur.js"
