@@ -47,9 +47,9 @@
     //壓地圖材質
 
   #map
-    height: 300px
+    height: 400px
     +breakpoint($b-mobile)
-      height: 600px
+      height: 700px
 
   %overlay
     position: absolute
@@ -60,7 +60,8 @@
     @extend %overlay
     @extend #map
     width: 100%
-    background-color: rgba(black, 0.5)
+    overflow: hidden
+    background-color: rgba(black, 0.6)
 
   #discover-trigger
     width: 88px
@@ -144,21 +145,38 @@
   .detail
     @extend #map
     display: none
+    overflow: scroll
     position: relative
     width: $w-mobile
     background-color: $color-detailPanel
     float: right
     z-index: index($elements, detail-panel)
 
-    .back
+    %detail-section
       +span(12)
+      padding: 1em 0.5em
+    .back
+      @extend %detail-section
       background-color: lighten(black, 30%)
-      padding: 0.5em
       a
         color: darken($color-panelNav, 15%)
         text-decoration: none
         &:hover
           color: $color-panelNav
+    .category
+      @extend %detail-section
+
+    .location
+      @extend %detail-section
+
+    .time
+      @extend %detail-section
+
+    .list
+      @extend %detail-section
+
+    .button
+      @extend %detail-section
 
 
 
