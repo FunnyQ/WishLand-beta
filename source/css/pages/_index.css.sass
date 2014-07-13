@@ -1,3 +1,10 @@
+// *************************************
+//
+//   pages/index
+//   index 頁面設定
+//
+// *************************************
+
 .site-header
   background-color: $wl-lightgrey
   height: 3em
@@ -15,3 +22,15 @@
     margin-top: 0
     +breakpoint($b-mobile)
       font-size: 2.5em
+
+
+.site-main
+  height: 300px
+
+
+.site-footer
+  height: 2em
+  background: darken($wl-pink, 5%) image-url('asset/footer-stripe.png')
+  border-top: 2px solid lighten($wl-pink, 20%)
+  +breakpoint($b-mobile)
+    height: 3em
