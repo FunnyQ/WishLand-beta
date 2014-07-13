@@ -39,10 +39,10 @@
 .index
   .map
     position: relative
+    @extend #map
 
   #map
     height: 300px
-    +transition(all, 2.5s)
     +breakpoint($b-mobile)
       height: 600px
 
@@ -57,33 +57,77 @@
     width: 100%
     background-color: rgba(black, 0.5)
 
+  .avatar
+    position: absolute
+    margin: -88px 0 0 -44px
+    width: 88px
+    height: 88px
+    top: 50%
+    left: 50%
+    img
+      border: 5px solid #fff
+    +breakpoint($b-mobile)
+      width: 120px
+      height: 120px
+      margin: -120px 0 0 -60px
+
   .ui
     @extend %overlay
     @extend #map
     width: 100%
     display: table
 
-    .avatar
-      position: absolute
-      margin: -80px 0 0 -60px
-      width: 120px
-      height: 120px
-      top: 50%
-      left: 50%
-      +breakpoint($b-mobile)
-        margin: -90px 0 0 -60px
-
     .login-button
       +sassy-button("flat", 5px, 1em, $btn-action, "inset")
+      font-weight: bold
       position: absolute
       text-align: center
       display: block
       width: 200px
       margin-left: -100px
       left: 50%
-      top: 65%
+      top: 58%
       +breakpoint($b-mobile)
-        margin-top: -70px
+        margin-top: -20px
+
+  .fake
+    display: none
+    // pointer-events: none
+    .username
+      @extend %overlay
+      width: 100%
+      color: $color-username
+      text-align: center
+      +text-shadow(black 0 0 5px)
+      font-weight: bold
+      font-size: $fz-l
+      top: 55%
+      pointer-events: none
+      +breakpoint($b-mobile)
+        top: 50%
+
+    %point
+      width: 44px
+      height: 44px
+      text-align: center
+      color: white
+      font-size: $fz-m
+      padding-top: 0.6em
+      +border-radius(100px)
+
+    .wish-point
+      @extend %overlay
+      @extend %point
+      background-color: rgba(black, 0.8)
+      top: 55%
+      left: 55%
+
+    .event-point
+      @extend %overlay
+      @extend %point
+      background-color: rgba(red, 0.8)
+      top: 35%
+      left: 35%
 
 
 

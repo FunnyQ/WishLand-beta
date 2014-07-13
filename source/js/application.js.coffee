@@ -99,6 +99,24 @@ $('.carousel').carousel
 #   Into Discover mode
 # -------------------------------------
 $("#discover-trigger").click ->
-  $("#map").removeClass "blur"
-  $(".ui").fadeOut()
-  $(".overlay").fadeOut()
+  ui = $(".map")
+
+  ui.find("#map").removeClass "blur"
+  ui.find(".ui").fadeOut()
+  ui.find(".overlay").fadeOut "slow"
+  ui.find(".fake").fadeIn "slow"
+  return
+
+# -------------------------------------
+#  call wish ui
+# -------------------------------------
+$(".wish-point, .event-point").click ->
+  ui = $(".map")
+
+  ui.find(".overlay").fadeIn()
+  ui.find("#map").addClass "blur"
+  $(".overlay").click ->
+    $(".overlay").fadeOut()
+    $("#map").removeClass "blur"
+    return
+  return

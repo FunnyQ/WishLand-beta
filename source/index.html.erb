@@ -7,17 +7,29 @@ title: Wish.Land - 非會員頁面
   <!-- main function view -->
   <div class="map">
     <!-- map -->
-    <div id="map" class="blur"></div>
+    <div id="map" class="blur trans-1s"></div>
     <!-- overlay -->
     <div class="overlay">
     </div>
     <div class="ui">
         <div class="avatar">
           <a id="discover-trigger" href="#">
-            <img src="<%= lorem.image('120x120', :text => "Discover Mode") %>" alt="" class="avatar img-responsive img-circle">
+            <img src="<%= lorem.image('120x120', :text => "Discover") %>" alt="" class="img-responsive img-circle box-shadow">
           </a>
         </div>
         <a href="#" class="login-button">立即登入</a>
+    </div>
+    <div class="fake">
+      <div class="avatar">
+        <a href="#wish-category">
+          <img src="<%= lorem.image('120x120', :text => "Avatar") %>" alt="" class="img-responsive img-circle box-shadow">
+        </a>
+      </div>
+      <div class="username">
+        <span>FunnyQ</span>
+      </div>
+      <a href="#" class="wish-point" data-wish="wish001"><i class="fa fa-coffee"></i></a>
+      <a href="#" class="event-point" data-event="event001"><i class="fa fa-cutlery"></i></a>
     </div>
   </div>
 </div>
