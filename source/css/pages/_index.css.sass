@@ -40,7 +40,15 @@
   .map
     position: relative
 
-    #map
-      height: 300px
-      +breakpoint($b-mobile)
-        height: 600px
+  #map
+    height: 300px
+    +breakpoint($b-mobile)
+      height: 600px
+
+  .overlay
+    @extend #map
+    width: 100%
+    background-color: rgba(black, 0.5)
+    position: absolute
+    top: 0
+    left: 0
