@@ -105,18 +105,21 @@ indexOverlay = pageIndex.find('.overlay')
 indexDetail = indexOverlay.find('.detail')
 indexIsUser = pageIndex.find('.isUser')
 
-$("#discover-trigger").click ->
+$("#discover-trigger").click (e) ->
+  e.preventDefault()
   indexMap.removeClass "blur"
   indexUI.fadeOut()
   indexOverlay.fadeOut "slow"
   indexIsUser.fadeIn "slow"
   return
 
-$(".wish-point, .event-point").click ->
+$(".wish-point, .event-point").click (e) ->
+  e.preventDefault()
   indexOverlay.fadeIn()
   # indexMap.addClass "blur"
   indexDetail.fadeIn().removeClass "off-canvas"
-  $(".panelNav").click ->
+  $(".panelNav").click (e) ->
+    e.preventDefault()
     indexOverlay.fadeOut()
     # indexMap.removeClass "blur"
     indexDetail.fadeOut().addClass "off-canvas"
