@@ -164,7 +164,7 @@ title: Wish.Land - 非會員頁面
             <img src="<%= lorem.image('120x120', :text => "Discover") %>" alt="" class="img-responsive img-circle box-shadow">
           </a>
         </div>
-        <a href="#" class="trans-05s login-button">立即登入 <i class="fa fa-sign-in fa-lg"></i></a>
+        <a href="#" class="trans-05s login-button" data-toggle="modal" data-target="#myModal">立即登入 <i class="fa fa-sign-in fa-lg"></i></a>
     </div><!-- end of landing UI -->
 
     <!-- isUser UI -->
@@ -192,14 +192,14 @@ title: Wish.Land - 非會員頁面
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">登入</h4>
+        <h4 class="modal-title" id="myModalLabel">登入 Wish Land</h4>
       </div>
       <div class="modal-body">
         <div class="fb-login"></div>
         <div class="email-login"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         <button type="button" class="btn btn-primary">登入</button>
       </div>
     </div>
