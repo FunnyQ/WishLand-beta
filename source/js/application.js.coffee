@@ -94,11 +94,20 @@ $('.carousel').carousel
   pause: true
   interval: false
 
+
 # -------------------------------------
 #   Bootstrap modal
 # -------------------------------------
 
 $('#login').modal "show"
+
+
+# -------------------------------------
+#   Bootstrap tooltip
+# -------------------------------------
+
+$('#discover-trigger img').tooltip
+  delay: { hide: 300 }
 
 
 # -------------------------------------
