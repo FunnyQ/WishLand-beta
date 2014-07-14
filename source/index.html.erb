@@ -26,6 +26,12 @@ title: Wish.Land - 非會員頁面
 <!-- detail info panel -->
 <%= partial "partials/index/wish_detail" %><!-- end of detail info panel -->
 
+<!-- wish making panel -->
+<%= partial "partials/index/wish_maker" %><!-- end of detail info panel -->
+
+<!-- event creator panel -->
+<%= partial "partials/index/event_creator" %><!-- end of detail info panel -->
+
     </div><!-- end of black overlay -->
 
     <!-- landing UI -->
@@ -41,7 +47,7 @@ title: Wish.Land - 非會員頁面
     <!-- isUser UI -->
     <div class="isUser">
       <div class="avatar">
-        <a href="#wish-category">
+        <a id="make-wish" href="#">
           <img src="<%= lorem.image('120x120', :text => "Avatar") %>" alt="" class="img-responsive img-circle box-shadow">
         </a>
       </div>

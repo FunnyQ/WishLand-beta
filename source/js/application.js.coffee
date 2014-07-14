@@ -120,6 +120,8 @@ indexOverlay = pageIndex.find('.overlay')
 indexWishID = indexOverlay.find('#wish001')
 indexEventID = indexOverlay.find('#event001')
 indexIsUser = pageIndex.find('.isUser')
+indexMakeWish = indexOverlay.find("#wish-maker")
+indexEventCreate = indexOverlay.find("#event-creator")
 
 $("#discover-trigger").click (e) ->
   e.preventDefault()
@@ -154,3 +156,28 @@ $(".event-point").click (e) ->
     indexEventID.fadeOut().addClass "off-canvas"
     return
   return
+
+$("#make-wish").click (e) ->
+  e.preventDefault()
+  indexOverlay.fadeIn()
+  indexMakeWish.fadeIn().removeClass "off-canvas"
+  $(".panelNav").click (e) ->
+    e.preventDefault()
+    indexOverlay.fadeOut()
+    # indexMap.removeClass "blur"
+    indexMakeWish.fadeOut().addClass "off-canvas"
+    return
+  return
+
+$("#host").click (e) ->
+  e.preventDefault()
+  indexWishID.fadeOut().addClass "off-canvas"
+  indexEventCreate.fadeIn().removeClass "off-canvas"
+  $(".panelNav").click (e) ->
+    e.preventDefault()
+    indexOverlay.fadeOut()
+    # indexMap.removeClass "blur"
+    indexEventCreate.fadeOut().addClass "off-canvas"
+    return
+  return
+
