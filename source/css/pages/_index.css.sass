@@ -27,10 +27,11 @@
 
 
 .search
-  padding: 3em 1em
+  padding: 1em 1em
   +container($w-mobile)
 
   +breakpoint($b-mobile)
+    padding: 1.5em 1em
     +container($w-pad)
 
 
@@ -141,10 +142,20 @@
     background-color: $color-detailPanel
     float: right
     z-index: index($elements, detail-panel)
+    color: $color-detail-text
+
+    h4
+      margin: 0
+    p
+      margin: 0.5em 0 0 0
+      font-size: $fz-s
 
     .back
       @extend %index-detail-section
       background-color: lighten(black, 30%)
+      margin-bottom: 1em
+      &:hover
+        background-color: lighten(black, 25%)
       a
         color: darken($color-panelNav, 15%)
         text-decoration: none
@@ -152,19 +163,42 @@
           color: $color-panelNav
     .category
       @extend %index-detail-section
-
+      .icon
+        @extend %index-detail-icon
+      .info
+        @extend %index-detail-info
 
     .location
       @extend %index-detail-section
+      .icon
+        @extend %index-detail-icon
+      .info
+        @extend %index-detail-info
 
     .time
       @extend %index-detail-section
+      .icon
+        @extend %index-detail-icon
+      .info
+        @extend %index-detail-info
 
     .list
       @extend %index-detail-section
+      .icon
+        @extend %index-detail-icon
+      .info
+        @extend %index-detail-info
 
     .button
       @extend %index-detail-section
+      text-align: center
+      background-color: lighten($wl-pink, 15%)
+      color: $color-detail-button
+      font-size: $fz-l
+      text-decoration: none
+      &:hover
+        background-color: lighten($wl-pink, 10%)
+
 
 
 
