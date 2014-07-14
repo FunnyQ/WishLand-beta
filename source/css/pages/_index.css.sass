@@ -26,8 +26,12 @@
       font-size: $fz-xxl
 
 
-.site-main
-  height: 300px
+.search
+  padding: 3em 1em
+  +container($w-mobile)
+
+  +breakpoint($b-mobile)
+    +container($w-pad)
 
 
 .site-footer
@@ -51,13 +55,8 @@
     +breakpoint($b-mobile)
       height: 700px
 
-  %overlay
-    position: absolute
-    top: 0
-    left: 0
-
   .overlay
-    @extend %overlay
+    @extend %index-overlay
     @extend #map
     width: 100%
     overflow: hidden
@@ -85,7 +84,7 @@
       margin: -120px 0 0 -60px
 
   .ui
-    @extend %overlay
+    @extend %index-overlay
     @extend #map
     width: 100%
 
@@ -107,7 +106,7 @@
     z-index: index($elements, ui)
     // pointer-events: none
     .username
-      @extend %overlay
+      @extend %index-overlay
       width: 100%
       color: $color-username
       text-align: center
@@ -119,25 +118,16 @@
       +breakpoint($b-mobile)
         top: 50%
 
-    %point
-      width: 44px
-      height: 44px
-      text-align: center
-      color: white
-      font-size: $fz-m
-      padding-top: 0.6em
-      +border-radius(100px)
-
     .wish-point
-      @extend %overlay
-      @extend %point
+      @extend %index-overlay
+      @extend %index-point
       background-color: rgba($color-wishPoint, 0.8)
       top: 55%
       left: 55%
 
     .event-point
-      @extend %overlay
-      @extend %point
+      @extend %index-overlay
+      @extend %index-point
       background-color: rgba($color-eventPoint, 0.8)
       top: 35%
       left: 35%
@@ -152,11 +142,8 @@
     float: right
     z-index: index($elements, detail-panel)
 
-    %detail-section
-      +span(12)
-      padding: 1em 0.5em
     .back
-      @extend %detail-section
+      @extend %index-detail-section
       background-color: lighten(black, 30%)
       a
         color: darken($color-panelNav, 15%)
@@ -164,19 +151,20 @@
         &:hover
           color: $color-panelNav
     .category
-      @extend %detail-section
+      @extend %index-detail-section
+
 
     .location
-      @extend %detail-section
+      @extend %index-detail-section
 
     .time
-      @extend %detail-section
+      @extend %index-detail-section
 
     .list
-      @extend %detail-section
+      @extend %index-detail-section
 
     .button
-      @extend %detail-section
+      @extend %index-detail-section
 
 
 
