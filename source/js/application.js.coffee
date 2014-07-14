@@ -94,6 +94,12 @@ $('.carousel').carousel
   pause: true
   interval: false
 
+# -------------------------------------
+#   Bootstrap modal
+# -------------------------------------
+
+$('#login').modal "show"
+
 
 # -------------------------------------
 #   main UI
