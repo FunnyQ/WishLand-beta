@@ -45,8 +45,22 @@
     height: 3em
 
 
-.modal-title
-  text-align: center
+#login-form
+  p
+    margin: 0
+
+  .modal-title
+    text-align: center
+
+  .fb-login
+    @extend %index-loginform-section
+    +sassy-button("flat", 5px, 1em, $btn-fblogin, "inset")
+
+  .email-login
+    @extend %index-loginform-section
+
+  .or
+    @extend %index-loginform-section
 
 
 
