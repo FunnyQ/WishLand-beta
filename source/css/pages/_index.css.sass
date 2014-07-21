@@ -176,13 +176,16 @@
     .wish-point
       @extend %index-overlay
       @extend %index-point
-      background-color: rgba($color-wishPoint, 0.8)
+      color: #000
+      background-color: rgba(#fff, 0.3)
+      border: 3px solid rgba($color-wishPoint, 0.7)
       top: 55%
-      left: 55%
+      left: 60%
 
     .event-point
       @extend %index-overlay
       @extend %index-point
+      color: #000
       background-color: rgba($color-eventPoint, 0.8)
       top: 35%
       left: 35%
@@ -215,7 +218,7 @@
         text-decoration: none
         &:hover
           color: $color-panelNav
-    .event-title, .number, .cost, .category, .location, .time, .list
+    .event-title, .number, .cost, .category, .location, .time, .list, .distance
       @extend %index-detail-section
       .icon
         @extend %index-detail-icon
