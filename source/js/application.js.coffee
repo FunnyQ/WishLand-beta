@@ -157,16 +157,37 @@ $(".event-point").click (e) ->
     return
   return
 
-$("#make-wish").click (e) ->
+# $("#food").click (e) ->
+#   e.preventDefault()
+#   indexOverlay.fadeIn()
+#   indexMakeWish.fadeIn().removeClass "off-canvas"
+#   $(".panelNav").click (e) ->
+#     e.preventDefault()
+#     indexOverlay.fadeOut()
+#     # indexMap.removeClass "blur"
+#     indexMakeWish.fadeOut().addClass "off-canvas"
+#     return
+#   return
+
+$("#food").click (e) ->
   e.preventDefault()
-  indexOverlay.fadeIn()
-  indexMakeWish.fadeIn().removeClass "off-canvas"
-  $(".panelNav").click (e) ->
-    e.preventDefault()
-    indexOverlay.fadeOut()
-    # indexMap.removeClass "blur"
-    indexMakeWish.fadeOut().addClass "off-canvas"
-    return
+  $('#food').addClass "hidden"
+  $('#social').removeClass "hidden"
+  return
+$("#social").click (e) ->
+  e.preventDefault()
+  $('#social').addClass "hidden"
+  $('#sport').removeClass "hidden"
+  return
+$("#sport").click (e) ->
+  e.preventDefault()
+  $('#sport').addClass "hidden"
+  $('#art').removeClass "hidden"
+  return
+$("#art").click (e) ->
+  e.preventDefault()
+  $('#art').addClass "hidden"
+  $('#food').removeClass "hidden"
   return
 
 $("#host").click (e) ->
