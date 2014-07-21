@@ -157,37 +157,37 @@ $(".event-point").click (e) ->
     return
   return
 
-# $("#food").click (e) ->
-#   e.preventDefault()
-#   indexOverlay.fadeIn()
-#   indexMakeWish.fadeIn().removeClass "off-canvas"
-#   $(".panelNav").click (e) ->
-#     e.preventDefault()
-#     indexOverlay.fadeOut()
-#     # indexMap.removeClass "blur"
-#     indexMakeWish.fadeOut().addClass "off-canvas"
-#     return
-#   return
+$(".food-button, .social-button, .sport-button, .art-button").click (e) ->
+  e.preventDefault()
+  indexOverlay.fadeIn()
+  indexMakeWish.fadeIn().removeClass "off-canvas"
+  $(".panelNav").click (e) ->
+    e.preventDefault()
+    indexOverlay.fadeOut()
+    # indexMap.removeClass "blur"
+    indexMakeWish.fadeOut().addClass "off-canvas"
+    return
+  return
 
 $("#food").click (e) ->
   e.preventDefault()
-  $('#food').addClass "hidden"
-  $('#social').removeClass "hidden"
+  $('#food, .food-button').addClass "hidden"
+  $('#social, .social-button').removeClass "hidden"
   return
 $("#social").click (e) ->
   e.preventDefault()
-  $('#social').addClass "hidden"
-  $('#sport').removeClass "hidden"
+  $('#social, .social-button').addClass "hidden"
+  $('#sport, .sport-button').removeClass "hidden"
   return
 $("#sport").click (e) ->
   e.preventDefault()
-  $('#sport').addClass "hidden"
-  $('#art').removeClass "hidden"
+  $('#sport, .sport-button').addClass "hidden"
+  $('#art, .art-button').removeClass "hidden"
   return
 $("#art").click (e) ->
   e.preventDefault()
-  $('#art').addClass "hidden"
-  $('#food').removeClass "hidden"
+  $('#art, .art-button').addClass "hidden"
+  $('#food, .food-button').removeClass "hidden"
   return
 
 $("#host").click (e) ->

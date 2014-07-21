@@ -112,26 +112,28 @@
     .tooltip-arrow
       border-top-color: $color-tooltip-bg
 
-    .normal
-      img
-        border: 10px solid rgba(#fff, 0.5)
-    .food
-      img
-        border: 20px solid rgba(blue, 0.5)
-    .social
-      img
-        border: 20px solid rgba(pink, 0.8)
-    .sport
-      img
-        border: 20px solid rgba(yellow, 0.5)
-    .art
-      img
-        border: 20px solid rgba(green, 0.5)
-
     +breakpoint($b-mobile)
       width: 120px
       height: 120px
       margin: -120px 0 0 -60px
+
+  .normal
+    img
+      border: 10px solid #fff
+  .food
+    img
+      border: 20px solid rgba(blue, 0.5)
+  .food-button, .social-button, .sport-button, .art-button
+    +sassy-button("shiny", 3px, 0.8em, $wl-pink)
+  .social
+    img
+      border: 20px solid rgba(pink, 0.8)
+  .sport
+    img
+      border: 20px solid rgba(yellow, 0.5)
+  .art
+    img
+      border: 20px solid rgba(green, 0.5)
 
   .ui
     @extend %index-overlay
@@ -164,9 +166,12 @@
       font-weight: bold
       font-size: $fz-l
       top: 55%
-      pointer-events: none
+      // pointer-events: none
       +breakpoint($b-mobile)
         top: 50%
+      span
+        display: block
+        z-index: index($elements, wishButton)
 
     .wish-point
       @extend %index-overlay
