@@ -11,7 +11,7 @@
 
 $("#map").tinyMap
   center           : "捷運忠孝復興站"
-  scrollwheel      : false
+  scrollwheel      : true
   panControl       : false
   streetViewControl: false
   mapTypeControl   : false
