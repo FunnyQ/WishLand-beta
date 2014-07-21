@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <!-- Use title if it's in the page YAML frontmatter -->
-        <title>Wish.Land - 非會員頁面</title>
+        <title>Wish.Land - DEMO</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -98,6 +98,17 @@
     </div>
   </div>
 
+  <!-- distance -->
+  <div class="distance trans-05s">
+    <div class="icon">
+      <i class="fa fa-cab fa-lg"></i>
+    </div>
+    <div class="info">
+      <h4>距離</h4>
+      <p>此活動距離我 <span>1.3</span> KM</p>
+    </div>
+  </div>
+
   <!-- number -->
   <div class="number trans-05s">
     <div class="icon">
@@ -183,28 +194,10 @@
       <div class="wishes-unit qrow">
         <div class="wishes-avatar">
           <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Teague</p>
+          <p>Sykes</p>
         </div>
         <div class="comment">
-          <p>Velit enim consequatur ducimus ut culpa ut accusamus nihil modi architecto voluptas</p>
-        </div>
-      </div>
-      <div class="wishes-unit qrow">
-        <div class="wishes-avatar">
-          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Li</p>
-        </div>
-        <div class="comment">
-          <p>Illo repudiandae adipisci velit</p>
-        </div>
-      </div>
-      <div class="wishes-unit qrow">
-        <div class="wishes-avatar">
-          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Lane</p>
-        </div>
-        <div class="comment">
-          <p>Placeat voluptas est aut asperiores maiores reprehenderit commodi similique excepturi neque dicta et</p>
+          <p>Enim est ad quaerat quod hic error illo nulla nesciunt expedita repudiandae</p>
         </div>
       </div>
       <div class="wishes-unit qrow">
@@ -213,61 +206,34 @@
           <p>Nichols</p>
         </div>
         <div class="comment">
-          <p>Veritatis qui ea nihil quasi aspernatur quis nam libero</p>
+          <p>Impedit facilis sunt eum voluptatum assumenda blanditiis corporis</p>
         </div>
       </div>
       <div class="wishes-unit qrow">
         <div class="wishes-avatar">
           <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Lucas</p>
+          <p>Waters</p>
         </div>
         <div class="comment">
-          <p>Quis quasi fugiat aperiam eum occaecati assumenda recusandae natus debitis</p>
+          <p>Soluta sequi et amet</p>
         </div>
       </div>
       <div class="wishes-unit qrow">
         <div class="wishes-avatar">
           <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Palmer</p>
+          <p>Farrell</p>
         </div>
         <div class="comment">
-          <p>Facilis laudantium et iusto non iste voluptas consectetur sed numquam consequatur ut non aspernatur voluptate</p>
+          <p>Suscipit aspernatur aliquid et laboriosam et eveniet dolorum inventore temporibus perspiciatis officia soluta repellendus</p>
         </div>
       </div>
       <div class="wishes-unit qrow">
         <div class="wishes-avatar">
           <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Hatcher</p>
+          <p>Hanna</p>
         </div>
         <div class="comment">
-          <p>Fugit aperiam et rem labore ut quisquam maxime sint distinctio</p>
-        </div>
-      </div>
-      <div class="wishes-unit qrow">
-        <div class="wishes-avatar">
-          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>Olsen</p>
-        </div>
-        <div class="comment">
-          <p>Vero qui dolorem cum aperiam nam tempore expedita beatae exercitationem rerum provident ad</p>
-        </div>
-      </div>
-      <div class="wishes-unit qrow">
-        <div class="wishes-avatar">
-          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>McClure</p>
-        </div>
-        <div class="comment">
-          <p>Qui aut ea deleniti occaecati</p>
-        </div>
-      </div>
-      <div class="wishes-unit qrow">
-        <div class="wishes-avatar">
-          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle">
-          <p>McNamara</p>
-        </div>
-        <div class="comment">
-          <p>Voluptate veniam facilis aut labore modi eveniet non voluptatum autem porro dolores ut et</p>
+          <p>Reprehenderit nulla facere enim laboriosam qui</p>
         </div>
       </div>
     </div>
@@ -423,7 +389,11 @@
     </div>
     <div class="info">
       <h4>活動人數</h4>
-      <input type="number" class="form-control" value="" placeholder="請輸入人數">
+      <select class="form-control">
+        <option>10 人以下 <i class="fa fa-coffee"></i></option>
+        <option>11 ~ 25 人</option>
+        <option>25 人以上</option>
+      </select>
     </div>
   </div>
 
@@ -450,8 +420,8 @@
 
     <!-- landing UI -->
     <div class="ui">
-        <div class="avatar">
-          <a id="discover-trigger" href="#" >
+        <div class="avatar trans-05s">
+          <a id="discover-trigger" href="#" class="normal">
             <img src="http://placehold.it/120x120&text=Discover" alt="" class="img-responsive img-circle box-shadow"  href="#" data-toggle="tooltip" data-placement="top" title="先進入探索模式瞧瞧！">
           </a>
         </div>
@@ -461,16 +431,38 @@
     <!-- isUser UI -->
     <div class="isUser">
       <div class="avatar">
-        <a id="make-wish" href="#">
+        <a id="food" href="#" class="food trans-05s">
+          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle box-shadow">
+        </a>
+        <a id="social" href="#" class="hidden social trans-05s">
+          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle box-shadow">
+        </a>
+        <a id="sport" href="#" class="hidden sport trans-05s">
+          <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle box-shadow">
+        </a>
+        <a id="art" href="#" class="hidden art trans-05s">
           <img src="http://placehold.it/120x120&text=Avatar" alt="" class="img-responsive img-circle box-shadow">
         </a>
       </div>
       <div class="username">
-        <span>FunnyQ</span>
+        <div class="food-button">
+          Wish to Eat
+        </div>
+        <div class="social-button hidden">
+          Wish to Social
+        </div>
+        <div class="sport-button hidden">
+          Wish to Sport
+        </div>
+        <div class="art-button hidden">
+          Wish to Art
+        </div>
       </div>
+
+
       <!-- fake points -->
       <a href="#" class="wish-point" data-wish="wish001"><i class="fa fa-coffee"></i></a>
-      <a href="#" class="event-point" data-event="event001"><i class="fa fa-cutlery"></i></a>
+      <a href="#" class="event-point" data-event="event001"><i class="fa fa-flash"></i></a>
     </div><!-- end of isUser UI -->
 
   </div><!-- end of main function view -->
@@ -507,6 +499,10 @@
               <label class="sr-only" for="password">Password</label>
               <input type="password" class="form-control" id="password" placeholder="輸入密碼">
             </div>
+          </div>
+          <div class="account-function">
+            <a href="#">立即註冊一個帳號</a>
+            <a href="#">忘記密碼？</a>
           </div>
         </div>
       </div>

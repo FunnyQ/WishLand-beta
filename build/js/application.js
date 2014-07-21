@@ -110,7 +110,7 @@
     });
   });
 
-  $("#make-wish").click(function(e) {
+  $(".food-button, .social-button, .sport-button, .art-button").click(function(e) {
     e.preventDefault();
     indexOverlay.fadeIn();
     indexMakeWish.fadeIn().removeClass("off-canvas");
@@ -119,6 +119,30 @@
       indexOverlay.fadeOut();
       indexMakeWish.fadeOut().addClass("off-canvas");
     });
+  });
+
+  $("#food").click(function(e) {
+    e.preventDefault();
+    $('#food, .food-button').addClass("hidden");
+    $('#social, .social-button').removeClass("hidden");
+  });
+
+  $("#social").click(function(e) {
+    e.preventDefault();
+    $('#social, .social-button').addClass("hidden");
+    $('#sport, .sport-button').removeClass("hidden");
+  });
+
+  $("#sport").click(function(e) {
+    e.preventDefault();
+    $('#sport, .sport-button').addClass("hidden");
+    $('#art, .art-button').removeClass("hidden");
+  });
+
+  $("#art").click(function(e) {
+    e.preventDefault();
+    $('#art, .art-button').addClass("hidden");
+    $('#food, .food-button').removeClass("hidden");
   });
 
   $("#host").click(function(e) {

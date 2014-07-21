@@ -5315,30 +5315,30 @@ button.close {
   -webkit-border-radius: 100px;
   border-radius: 100px; }
 
-.index .detail .back, .index .detail .event-title, .index .detail .number, .index .detail .cost, .index .detail .category, .index .detail .location, .index .detail .time, .index .detail .list, .index .detail .button {
+.index .detail .back, .index .detail .event-title, .index .detail .number, .index .detail .cost, .index .detail .category, .index .detail .location, .index .detail .time, .index .detail .list, .index .detail .distance, .index .detail .button {
   width: 100%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   padding: 1em 2em; }
-  .index .detail .back:hover, .index .detail .event-title:hover, .index .detail .number:hover, .index .detail .cost:hover, .index .detail .category:hover, .index .detail .location:hover, .index .detail .time:hover, .index .detail .list:hover, .index .detail .button:hover {
+  .index .detail .back:hover, .index .detail .event-title:hover, .index .detail .number:hover, .index .detail .cost:hover, .index .detail .category:hover, .index .detail .location:hover, .index .detail .time:hover, .index .detail .list:hover, .index .detail .distance:hover, .index .detail .button:hover {
     background-color: #f2f2f2; }
 
-.index .detail .event-title .icon, .index .detail .number .icon, .index .detail .cost .icon, .index .detail .category .icon, .index .detail .location .icon, .index .detail .time .icon, .index .detail .list .icon {
+.index .detail .event-title .icon, .index .detail .number .icon, .index .detail .cost .icon, .index .detail .category .icon, .index .detail .location .icon, .index .detail .time .icon, .index .detail .list .icon, .index .detail .distance .icon {
   width: 8.33333%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   text-align: right; }
 
-.index .detail .event-title .info, .index .detail .number .info, .index .detail .cost .info, .index .detail .category .info, .index .detail .location .info, .index .detail .time .info, .index .detail .list .info {
+.index .detail .event-title .info, .index .detail .number .info, .index .detail .cost .info, .index .detail .category .info, .index .detail .location .info, .index .detail .time .info, .index .detail .list .info, .index .detail .distance .info {
   width: 91.66667%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   padding-left: 1em; }
 
-#login-form .fb-login, #login-form .email-login, #login-form .or {
+#login-form .fb-login, #login-form .email-login, #login-form .or, #login-form .account-function {
   width: 100%;
   float: left;
   padding-left: 0.83333%;
@@ -5431,6 +5431,10 @@ button.close {
   #login-form .fb-login::-moz-focus-inner {
     padding: 0 !important;
     margin: -1px !important; }
+#login-form .account-function a {
+  display: block;
+  font-size: 0.8125em;
+  text-decoration: none; }
 
 .index .main_map {
   position: relative; }
@@ -5463,13 +5467,59 @@ button.close {
     background-color: rgba(0, 0, 0, 0.5); }
   .index .avatar .tooltip-arrow {
     border-top-color: rgba(0, 0, 0, 0.5); }
-  .index .avatar img {
-    border: 5px solid white; }
   @media (min-width: 500px) {
     .index .avatar {
       width: 120px;
       height: 120px;
       margin: -120px 0 0 -60px; } }
+.index .normal img {
+  border: 10px solid white; }
+.index .food img {
+  border: 20px solid rgba(0, 0, 255, 0.5); }
+.index .food-button, .index .social-button, .index .sport-button, .index .art-button {
+  font-size: 0.8em;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFDD2055', endColorstr='#FF841333');
+  background: -moz-linear-gradient(#ef8ea9, #dd2055 50%, #b01a44);
+  background: -webkit-linear-gradient(#ef8ea9, #dd2055 50%, #b01a44);
+  background: linear-gradient(#ef8ea9, #dd2055 50%, #b01a44);
+  -webkit-box-shadow: #f8d1dc 0 1px 0 inset;
+  box-shadow: #f8d1dc 0 1px 0 inset;
+  border: 1px solid #9a163b;
+  color: white;
+  text-shadow: #b71b46 0 -1px 0; }
+  .index .food-button:hover, .index .social-button:hover, .index .sport-button:hover, .index .art-button:hover {
+    text-decoration: none; }
+  .index .food-button:hover, .index .social-button:hover, .index .sport-button:hover, .index .art-button:hover {
+    background-color: #b01a44;
+    background: -moz-linear-gradient(#ed85a2, #b01a44 50%, #8d1436);
+    background: -webkit-linear-gradient(#ed85a2, #b01a44 50%, #8d1436);
+    background: linear-gradient(#ed85a2, #b01a44 50%, #8d1436); }
+  .index .food-button:active, .index .social-button:active, .index .sport-button:active, .index .art-button:active {
+    -webkit-box-shadow: #8d1436 0 1px 2px inset;
+    box-shadow: #8d1436 0 1px 2px inset; }
+  .index .food-button.disabled, .index .food-button[disabled], .index .social-button.disabled, .index .social-button[disabled], .index .sport-button.disabled, .index .sport-button[disabled], .index .art-button.disabled, .index .art-button[disabled] {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    background: #b01a44;
+    cursor: default;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .index .food-button::-moz-focus-inner, .index .social-button::-moz-focus-inner, .index .sport-button::-moz-focus-inner, .index .art-button::-moz-focus-inner {
+    padding: 0 !important;
+    margin: -1px !important; }
+.index .social img {
+  border: 20px solid rgba(255, 192, 203, 0.8); }
+.index .sport img {
+  border: 20px solid rgba(255, 255, 0, 0.5); }
+.index .art img {
+  border: 20px solid rgba(0, 128, 0, 0.5); }
 .index .ui {
   width: 100%; }
   .index .ui .login-button {
@@ -5520,20 +5570,28 @@ button.close {
     width: 100%;
     color: white;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em 0;
+    margin-top: 0.5em;
     text-shadow: black 0 0 5px;
     font-weight: bold;
     font-size: 1.25em;
-    top: 55%;
-    pointer-events: none; }
+    top: 55%; }
     @media (min-width: 500px) {
       .index .isUser .username {
         top: 50%; } }
+    .index .isUser .username span {
+      display: block;
+      z-index: 5; }
   .index .isUser .wish-point {
-    background-color: rgba(0, 0, 0, 0.8);
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(0, 0, 255, 0.7);
     top: 55%;
-    left: 55%; }
+    left: 60%; }
   .index .isUser .event-point {
-    background-color: rgba(255, 0, 0, 0.8);
+    color: black;
+    background-color: rgba(255, 255, 0, 0.8);
     top: 35%;
     left: 35%; }
 .index .detail {
