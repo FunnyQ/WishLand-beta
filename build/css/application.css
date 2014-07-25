@@ -5653,6 +5653,11 @@ button.close {
 .index #wish-maker .input-group, .index #wish-maker select, .index #wish-maker textarea, .index #wish-maker input, .index #event-creator .input-group, .index #event-creator select, .index #event-creator textarea, .index #event-creator input {
   margin-top: 1em; }
 
+.index2 .overlay {
+  display: none; }
+.index2 .isUser {
+  display: block; }
+
 .blur {
   -webkit-filter: blur(6px);
   filter: blur(6px); }
