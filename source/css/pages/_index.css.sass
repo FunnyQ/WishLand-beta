@@ -4,3 +4,23 @@
 //
 //
 // *************************************
+
+body, html, .main_content
+  @extend %h100p
+
+
+.landing
+  @extend %h100p
+  background-color: $c-landing
+  position: relative
+
+
+.ctrl_board
+  @extend %w100p
+  height: 80px
+  background-color: $c-ctrl_board
+  border-top: 1px solid #fff
+  +box-shadow(0 0 3px rgba(#000, 0.5))
+  position: fixed
+  bottom: 0
+
