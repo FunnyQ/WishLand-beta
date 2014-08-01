@@ -16,12 +16,12 @@ body, html, .main_content
   position: relative
 
   .lp-content
-    padding-top: 40vh
+    padding-top: 33vh
     color: $cs-white
     text-align: center
 
   .lp-logo
-    margin-bottom: 40px
+    margin-bottom: 20px
     .logo
       +container(200px)
 
@@ -33,14 +33,16 @@ body, html, .main_content
     p
       margin: 1em 0 0 0
       color: lighten($c-landing, 25%)
+  .explore
+    +sassy-button("flat", 5px, $fz-m, #ffd71a, #ffd71a, #555, "inset")
+    margin-top: 30px
 
 .map
   @extend %h100p
   @extend %w100p
   position: absolute
   top: 0
-  display: none
-
+  opacity: 0
 
 
 // 控制版基本外觀
