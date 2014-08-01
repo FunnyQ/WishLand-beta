@@ -18,3 +18,7 @@
 #= require "bootstrap-sprockets"
 #
 #
+## -------------------------------------
+##   tinyMap, google map API 簡化工具
+## -------------------------------------
+#= require vendor/_tinyMap
