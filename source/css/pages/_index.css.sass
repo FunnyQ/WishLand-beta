@@ -27,11 +27,12 @@ body, html, .main_content
 
   .lp-slogan
     +container($w-pad)
-    +text-shadow(0 1px 2px darken($c-landing, 40%))
+    // +text-shadow(0 1px 2px darken($c-landing, 40%))
     h5
       font-size: $fz-l
     p
       margin: 1em 0 0 0
+      color: lighten($c-landing, 25%)
 
 
 
@@ -46,3 +47,27 @@ body, html, .main_content
   position: fixed
   bottom: 0
 
+.not_user
+  @extend %span12
+  .ctrl-logo
+    +span(2)
+    padding-top: 27px
+  .ctrl-main
+    +span(8)
+    padding-top: 27px
+    .options
+      +container($w-mobile)
+    .sign-in_button, .sign-up_button
+      +span(6)
+      text-align: center
+  .ctrl-right
+    +span(2)
+    padding-top: 27px
+    text-align: right
+    a
+      font-size: $fz-s
+      color: darken($c-ctrl_board, 30%)
+      +transition(color 0.5s)
+      &:hover
+        color: darken($c-ctrl_board, 50%)
+        text-decoration: none
