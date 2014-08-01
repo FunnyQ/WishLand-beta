@@ -49,17 +49,33 @@ body, html, .main_content
 
 .not_user
   @extend %span12
+
   .ctrl-logo
     +span(2)
     padding-top: 27px
+
   .ctrl-main
     +span(8)
-    padding-top: 27px
+    padding-top: 23px
     .options
       +container($w-mobile)
     .sign-in_button, .sign-up_button
       +span(6)
-      text-align: center
+      a
+        color: #ccc
+        @extend .trans-05s
+        &:hover
+          color: #ddd
+          +text-shadow(0 0 2px darken($c-ctrl_board, 30%))
+      .fa-inverse
+        color: #888
+        @extend .trans-05s
+        &:hover
+          color: darken(#888, 20%)
+
+    .sign-up_button
+      text-align: right
+
   .ctrl-right
     +span(2)
     padding-top: 27px
@@ -71,3 +87,4 @@ body, html, .main_content
       &:hover
         color: darken($c-ctrl_board, 50%)
         text-decoration: none
+
