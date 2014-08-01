@@ -9,12 +9,33 @@ body, html, .main_content
   @extend %h100p
 
 
+// 第一層基本頁面
 .landing
   @extend %h100p
   background-color: $c-landing
   position: relative
 
+  .lp-content
+    padding-top: 40vh
+    color: $cs-white
+    text-align: center
 
+  .lp-logo
+    margin-bottom: 40px
+    .logo
+      +container(200px)
+
+  .lp-slogan
+    +container($w-pad)
+    +text-shadow(0 1px 2px darken($c-landing, 40%))
+    h5
+      font-size: $fz-l
+    p
+      margin: 1em 0 0 0
+
+
+
+// 控制版基本外觀
 .ctrl_board
   @extend %w100p
   height: 160px
