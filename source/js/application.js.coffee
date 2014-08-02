@@ -1,35 +1,52 @@
-# *************************************
-#
-#   application.js
-#
-#
-# *************************************
+###
+////////////////////
+//  application.js
+////////////////////
+###
 
-# 註冊按鈕
-signUpBtn = $('.sign-up_button a')
-# 登入按鈕
-signInBtn = $('.sign-in_button a')
+###
+定義變數
+////////////////////
+###
 
 # 地圖 canvas
 mapCanvas = $('#map')
 
+
 # 探索模式按鈕
-exploreBtn = $('a.explore')
+fbLoginBtn = $('a.login-button')
 
-# not_user 登入註冊按鈕 tooltip 顯示
-signUpBtn.add(signInBtn).tooltip
-  delay: {
-    show: 200
-    hide: 200
-  }
+# Ctrl_board 主控制區
+ctrlBoard = $('.ctrl_board')
 
+###
+定義 function
+////////////////////
+###
+
+# 顯示地圖
+showMap = ->
+  mapCanvas.animate(opacity: 1).removeClass("cant-touch")
+
+
+
+###
+Main section
+###
 
 # 載入地圖
 mapCanvas.tinyMap
   center: '台北車站'
   zoom: 15
 
+
 # 顯示地圖界面
-exploreBtn.on "click", ->
-  mapCanvas.animate(opacity: 1).removeClass("cant-touch")
-  return
+fbLoginBtn.on "click", ->
+  showMap()
+  $.ajax
+    url: './is_user.html'
+    type: 'GET'
+    dataType: 'html'
+    success: (respond) ->
+      ctrlBoard.html(respond)
+  null

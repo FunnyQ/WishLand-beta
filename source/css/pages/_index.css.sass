@@ -33,8 +33,8 @@ body, html, .main_content
     p
       margin: 1em 0 0 0
       color: lighten($c-landing, 25%)
-  .explore
-    +sassy-button("flat", 5px, $fz-m, #ffd71a, #ffd71a, #555, "inset")
+  .login-button
+    +sassy-button("flat", 5px, $fz-m, $c-facebook, $c-facebook, #fff, "inset")
     margin-top: 30px
 
 .map
@@ -51,12 +51,13 @@ body, html, .main_content
   height: 160px
   margin-bottom: -80px
   background-color: $c-ctrl_board
+  background-image: url("../img/wood.png")
   border-top: 1px solid #fff
   +box-shadow(0 0 3px rgba(#000, 0.5))
   position: fixed
   bottom: 0
 
-.not_user
+.not_user, .is_user
   @extend %span12
 
   .ctrl-logo
@@ -71,11 +72,11 @@ body, html, .main_content
     .sign-in_button, .sign-up_button
       +span(6)
       a
-        color: #ccc
+        color: #eee
         @extend .trans-05s
         &:hover
-          color: #ddd
-          +text-shadow(0 0 2px darken($c-ctrl_board, 30%))
+          color: #fff
+          // +text-shadow(0 0 2px darken($c-ctrl_board, 30%))
       .fa-inverse
         color: #888
         @extend .trans-05s
