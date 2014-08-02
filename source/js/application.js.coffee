@@ -13,12 +13,16 @@
 mapCanvas = $('#map')
 mainUI = $('.mainUI')
 
-
-# 探索模式按鈕
-fbLoginBtn = $('a.login-button')
-
 # Ctrl_board 主控制區
 ctrlBoard = $('.ctrl_board')
+
+
+# FB 登入按鈕
+fbLoginBtn = $('a.login-button')
+
+# 帳號管理 trigger
+accountManageBtn = $('#accountManage')
+
 
 ###
 定義 function
@@ -34,6 +38,13 @@ showMap = ->
 ###
 Main section
 ###
+
+# tooltip
+accountManageBtn.tooltip
+  delay: {
+    show: 600
+    hide: 300
+  }
 
 # 載入地圖
 mapCanvas.tinyMap
