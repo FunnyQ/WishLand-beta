@@ -11,6 +11,7 @@
 
 # 地圖 canvas
 mapCanvas = $('#map')
+mainUI = $('.mainUI')
 
 
 # 探索模式按鈕
@@ -26,7 +27,7 @@ ctrlBoard = $('.ctrl_board')
 
 # 顯示地圖
 showMap = ->
-  mapCanvas.animate(opacity: 1).removeClass("cant-touch")
+  mainUI.animate(opacity: 1).removeClass("cant-touch")
 
 
 

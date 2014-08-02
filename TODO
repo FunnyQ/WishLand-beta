@@ -1,0 +1,4 @@
+☐ 開發完要加回去的項目
+  ☐ _index.css.sass > .mainUI < opacity 取消 comment
+  ☐ _ctrl_board.html.erb > 拿掉 is_user 換回 not_user
+  ☐ _map.html.erb > #map 加回 .cant-touch
