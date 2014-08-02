@@ -17,11 +17,20 @@ mainUI = $('.mainUI')
 ctrlBoard = $('.ctrl_board')
 
 
+# 訊息通知 lable
+notifyLabel = ctrlBoard.find('.label')
+
+# 控制區的按鈕們
+ctrlBtns = ctrlBoard.find('a')
+
 # FB 登入按鈕
 fbLoginBtn = $('a.login-button')
 
-# 帳號管理 trigger
+# 帳號管理按鈕
 accountManageBtn = $('#accountManage')
+
+# 登出按鈕
+signOutBtn = $('#sign_out')
 
 
 ###
@@ -33,6 +42,15 @@ accountManageBtn = $('#accountManage')
 showMap = ->
   mainUI.animate(opacity: 1).removeClass("cant-touch")
 
+# 載入 is_user.html 主介面
+loadCtrlBoard = ->
+  $.ajax
+    url: './is_user.html'
+    type: 'GET'
+    dataType: 'html'
+    success: (respond) ->
+      ctrlBoard.html(respond)
+      null
 
 
 ###
@@ -40,7 +58,7 @@ Main section
 ###
 
 # tooltip
-accountManageBtn.tooltip
+ctrlBtns.add(notifyLabel).tooltip
   delay: {
     show: 600
     hide: 300
@@ -53,12 +71,10 @@ mapCanvas.tinyMap
 
 
 # 顯示地圖界面
+###
+Facebook 登入成功後 call showMap() & loadCtrlBoard()
+###
 fbLoginBtn.on "click", ->
   showMap()
-  $.ajax
-    url: './is_user.html'
-    type: 'GET'
-    dataType: 'html'
-    success: (respond) ->
-      ctrlBoard.html(respond)
+  loadCtrlBoard()
   null
