@@ -11,30 +11,27 @@
 
   </div><!-- e/o .ctrl-logo -->
 
-  <!-- 使用者選項 => 登入, 註冊 -->
+  <!-- 中央應用控制區 -->
   <div class="ctrl-main">
 
     <div class="wraper">
 
       <div class="options">
 
-        <div class="sign-up_button">
-          <a href="#" title="註冊新帳號" data-toggle="tooltip" data-placement="top">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-edit fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-        </div>
+        <a href="#" title="許下願望" data-toggle="tooltip" data-placement="top">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
-        <div class="sign-in_button">
-          <a href="#" title="使用者登入">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-key fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-        </div>
+        <!-- <a href="#" title="我的位置" data-toggle="tooltip" data-placement="top">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+ -->
 
       </div>
 
@@ -42,10 +39,17 @@
 
   </div><!-- e/o .ctrl-main -->
 
-  <!-- 右半部 個人頁面 -->
+  <!-- 右半部 帳號控制區 -->
   <div class="ctrl-right">
 
     <div class="wraper">
+
+      <a id="sign_out" href="#" data-toggle="tooltip" data-placement="top" title="登出">
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
 
       <a id="accountManage" href="#" data-toggle="tooltip" data-placement="top" title="帳號管理">
         <span class="fa-stack fa-lg">
@@ -53,7 +57,9 @@
           <i class="fa fa-user fa-stack-1x fa-inverse"></i>
         </span>
       </a>
-      <span class="badge pull-right"></span>
+
+      <!-- 訊息通知欄位 -->
+      <span class="label label-info" data-toggle="tooltip" data-placement="top" title="您關注的願望有新訊息">New</span>
 
     </div>
 
