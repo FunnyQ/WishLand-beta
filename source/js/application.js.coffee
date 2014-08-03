@@ -84,19 +84,19 @@ $( document ).ready ->
   固定切換類別按鈕在主介面中間
   ###
   changeCategoruBtn.css
-    "margin-top": ( viewHeight / 2 ) - 88
-    "left": (viewWidth / 2) - 44
+    "margin-top": ( viewHeight / 2 ) - 100
+    "left": (viewWidth / 2) - 50
   $( window ).resize ->
     viewHeight = $( window ).height()
     viewWidth = $( window ).width()
     changeCategoruBtn.css
-      "margin-top": ( viewHeight / 2 ) - 88
-      "left": (viewWidth / 2) - 44
+      "margin-top": ( viewHeight / 2 ) - 100
+      "left": (viewWidth / 2) - 50
 
 ###
 tooltip
 ###
-ctrlBtns.add(notifyLabel).tooltip
+ctrlBtns.add(notifyLabel).add(changeCategoruBtn).tooltip
   delay: {
     show: 600
     hide: 300
@@ -108,6 +108,11 @@ ctrlBtns.add(notifyLabel).tooltip
 mapCanvas.tinyMap
   center: '台北火車站'
   zoom: 16
+  control: false
+  autoLocation: true
+  panControl: false
+  streetViewControl: false
+  scaleControl: false
 
 # 顯示地圖界面
 ###
