@@ -17,6 +17,7 @@ mainUI = $('.mainUI')
 ctrlBoard = $('.ctrl_board')
 
 
+
 # 訊息通知 lable
 notifyLabel = ctrlBoard.find('.label')
 
@@ -32,6 +33,11 @@ accountManageBtn = $('#accountManage')
 # 登出按鈕
 signOutBtn = $('#sign_out')
 
+
+
+# 視窗高度
+
+viewHeight = $( window ).height()
 
 ###
 定義 function
@@ -57,6 +63,14 @@ loadCtrlBoard = ->
 Main section
 ###
 
+$( document ).ready ->
+  # 主界面區塊隨視窗高度變動
+  mapCanvas.add(mainUI).height( viewHeight - 80 )
+  $( window ).resize ->
+    viewHeight = $( window ).height()
+    mapCanvas.add(mainUI).height( viewHeight - 80 )
+
+
 # tooltip
 ctrlBtns.add(notifyLabel).tooltip
   delay: {
@@ -66,8 +80,8 @@ ctrlBtns.add(notifyLabel).tooltip
 
 # 載入地圖
 mapCanvas.tinyMap
-  center: '台北車站'
-  zoom: 15
+  center: '台北火車站'
+  zoom: 16
 
 
 # 顯示地圖界面
