@@ -92,11 +92,101 @@ body, html, .main_content
   .info-panel
     @extend %h100p
     position: relative
+    overflow: scroll
     width: 400px
     background-color: $c-ctrl_board
     z-index: +index($elements, test)
     float: right
-    display: none
+    +box-shadow(0 0 15px #000)
+    // display: none
+    z-index: index($elements, info-panel)
+    h3
+      @extend %panelTitle
+      margin: 0
+
+    .wish-owner
+      background-color: darken($c-ctrl_board, 10%)
+      padding: 0.5em
+      border-bottom: 2px solid darken($c-ctrl_board, 20%)
+      h4
+        color: darken($c-yellow, 50%)
+        font-size: $fz-m
+        margin: 0
+        padding: 1em 0
+      .owner-avatar
+        display: inline-block
+        margin-left: 1em
+        height: 50px
+        width: 50px
+        @extend %circle
+        border: 5px solid #fff
+      .owner-name
+        color: darken($c-yellow, 50%)
+        margin-left: 75px
+        margin-top: -40px
+        padding-bottom: 1em
+      button
+        +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+        margin-top: -4px
+        float: right
+
+    .wish-title
+      margin: 0.5em 0
+      @extend %w100p
+      padding: 1em
+      .inner
+        @extend %w100p
+        @extend %h100p
+        margin: 0
+        background-color: #FFF
+        +box-shadow(0 0 2px #aaa)
+        padding: 1.4em
+        font-weight: bold
+      .signature
+        margin: 0
+        text-align: right
+        font-size: $fz-xs
+        color: darken(#fff, 40%)
+
+    .other-info
+      @extend .wish-title
+      padding-top: 0
+      margin-bottom: 0
+      .detail
+        background-color: lighten($c-ctrl_board, 3%)
+        margin-bottom: 0.5em
+        padding: 0.5em 1em
+      h4
+        font-size: $fz-m
+        color: darken($c-ctrl_board, 70%)
+      p
+        margin: 1em 0 0 37px
+        padding-bottom: 0.5em
+        color: darken($c-ctrl_board, 60%)
+        font-size: $fz-s
+        border-bottom: 1px solid darken($c-ctrl_board, 30%)
+
+    .option-buttons
+      @extend .wish-title
+      padding-top: 0
+      .observe
+        @extend %w100p
+        padding: 0 0.5em
+        button
+          +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+          margin-bottom: 1em
+      .share, .host, .comment
+        +span(4)
+        padding: 0 0.5em
+        button
+          @extend %w100p
+          +sassy-button("flat", 5px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+          margin-bottom: 1em
+
+
+
+
+
 
   .make-wish
     position: relative
@@ -109,13 +199,7 @@ body, html, .main_content
     +box-shadow(0 0 15px #000)
     display: none
     h3
-      text-align: center
-      font-size: $fz-l
-      padding: 0.5em
-      background-color: $c-landing
-      color: #fff
-      border-bottom: 3px solid darken($c-landing, 10%)
-      margin-bottom: 2em
+      @extend %panelTitle
     h4
       font-size: $fz-m
 

@@ -87,7 +87,7 @@ unLoadCtrlBoard = ->
 
 # 顯示許願卡
 showMakeWishForm = ->
-  hardCloseUI()
+  closeUI(0)
   makeWishForm.addClass('animated bounceInUp')
   makeWishForm.add(siteOverlay).fadeIn()
   setTimeout (->
@@ -110,7 +110,7 @@ submitWishEffect = ->
   null
 
 showInfoPanel = ->
-  hardCloseUI()
+  closeUI(0)
   infoPanel.add(siteOverlay).fadeIn()
   infoPanel.addClass('animated fadeInRight')
   setTimeout (->
@@ -120,12 +120,8 @@ showInfoPanel = ->
   null
 
 # 關閉所有視窗
-closeUI = ->
-  makeWishForm.add(siteOverlay).add(infoPanel).fadeOut()
-  null
-
-hardCloseUI = ->
-  makeWishForm.add(siteOverlay).add(infoPanel).fadeOut(0)
+closeUI = ( speed = "500" ) ->
+  makeWishForm.add(siteOverlay).add(infoPanel).fadeOut(speed)
   null
 
 ###
