@@ -9,6 +9,9 @@
 ////////////////////
 ###
 
+# overlay
+siteOverlay = $('.overlay')
+
 # 地圖 canvas
 mapCanvas = $('#map')
 mainUI = $('.mainUI')
@@ -16,6 +19,8 @@ mainUI = $('.mainUI')
 # Ctrl_board 主控制區
 ctrlBoard = $('.ctrl_board')
 
+# make-wish 表單
+makeWishForm = mainUI.find('.make-wish')
 
 
 # 訊息通知 lable
@@ -32,6 +37,9 @@ accountManageBtn = $('#accountManage')
 
 # 登出按鈕
 signOutBtn = $('#sign_out')
+
+# make-wish 按鈕
+makeWishBtn = $('#makeWishBtn')
 
 # 切換類別按鈕（使用者頭像）
 changeCategoruBtn = $('#change_category')
@@ -108,4 +116,12 @@ Facebook 登入成功後 call showMap() & loadCtrlBoard()
 fbLoginBtn.on "click", ->
   showMap()
   loadCtrlBoard()
+  null
+
+makeWishBtn.on "click", ->
+  makeWishForm.add(siteOverlay).fadeIn()
+  null
+
+siteOverlay.on "click", ->
+  makeWishForm.add(siteOverlay).fadeOut()
   null

@@ -57,6 +57,16 @@ body, html, .main_content
   top: 0
   // opacity: 0
 
+  // overlay
+  .overlay
+    @extend %w100p
+    @extend %h100p
+    position: absolute
+    top: 0
+    background-color: rgba(black, 0.5)
+    z-index: +index($elements, overlay)
+    display: none
+
   // map canvas
   .map
     // @extend %h100p
@@ -84,6 +94,15 @@ body, html, .main_content
     z-index: +index($elements, test)
     float: right
 
+  .make-wish
+    position: relative
+    @extend %m0auto
+    margin-top: 80px
+    width: 400px
+    height: 600px
+    background-color: #FFF
+    z-index: +index($elements, make-wish)
+    display: none
 
 
 ///////////////////////////////
