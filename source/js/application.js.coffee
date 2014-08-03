@@ -34,12 +34,16 @@ fbLoginBtn = $('a.login-button')
 
 # 帳號管理按鈕
 accountManageBtn = $('#accountManage')
-
 # 登出按鈕
 signOutBtn = $('#sign_out')
 
-# make-wish 按鈕
+# 許願按鈕
 makeWishBtn = $('#makeWishBtn')
+# 取消許願按鈕
+cencelWishBtn = makeWishForm.find('.form-cancel')
+# 送出願望按鈕
+submitWishBtn = makeWishForm.find('.form-submit')
+
 
 # 切換類別按鈕（使用者頭像）
 changeCategoruBtn = $('#change_category')
@@ -67,12 +71,40 @@ loadCtrlBoard = ->
       ctrlBoard.html(respond)
       null
 
+# 顯示許願卡
+showMakeWishForm = ->
+  makeWishForm.addClass('animated bounceInUp')
+  makeWishForm.add(siteOverlay).fadeIn()
+  setTimeout (->
+    makeWishForm.removeClass('animated bounceInUp')
+    null
+  ), 1000
+  null
+
+# 送出許願卡
+submitWishEffect = ->
+  makeWishForm.addClass "animated zoomOutUp"
+  setTimeout (->
+    closeUI()
+    null
+  ), 500
+  setTimeout (->
+    makeWishForm.removeClass "animated zoomOutUp"
+    null
+  ), 1000
+  null
+
+# 關閉所有視窗
+closeUI = ->
+  makeWishForm.add(siteOverlay).fadeOut()
+  null
 
 ###
 Main section
 ###
 
 $( document ).ready ->
+  new WOW().init();
   ###
   主界面區塊隨視窗高度變動
   ###
@@ -123,10 +155,31 @@ fbLoginBtn.on "click", ->
   loadCtrlBoard()
   null
 
+###
+按下許願按鈕，顯示許願表單
+###
 makeWishBtn.on "click", ->
-  makeWishForm.add(siteOverlay).fadeIn()
+  showMakeWishForm()
+  null
+###
+取消許願可關閉視窗
+###
+cencelWishBtn.on "click", ->
+  closeUI()
+  null
+###
+送出願望後關閉視窗
+###
+submitWishBtn.on "click", ->
+  # do something
+  submitWishEffect()
   null
 
+
+###
+黑色 overlay 區域可以關閉視窗
+###
 siteOverlay.on "click", ->
-  makeWishForm.add(siteOverlay).fadeOut()
+  closeUI()
   null
+

@@ -98,14 +98,34 @@ body, html, .main_content
   .make-wish
     position: relative
     @extend %m0auto
-    margin-top: 40px
+    margin-top: 80px
     width: 400px
-    height: 600px
-    background-color: #FFF
+    background-color: $c-ctrl_board
     z-index: +index($elements, make-wish)
+    +border-radius(10px)
+    +box-shadow(0 0 15px #000)
     display: none
+    h3
+      text-align: center
+      font-size: $fz-l
+      padding: 0.5em
+      background-color: $c-landing
+      color: #fff
+      border-bottom: 3px solid darken($c-landing, 10%)
+      margin-bottom: 2em
+    h4
+      font-size: $fz-m
 
-
+  .form-wraper
+    padding: 0 2em
+    margin-bottom: 2em
+  .button-wraper
+    padding: 2em 0
+    text-align: center
+  .form-cancel
+    +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
+  .form-submit
+    +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
 ///////////////////////////////
 
 
