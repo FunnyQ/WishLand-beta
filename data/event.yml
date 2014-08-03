@@ -8,12 +8,12 @@ status:
 location: 臺北火車站
 lat:
 lng:
-time: 2014-08-03
+time: 2014-08-25
 content: 想和不認識的你慢慢喝杯奶茶...
 limit:
 player:
-fee:
+fee: 200
 w_belong:
 e_belong:
 counter:
-timestamp:
+timestamp: 2014-08-03

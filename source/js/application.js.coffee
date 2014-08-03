@@ -95,6 +95,15 @@ loadWishDetail = ->
     success: (respond) ->
       infoPanel.html(respond)
       null
+# 載入活動詳細資訊
+loadEventDetail = ->
+  $.ajax
+    url: './event_detail.html'
+    type: 'GET'
+    dataType: 'html'
+    success: (respond) ->
+      infoPanel.html(respond)
+      null
 
 # 顯示許願卡
 showMakeWishForm = ->
@@ -238,3 +247,7 @@ ctrlBoard.find('.marker-wish').on "click", ->
   null
 
 ctrlBoard.find('.marker-event').on "click", ->
+  # 先 ajax 讀入表單再顯示面板
+  loadEventDetail()
+  showInfoPanel()
+  null

@@ -104,7 +104,7 @@ body, html, .main_content
       @extend %panelTitle
       margin: 0
 
-    .wish-owner
+    .wish-owner, .event-owner
       background-color: darken($c-ctrl_board, 10%)
       padding: 0.5em
       border-bottom: 2px solid darken($c-ctrl_board, 20%)
@@ -130,7 +130,7 @@ body, html, .main_content
         margin-top: -4px
         float: right
 
-    .wish-title
+    .wish-title, .event-title
       margin: 0.5em 0
       @extend %w100p
       padding: 1em
@@ -174,16 +174,16 @@ body, html, .main_content
       padding-top: 0
       .observe
         @extend %w100p
-        padding: 0 0.5em
+        padding: 0 0.3em
         button
-          +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
-          margin-bottom: 1em
-      .share, .host, .comment
+          +sassy-button("flat", 5px, $fz-m, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+          margin-bottom: 0.6em
+      .share, .host, .comment, .join
         +span(4)
-        padding: 0 0.5em
+        padding: 0 0.3em
         button
           @extend %w100p
-          +sassy-button("flat", 5px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+          +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
           margin-bottom: 1em
 
 

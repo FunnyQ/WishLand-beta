@@ -1,9 +1,8 @@
-<div class="wish-detail">
+<div class="event-detail">
+  <h3><i class="fa fa-lightbulb-o fa-lg"></i> 活動詳細內容</h3>
 
-  <h3><i class="fa fa-list-alt fa-lg"></i> 願望詳細內容</h3>
-
-  <!-- 許願者欄位，可 follow 人 -->
-  <div class="wish-owner">
+  <!-- 活動主辦者欄位，可 follow 人 -->
+  <div class="event-owner">
     <!-- <h4><i class="fa fa-child fa-lg"></i> 許願者：</h4> -->
     <div class="owner-inner">
       <div class="owner-avatar">
@@ -16,11 +15,11 @@
     </div>
   </div>
 
-  <!-- 願望標題 -->
-  <div class="wish-title">
+  <!-- 活動標題 -->
+  <div class="event-title">
     <div class="inner">
-      <p><i><%= data.event.content %></i></p><br />
-      <p class="signature">by <span><%= data.member.firstname %></span></p>
+      <p><i><%= data.event.title %></i></p><br />
+      <p class="signature">主辦人： <span><%= data.member.firstname %></span></p>
     </div>
   </div>
 
@@ -32,7 +31,7 @@
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i>
         </span>
-        願望類別
+        活動類別
         <p>
           <i class="fa fa-cutlery"></i> 美食
         </p>
@@ -45,9 +44,9 @@
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
         </span>
-        許願時間
+        開始時間
         <p>
-          <%= data.event.timestamp %> （<span>2 天前</span>）
+          <%= data.event.time %> （<span>還有 22 天</span>）
         </p>
       </h4>
     </div>
@@ -58,9 +57,22 @@
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
         </span>
-        許願地點
+        舉辦地點
         <p>
           <%= data.event.location %> （距離我 <span>3</span> 公里遠）
+        </p>
+      </h4>
+    </div>
+
+    <div class="detail">
+      <h4>
+        <span class="fa-stack">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+        </span>
+        參加費用
+        <p>
+          <%= data.event.fee %> 元
         </p>
       </h4>
     </div>
@@ -70,12 +82,12 @@
   <div class="option-buttons">
     <div class="row">
       <div class="observe">
-        <button class="observe"><i class="fa fa-star-o fa-lg"></i> 關注願望</button>
+        <button class="observe"><i class="fa fa-star fa-lg"></i> 關注活動</button>
       </div>
     </div>
     <div class="row">
       <div class="share"><button>分享 <i class="fa fa-share"></i></button></div>
-      <div class="host"><button>實現 <i class="fa fa-magic"></i></button></div>
+      <div class="join"><button>參加 <i class="fa fa-hand-o-up"></i></button></div>
       <div class="comment"><button>留言 <i class="fa fa-comment"></i></button></div>
     </div>
   </div>

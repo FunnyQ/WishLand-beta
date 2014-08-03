@@ -2,3 +2,10 @@
   ☐ _index.css.sass > .mainUI < opacity 取消 comment
   ☐ _ctrl_board.html.erb > 拿掉 is_user 換回 not_user
   ☐ _map.html.erb > #map 加回 .cant-touch
+
+
+
+☐ 尚未完成
+  ☐ 願望與活動分享界面
+  ☐ 留言界面
+  ☐ 實現願望界面
