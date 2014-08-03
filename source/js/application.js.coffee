@@ -212,16 +212,6 @@ siteOverlay.on "click", ->
   closeUI()
   null
 
-<<<<<<< Updated upstream
-
-### TEST AREA ###
-ctrlBoard.find('.marker-wish').on "click", ->
-  showInfoPanel()
-  null
-=======
-<<<<<<< Updated upstream
-=======
-
 ###
 登出，登出使用者然後關閉地圖畫面
 ###
@@ -238,5 +228,3 @@ ctrlBoard.find('.marker-wish').on "click", ->
   # 先 ajax 讀入表單再顯示面板
   showInfoPanel()
   null
->>>>>>> Stashed changes
->>>>>>> Stashed changes
