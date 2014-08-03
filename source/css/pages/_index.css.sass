@@ -57,18 +57,34 @@ body, html, .main_content
   top: 0
   // opacity: 0
 
-// map canvas
-.map
-  // @extend %h100p
-  @extend %w100p
-  position: absolute
-  top: 0
+  // map canvas
+  .map
+    // @extend %h100p
+    @extend %w100p
+    position: absolute
+    z-index: +index($elements, map)
 
-// 地圖主界面
-.avatar
-  width: 55px
-  height: 55px
-  background-color: #FFF
+  // 地圖主界面
+  .avatar
+    position: absolute
+    display: block
+    top: 0
+    @extend %circle
+    width: 95px
+    height: 95px
+    padding: 7px
+    background-color: rgba(black, 0.5)
+    z-index: +index($elements, change_category)
+
+  .test
+    @extend %h100p
+    position: relative
+    width: 400px
+    background-color: #FFF
+    z-index: +index($elements, test)
+    float: right
+
+
 
 ///////////////////////////////
 

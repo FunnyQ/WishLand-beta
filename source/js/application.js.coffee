@@ -33,11 +33,12 @@ accountManageBtn = $('#accountManage')
 # 登出按鈕
 signOutBtn = $('#sign_out')
 
+# 切換類別按鈕（使用者頭像）
+changeCategoruBtn = $('#change_category')
 
-
-# 視窗高度
-
+# 視窗寬高度
 viewHeight = $( window ).height()
+viewWidth = $( window ).width()
 
 ###
 定義 function
@@ -64,25 +65,41 @@ Main section
 ###
 
 $( document ).ready ->
-  # 主界面區塊隨視窗高度變動
+  ###
+  主界面區塊隨視窗高度變動
+  ###
   mapCanvas.add(mainUI).height( viewHeight - 80 )
   $( window ).resize ->
     viewHeight = $( window ).height()
     mapCanvas.add(mainUI).height( viewHeight - 80 )
+  ###
+  固定切換類別按鈕在主介面中間
+  ###
+  changeCategoruBtn.css
+    "margin-top": ( viewHeight / 2 ) - 88
+    "left": (viewWidth / 2) - 44
+  $( window ).resize ->
+    viewHeight = $( window ).height()
+    viewWidth = $( window ).width()
+    changeCategoruBtn.css
+      "margin-top": ( viewHeight / 2 ) - 88
+      "left": (viewWidth / 2) - 44
 
-
-# tooltip
+###
+tooltip
+###
 ctrlBtns.add(notifyLabel).tooltip
   delay: {
     show: 600
     hide: 300
   }
 
-# 載入地圖
+###
+載入地圖
+###
 mapCanvas.tinyMap
   center: '台北火車站'
   zoom: 16
-
 
 # 顯示地圖界面
 ###
