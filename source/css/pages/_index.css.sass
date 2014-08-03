@@ -79,6 +79,8 @@ body, html, .main_content
     position: absolute
     display: block
     top: 0
+    margin-top: calc(50vh - 100px)
+    left: calc(50% - 50px)
     @extend %circle
     width: 100px
     height: 100px
@@ -87,13 +89,14 @@ body, html, .main_content
     +transition(color, 1s)
     z-index: +index($elements, change_category)
 
-  .test
+  .info-panel
     @extend %h100p
     position: relative
     width: 400px
-    background-color: #FFF
+    background-color: $c-ctrl_board
     z-index: +index($elements, test)
     float: right
+    display: none
 
   .make-wish
     position: relative

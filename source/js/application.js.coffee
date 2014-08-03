@@ -22,6 +22,9 @@ ctrlBoard = $('.ctrl_board')
 # make-wish 表單
 makeWishForm = mainUI.find('.make-wish')
 
+# infoPanel 活動或願望的詳細內容顯示區
+infoPanel = mainUI.find('.info-panel')
+
 
 # 訊息通知 lable
 notifyLabel = ctrlBoard.find('.label')
@@ -46,7 +49,7 @@ submitWishBtn = makeWishForm.find('.form-submit')
 
 
 # 切換類別按鈕（使用者頭像）
-changeCategoruBtn = $('#change_category')
+changeCategoryBtn = $('#change_category')
 
 # 視窗寬高度
 viewHeight = $( window ).height()
@@ -73,6 +76,7 @@ loadCtrlBoard = ->
 
 # 顯示許願卡
 showMakeWishForm = ->
+  hardCloseUI()
   makeWishForm.addClass('animated bounceInUp')
   makeWishForm.add(siteOverlay).fadeIn()
   setTimeout (->
@@ -94,9 +98,23 @@ submitWishEffect = ->
   ), 1000
   null
 
+showInfoPanel = ->
+  hardCloseUI()
+  infoPanel.add(siteOverlay).fadeIn()
+  infoPanel.addClass('animated fadeInRight')
+  setTimeout (->
+    infoPanel.removeClass('animated fadeInRight')
+    null
+  ), 1000
+  null
+
 # 關閉所有視窗
 closeUI = ->
-  makeWishForm.add(siteOverlay).fadeOut()
+  makeWishForm.add(siteOverlay).add(infoPanel).fadeOut()
+  null
+
+hardCloseUI = ->
+  makeWishForm.add(siteOverlay).add(infoPanel).fadeOut(0)
   null
 
 ###
@@ -115,20 +133,20 @@ $( document ).ready ->
   ###
   固定切換類別按鈕在主介面中間
   ###
-  changeCategoruBtn.css
+  changeCategoryBtn.css
     "margin-top": ( viewHeight / 2 ) - 100
     "left": (viewWidth / 2) - 50
   $( window ).resize ->
     viewHeight = $( window ).height()
     viewWidth = $( window ).width()
-    changeCategoruBtn.css
+    changeCategoryBtn.css
       "margin-top": ( viewHeight / 2 ) - 100
       "left": (viewWidth / 2) - 50
 
 ###
 tooltip
 ###
-ctrlBtns.add(notifyLabel).add(changeCategoruBtn).tooltip
+ctrlBtns.add(notifyLabel).add(changeCategoryBtn).tooltip
   delay: {
     show: 600
     hide: 300
@@ -183,3 +201,8 @@ siteOverlay.on "click", ->
   closeUI()
   null
 
+
+### TEST AREA ###
+ctrlBoard.find('.marker-wish').on "click", ->
+  showInfoPanel()
+  null
