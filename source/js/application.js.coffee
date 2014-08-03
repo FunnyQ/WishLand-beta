@@ -63,11 +63,22 @@ viewWidth = $( window ).width()
 # 顯示地圖
 showMap = ->
   mainUI.animate(opacity: 1).removeClass("cant-touch")
+closeMap = ->
+  mainUI.animate(opacity: 0).addClass("cant-touch")
 
 # 載入 is_user.html 主介面
 loadCtrlBoard = ->
   $.ajax
     url: './is_user.html'
+    type: 'GET'
+    dataType: 'html'
+    success: (respond) ->
+      ctrlBoard.html(respond)
+      null
+
+unLoadCtrlBoard = ->
+  $.ajax
+    url: './not_user.html'
     type: 'GET'
     dataType: 'html'
     success: (respond) ->
@@ -201,8 +212,31 @@ siteOverlay.on "click", ->
   closeUI()
   null
 
+<<<<<<< Updated upstream
 
 ### TEST AREA ###
 ctrlBoard.find('.marker-wish').on "click", ->
   showInfoPanel()
   null
+=======
+<<<<<<< Updated upstream
+=======
+
+###
+登出，登出使用者然後關閉地圖畫面
+###
+signOutBtn.on "click", ->
+  ###
+  logout user
+  ###
+  unLoadCtrlBoard()
+  closeMap()
+  null
+
+### TEST AREA ###
+ctrlBoard.find('.marker-wish').on "click", ->
+  # 先 ajax 讀入表單再顯示面板
+  showInfoPanel()
+  null
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
