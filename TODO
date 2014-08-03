@@ -12,5 +12,5 @@
 
   ☐ enter 鍵要能 submit 表單
 
-☐ Bug
-  ☐ 登出再登入 Dashboard 會失效，原因不明...
+✔ Bug @done (14-08-03 21:31)
+  ✔ 登出再登入 Dashboard 會失效，原因不明... @done (14-08-03 21:31)
