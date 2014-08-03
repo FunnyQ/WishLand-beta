@@ -76,6 +76,7 @@ loadCtrlBoard = ->
       ctrlBoard.html(respond)
       null
 
+# 移除主介面
 unLoadCtrlBoard = ->
   $.ajax
     url: './not_user.html'
@@ -83,6 +84,16 @@ unLoadCtrlBoard = ->
     dataType: 'html'
     success: (respond) ->
       ctrlBoard.html(respond)
+      null
+
+# 載入願望詳細資訊
+loadWishDetail = ->
+  $.ajax
+    url: './wish_detail.html'
+    type: 'GET'
+    dataType: 'html'
+    success: (respond) ->
+      infoPanel.html(respond)
       null
 
 # 顯示許願卡
@@ -222,5 +233,8 @@ signOutBtn.on "click", ->
 ### TEST AREA ###
 ctrlBoard.find('.marker-wish').on "click", ->
   # 先 ajax 讀入表單再顯示面板
+  loadWishDetail()
   showInfoPanel()
   null
+
+ctrlBoard.find('.marker-event').on "click", ->
