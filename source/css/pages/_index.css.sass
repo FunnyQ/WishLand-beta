@@ -156,6 +156,9 @@ body, html, .main_content
         background-color: lighten($c-ctrl_board, 3%)
         margin-bottom: 0.5em
         padding: 0.5em 1em
+        &:hover
+          background-color: lighten($c-ctrl_board, 5%)
+          +box-shadow(0 0 3px darken($c-ctrl_board, 15%))
       h4
         font-size: $fz-m
         color: darken($c-ctrl_board, 70%)
