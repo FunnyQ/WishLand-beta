@@ -55,7 +55,7 @@ body, html, .main_content
   @extend %w100p
   position: absolute
   top: 0
-  // opacity: 0
+  opacity: 0
 
   // overlay
   .overlay
@@ -89,6 +89,8 @@ body, html, .main_content
     +transition(color, 1s)
     z-index: +index($elements, change_category)
 
+  .wish-detail, .event-detail
+    display: none
   .info-panel
     @extend %h100p
     position: relative
@@ -234,6 +236,8 @@ body, html, .main_content
   bottom: 0
   z-index: index($elements, ctrl_board)
 
+.is_user
+  display: none
 // 設定 is_user, not_user 全寬
 .not_user, .is_user
   @extend %span12

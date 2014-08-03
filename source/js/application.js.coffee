@@ -24,6 +24,10 @@ makeWishForm = mainUI.find('.make-wish')
 
 # infoPanel 活動或願望的詳細內容顯示區
 infoPanel = mainUI.find('.info-panel')
+wishDetail = infoPanel.find('.wish-detail')
+eventDetail = infoPanel.find('.event-detail')
+wishInfoSection = wishDetail.find('.info-section')
+eventInfoSection = eventDetail.find('.info-section')
 
 
 # 訊息通知 lable
@@ -68,23 +72,12 @@ closeMap = ->
 
 # 載入 is_user.html 主介面
 loadCtrlBoard = ->
-  $.ajax
-    url: './is_user.html'
-    type: 'GET'
-    dataType: 'html'
-    success: (respond) ->
-      ctrlBoard.html(respond)
-      null
+  ctrlBoard.find('.is_user').fadeIn()
 
 # 移除主介面
 unLoadCtrlBoard = ->
-  $.ajax
-    url: './not_user.html'
-    type: 'GET'
-    dataType: 'html'
-    success: (respond) ->
-      ctrlBoard.html(respond)
-      null
+  ctrlBoard.find('.is_user').fadeOut()
+
 
 # 載入願望詳細資訊
 loadWishDetail = ->
@@ -93,7 +86,8 @@ loadWishDetail = ->
     type: 'GET'
     dataType: 'html'
     success: (respond) ->
-      infoPanel.html(respond)
+      wishDetail.fadeIn(0)
+      wishInfoSection.html(respond)
       null
 # 載入活動詳細資訊
 loadEventDetail = ->
@@ -102,7 +96,8 @@ loadEventDetail = ->
     type: 'GET'
     dataType: 'html'
     success: (respond) ->
-      infoPanel.html(respond)
+      eventDetail.fadeIn(0)
+      eventInfoSection.html(respond)
       null
 
 # 顯示許願卡
@@ -141,7 +136,7 @@ showInfoPanel = ->
 
 # 關閉所有視窗
 closeUI = ( speed = "500" ) ->
-  makeWishForm.add(siteOverlay).add(infoPanel).fadeOut(speed)
+  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed)
   null
 
 ###

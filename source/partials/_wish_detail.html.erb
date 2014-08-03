@@ -1,83 +1,65 @@
-<div class="wish-detail">
+<h3><i class="fa fa-list-alt fa-lg"></i> 願望詳細內容</h3>
 
-  <h3><i class="fa fa-list-alt fa-lg"></i> 願望詳細內容</h3>
-
-  <!-- 許願者欄位，可 follow 人 -->
-  <div class="wish-owner">
-    <!-- <h4><i class="fa fa-child fa-lg"></i> 許願者：</h4> -->
-    <div class="owner-inner">
-      <div class="owner-avatar">
-        <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
-      </div>
-      <div class="owner-name">
-        <span><%= data.member.firstname %> <%= data.member.lastname %></span>
-        <button><i class="fa fa-heart-o"></i> Follow </button>
-      </div>
+<!-- 許願者欄位，可 follow 人 -->
+<div class="wish-owner">
+  <!-- <h4><i class="fa fa-child fa-lg"></i> 許願者：</h4> -->
+  <div class="owner-inner">
+    <div class="owner-avatar">
+      <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+    </div>
+    <div class="owner-name">
+      <span><%= data.member.firstname %> <%= data.member.lastname %></span>
+      <button><i class="fa fa-heart-o"></i> Follow </button>
     </div>
   </div>
-
-  <!-- 願望標題 -->
-  <div class="wish-title">
-    <div class="inner">
-      <p><i><%= data.event.content %></i></p><br />
-      <p class="signature">by <span><%= data.member.firstname %></span></p>
-    </div>
-  </div>
-
-  <!-- 其他詳細資訊 -->
-  <div class="other-info">
-    <div class="detail">
-      <h4>
-        <span class="fa-stack">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i>
-        </span>
-        願望類別
-        <p>
-          <i class="fa fa-cutlery"></i> 美食
-        </p>
-      </h4>
-    </div>
-
-    <div class="detail">
-      <h4>
-        <span class="fa-stack">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
-        </span>
-        許願時間
-        <p>
-          <%= data.event.timestamp %> （<span>2 天前</span>）
-        </p>
-      </h4>
-    </div>
-
-    <div class="detail">
-      <h4>
-        <span class="fa-stack">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-        </span>
-        許願地點
-        <p>
-          <%= data.event.location %> （距離我 <span>3</span> 公里遠）
-        </p>
-      </h4>
-    </div>
-  </div><!-- e/o 其他詳細資訊 -->
-
-  <!-- 按鈕們 -->
-  <div class="option-buttons">
-    <div class="row">
-      <div class="observe">
-        <button class="observe"><i class="fa fa-star-o fa-lg"></i> 關注願望</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="share"><button>分享 <i class="fa fa-share"></i></button></div>
-      <div class="host"><button>實現 <i class="fa fa-magic"></i></button></div>
-      <div class="comment"><button>留言 <i class="fa fa-comment"></i></button></div>
-    </div>
-  </div>
-
 </div>
+
+<!-- 願望標題 -->
+<div class="wish-title">
+  <div class="inner">
+    <p><i><%= data.event.content %></i></p><br />
+    <p class="signature">by <span><%= data.member.firstname %></span></p>
+  </div>
+</div>
+
+<!-- 其他詳細資訊 -->
+<div class="other-info">
+  <div class="detail">
+    <h4>
+      <span class="fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i>
+      </span>
+      願望類別
+      <p>
+        <i class="fa fa-cutlery"></i> 美食
+      </p>
+    </h4>
+  </div>
+
+  <div class="detail">
+    <h4>
+      <span class="fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
+      </span>
+      許願時間
+      <p>
+        <%= data.event.timestamp %> （<span>2 天前</span>）
+      </p>
+    </h4>
+  </div>
+
+  <div class="detail">
+    <h4>
+      <span class="fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+      </span>
+      許願地點
+      <p>
+        <%= data.event.location %> （距離我 <span>3</span> 公里遠）
+      </p>
+    </h4>
+  </div>
+</div><!-- e/o 其他詳細資訊 -->
