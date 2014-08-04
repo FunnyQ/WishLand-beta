@@ -98,11 +98,29 @@
       <div class="timeline">
 
         <!-- comment unit -->
-        <!-- <% 500.times do |d| %>
+        <% 10.times do |d| %>
         <div class="comment-unit">
-          123
+
+          <div class="comment-time">
+            <span class="commenter-avatar">
+              <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+            </span>
+            <span class="time">
+              <%= rand(60) %> 分鐘前
+            </span>
+          </div>
+
+          <div class="comment-info">
+            <div class="commenter-name">
+              <span><%= data.member.firstname %></span> 說：
+            </div>
+            <div class="comment-content">
+              <p><%= data.comment.content %></p>
+            </div>
+          </div>
+
         </div>
-        <% end %>  -->
+        <% end %>
       </div>
     </div>
     <div class="comment-form">

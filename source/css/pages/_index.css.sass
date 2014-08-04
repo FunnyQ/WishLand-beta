@@ -294,9 +294,55 @@ body, html, .main_content
       height: 475px /* height of .view-comments - (.view-comments h3) - .comment-form */
       overflow: scroll
       .timeline
-        height: 1000px
-        border-left: 8px solid darken($c-ctrl_board, 30%)
+        border-left: 5px solid darken($c-ctrl_board, 30%)
         margin: 50px 0 50px 50px
+        +clearfix
+      .comment-unit
+        width: 480px
+        margin-bottom: 1em
+        margin-left: -57px
+        font-size: $fz-s
+        &:last-child
+          margin-bottom: 0
+          background-color: $c-ctrl_board
+
+        +clearfix
+        .comment-time
+          +span(3)
+          text-align: center
+          margin-left: -5px
+          .commenter-avatar
+            display: block
+            @extend %m0auto
+            height: 50px
+            width: 50px
+            background-color: #FFF
+            padding: 5px
+            margin-bottom: 0.5em
+            +border-radius(50%)
+          .time
+            background-color: darken($c-ctrl_board, 50%)
+            +border-radius(50px)
+            padding: 0 1em
+            font-size: $fz-xs
+            color: #fff
+        .comment-info
+          +span(9)
+          margin-left: -10px
+          .commenter-name
+            +span(12)
+            margin-top: 16px
+          .comment-content
+            +span(12)
+            padding: 1em
+            margin-top: 11px
+            p
+              background-color: #FFF
+              padding: 0.5em
+              margin: 0
+              +border-radius(10px)
+
+
     .comment-divider
       @extend %w100p
       height: 17px
