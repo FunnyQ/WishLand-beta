@@ -18,6 +18,9 @@ siteOverlayLv2 = $('.overlay-lv2')
 # 地圖 canvas
 mainUI = $('.mainUI')
 mapCanvas = $('#map')
+
+# landing
+landingPage = $('.landing')
 ################################################################################
 
 # Ctrl_board 主控制區
@@ -126,9 +129,9 @@ viewWidth = $( window ).width()
 
 # 顯示地圖
 showMap = ->
-  mainUI.animate(opacity: 1).removeClass("cant-touch")
+  landingPage.fadeOut()
 closeMap = ->
-  mainUI.animate(opacity: 0).addClass("cant-touch")
+  landingPage.fadeIn()
 
 # 載入 is_user.html 主介面
 loadCtrlBoard = ->
