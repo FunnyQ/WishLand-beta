@@ -39,5 +39,19 @@
   margin-bottom: 2em
   +text-shadow(0 -1px 0 darken($c-landing, 30%))
 
+
+%make-wish
+  position: relative
+  @extend %m0auto
+  margin-top: 80px
+  width: 400px
+  background-color: $c-ctrl_board
+  +border-radius(10px)
+  +box-shadow(0 0 15px #000)
+  display: none
+  h3
+    @extend %panelTitle
+  h4
+    font-size: $fz-m
 // index
 

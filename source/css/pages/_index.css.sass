@@ -57,6 +57,7 @@ body, html, .main_content
   position: absolute
   top: 0
   z-index: +index($elements, map)
+  overflow: hidden
 
   // overlay
   .overlay, .overlay-lv2
@@ -201,19 +202,9 @@ body, html, .main_content
 
 
   .make-wish
-    position: relative
-    @extend %m0auto
-    margin-top: 80px
-    width: 400px
-    background-color: $c-ctrl_board
+    @extend %make-wish
     z-index: +index($elements, make-wish)
-    +border-radius(10px)
-    +box-shadow(0 0 15px #000)
-    display: none
-    h3
-      @extend %panelTitle
-    h4
-      font-size: $fz-m
+
 
   .form-wraper
     padding: 0 2em
@@ -229,7 +220,8 @@ body, html, .main_content
 
 
   .share-form
-    @extend .make-wish
+    @extend %make-wish
+    z-index: +index($elements, share-form)
     .button-wraper
       padding: 0 2em 2em 2em
       .share-fb
@@ -251,7 +243,9 @@ body, html, .main_content
 
 
   .host-form
-    @extend .make-wish
+    @extend %make-wish
+    z-index: +index($elements, host-form) !important
+    margin-top: 0
     h3
       margin-bottom: 1em
     .original-wish
@@ -284,7 +278,8 @@ body, html, .main_content
 
 
   .view-comments
-    @extend .make-wish
+    @extend %make-wish
+    z-index: +index($elements, view-comments)
     margin-top: 0
     width: 480px
     height: 680px
