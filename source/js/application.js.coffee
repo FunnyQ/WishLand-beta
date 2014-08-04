@@ -162,11 +162,17 @@ showInfoPanel = ->
 
 # 顯示分享視窗
 showSharePanel = ->
+  siteOverlayLv2.fadeIn()
+  null
 
-
-# 關閉所有視窗
+# 關閉 LV1 UI
 closeUI = ( speed = "500" ) ->
   makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed)
+  null
+
+# 關閉 LV2 UI
+closeLv2UI = ( speed = "500" ) ->
+  siteOverlayLv2.fadeOut(speed)
   null
 
 ################################################################################
@@ -256,10 +262,26 @@ submitWishBtn.on "click", ->
 
 
 ###
+詳細活動面板按鈕動作
+###
+# 分享活動
+shareEventBtn.on "click", ->
+  showSharePanel()
+  null
+
+
+###
 黑色 overlay 區域可以關閉視窗
 ###
 siteOverlay.on "click", ->
   closeUI()
+  null
+
+###
+黑色 overlayLv2 區域可以關閉視窗
+###
+siteOverlayLv2.on "click", ->
+  closeLv2UI()
   null
 
 

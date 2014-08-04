@@ -68,6 +68,8 @@ body, html, .main_content
     display: none
   .overlay-lv2
     z-index: +index($elements, overlay-lv2)
+    background-color: rgba(black, 0.4)
+
 
   // map canvas
   .map
@@ -223,6 +225,30 @@ body, html, .main_content
     +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
   .form-submit
     +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
+
+
+  .share-form
+    @extend .make-wish
+    display: block
+    .button-wraper
+      padding: 0 2em 2em 2em
+      .share-fb
+        @extend %w100p
+        margin-bottom: 0.5em
+        +sassy-button("flat", 5px, $fz-s, $c-facebook, $btn-primary, #fff, "inset")
+      .share-twitter
+        @extend .share-fb
+        +sassy-button("flat", 5px, $fz-s, $c-twitter, $btn-primary, #fff, "inset")
+      .share-weibo
+        @extend .share-fb
+        +sassy-button("flat", 5px, $fz-s, $c-weibo, $btn-primary, #fff, "inset")
+      .share-email
+        @extend .share-fb
+        +sassy-button("flat", 5px, $fz-s, $c-email, $btn-primary, #fff, "inset")
+      .form-cancel
+        margin-top: 1.5em
+
+
 ///////////////////////////////
 
 
