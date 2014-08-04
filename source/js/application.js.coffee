@@ -29,6 +29,9 @@ makeWishForm = mainUI.find('.make-wish')
 
 # 分享視窗 表單
 shareForm = mainUI.find('.share-form')
+
+# 建立活動 表單
+hostForm = mainUI.find('.host-form')
 ################################################################################
 
 # infoPanel 活動或願望的詳細內容顯示區
@@ -97,6 +100,11 @@ shareToEmailBtn = shareForm.find('.share-email')
 shareCancelBtn = shareForm.find('.form-cancel')
 ################################################################################
 
+## 建立活動表單的按鈕們
+# 取消建立活動
+cancelHostBtn = hostForm.find('.form-cancel')
+# 送出建立活動表單內容
+submitHostBtn = hostForm.find('.form-submit')
 
 
 # 視窗寬高度
@@ -181,11 +189,33 @@ showInfoPanel = ->
 
 # 顯示分享視窗
 showSharePanel = ->
-  closeLv2UI(0)
   shareForm.addClass "animated bounceInUp"
   shareForm.add(siteOverlayLv2).fadeIn()
   setTimeout (->
     shareForm.removeClass('animated bounceInUp')
+    null
+  ), 1000
+  null
+
+# 顯示實現願望表單視窗
+showHostForm = ->
+  hostForm.addClass "animated bounceInUp"
+  hostForm.add(siteOverlayLv2).fadeIn()
+  setTimeout (->
+    hostForm.removeClass('animated bounceInUp')
+    null
+  ), 1000
+  null
+
+submitHostEffect = ->
+  hostForm.addClass "animated zoomOutUp"
+  setTimeout (->
+    closeLv2UI()
+    closeUI()
+    null
+  ), 500
+  setTimeout (->
+    hostForm.removeClass "animated zoomOutUp"
     null
   ), 1000
   null
@@ -209,7 +239,7 @@ closeUI = ( speed = "500" ) ->
 
 # 關閉 LV2 UI
 closeLv2UI = ( speed = "500" ) ->
-  shareForm.add(siteOverlayLv2).fadeOut(speed)
+  shareForm.add(siteOverlayLv2).add(hostForm).fadeOut(speed)
   null
 
 ################################################################################
@@ -302,6 +332,10 @@ submitWishBtn.on "click", ->
 ###
 詳細活動面板按鈕動作
 ###
+
+###
+///////////////////分享///////////////////
+###
 ###
 # 按下分享活動，顯示分享面板
 ###
@@ -353,6 +387,32 @@ shareToEmailBtn.on "click", ->
   sendShareEffect()
   null
 
+###
+///////////////////實現願望（建立活動）///////////////////
+###
+###
+# 按下實現願望按鈕，顯示分享面板
+###
+hostWishBtn.on "click", ->
+  showHostForm()
+  null
+
+###
+# 按下取消按鈕，關閉視窗
+###
+cancelHostBtn.on "click", ->
+  closeLv2UI()
+  null
+
+###
+# 按下實現願望按鈕，送出建立活動表單
+###
+submitHostBtn.on "click", ->
+  ###
+  do something, maybe pan to location
+  ###
+  submitHostEffect()
+  null
 
 ###
 黑色 overlay 區域可以關閉視窗

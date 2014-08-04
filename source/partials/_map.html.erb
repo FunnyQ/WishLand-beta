@@ -1,5 +1,5 @@
 <!-- 主要界面, js -> mainUI -->
-<div class="mainUI">
+<div class="mainUI cant-touch">
 
   <div class="overlay"></div>
   <div class="overlay-lv2"></div>
@@ -91,17 +91,15 @@
 
     <!-- 原始的願望，包含許願者和願望內容 -->
     <div class="original-wish">
-      <div class="row">
-        <!-- 許願者頭像 -->
-        <div class="owner-avatar">
-          <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
-        </div>
-        <!-- 許願者名字 -->
-        <div class="owner-name">
-          <span><%= data.member.firstname %></span> <span>的願望：</span>
-        </div>
+      <!-- 許願者頭像 -->
+      <div class="owner-avatar">
+        <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
       </div>
-      <!-- 原始願望內容 -->
+      <!-- 許願者名字 -->
+      <div class="owner-name">
+        <span><%= data.member.firstname %></span> <span>的願望：</span>
+      </div>
+    <!-- 原始願望內容 -->
       <div class="wish-title">
         <i><%= data.event.content %></i>
       </div>
@@ -113,7 +111,7 @@
         <h4>
           <i class="fa fa-folder-open-o fa-lg"></i> 活動類別：
         </h4>
-        <select class="form-control" value="2" disabled>
+        <select class="form-control" disabled>
           <option>藝文</option>
           <option selected="selected">美食</option>
           <option>運動</option>
@@ -150,7 +148,11 @@
         <h4>
           <i class="fa fa-child fa-lg"></i> 設定人數限制：
         </h4>
-        <input type="number" class="form-control" id="wish-title" placeholder="200">
+        <select class="form-control">
+          <option>10 人內</option>
+          <option>25 人內</option>
+          <option>50 人內</option>
+        </select>
       </div>
 
       <div class="button-wraper">
@@ -160,6 +162,6 @@
 
     </form>
 
-  </div>
+  </div><!-- e/o host-form -->
 
 </div>
