@@ -12,7 +12,7 @@
  */
 
 (function() {
-  var accountManageBtn, cencelWishBtn, changeCategoryBtn, closeLv2UI, closeMap, closeUI, commentEventBtn, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostWishBtn, infoPanel, joinEventBtn, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeLv2UI, closeMap, closeUI, commentEventBtn, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostForm, hostWishBtn, infoPanel, joinEventBtn, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showHostForm, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -27,6 +27,8 @@
   makeWishForm = mainUI.find('.make-wish');
 
   shareForm = mainUI.find('.share-form');
+
+  hostForm = mainUI.find('.host-form');
 
   infoPanel = mainUI.find('.info-panel');
 
@@ -81,6 +83,10 @@
   shareToEmailBtn = shareForm.find('.share-email');
 
   shareCancelBtn = shareForm.find('.form-cancel');
+
+  cancelHostBtn = hostForm.find('.form-cancel');
+
+  submitHostBtn = hostForm.find('.form-submit');
 
   viewHeight = $(window).height();
 
@@ -174,11 +180,34 @@
   };
 
   showSharePanel = function() {
-    closeLv2UI(0);
     shareForm.addClass("animated bounceInUp");
     shareForm.add(siteOverlayLv2).fadeIn();
     setTimeout((function() {
       shareForm.removeClass('animated bounceInUp');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  showHostForm = function() {
+    hostForm.addClass("animated bounceInUp");
+    hostForm.add(siteOverlayLv2).fadeIn();
+    setTimeout((function() {
+      hostForm.removeClass('animated bounceInUp');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  submitHostEffect = function() {
+    hostForm.addClass("animated zoomOutUp");
+    setTimeout((function() {
+      closeLv2UI();
+      closeUI();
+      return null;
+    }), 500);
+    setTimeout((function() {
+      hostForm.removeClass("animated zoomOutUp");
       return null;
     }), 1000);
     return null;
@@ -209,7 +238,7 @@
     if (speed == null) {
       speed = "500";
     }
-    shareForm.add(siteOverlayLv2).fadeOut(speed);
+    shareForm.add(siteOverlayLv2).add(hostForm).fadeOut(speed);
     return null;
   };
 
@@ -322,6 +351,11 @@
 
 
   /*
+  ///////////////////分享///////////////////
+   */
+
+
+  /*
    * 按下分享活動，顯示分享面板
    */
 
@@ -388,6 +422,45 @@
     do something here
      */
     sendShareEffect();
+    return null;
+  });
+
+
+  /*
+  ///////////////////實現願望（建立活動）///////////////////
+   */
+
+
+  /*
+   * 按下實現願望按鈕，顯示分享面板
+   */
+
+  hostWishBtn.on("click", function() {
+    showHostForm();
+    return null;
+  });
+
+
+  /*
+   * 按下取消按鈕，關閉視窗
+   */
+
+  cancelHostBtn.on("click", function() {
+    closeLv2UI();
+    return null;
+  });
+
+
+  /*
+   * 按下實現願望按鈕，送出建立活動表單
+   */
+
+  submitHostBtn.on("click", function() {
+
+    /*
+    do something, maybe pan to location
+     */
+    submitHostEffect();
     return null;
   });
 

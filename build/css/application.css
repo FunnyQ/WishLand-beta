@@ -5248,10 +5248,10 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
 .mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .ctrl_board {
   width: 100%; }
 
-.mainUI .make-wish, .mainUI .share-form {
+.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form {
   margin: 0 auto; }
 
-.mainUI .info-panel h3, .mainUI .make-wish h3, .mainUI .share-form h3 {
+.mainUI .info-panel h3, .mainUI .make-wish h3, .mainUI .share-form h3, .mainUI .host-form h3 {
   text-align: center;
   font-size: 1.25em;
   padding: 0.5em;
@@ -5340,7 +5340,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     z-index: 2;
     display: none; }
   .mainUI .overlay-lv2 {
-    z-index: 4;
+    z-index: 5;
     background-color: rgba(0, 0, 0, 0.4); }
   .mainUI .map {
     position: absolute;
@@ -5358,7 +5358,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     -webkit-transition: color, 1s;
     -o-transition: color, 1s;
     transition: color, 1s;
-    z-index: 6; }
+    z-index: 3; }
   .mainUI .wish-detail, .mainUI .event-detail {
     display: none; }
   .mainUI .info-panel {
@@ -5371,7 +5371,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     -webkit-box-shadow: 0 0 15px black;
     box-shadow: 0 0 15px black;
     display: none;
-    z-index: 3; }
+    z-index: 4; }
     .mainUI .info-panel h3 {
       margin: 0; }
     .mainUI .info-panel .wish-owner, .mainUI .info-panel .event-owner {
@@ -5534,7 +5534,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
           .mainUI .info-panel .option-buttons .share button::-moz-focus-inner, .mainUI .info-panel .option-buttons .host button::-moz-focus-inner, .mainUI .info-panel .option-buttons .comment button::-moz-focus-inner, .mainUI .info-panel .option-buttons .join button::-moz-focus-inner {
             padding: 0 !important;
             margin: -1px !important; }
-  .mainUI .make-wish, .mainUI .share-form {
+  .mainUI .make-wish, .mainUI .share-form, .mainUI .host-form {
     position: relative;
     margin-top: 80px;
     width: 400px;
@@ -5546,7 +5546,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     -webkit-box-shadow: 0 0 15px black;
     box-shadow: 0 0 15px black;
     display: none; }
-    .mainUI .make-wish h4, .mainUI .share-form h4 {
+    .mainUI .make-wish h4, .mainUI .share-form h4, .mainUI .host-form h4 {
       font-size: 1em; }
   .mainUI .form-wraper {
     padding: 0 2em;
@@ -5739,7 +5739,40 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
         padding: 0 !important;
         margin: -1px !important; }
     .mainUI .share-form .button-wraper .form-cancel {
-      margin-top: 1.5em; }
+      margin-top: 1.5em;
+      font-size: 0.8125em; }
+  .mainUI .host-form h3 {
+    margin-bottom: 1em; }
+  .mainUI .host-form .original-wish {
+    margin: 1em;
+    padding: 1em;
+    background-color: #f8f5f3;
+    -webkit-box-shadow: 0 0 2px #aaaaaa;
+    box-shadow: 0 0 2px #aaaaaa; }
+    .mainUI .host-form .original-wish .owner-avatar {
+      float: left;
+      width: 38px;
+      height: 38px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-color: white;
+      padding: 3px; }
+    .mainUI .host-form .original-wish .owner-name {
+      float: left;
+      font-size: 0.8125em;
+      margin: 0.8em 0 0 0.5em;
+      color: #6a3f01; }
+    .mainUI .host-form .original-wish .wish-title, .mainUI .host-form .original-wish .info-panel .other-info, .mainUI .info-panel .host-form .original-wish .other-info, .mainUI .host-form .original-wish .info-panel .option-buttons, .mainUI .info-panel .host-form .original-wish .option-buttons {
+      clear: left;
+      font-weight: bold;
+      margin-top: 0.5em;
+      padding: 0 3em;
+      color: #4d4d4d; }
+  .mainUI .host-form .form-wraper {
+    margin-bottom: 1em; }
+  .mainUI .host-form .button-wraper {
+    padding-top: 1em; }
 
 .ctrl_board {
   height: 160px;
@@ -5751,7 +5784,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
-  z-index: 5; }
+  z-index: 6; }
 
 .is_user {
   display: none; }
@@ -5824,9 +5857,6 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
 .box-shadow {
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px;
   box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; }
-
-.off-canvas {
-  margin-right: -320px; }
 
 .hidden {
   display: none; }
