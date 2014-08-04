@@ -12,7 +12,7 @@
  */
 
 (function() {
-  var accountManageBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeLv2UI, closeMap, closeUI, commentEventBtn, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostForm, hostWishBtn, infoPanel, joinEventBtn, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showHostForm, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showHostForm, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -22,6 +22,8 @@
 
   mapCanvas = $('#map');
 
+  landingPage = $('.landing');
+
   ctrlBoard = $('.ctrl_board');
 
   makeWishForm = mainUI.find('.make-wish');
@@ -29,6 +31,8 @@
   shareForm = mainUI.find('.share-form');
 
   hostForm = mainUI.find('.host-form');
+
+  commentForm = mainUI.find('.view-comments');
 
   infoPanel = mainUI.find('.info-panel');
 
@@ -88,6 +92,10 @@
 
   submitHostBtn = hostForm.find('.form-submit');
 
+  cancelCommentBtn = commentForm.find('.form-cancel');
+
+  submitCommentBtn = commentForm.find('.form-submit');
+
   viewHeight = $(window).height();
 
   viewWidth = $(window).width();
@@ -99,15 +107,11 @@
    */
 
   showMap = function() {
-    return mainUI.animate({
-      opacity: 1
-    }).removeClass("cant-touch");
+    return landingPage.fadeOut();
   };
 
   closeMap = function() {
-    return mainUI.animate({
-      opacity: 0
-    }).addClass("cant-touch");
+    return landingPage.fadeIn();
   };
 
   loadCtrlBoard = function() {
@@ -226,6 +230,29 @@
     return null;
   };
 
+  showCommentForm = function() {
+    commentForm.addClass("animated fadeInDown");
+    commentForm.add(siteOverlayLv2).fadeIn();
+    setTimeout((function() {
+      commentForm.removeClass('animated fadeInDown');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  closeCommentEffect = function() {
+    commentForm.addClass("animated fadeOutUp");
+    setTimeout((function() {
+      closeLv2UI();
+      return null;
+    }), 500);
+    setTimeout((function() {
+      commentForm.removeClass("animated fadeOutUp");
+      return null;
+    }), 1000);
+    return null;
+  };
+
   closeUI = function(speed) {
     if (speed == null) {
       speed = "500";
@@ -238,7 +265,7 @@
     if (speed == null) {
       speed = "500";
     }
-    shareForm.add(siteOverlayLv2).add(hostForm).fadeOut(speed);
+    shareForm.add(siteOverlayLv2).add(hostForm).add(commentForm).fadeOut(speed);
     return null;
   };
 
@@ -446,7 +473,7 @@
    */
 
   cancelHostBtn.on("click", function() {
-    closeLv2UI();
+    closeCommentEffect();
     return null;
   });
 
@@ -461,6 +488,49 @@
     do something, maybe pan to location
      */
     submitHostEffect();
+    return null;
+  });
+
+
+  /*
+  ///////////////////實現願望（建立活動）///////////////////
+   */
+
+
+  /*
+   * 按下留言按鈕，顯示留言表單
+   */
+
+  commentEventBtn.on("click", function() {
+    showCommentForm();
+    return null;
+  });
+
+  commentWishBtn.on("click", function() {
+    showCommentForm();
+    return null;
+  });
+
+
+  /*
+   * 按下取消按鈕，關閉視窗
+   */
+
+  cancelCommentBtn.on("click", function() {
+    closeCommentEffect();
+    return null;
+  });
+
+
+  /*
+   * 按下送出留言按鈕，送出表單
+   */
+
+  submitCommentBtn.on("click", function() {
+
+    /*
+    do something
+     */
     return null;
   });
 

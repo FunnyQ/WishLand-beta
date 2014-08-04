@@ -5245,13 +5245,13 @@ Copyright (c) 2014 Daniel Eden
 body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .info-panel, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner {
   height: 100%; }
 
-.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .ctrl_board {
+.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .mainUI .view-comments .comment-divider, .mainUI .view-comments .comment-form, .ctrl_board {
   width: 100%; }
 
-.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form {
+.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form, .mainUI .view-comments, .mainUI .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar {
   margin: 0 auto; }
 
-.mainUI .info-panel h3, .mainUI .make-wish h3, .mainUI .share-form h3, .mainUI .host-form h3 {
+.mainUI .info-panel h3, .mainUI .make-wish h3, .mainUI .share-form h3, .mainUI .host-form h3, .mainUI .view-comments h3 {
   text-align: center;
   font-size: 1.25em;
   padding: 0.5em;
@@ -5269,7 +5269,8 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
 
 .landing {
   background-color: #fa826d;
-  position: relative; }
+  position: relative;
+  z-index: 2; }
   .landing .lp-content {
     padding-top: 33vh;
     color: #f2ede9;
@@ -5332,15 +5333,15 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
 .mainUI {
   position: absolute;
   top: 0;
-  opacity: 0; }
+  z-index: 1; }
   .mainUI .overlay, .mainUI .overlay-lv2 {
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 2;
+    z-index: 3;
     display: none; }
   .mainUI .overlay-lv2 {
-    z-index: 5;
+    z-index: 6;
     background-color: rgba(0, 0, 0, 0.4); }
   .mainUI .map {
     position: absolute;
@@ -5358,7 +5359,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     -webkit-transition: color, 1s;
     -o-transition: color, 1s;
     transition: color, 1s;
-    z-index: 3; }
+    z-index: 4; }
   .mainUI .wish-detail, .mainUI .event-detail {
     display: none; }
   .mainUI .info-panel {
@@ -5366,12 +5367,12 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     overflow: scroll;
     width: 400px;
     background-color: #f2ede9;
-    z-index: 7;
+    z-index: 8;
     float: right;
     -webkit-box-shadow: 0 0 15px black;
     box-shadow: 0 0 15px black;
     display: none;
-    z-index: 4; }
+    z-index: 5; }
     .mainUI .info-panel h3 {
       margin: 0; }
     .mainUI .info-panel .wish-owner, .mainUI .info-panel .event-owner {
@@ -5534,19 +5535,19 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
           .mainUI .info-panel .option-buttons .share button::-moz-focus-inner, .mainUI .info-panel .option-buttons .host button::-moz-focus-inner, .mainUI .info-panel .option-buttons .comment button::-moz-focus-inner, .mainUI .info-panel .option-buttons .join button::-moz-focus-inner {
             padding: 0 !important;
             margin: -1px !important; }
-  .mainUI .make-wish, .mainUI .share-form, .mainUI .host-form {
+  .mainUI .make-wish, .mainUI .share-form, .mainUI .host-form, .mainUI .view-comments {
     position: relative;
     margin-top: 80px;
     width: 400px;
     background-color: #f2ede9;
-    z-index: 9;
+    z-index: 10;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 15px black;
     box-shadow: 0 0 15px black;
     display: none; }
-    .mainUI .make-wish h4, .mainUI .share-form h4, .mainUI .host-form h4 {
+    .mainUI .make-wish h4, .mainUI .share-form h4, .mainUI .host-form h4, .mainUI .view-comments h4 {
       font-size: 1em; }
   .mainUI .form-wraper {
     padding: 0 2em;
@@ -5773,6 +5774,104 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
     margin-bottom: 1em; }
   .mainUI .host-form .button-wraper {
     padding-top: 1em; }
+  .mainUI .view-comments {
+    margin-top: 0;
+    width: 480px;
+    height: 680px; }
+    .mainUI .view-comments h3 {
+      margin: 0; }
+    .mainUI .view-comments .everyones-comments {
+      height: 475px;
+      overflow-y: scroll;
+      overflow-x: hidden; }
+      .mainUI .view-comments .everyones-comments .timeline {
+        border-left: 5px solid #b99e89;
+        margin: 50px 0 50px 58px; }
+        .mainUI .view-comments .everyones-comments .timeline:before, .mainUI .view-comments .everyones-comments .timeline:after {
+          content: " ";
+          display: table; }
+        .mainUI .view-comments .everyones-comments .timeline:after {
+          clear: both; }
+      .mainUI .view-comments .everyones-comments .comment-unit {
+        width: 450px;
+        margin-bottom: 1em;
+        margin-left: -54px;
+        font-size: 0.8125em; }
+        .mainUI .view-comments .everyones-comments .comment-unit:last-child {
+          margin-bottom: 0;
+          background-color: #f2ede9; }
+        .mainUI .view-comments .everyones-comments .comment-unit:before, .mainUI .view-comments .everyones-comments .comment-unit:after {
+          content: " ";
+          display: table; }
+        .mainUI .view-comments .everyones-comments .comment-unit:after {
+          clear: both; }
+        .mainUI .view-comments .everyones-comments .comment-unit .comment-time {
+          width: 25%;
+          float: left;
+          padding-left: 0.83333%;
+          padding-right: 0.83333%;
+          text-align: center;
+          margin-left: -5px; }
+          .mainUI .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar {
+            display: block;
+            height: 50px;
+            width: 50px;
+            background-color: white;
+            padding: 5px;
+            margin-bottom: 0.5em;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%; }
+          .mainUI .view-comments .everyones-comments .comment-unit .comment-time .time {
+            background-color: #8a6b52;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+            padding: 0 1em;
+            font-size: 0.75em;
+            color: white; }
+        .mainUI .view-comments .everyones-comments .comment-unit .comment-info {
+          width: 75%;
+          float: left;
+          padding-left: 0.83333%;
+          padding-right: 0.83333%;
+          margin-left: -10px; }
+          .mainUI .view-comments .everyones-comments .comment-unit .comment-info .commenter-name {
+            width: 100%;
+            float: left;
+            padding-left: 0.83333%;
+            padding-right: 0.83333%;
+            margin-top: 16px; }
+          .mainUI .view-comments .everyones-comments .comment-unit .comment-info .comment-content {
+            width: 100%;
+            float: left;
+            padding-left: 0.83333%;
+            padding-right: 0.83333%;
+            padding: 1em;
+            margin-top: 11px; }
+            .mainUI .view-comments .everyones-comments .comment-unit .comment-info .comment-content p {
+              background-color: white;
+              padding: 0.5em;
+              margin: 0;
+              -moz-border-radius: 10px;
+              -webkit-border-radius: 10px;
+              border-radius: 10px; }
+    .mainUI .view-comments .comment-divider {
+      height: 17px;
+      background: url(../img/comment-divider.png) 0 0 no-repeat;
+      margin-top: -17px; }
+    .mainUI .view-comments .comment-form {
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      background-color: #f2ede9;
+      position: absolute;
+      bottom: 0;
+      height: 10em; }
+      .mainUI .view-comments .comment-form .comment, .mainUI .view-comments .comment-form .buttons {
+        padding: 1em; }
+      .mainUI .view-comments .comment-form .buttons {
+        padding-top: 0;
+        text-align: center; }
 
 .ctrl_board {
   height: 160px;
@@ -5784,7 +5883,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
-  z-index: 6; }
+  z-index: 7; }
 
 .is_user {
   display: none; }
