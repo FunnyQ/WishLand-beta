@@ -1,5 +1,5 @@
 <!-- 主要界面, js -> mainUI -->
-<div class="mainUI">
+<div class="mainUI cant-touch">
 
   <div class="overlay"></div>
   <div class="overlay-lv2"></div>
@@ -76,28 +76,7 @@
 
   <!-- 分享視窗 -->
   <div class="share-form">
-    <h3><i class="fa fa-share-alt fa-lg"></i> 分享給朋友</h3>
-    <form class="form-horizontal" role="form">
-
-      <!-- 分享內容-->
-      <div class="form-wraper">
-        <h4>
-          <i class="fa fa-comment-o fa-lg"></i>
-          分享內容
-        </h4>
-        <textarea class="form-control" rows="4"></textarea>
-      </div>
-
-      <div class="button-wraper">
-        <button class="share-fb" type="submit" class="form-cancel"><i class="fa fa-facebook-square fa-lg"></i> 分享到 Facebook</button>
-        <button class="share-twitter" type="submit" class="form-cancel"><i class="fa fa-twitter fa-lg"></i> 分享到 Twitter</button>
-        <button class="share-weibo" type="submit" class="form-cancel"><i class="fa fa-weibo fa-lg"></i> 分享到 微博</button>
-        <button class="share-email" type="submit" class="form-cancel"><i class="fa fa-facebook-square fa-lg"></i> 透過 Email 分享</button>
-        <button type="button" class="form-cancel">取消</button>
-      </div>
-
-
-    </form>
+<%= partial "partials/share_form" %>
   </div>
 
 </div>

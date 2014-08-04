@@ -55,7 +55,7 @@ body, html, .main_content
   @extend %w100p
   position: absolute
   top: 0
-  // opacity: 0
+  opacity: 0
 
   // overlay
   .overlay, .overlay-lv2
@@ -229,7 +229,6 @@ body, html, .main_content
 
   .share-form
     @extend .make-wish
-    display: block
     .button-wraper
       padding: 0 2em 2em 2em
       .share-fb
@@ -266,7 +265,7 @@ body, html, .main_content
   z-index: index($elements, ctrl_board)
 
 .is_user
-  // display: none
+  display: none
 // 設定 is_user, not_user 全寬
 .not_user, .is_user
   @extend %span12

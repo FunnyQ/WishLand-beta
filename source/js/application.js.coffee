@@ -26,6 +26,9 @@ ctrlBoard = $('.ctrl_board')
 
 # make-wish 表單
 makeWishForm = mainUI.find('.make-wish')
+
+# 分享視窗 表單
+shareForm = mainUI.find('.share-form')
 ################################################################################
 
 # infoPanel 活動或願望的詳細內容顯示區
@@ -68,6 +71,7 @@ shareEventBtn = eventDetail.find('.share button')
 joinEventBtn = eventDetail.find('.join button')
 # 留言
 commentEventBtn = eventDetail.find('.comment button')
+################################################################################
 
 ## 詳細願望面板按鈕們 ##
 # 關注願望
@@ -78,6 +82,21 @@ shareWishBtn = wishDetail.find('.share button')
 hostWishBtn = wishDetail.find('.host button')
 # 留言
 commentWishBtn = wishDetail.find('.comment button')
+################################################################################
+
+## 分享面板表單按鈕們 ##
+# 分享到 FB
+shareToFbBtn = shareForm.find('.share-fb')
+# 分享到 Twitter
+shareToTwitterBtn = shareForm.find('.share-twitter')
+# 分享到 微博
+shareToWeiboBtn = shareForm.find('.share-weibo')
+# 分享到 Email
+shareToEmailBtn = shareForm.find('.share-email')
+# 取消按鈕
+shareCancelBtn = shareForm.find('.form-cancel')
+################################################################################
+
 
 
 # 視窗寬高度
@@ -152,8 +171,8 @@ submitWishEffect = ->
 # 顯示願望或活動詳細資訊面板
 showInfoPanel = ->
   closeUI(0)
-  infoPanel.add(siteOverlay).fadeIn()
   infoPanel.addClass('animated fadeInRight')
+  infoPanel.add(siteOverlay).fadeIn()
   setTimeout (->
     infoPanel.removeClass('animated fadeInRight')
     null
@@ -162,7 +181,25 @@ showInfoPanel = ->
 
 # 顯示分享視窗
 showSharePanel = ->
-  siteOverlayLv2.fadeIn()
+  closeLv2UI(0)
+  shareForm.addClass "animated bounceInUp"
+  shareForm.add(siteOverlayLv2).fadeIn()
+  setTimeout (->
+    shareForm.removeClass('animated bounceInUp')
+    null
+  ), 1000
+  null
+
+sendShareEffect = ->
+  shareForm.addClass "animated bounceOutUp"
+  setTimeout (->
+    closeLv2UI()
+    null
+  ), 500
+  setTimeout (->
+    shareForm.removeClass "animated bounceOutUp"
+    null
+  ), 1000
   null
 
 # 關閉 LV1 UI
@@ -172,7 +209,7 @@ closeUI = ( speed = "500" ) ->
 
 # 關閉 LV2 UI
 closeLv2UI = ( speed = "500" ) ->
-  siteOverlayLv2.fadeOut(speed)
+  shareForm.add(siteOverlayLv2).fadeOut(speed)
   null
 
 ################################################################################
@@ -264,9 +301,55 @@ submitWishBtn.on "click", ->
 ###
 詳細活動面板按鈕動作
 ###
-# 分享活動
+###
+# 按下分享活動，顯示分享面板
+###
 shareEventBtn.on "click", ->
   showSharePanel()
+  null
+
+###
+# 按下分享願望，顯示分享面板
+###
+shareWishBtn.on "click", ->
+  showSharePanel()
+  null
+
+###
+# 按下取消可關閉視窗
+###
+shareCancelBtn.on "click", ->
+  closeLv2UI()
+  null
+###
+各種分享按鈕的個別動作
+###
+shareToFbBtn.on "click", ->
+  ###
+  do something here
+  ###
+  sendShareEffect()
+  null
+
+shareToTwitterBtn.on "click", ->
+  ###
+  do something here
+  ###
+  sendShareEffect()
+  null
+
+shareToWeiboBtn.on "click", ->
+  ###
+  do something here
+  ###
+  sendShareEffect()
+  null
+
+shareToEmailBtn.on "click", ->
+  ###
+  do something here
+  ###
+  sendShareEffect()
   null
 
 
