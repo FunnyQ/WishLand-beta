@@ -55,7 +55,7 @@ body, html, .main_content
   @extend %w100p
   position: absolute
   top: 0
-  opacity: 0
+  // opacity: 0
 
   // overlay
   .overlay
@@ -179,6 +179,7 @@ body, html, .main_content
         @extend %w100p
         padding: 0 0.3em
         button
+          @extend %w100p
           +sassy-button("flat", 5px, $fz-m, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
           margin-bottom: 0.6em
       .share, .host, .comment, .join
@@ -237,7 +238,7 @@ body, html, .main_content
   z-index: index($elements, ctrl_board)
 
 .is_user
-  display: none
+  // display: none
 // 設定 is_user, not_user 全寬
 .not_user, .is_user
   @extend %span12

@@ -11,16 +11,21 @@
 
 # overlay
 siteOverlay = $('.overlay')
+################################################################################
+
 
 # 地圖 canvas
-mapCanvas = $('#map')
 mainUI = $('.mainUI')
+mapCanvas = $('#map')
+################################################################################
 
 # Ctrl_board 主控制區
 ctrlBoard = $('.ctrl_board')
+################################################################################
 
 # make-wish 表單
 makeWishForm = mainUI.find('.make-wish')
+################################################################################
 
 # infoPanel 活動或願望的詳細內容顯示區
 infoPanel = mainUI.find('.info-panel')
@@ -28,21 +33,16 @@ wishDetail = infoPanel.find('.wish-detail')
 eventDetail = infoPanel.find('.event-detail')
 wishInfoSection = wishDetail.find('.info-section')
 eventInfoSection = eventDetail.find('.info-section')
-
+################################################################################
 
 # 訊息通知 lable
-notifyLabel = ctrlBoard.find('.label')
-
-# 控制區的按鈕們
-ctrlBtns = ctrlBoard.find('a')
+newMessageNotifier = ctrlBoard.find('.label')
 
 # FB 登入按鈕
 fbLoginBtn = $('a.login-button')
 
-# 帳號管理按鈕
-accountManageBtn = $('#accountManage')
-# 登出按鈕
-signOutBtn = $('#sign_out')
+# 切換類別按鈕（使用者頭像）
+changeCategoryBtn = $('#change_category')
 
 # 許願按鈕
 makeWishBtn = $('#makeWishBtn')
@@ -51,9 +51,33 @@ cencelWishBtn = makeWishForm.find('.form-cancel')
 # 送出願望按鈕
 submitWishBtn = makeWishForm.find('.form-submit')
 
+# 控制區的按鈕們
+ctrlBtns = ctrlBoard.find('a')
+# 帳號管理按鈕
+accountManageBtn = $('#accountManage')
+# 登出按鈕
+signOutBtn = $('#sign_out')
 
-# 切換類別按鈕（使用者頭像）
-changeCategoryBtn = $('#change_category')
+## 詳細活動面板按鈕們 ##
+# 關注活動
+followEventBtn = eventDetail.find('.observe button')
+# 分享活動
+shareEventBtn = eventDetail.find('.share button')
+# 參加活動
+joinEventBtn = eventDetail.find('.join button')
+# 留言
+commentEventBtn = eventDetail.find('.comment button')
+
+## 詳細願望面板按鈕們 ##
+# 關注願望
+followWishBtn = wishDetail.find('.observe button')
+# 分享願望
+shareWishBtn = wishDetail.find('.share button')
+# 實現願望
+hostWishBtn = wishDetail.find('.host button')
+# 留言
+commentWishBtn = wishDetail.find('.comment button')
+
 
 # 視窗寬高度
 viewHeight = $( window ).height()
@@ -139,6 +163,9 @@ closeUI = ( speed = "500" ) ->
   makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed)
   null
 
+################################################################################
+
+
 ###
 Main section
 ###
@@ -165,14 +192,18 @@ $( document ).ready ->
       "margin-top": ( viewHeight / 2 ) - 100
       "left": (viewWidth / 2) - 50
 
+################################################################################
+
+
 ###
 tooltip
 ###
-ctrlBtns.add(notifyLabel).add(changeCategoryBtn).tooltip
+ctrlBtns.add(changeCategoryBtn).tooltip
   delay: {
     show: 600
     hide: 300
   }
+
 
 ###
 載入地圖
@@ -186,6 +217,7 @@ mapCanvas.tinyMap
   streetViewControl: false
   scaleControl: false
 
+
 # 顯示地圖界面
 ###
 Facebook 登入成功後 call showMap() & loadCtrlBoard()
@@ -194,6 +226,7 @@ fbLoginBtn.on "click", ->
   showMap()
   loadCtrlBoard()
   null
+
 
 ###
 按下許願按鈕，顯示許願表單
@@ -223,6 +256,7 @@ siteOverlay.on "click", ->
   closeUI()
   null
 
+
 ###
 登出，登出使用者然後關閉地圖畫面
 ###
@@ -234,7 +268,10 @@ signOutBtn.on "click", ->
   closeMap()
   null
 
+
 ### TEST AREA ###
+## 實際 trigger 應該是地圖上的 markers
+#################
 ctrlBoard.find('.marker-wish').on "click", ->
   # 先 ajax 讀入表單再顯示面板
   loadWishDetail()
@@ -246,3 +283,5 @@ ctrlBoard.find('.marker-event').on "click", ->
   loadEventDetail()
   showInfoPanel()
   null
+
+################################################################################
