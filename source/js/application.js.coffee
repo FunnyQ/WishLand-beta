@@ -11,6 +11,7 @@
 
 # overlay
 siteOverlay = $('.overlay')
+siteOverlayLv2 = $('.overlay-lv2')
 ################################################################################
 
 
@@ -148,6 +149,7 @@ submitWishEffect = ->
   ), 1000
   null
 
+# 顯示願望或活動詳細資訊面板
 showInfoPanel = ->
   closeUI(0)
   infoPanel.add(siteOverlay).fadeIn()
@@ -157,6 +159,10 @@ showInfoPanel = ->
     null
   ), 1000
   null
+
+# 顯示分享視窗
+showSharePanel = ->
+
 
 # 關閉所有視窗
 closeUI = ( speed = "500" ) ->

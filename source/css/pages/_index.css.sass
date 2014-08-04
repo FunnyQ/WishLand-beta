@@ -58,7 +58,7 @@ body, html, .main_content
   // opacity: 0
 
   // overlay
-  .overlay
+  .overlay, .overlay-lv2
     @extend %w100p
     @extend %h100p
     position: absolute
@@ -66,6 +66,8 @@ body, html, .main_content
     background-color: rgba(black, 0.6)
     z-index: +index($elements, overlay)
     display: none
+  .overlay-lv2
+    z-index: +index($elements, overlay-lv2)
 
   // map canvas
   .map
