@@ -250,8 +250,35 @@ body, html, .main_content
 
   .host-form
     @extend .make-wish
-    height: 500px
     display: block
+    h3
+      margin-bottom: 1em
+    .original-wish
+      margin: 1em
+      padding: 1em
+      background-color: lighten($c-ctrl_board, 3%)
+      +box-shadow(0 0 2px #aaa)
+      .owner-avatar
+        float: left
+        width: 38px
+        height: 38px
+        +border-radius(50%)
+        background-color: #fff
+        padding: 3px
+      .owner-name
+        float: left
+        font-size: $fz-s
+        margin: 0.8em 0 0 0.5em
+        color: darken($c-yellow, 50%)
+      .wish-title
+        margin-top: 0.5em
+        padding: 0 3em
+        color: lighten(#000, 30%)
+    .form-wraper
+      margin-bottom: 1em
+    .button-wraper
+      padding-top: 1em
+
 
 
 ///////////////////////////////

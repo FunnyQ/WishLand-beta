@@ -87,7 +87,78 @@
 
   <!-- 實現願望表單視窗 -->
   <div class="host-form">
-    <h3><i class="fa fa-share-alt fa-lg"></i> 讓願望實現</h3>
+    <h3><i class="fa fa-magic fa-lg"></i> 讓願望實現</h3>
+
+    <!-- 原始的願望，包含許願者和願望內容 -->
+    <div class="original-wish">
+      <div class="row">
+        <!-- 許願者頭像 -->
+        <div class="owner-avatar">
+          <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+        </div>
+        <!-- 許願者名字 -->
+        <div class="owner-name">
+          <span><%= data.member.firstname %></span> <span>的願望：</span>
+        </div>
+      </div>
+      <!-- 原始願望內容 -->
+      <div class="wish-title">
+        <i><%= data.event.content %></i>
+      </div>
+    </div><!-- e/o .original-wish -->
+
+    <form class="form-horizontal" role="form">
+      <!-- 顯示原始類別，無法更改 -->
+      <div class="form-wraper">
+        <h4>
+          <i class="fa fa-folder-open-o fa-lg"></i> 活動類別：
+        </h4>
+        <select class="form-control" value="2" disabled>
+          <option>藝文</option>
+          <option selected="selected">美食</option>
+          <option>運動</option>
+          <option>社交</option>
+        </select>
+      </div>
+
+      <!-- 設定活動標題 -->
+      <div class="form-wraper">
+        <h4>
+          <i class="fa fa-lightbulb-o fa-lg"></i> 設定活動標題：
+        </h4>
+        <input type="text" class="form-control" id="wish-title" placeholder="例如：Tabasco 無限暢飲大賽">
+      </div>
+
+      <!-- 設定活動時間 -->
+      <div class="form-wraper">
+        <h4>
+          <i class="fa fa-calendar fa-lg"></i> 決定活動時間：
+        </h4>
+        <input type="date" class="form-control" id="wish-title" placeholder="">
+      </div>
+
+      <!-- 設定活動票價 -->
+      <div class="form-wraper">
+        <h4>
+          <i class="fa fa-money fa-lg"></i> 設定活動票價：
+        </h4>
+        <input type="number" class="form-control" id="wish-title" placeholder="200">
+      </div>
+
+      <!-- 設定活動票價 -->
+      <div class="form-wraper">
+        <h4>
+          <i class="fa fa-child fa-lg"></i> 設定人數限制：
+        </h4>
+        <input type="number" class="form-control" id="wish-title" placeholder="200">
+      </div>
+
+      <div class="button-wraper">
+        <button type="button" class="form-cancel">取消</button>
+        <button type="submit" class="form-submit">舉辦活動！</button>
+      </div>
+
+    </form>
 
   </div>
 

@@ -220,6 +220,7 @@ Main section
 ###
 
 $( document ).ready ->
+  # 使用 wow.js
   new WOW().init();
   ###
   主界面區塊隨視窗高度變動
