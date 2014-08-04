@@ -286,18 +286,29 @@ body, html, .main_content
     @extend .make-wish
     margin-top: 0
     width: 480px
-    height: 100%
+    height: 99%
     display: block
     h3
       margin: 0
     .everyones-comments
 
+    .comment-divider
+      @extend %w100p
+      height: 17px
+      background: url(../img/comment-divider.png) 0 0 no-repeat
+      margin-top: -17px
     .comment-form
+      +border-bottom-radius(10px)
+      background-color: $c-ctrl_board
       position: absolute
       bottom: 0
       @extend %w100p
-      height: 8em
-      background-color: #ccc
+      height: 10em
+      .comment, .buttons
+        padding: 1em
+      .buttons
+        padding-top: 0
+        text-align: center
 
 
 ///////////////////////////////
