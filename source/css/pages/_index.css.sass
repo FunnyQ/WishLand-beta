@@ -55,7 +55,7 @@ body, html, .main_content
   @extend %w100p
   position: absolute
   top: 0
-  opacity: 0
+  // opacity: 0
 
   // overlay
   .overlay, .overlay-lv2
@@ -246,6 +246,7 @@ body, html, .main_content
         +sassy-button("flat", 5px, $fz-s, $c-email, $btn-primary, #fff, "inset")
       .form-cancel
         margin-top: 1.5em
+        font-size: $fz-s
 
 
 ///////////////////////////////
@@ -265,7 +266,7 @@ body, html, .main_content
   z-index: index($elements, ctrl_board)
 
 .is_user
-  display: none
+  // display: none
 // 設定 is_user, not_user 全寬
 .not_user, .is_user
   @extend %span12
