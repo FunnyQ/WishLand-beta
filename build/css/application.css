@@ -5242,16 +5242,16 @@ Copyright (c) 2014 Daniel Eden
   padding-left: 0.83333%;
   padding-right: 0.83333%; }
 
-body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner {
+body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .info-panel, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner {
   height: 100%; }
 
-.mainUI, .mainUI .overlay, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .ctrl_board {
+.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .ctrl_board {
   width: 100%; }
 
-.mainUI .make-wish {
+.mainUI .make-wish, .mainUI .share-form {
   margin: 0 auto; }
 
-.mainUI .info-panel h3, .mainUI .make-wish h3 {
+.mainUI .info-panel h3, .mainUI .make-wish h3, .mainUI .share-form h3 {
   text-align: center;
   font-size: 1.25em;
   padding: 0.5em;
@@ -5333,12 +5333,15 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mai
   position: absolute;
   top: 0;
   opacity: 0; }
-  .mainUI .overlay {
+  .mainUI .overlay, .mainUI .overlay-lv2 {
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     display: none; }
+  .mainUI .overlay-lv2 {
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.4); }
   .mainUI .map {
     position: absolute;
     z-index: 1; }
@@ -5355,7 +5358,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mai
     -webkit-transition: color, 1s;
     -o-transition: color, 1s;
     transition: color, 1s;
-    z-index: 5; }
+    z-index: 6; }
   .mainUI .wish-detail, .mainUI .event-detail {
     display: none; }
   .mainUI .info-panel {
@@ -5363,7 +5366,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mai
     overflow: scroll;
     width: 400px;
     background-color: #f2ede9;
-    z-index: 6;
+    z-index: 7;
     float: right;
     -webkit-box-shadow: 0 0 15px black;
     box-shadow: 0 0 15px black;
@@ -5531,19 +5534,19 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mai
           .mainUI .info-panel .option-buttons .share button::-moz-focus-inner, .mainUI .info-panel .option-buttons .host button::-moz-focus-inner, .mainUI .info-panel .option-buttons .comment button::-moz-focus-inner, .mainUI .info-panel .option-buttons .join button::-moz-focus-inner {
             padding: 0 !important;
             margin: -1px !important; }
-  .mainUI .make-wish {
+  .mainUI .make-wish, .mainUI .share-form {
     position: relative;
     margin-top: 80px;
     width: 400px;
     background-color: #f2ede9;
-    z-index: 7;
+    z-index: 9;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 15px black;
     box-shadow: 0 0 15px black;
     display: none; }
-    .mainUI .make-wish h4 {
+    .mainUI .make-wish h4, .mainUI .share-form h4 {
       font-size: 1em; }
   .mainUI .form-wraper {
     padding: 0 2em;
@@ -5612,6 +5615,131 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mai
     .mainUI .form-submit::-moz-focus-inner {
       padding: 0 !important;
       margin: -1px !important; }
+  .mainUI .share-form .button-wraper {
+    padding: 0 2em 2em 2em; }
+    .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email {
+      margin-bottom: 0.5em;
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3F5C9A', endColorstr='#FF213152');
+      background-color: #3f5c9a;
+      border: 0;
+      color: white;
+      text-shadow: #1a2640 0 -1px 0; }
+      .mainUI .share-form .button-wraper .share-fb:hover, .mainUI .share-form .button-wraper .share-twitter:hover, .mainUI .share-form .button-wraper .share-weibo:hover, .mainUI .share-form .button-wraper .share-email:hover {
+        text-decoration: none; }
+      .mainUI .share-form .button-wraper .share-fb:hover, .mainUI .share-form .button-wraper .share-twitter:hover, .mainUI .share-form .button-wraper .share-weibo:hover, .mainUI .share-form .button-wraper .share-email:hover {
+        background-color: #385188; }
+      .mainUI .share-form .button-wraper .share-fb:active, .mainUI .share-form .button-wraper .share-twitter:active, .mainUI .share-form .button-wraper .share-weibo:active, .mainUI .share-form .button-wraper .share-email:active {
+        background-color: #334b7d; }
+      .mainUI .share-form .button-wraper .share-fb.disabled, .mainUI .share-form .button-wraper .disabled.share-twitter, .mainUI .share-form .button-wraper .disabled.share-weibo, .mainUI .share-form .button-wraper .disabled.share-email, .mainUI .share-form .button-wraper .share-fb[disabled], .mainUI .share-form .button-wraper [disabled].share-twitter, .mainUI .share-form .button-wraper [disabled].share-weibo, .mainUI .share-form .button-wraper [disabled].share-email {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .mainUI .share-form .button-wraper .share-fb::-moz-focus-inner, .mainUI .share-form .button-wraper .share-twitter::-moz-focus-inner, .mainUI .share-form .button-wraper .share-weibo::-moz-focus-inner, .mainUI .share-form .button-wraper .share-email::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .mainUI .share-form .button-wraper .share-twitter {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00ABF0', endColorstr='#FF00628A');
+      background-color: #00abf0;
+      border: 0;
+      color: white;
+      text-shadow: #005070 0 -1px 0; }
+      .mainUI .share-form .button-wraper .share-twitter:hover {
+        text-decoration: none; }
+      .mainUI .share-form .button-wraper .share-twitter:hover {
+        background-color: #0099d6; }
+      .mainUI .share-form .button-wraper .share-twitter:active {
+        background-color: #008ec7; }
+      .mainUI .share-form .button-wraper .share-twitter.disabled, .mainUI .share-form .button-wraper .share-twitter[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .mainUI .share-form .button-wraper .share-twitter::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .mainUI .share-form .button-wraper .share-weibo {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF94553', endColorstr='#FFD10716');
+      background-color: #f94553;
+      border: 0;
+      color: white;
+      text-shadow: #b90614 0 -1px 0; }
+      .mainUI .share-form .button-wraper .share-weibo:hover {
+        text-decoration: none; }
+      .mainUI .share-form .button-wraper .share-weibo:hover {
+        background-color: #f82c3c; }
+      .mainUI .share-form .button-wraper .share-weibo:active {
+        background-color: #f81d2e; }
+      .mainUI .share-form .button-wraper .share-weibo.disabled, .mainUI .share-form .button-wraper .share-weibo[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .mainUI .share-form .button-wraper .share-weibo::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .mainUI .share-form .button-wraper .share-email {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF40CC6C', endColorstr='#FF238341');
+      background-color: #40cc6c;
+      border: 0;
+      color: white;
+      text-shadow: #1e6f37 0 -1px 0; }
+      .mainUI .share-form .button-wraper .share-email:hover {
+        text-decoration: none; }
+      .mainUI .share-form .button-wraper .share-email:hover {
+        background-color: #33bf5f; }
+      .mainUI .share-form .button-wraper .share-email:active {
+        background-color: #30b359; }
+      .mainUI .share-form .button-wraper .share-email.disabled, .mainUI .share-form .button-wraper .share-email[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .mainUI .share-form .button-wraper .share-email::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .mainUI .share-form .button-wraper .form-cancel {
+      margin-top: 1.5em; }
 
 .ctrl_board {
   height: 160px;
@@ -5623,7 +5751,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .info-panel, .mai
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
-  z-index: 4; }
+  z-index: 5; }
 
 .is_user {
   display: none; }

@@ -12,17 +12,21 @@
  */
 
 (function() {
-  var accountManageBtn, cencelWishBtn, changeCategoryBtn, closeMap, closeUI, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, infoPanel, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, notifyLabel, showInfoPanel, showMakeWishForm, showMap, signOutBtn, siteOverlay, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
+  var accountManageBtn, cencelWishBtn, changeCategoryBtn, closeLv2UI, closeMap, closeUI, commentEventBtn, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostWishBtn, infoPanel, joinEventBtn, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
-  mapCanvas = $('#map');
+  siteOverlayLv2 = $('.overlay-lv2');
 
   mainUI = $('.mainUI');
+
+  mapCanvas = $('#map');
 
   ctrlBoard = $('.ctrl_board');
 
   makeWishForm = mainUI.find('.make-wish');
+
+  shareForm = mainUI.find('.share-form');
 
   infoPanel = mainUI.find('.info-panel');
 
@@ -34,15 +38,11 @@
 
   eventInfoSection = eventDetail.find('.info-section');
 
-  notifyLabel = ctrlBoard.find('.label');
-
-  ctrlBtns = ctrlBoard.find('a');
+  newMessageNotifier = ctrlBoard.find('.label');
 
   fbLoginBtn = $('a.login-button');
 
-  accountManageBtn = $('#accountManage');
-
-  signOutBtn = $('#sign_out');
+  changeCategoryBtn = $('#change_category');
 
   makeWishBtn = $('#makeWishBtn');
 
@@ -50,7 +50,37 @@
 
   submitWishBtn = makeWishForm.find('.form-submit');
 
-  changeCategoryBtn = $('#change_category');
+  ctrlBtns = ctrlBoard.find('a');
+
+  accountManageBtn = $('#accountManage');
+
+  signOutBtn = $('#sign_out');
+
+  followEventBtn = eventDetail.find('.observe button');
+
+  shareEventBtn = eventDetail.find('.share button');
+
+  joinEventBtn = eventDetail.find('.join button');
+
+  commentEventBtn = eventDetail.find('.comment button');
+
+  followWishBtn = wishDetail.find('.observe button');
+
+  shareWishBtn = wishDetail.find('.share button');
+
+  hostWishBtn = wishDetail.find('.host button');
+
+  commentWishBtn = wishDetail.find('.comment button');
+
+  shareToFbBtn = shareForm.find('.share-fb');
+
+  shareToTwitterBtn = shareForm.find('.share-twitter');
+
+  shareToWeiboBtn = shareForm.find('.share-weibo');
+
+  shareToEmailBtn = shareForm.find('.share-email');
+
+  shareCancelBtn = shareForm.find('.form-cancel');
 
   viewHeight = $(window).height();
 
@@ -134,10 +164,34 @@
 
   showInfoPanel = function() {
     closeUI(0);
-    infoPanel.add(siteOverlay).fadeIn();
     infoPanel.addClass('animated fadeInRight');
+    infoPanel.add(siteOverlay).fadeIn();
     setTimeout((function() {
       infoPanel.removeClass('animated fadeInRight');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  showSharePanel = function() {
+    closeLv2UI(0);
+    shareForm.addClass("animated bounceInUp");
+    shareForm.add(siteOverlayLv2).fadeIn();
+    setTimeout((function() {
+      shareForm.removeClass('animated bounceInUp');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  sendShareEffect = function() {
+    shareForm.addClass("animated bounceOutUp");
+    setTimeout((function() {
+      closeLv2UI();
+      return null;
+    }), 500);
+    setTimeout((function() {
+      shareForm.removeClass("animated bounceOutUp");
       return null;
     }), 1000);
     return null;
@@ -148,6 +202,14 @@
       speed = "500";
     }
     makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed);
+    return null;
+  };
+
+  closeLv2UI = function(speed) {
+    if (speed == null) {
+      speed = "500";
+    }
+    shareForm.add(siteOverlayLv2).fadeOut(speed);
     return null;
   };
 
@@ -190,7 +252,7 @@
   tooltip
    */
 
-  ctrlBtns.add(notifyLabel).add(changeCategoryBtn).tooltip({
+  ctrlBtns.add(changeCategoryBtn).tooltip({
     delay: {
       show: 600,
       hide: 300
@@ -255,11 +317,97 @@
 
 
   /*
+  詳細活動面板按鈕動作
+   */
+
+
+  /*
+   * 按下分享活動，顯示分享面板
+   */
+
+  shareEventBtn.on("click", function() {
+    showSharePanel();
+    return null;
+  });
+
+
+  /*
+   * 按下分享願望，顯示分享面板
+   */
+
+  shareWishBtn.on("click", function() {
+    showSharePanel();
+    return null;
+  });
+
+
+  /*
+   * 按下取消可關閉視窗
+   */
+
+  shareCancelBtn.on("click", function() {
+    closeLv2UI();
+    return null;
+  });
+
+
+  /*
+  各種分享按鈕的個別動作
+   */
+
+  shareToFbBtn.on("click", function() {
+
+    /*
+    do something here
+     */
+    sendShareEffect();
+    return null;
+  });
+
+  shareToTwitterBtn.on("click", function() {
+
+    /*
+    do something here
+     */
+    sendShareEffect();
+    return null;
+  });
+
+  shareToWeiboBtn.on("click", function() {
+
+    /*
+    do something here
+     */
+    sendShareEffect();
+    return null;
+  });
+
+  shareToEmailBtn.on("click", function() {
+
+    /*
+    do something here
+     */
+    sendShareEffect();
+    return null;
+  });
+
+
+  /*
   黑色 overlay 區域可以關閉視窗
    */
 
   siteOverlay.on("click", function() {
     closeUI();
+    return null;
+  });
+
+
+  /*
+  黑色 overlayLv2 區域可以關閉視窗
+   */
+
+  siteOverlayLv2.on("click", function() {
+    closeLv2UI();
     return null;
   });
 
