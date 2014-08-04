@@ -286,12 +286,17 @@ body, html, .main_content
     @extend .make-wish
     margin-top: 0
     width: 480px
-    height: 99%
+    height: 680px
     display: block
     h3
       margin: 0
     .everyones-comments
-
+      height: 475px /* height of .view-comments - (.view-comments h3) - .comment-form */
+      overflow: scroll
+      .timeline
+        height: 1000px
+        border-left: 8px solid darken($c-ctrl_board, 30%)
+        margin: 50px 0 50px 50px
     .comment-divider
       @extend %w100p
       height: 17px
