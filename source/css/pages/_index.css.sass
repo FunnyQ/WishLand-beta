@@ -55,7 +55,7 @@ body, html, .main_content
   @extend %w100p
   position: absolute
   top: 0
-  // opacity: 0
+  opacity: 0
 
   // overlay
   .overlay, .overlay-lv2
@@ -287,20 +287,20 @@ body, html, .main_content
     margin-top: 0
     width: 480px
     height: 680px
-    display: block
     h3
       margin: 0
     .everyones-comments
       height: 475px /* height of .view-comments - (.view-comments h3) - .comment-form */
-      overflow: scroll
+      overflow-y: scroll
+      overflow-x: hidden
       .timeline
         border-left: 5px solid darken($c-ctrl_board, 30%)
-        margin: 50px 0 50px 50px
+        margin: 50px 0 50px 58px
         +clearfix
       .comment-unit
-        width: 480px
+        width: 450px
         margin-bottom: 1em
-        margin-left: -57px
+        margin-left: -54px
         font-size: $fz-s
         &:last-child
           margin-bottom: 0
@@ -342,7 +342,6 @@ body, html, .main_content
               margin: 0
               +border-radius(10px)
 
-
     .comment-divider
       @extend %w100p
       height: 17px
@@ -379,7 +378,7 @@ body, html, .main_content
   z-index: index($elements, ctrl_board)
 
 .is_user
-  // display: none
+  display: none
 // 設定 is_user, not_user 全寬
 .not_user, .is_user
   @extend %span12

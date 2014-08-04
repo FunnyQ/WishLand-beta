@@ -32,6 +32,9 @@ shareForm = mainUI.find('.share-form')
 
 # 建立活動 表單
 hostForm = mainUI.find('.host-form')
+
+# 留言查看與輸入表單
+commentForm = mainUI.find('.view-comments')
 ################################################################################
 
 # infoPanel 活動或願望的詳細內容顯示區
@@ -106,6 +109,11 @@ cancelHostBtn = hostForm.find('.form-cancel')
 # 送出建立活動表單內容
 submitHostBtn = hostForm.find('.form-submit')
 
+## 留言表單的按鈕們
+# 取消建立活動
+cancelCommentBtn = commentForm.find('.form-cancel')
+# 送出建立活動表單內容
+submitCommentBtn = commentForm.find('.form-submit')
 
 # 視窗寬高度
 viewHeight = $( window ).height()
@@ -232,6 +240,28 @@ sendShareEffect = ->
   ), 1000
   null
 
+# 顯示瀏覽與輸入表單
+showCommentForm = ->
+  commentForm.addClass "animated fadeInDown"
+  commentForm.add(siteOverlayLv2).fadeIn()
+  setTimeout (->
+    commentForm.removeClass('animated fadeInDown')
+    null
+  ), 1000
+  null
+
+closeCommentEffect = ->
+  commentForm.addClass "animated fadeOutUp"
+  setTimeout (->
+    closeLv2UI()
+    null
+  ), 500
+  setTimeout (->
+    commentForm.removeClass "animated fadeOutUp"
+    null
+  ), 1000
+  null
+
 # 關閉 LV1 UI
 closeUI = ( speed = "500" ) ->
   makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed)
@@ -239,7 +269,7 @@ closeUI = ( speed = "500" ) ->
 
 # 關閉 LV2 UI
 closeLv2UI = ( speed = "500" ) ->
-  shareForm.add(siteOverlayLv2).add(hostForm).fadeOut(speed)
+  shareForm.add(siteOverlayLv2).add(hostForm).add(commentForm).fadeOut(speed)
   null
 
 ################################################################################
@@ -401,7 +431,7 @@ hostWishBtn.on "click", ->
 # 按下取消按鈕，關閉視窗
 ###
 cancelHostBtn.on "click", ->
-  closeLv2UI()
+  closeCommentEffect()
   null
 
 ###
@@ -412,6 +442,35 @@ submitHostBtn.on "click", ->
   do something, maybe pan to location
   ###
   submitHostEffect()
+  null
+
+###
+///////////////////實現願望（建立活動）///////////////////
+###
+###
+# 按下留言按鈕，顯示留言表單
+###
+commentEventBtn.on "click", ->
+  showCommentForm()
+  null
+commentWishBtn.on "click", ->
+  showCommentForm()
+  null
+
+###
+# 按下取消按鈕，關閉視窗
+###
+cancelCommentBtn.on "click", ->
+  closeCommentEffect()
+  null
+
+###
+# 按下送出留言按鈕，送出表單
+###
+submitCommentBtn.on "click", ->
+  ###
+  do something
+  ###
   null
 
 ###
