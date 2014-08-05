@@ -74,6 +74,8 @@
 <!-- 主要界面, js -> mainUI -->
   <div class="mainUI">
 
+    <div class="overlay"></div>
+    <div class="overlay-lv2"></div>
     <!-- GoogleMap, js -> mapCanvas -->
     <div id="map" class="map"></div>
 
