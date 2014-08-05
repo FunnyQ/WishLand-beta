@@ -1,19 +1,22 @@
-☐ 開發完要加回去的項目
-  ☐ _index.css.sass > .mainUI < opacity 取消 comment
-  ☐ _ctrl_board.html.erb > 拿掉 is_user 換回 not_user
-  ☐ _map.html.erb > #map 加回 .cant-touch
+✔ 開發完要加回去的項目 @done (14-08-05 00:29)
+  ✔ _index.css.sass > .mainUI < opacity 取消 comment @done (14-08-05 00:29)
+  ✔ _ctrl_board.html.erb > 拿掉 is_user 換回 not_user @done (14-08-05 00:29)
+  ✔ _map.html.erb > #map 加回 .cant-touch @done (14-08-05 00:29)
 
 
 
-☐ 尚未完成
+✔ 尚未完成 @done (14-08-05 00:30)
   ✔ 願望與活動分享界面 @done (14-08-04 11:17)
-  ☐ 留言界面
-  ☐ 實現願望界面
+  ✔ 留言界面 @done (14-08-05 00:29)
+  ✔ 實現願望界面 @done (14-08-05 00:29)
 
   ☐ enter 鍵要能 submit 表單
 
-☐ 相容性問題
-  ☐ pointer-events 僅支援到 IE11 太新了，首頁 z-index 可能需要對調
+✔ 相容性問題 @done (14-08-05 00:30)
+  ✔ pointer-events 僅支援到 IE11 太新了，首頁 z-index 可能需要對調 @done (14-08-05 00:30)
 
 ✔ Bug @done (14-08-03 21:31)
   ✔ 登出再登入 Dashboard 會失效，原因不明... @done (14-08-03 21:31)
+
+
+ ☐ make-wish 按鈕要先清除 Lv2UI
