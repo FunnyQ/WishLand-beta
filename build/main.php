@@ -4,22 +4,21 @@
 	//include("lib/register.php");
 	if($_POST['uid'] != '')
 	{
-		$sqlb = "SELECT * FROM fblogin WHERE uid = ".$_POST['uid'];
+		$sqlb = "SELECT * FROM member WHERE uid = ".$_POST['uid'];
 		$resultb = exe_sql(DATABASE, $sqlb);
 		
 		if($resultb[0]['uid'] == $_POST['uid'])
 		{
 			$_SESSION['FBUSER_uid'] =  $_POST['uid'] ;
-			echo "歡迎回來";
+			//echo "歡迎回來";
 		}
 		else
 		{
-			$table = "fblogin";
+			$table = "member";
 			$data_array['uid'] = $_POST['uid'];
-			$data_array['name'] = $_POST['name'];
-			$data_array['first_name'] = $_POST['first_name'];
-			$data_array['last_name'] = $_POST['last_name'];
-			$data_array['email'] = $_POST['email'];
+			$data_array['firstname'] = $_POST['first_name'];
+			$data_array['lastname'] = $_POST['last_name'];
+			$data_array['account'] = $_POST['email'];
 			$data_array['gender'] = $_POST['gender'];
 			$data_array['link'] = $_POST['link'];
 			$data_array['locale'] = $_POST['locale'];
@@ -27,7 +26,7 @@
 			$data_array['updated_time'] = $_POST['updated_time'];
 			insert(DATABASE, $table, $data_array);
 			$_SESSION['FBUSER_uid'] =  $_POST['uid'] ;
-			echo "註冊成功!!";
+			//echo "註冊成功!!";
 		}
 	}
 ?>
@@ -49,6 +48,18 @@
         <link rel="stylesheet" href="css/application.css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="//connect.facebook.net/en_US/all.js"></script>
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+				appId : '1455451441374567', // App ID，請輸入 3.1 所又得的 App ID
+				channelURL : '//www.foncon.com.tw/powish/channel.html', // 請輸入 3.2 所新增的 channel.html 網址
+				status : true, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				oauth : true, // enable OAuth 2.0
+				xfbml : true // parse XFBML
+				});
+			};
+		</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -74,7 +85,7 @@
   <!-- 許願表單， js -> makeWishForm -->
   <div class="make-wish">
 <h3><i class="fa fa-edit fa-lg"></i> 許願卡</h3>
-<form class="form-horizontal" role="form" name="">
+<form name="makeWish" class="form-horizontal" role="form" id="makeWish">
 
   <!-- 願望 title -->
   <div class="form-wraper">
@@ -85,7 +96,7 @@
       </span>
       我想要...
     </h4>
-    <input type="text" class="form-control" id="wish-title" placeholder="請寫下你的願望">
+    <input name="content" type="text" class="form-control" id="wish-title" placeholder="請寫下你的願望">
   </div>
 
   <!-- 願望 category，會預設為使用者目前瀏覽的類別 -->
@@ -97,7 +108,7 @@
       </span>
       願望類別
     </h4>
-    <select id="wish-cate" class="form-control" >
+    <select name="category" id="wish-cate" class="form-control" >
       <option value="0">藝文</option>
       <option value="1">美食</option>
       <option value="2">運動</option>
@@ -106,7 +117,7 @@
   </div>
 
   <!-- 願望 location，預設為使用者目前位置 -->
-  <div class="form-wraper" >
+  <div class="form-wraper" style="display:none;">
     <h4>
       <span class="fa-stack">
         <i class="fa fa-square fa-stack-2x"></i>
@@ -274,7 +285,10 @@
   <!-- 右半部 帳號控制區 -->
   <div class="ctrl-right">
     <div class="wraper">
-      <a id="sign_out" href="#" data-toggle="tooltip" data-placement="top" title="登出">
+		<a href="out.php">
+			logout
+		</a>
+      <a id="sign_out" href="out.php" data-toggle="tooltip" data-placement="top" title="登出">
         <span class="fa-stack">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i>
@@ -303,7 +317,6 @@
         <script src="js/application.js"></script>
 
 <!-- Google Analystics -->
-
+	<div id='status' style="display:none;"></div>
     </body>
 </html>
-<div id='status' style="display:none;"></div>

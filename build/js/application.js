@@ -9,16 +9,7 @@
 2014/08/04 Paul edited
 Facebook login fuunction
 */
-window.fbAsyncInit = function() {
-	FB.init({
-	appId : '1455451441374567', // App ID，請輸入 3.1 所又得的 App ID
-	channelURL : '//www.foncon.com.tw/powish/channel.html', // 請輸入 3.2 所新增的 channel.html 網址
-	status : true, // check login status
-	cookie : true, // enable cookies to allow the server to access the session
-	oauth : true, // enable OAuth 2.0
-	xfbml : true // parse XFBML
-	});
-};
+
 
 /*
 定義變數
@@ -144,15 +135,9 @@ rrr = function(uid,name,first_name,last_name,email,gender,link,locale,timezone,u
 	document.getElementById('rrr').submit();
 };
    
-FBLoginOut= function(){
-	
+FBLoginOut = function(){
 	FB.logout(function(response)
 	{
-		alert('Logged out');
-		window.location.assign("http://www.foncon.com.tw/powish/index.php");
-		unLoadCtrlBoard();
-		closeMap();
-		
 	});
 };
    
@@ -358,8 +343,8 @@ FBLoginOut= function(){
     /*
     logout user
      */
-    FBLoginOut();
-    return null;
+	FBLoginOut();
+	return null;
   });
 
   /*
@@ -392,9 +377,24 @@ FBLoginOut= function(){
 	var c = $('#wish-cate').val();
 	var l = $('#wish-local').val();
 	
-	alert(t);
-	alert(c);
-	alert(l);
+	var URLs= "php/makeWish.php";
+	$.ajax({
+        url: URLs,
+        data: $('#makeWish').serialize(),
+        type:"POST",
+        dataType:'text',
+        success: function(msg){
+			if(msg=="OK"){
+				alert(msg);
+			}else{
+				alert(msg);
+			}
+		},
+         error:function(xhr, ajaxOptions, thrownError){ 
+            alert(xhr.status); 
+            alert(thrownError); 
+         }
+    });
 	
 	//否則不執行效果
     submitWishEffect();

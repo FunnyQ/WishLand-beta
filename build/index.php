@@ -1,6 +1,9 @@
 <?	
 session_start();
-if($_SESSION['FBUSER_uid']!='')
+if($_SESSION['FBUSER_uid']!=''){
+	header('Location: ttp://www.foncon.com.tw/powish/main.php');
+	exit;
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -20,6 +23,18 @@ if($_SESSION['FBUSER_uid']!='')
         <link rel="stylesheet" href="css/application.css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="//connect.facebook.net/en_US/all.js"></script>
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+				appId : '1455451441374567', // App ID，請輸入 3.1 所又得的 App ID
+				channelURL : '//www.foncon.com.tw/powish/channel.html', // 請輸入 3.2 所新增的 channel.html 網址
+				status : true, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				oauth : true, // enable OAuth 2.0
+				xfbml : true // parse XFBML
+				});
+			};
+		</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -78,10 +93,10 @@ if($_SESSION['FBUSER_uid']!='')
         <script src="js/application.js"></script>
 
 <!-- Google Analystics -->
-
+<div id='status' style="display:none;"></div>
 </body>
 </html>
-<div id='status' style="display:none;"></div>
+
 <script>
 
 
