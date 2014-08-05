@@ -5894,9 +5894,9 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
   bottom: 0;
   z-index: 6; }
 
-.is_user {
+/*.is_user {
   display: none; }
-
+*/
 .not_user .ctrl-logo, .is_user .ctrl-logo {
   width: 16.66667%;
   float: left;
