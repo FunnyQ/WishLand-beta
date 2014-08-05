@@ -4,7 +4,7 @@
 //  application.js
 ////////////////////
  */
- 
+
 /*
 2014/08/04 Paul edited
 Facebook login fuunction
@@ -16,7 +16,7 @@ Facebook login fuunction
 ////////////////////
  */
 
-  var accountManageBtn, cencelWishBtn, changeCategoryBtn, closeLv2UI, closeMap, closeUI, commentEventBtn, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostWishBtn, infoPanel, joinEventBtn, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showHostForm, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -26,9 +26,15 @@ Facebook login fuunction
 
   mapCanvas = $('#map');
 
+  landingPage = $('.landing');
+
   ctrlBoard = $('.ctrl_board');
 
   makeWishForm = mainUI.find('.make-wish');
+
+  hostForm = mainUI.find('.host-form');
+
+  commentForm = mainUI.find('.view-comments');
 
   shareForm = mainUI.find('.share-form');
 
@@ -80,6 +86,14 @@ Facebook login fuunction
 
   shareToTwitterBtn = shareForm.find('.share-twitter');
 
+  cancelHostBtn = hostForm.find('.form-cancel');
+
+  submitHostBtn = hostForm.find('.form-submit');
+
+  cancelCommentBtn = commentForm.find('.form-cancel');
+
+  submitCommentBtn = commentForm.find('.form-submit');
+
   shareToWeiboBtn = shareForm.find('.share-weibo');
 
   shareToEmailBtn = shareForm.find('.share-email');
@@ -95,16 +109,16 @@ Facebook login fuunction
   定義 function
   ////////////////////
    */
-   
-   
-FBLogin = function() 
+
+
+FBLogin = function()
 {
-	FB.login(function(response) 
+	FB.login(function(response)
 	{
-		if (response.authResponse) 
+		if (response.authResponse)
 		{
 			var uid = response.authResponse.userID;
-			FB.api('/me', 
+			FB.api('/me',
 				function(response)
 				{
 					var name 			= response.name;
@@ -130,27 +144,23 @@ FBLogin = function()
 };
 rrr = function(uid,name,first_name,last_name,email,gender,link,locale,timezone,updated_time)
 {
-	document.getElementById('status').innerHTML =  
+	document.getElementById('status').innerHTML =
 		'<form method="post" action="main.php" id="rrr" style="display:none;">id:<input type="text" id="uid" name="uid" value="'+ uid +'"><br>name:<input type="text" id="name" name="name" value="'+ name +'"><br>first_name:<input type="text" id="first_name" name="first_name" value="'+ first_name +'"><br>	last_name:<input type="text" id="last_name" name="last_name" value="'+ last_name +'"><br>mail:<input type="text" id="email" name="email" value="'+ email +'"><br>gender:<input type="text" id="gender" name="gender" value="'+ gender +'"><br>	link:<input type="text" id="link" name="link" value="'+ link +'"><br>	locale:<input type="text" id="locale" name="locale" value="'+ locale +'"><br>	timezone:<input type="text" id="timezone" name="timezone" value="'+ timezone +'"><br>updated_time:<input type="text" id="updated_time" name="updated_time" value="'+ updated_time +'"><br><input type="submit" value="ok"></form>';
 	document.getElementById('rrr').submit();
 };
-   
+
 FBLoginOut = function(){
 	FB.logout(function(response)
 	{
 	});
 };
-   
+
   showMap = function() {
-    return mainUI.animate({
-      opacity: 1
-    }).removeClass("cant-touch");
+    return landingPage.fadeOut();
   };
-	
+
   closeMap = function() {
-    return mainUI.animate({
-      opacity: 0
-    }).addClass("cant-touch");
+    return landingPage.fadeIn();
   };
 
   loadCtrlBoard = function() {
@@ -234,6 +244,30 @@ FBLoginOut = function(){
     return null;
   };
 
+  showHostForm = function() {
+    hostForm.addClass("animated bounceInUp");
+    hostForm.add(siteOverlayLv2).fadeIn();
+    setTimeout((function() {
+      hostForm.removeClass('animated bounceInUp');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  submitHostEffect = function() {
+    hostForm.addClass("animated zoomOutUp");
+    setTimeout((function() {
+      closeLv2UI();
+      closeUI();
+      return null;
+    }), 500);
+    setTimeout((function() {
+      hostForm.removeClass("animated zoomOutUp");
+      return null;
+    }), 1000);
+    return null;
+  };
+
   sendShareEffect = function() {
     shareForm.addClass("animated bounceOutUp");
     setTimeout((function() {
@@ -246,6 +280,30 @@ FBLoginOut = function(){
     }), 1000);
     return null;
   };
+
+  showCommentForm = function() {
+    commentForm.addClass("animated fadeInDown");
+    commentForm.add(siteOverlayLv2).fadeIn();
+    setTimeout((function() {
+      commentForm.removeClass('animated fadeInDown');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  closeCommentEffect = function() {
+    commentForm.addClass("animated fadeOutUp");
+    setTimeout((function() {
+      closeLv2UI();
+      return null;
+    }), 500);
+    setTimeout((function() {
+      commentForm.removeClass("animated fadeOutUp");
+      return null;
+    }), 1000);
+    return null;
+  };
+
 
   closeUI = function(speed) {
     if (speed == null) {
@@ -324,18 +382,18 @@ FBLoginOut = function(){
     scaleControl: false
   });
 
-  
+
 
   /*
   Facebook 登入成功後 call showMap() & loadCtrlBoard()
    */
 
   fbLoginBtn.on("click", function() {
-  
+
 	FBLogin();
     return null;
   });
-  
+
   /*
   登出，登出使用者然後關閉地圖畫面
    */
@@ -398,14 +456,14 @@ FBLoginOut = function(){
 				);
 				//alert(latlng);
 				$('#map').tinyMap('panto', latlng);﻿
-				
+
 			}else{
 				//alert(msg);
 			}
 		},
-         error:function(xhr, ajaxOptions, thrownError){ 
-            alert(xhr.status); 
-            alert(thrownError); 
+         error:function(xhr, ajaxOptions, thrownError){
+            alert(xhr.status);
+            alert(thrownError);
          }
 	});
 		return null;
@@ -415,11 +473,11 @@ FBLoginOut = function(){
    */
 
   submitWishBtn.on("click", function() {
-	//確認資料都存在	
+	//確認資料都存在
 	var t = $('#wish-title').val();
 	var c = $('#wish-cate').val();
 	var l = $('#wish-local').val();
-	
+
 	var URLs= "php/makeWish.php";
 	$.ajax({
         url: URLs,
@@ -447,17 +505,17 @@ FBLoginOut = function(){
 				);
 				//alert(latlng);
 				$('#map').tinyMap('panto', latlng);﻿
-				
+
 			}else{
 				//alert(msg);
 			}
 		},
-         error:function(xhr, ajaxOptions, thrownError){ 
-            alert(xhr.status); 
-            alert(thrownError); 
+         error:function(xhr, ajaxOptions, thrownError){
+            alert(xhr.status);
+            alert(thrownError);
          }
     });
-	
+
 	//否則不執行效果
     submitWishEffect();
     return null;
@@ -537,6 +595,88 @@ FBLoginOut = function(){
     sendShareEffect();
     return null;
   });
+
+  ///////////////////實現願望（建立活動）///////////////////
+   */
+
+
+  /*
+   * 按下實現願望按鈕，顯示分享面板
+   */
+
+  hostWishBtn.on("click", function() {
+    showHostForm();
+    return null;
+  });
+
+
+  /*
+   * 按下取消按鈕，關閉視窗
+   */
+
+  cancelHostBtn.on("click", function() {
+    closeCommentEffect();
+    return null;
+  });
+
+
+  /*
+   * 按下實現願望按鈕，送出建立活動表單
+   */
+
+  submitHostBtn.on("click", function() {
+
+    /*
+    do something, maybe pan to location
+     */
+    submitHostEffect();
+    return null;
+  });
+
+
+  /*
+  ///////////////////實現願望（建立活動）///////////////////
+   */
+
+
+  /*
+   * 按下留言按鈕，顯示留言表單
+   */
+
+  commentEventBtn.on("click", function() {
+    showCommentForm();
+    return null;
+  });
+
+  commentWishBtn.on("click", function() {
+    showCommentForm();
+    return null;
+  });
+
+
+  /*
+   * 按下取消按鈕，關閉視窗
+   */
+
+  cancelCommentBtn.on("click", function() {
+    closeCommentEffect();
+    return null;
+  });
+
+
+  /*
+   * 按下送出留言按鈕，送出表單
+   */
+
+  submitCommentBtn.on("click", function() {
+
+    /*
+    do something
+     */
+    return null;
+  });
+
+
 
 
   /*
