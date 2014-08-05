@@ -10,9 +10,9 @@
 		$data_array['priority'] = $_POST['priority'];
 		$data_array['location'] = $_POST['location'];
 		//$data_array['lat'] 		= $_POST['lat'];
-		$data_array['lat'] 		= (rand(0,900000000))/10000000;
+		$data_array['lat'] 		= (rand(-800000000,800000000))/10000000;
 		//$data_array['lng'] 		= $_POST['lng'];
-		$data_array['lng'] 		= (rand(0,1800000000))/10000000;
+		$data_array['lng'] 		= (rand(-1500000000,1500000000))/10000000;
 		$data_array['time'] 	= $_POST['time'];
 		$data_array['content'] 	= $_POST['content'];
 		$data_array['limitt'] 	= $_POST['limitt'];
@@ -21,7 +21,10 @@
 		$data_array['e_belong'] = $_POST['e_belong'];
 		$data_array['counter'] 	= $_POST['counter'];
 		insert(DATABASE, $table, $data_array);
-		echo "OK";
+		$sql = "SELECT id FROM `event` ORDER BY id DESC LIMIT 0 , 1";
+		$result = exe_sql(DATABASE, $sql);
+		$getWishId = $result[0]['id'];
+		echo $getWishId.";".$data_array['lat'].",".$data_array['lng'];
 	}
 
 ?>

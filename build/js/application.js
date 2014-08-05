@@ -161,11 +161,12 @@ FBLoginOut = function(){
     return ctrlBoard.find('.is_user').fadeOut();
   };
 
-  loadWishDetail = function() {
+  loadWishDetail = function(wishId) {
     return $.ajax({
-      url: './wish_detail.html',
-      type: 'GET',
-      dataType: 'html',
+	  data: "wishId="+wishId,
+      type: "POST",
+      url: './wish_detail.php',
+      dataType: 'text',
       success: function(respond) {
         wishDetail.fadeIn(0);
         wishInfoSection.html(respond);
@@ -283,14 +284,14 @@ FBLoginOut = function(){
     固定切換類別按鈕在主介面中間
      */
     changeCategoryBtn.css({
-      "margin-top": (viewHeight / 2) - 100,
+      "margin-top": (viewHeight / 2) - 20,
       "left": (viewWidth / 2) - 50
     });
     return $(window).resize(function() {
       viewHeight = $(window).height();
       viewWidth = $(window).width();
       return changeCategoryBtn.css({
-        "margin-top": (viewHeight / 2) - 100,
+        "margin-top": (viewHeight / 2) - 20,
         "left": (viewWidth / 2) - 50
       });
     });
@@ -323,6 +324,7 @@ FBLoginOut = function(){
     scaleControl: false
   });
 
+  
 
   /*
   Facebook 登入成功後 call showMap() & loadCtrlBoard()
@@ -365,8 +367,49 @@ FBLoginOut = function(){
     closeUI();
     return null;
   });
-
-
+	/*
+		按下改變類別按鈕
+	*/
+	changeCategoryBtn.on("click", function() {
+			var URLs= "php/getWishs.php";
+			$.ajax({
+			url: URLs,
+			data: $('#makeWish').serialize(),
+			type:"POST",
+			dataType:'text',
+			success: function(msg){
+			if(msg!=""){
+				//alert(msg);
+				var arrayMsg = msg.split(";");
+				var wishId = arrayMsg[0];
+				var latlng = arrayMsg[1];
+				//alert(latlng);
+				$('#map').tinyMap('modify', {
+						zoom: 4 ,
+						marker: [
+							{	addr: latlng,
+								event: function (e) {
+									$('#map').tinyMap('panto', latlng);﻿
+									loadWishDetail(wishId);
+									showInfoPanel();
+								}}
+							]
+						}
+				);
+				//alert(latlng);
+				$('#map').tinyMap('panto', latlng);﻿
+				
+			}else{
+				//alert(msg);
+			}
+		},
+         error:function(xhr, ajaxOptions, thrownError){ 
+            alert(xhr.status); 
+            alert(thrownError); 
+         }
+	});
+		return null;
+	});
   /*
   送出願望後關閉視窗
    */
@@ -384,10 +427,29 @@ FBLoginOut = function(){
         type:"POST",
         dataType:'text',
         success: function(msg){
-			if(msg=="OK"){
-				alert(msg);
+			if(msg!=""){
+				//alert(msg);
+				var arrayMsg = msg.split(";");
+				var wishId = arrayMsg[0];
+				var latlng = arrayMsg[1];
+				//alert(latlng);
+				$('#map').tinyMap('modify', {
+						zoom: 4 ,
+						marker: [
+							{	addr: latlng,
+								event: function (e) {
+									$('#map').tinyMap('panto', latlng);﻿
+									loadWishDetail(wishId);
+									showInfoPanel();
+								}}
+							]
+						}
+				);
+				//alert(latlng);
+				$('#map').tinyMap('panto', latlng);﻿
+				
 			}else{
-				alert(msg);
+				//alert(msg);
 			}
 		},
          error:function(xhr, ajaxOptions, thrownError){ 

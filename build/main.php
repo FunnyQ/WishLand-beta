@@ -320,3 +320,6 @@
 	<div id='status' style="display:none;"></div>
     </body>
 </html>
+<script>
+	
+</script>

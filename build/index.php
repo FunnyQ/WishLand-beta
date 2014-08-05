@@ -1,7 +1,7 @@
 <?	
 session_start();
 if($_SESSION['FBUSER_uid']!=''){
-	header('Location: ttp://www.foncon.com.tw/powish/main.php');
+	header('Location: http://www.foncon.com.tw/powish/main.php');
 	exit;
 }
 ?>
