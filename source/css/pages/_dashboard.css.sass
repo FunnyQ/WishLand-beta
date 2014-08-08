@@ -82,6 +82,36 @@
       font-size: $fz-l
       font-weight: bold
       color: darken($c-landing, 25%)
+  .navi-list
+    +clearfix
+    ul
+      display: block
+      list-style: none
+      margin-top: 20px
+      a
+        display: block
+        +transition(0.5s)
+        &:hover
+          text-decoration: none
+          background-color: rgba(black, 0.1)
+        &:last-child
+          li
+            border: none
+      li
+        display: block
+        padding: 8px 0
+        padding-left: 8px
+        border-bottom: 1px solid darken($c-ctrl_board, 15%)
+        span
+          float: right
+          margin-right: 16px
+          +transition(0.5s)
+        &:hover
+          .chevron
+            margin-right: 8px
+    .active
+      background-color: rgba(black, 0.1)
+
 
 
   .info-panel
