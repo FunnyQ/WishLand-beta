@@ -316,6 +316,10 @@ ctrlBtns.add(changeCategoryBtn).tooltip
     show: 600
     hide: 300
   }
+###
+dropdown
+###
+$('#dropdown').dropdown()
 
 
 ###
