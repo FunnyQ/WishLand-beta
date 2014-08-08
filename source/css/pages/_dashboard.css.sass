@@ -17,9 +17,12 @@
     padding-top: 8px
     +span(4)
   .center
+    font-size: $fz-l
+    color: darken($c-landing, 30%)
+    font-weight: bold
     text-align: center
     +span(4)
-    padding-top: 11px
+    padding-top: 8px
   .right
     float: right
     text-align: right
@@ -116,8 +119,24 @@
 
   .info-panel
     +span(8)
-    background-color: #fff
+    padding: 0
+    background-image: url("../img/light_noise_diagonal.png")
     margin-bottom: 20px
+    padding-bottom: 20px
+    border: 1px solid #fff
     +box-shadow(0 0 15px #aaa)
     +border-radius(5px)
-    height: 800px
+    h3
+      margin: 0 0 20px 0
+      +border-top-radius(5px)
+      @extend %panelTitle
+      width: 100%
+    .inner
+      padding: 0 10px
+      .follow-unit
+        +span(6)
+        padding: 10px
+      .follow-info
+        height: 150px
+        background-color: #FFF
+        +box-shadow(0 0 5px #ccc)
