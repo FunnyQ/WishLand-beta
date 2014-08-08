@@ -1,0 +1,48 @@
+<% 3.times do |f| %>
+
+        <!-- 關注的人 unit -->
+        <div class="follow-unit">
+          <div class="follow-info">
+            <!-- 頭像與名字 -->
+            <div class="pic-and-name">
+
+              <div class="pic">
+                <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+              </div>
+              <div class="name">
+                <span><%= data.member.firstname %> <%= data.member.lastname %></span>
+              </div>
+
+            </div><!-- e/o pic-and-name -->
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">願望數</span><br/>
+                <span class="num">12K</span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num">148</span>
+              </div>
+              <div class="right">
+                <span class="title">粉絲人數</span><br/>
+                <span class="num">6K</span>
+              </div>
+            </div>
+
+            <!-- 最新願望 -->
+            <div class="news">
+              <div class="event-content">
+                <span><%= data.event.content %></span>
+              </div>
+            </div>
+
+            <!-- 按鈕 -->
+            <div class="button">
+              <button class="cancel" type="button"><i class="fa fa-heart"></i> 取消關注</button>
+            </div>
+
+          </div><!-- e/o follow-info -->
+        </div><!-- e/o follow-unit -->
+<% end %>
