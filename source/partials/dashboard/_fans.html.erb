@@ -19,28 +19,28 @@
             <div class="numbers">
               <div class="left">
                 <span class="title">願望數</span><br/>
-                <span class="num">12K</span>
+                <span class="num"><%= rand(9000) %></span>
               </div>
               <div class="center">
                 <span class="title">關注人數</span><br/>
-                <span class="num">148</span>
+                <span class="num"><%= rand(1000) %></span>
               </div>
               <div class="right">
                 <span class="title">粉絲人數</span><br/>
-                <span class="num">6K</span>
+                <span class="num"><%= rand(1000) %></span>
               </div>
             </div>
 
             <!-- 最新願望 -->
             <div class="news">
-              <div class="event-content">
+              <div class="latest-content">
                 <span><%= data.event.content %></span>
               </div>
             </div>
 
             <!-- 按鈕 -->
             <div class="button">
-              <button class="follow" type="button"><i class="fa fa-heart-o"></i> 關注</button>
+              <button class="follow" type="button"><i class="fa fa-heart-o fa-lg"></i> 關注</button>
             </div>
 
           </div><!-- e/o follow-info -->

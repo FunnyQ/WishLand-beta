@@ -125,6 +125,7 @@
     margin-bottom: 20px
     padding-bottom: 20px
     border: 1px solid #fff
+    min-height: 500px
     +box-shadow(0 0 15px #999)
     +border-radius(5px)
     h3
@@ -143,6 +144,9 @@
       background-color: #fff
       padding-bottom: 1em
       +box-shadow(0 0 5px #ccc)
+      +transition(0.3s)
+      &:hover
+        +box-shadow(0 0 8px #999)
     .pic-and-name
       padding: 8px
       margin-bottom: 8px
@@ -164,18 +168,55 @@
         margin: 14px 0 0 8px
         color: darken($c-ctrl_board, 50%)
     .news
-      padding: 1em
+      padding: 0.5em
       font-size: $fz-s
       color: #777
-    .event-content
+    .latest-content
       background-color: #eee
-      padding: 15px 10px
+      padding: 1em
+      max-height: 4em
+      overflow: scroll
     .button
-      padding: 0 1em
+      padding: 0 0.5em
       button
         width: 100%
+        font-weight: bold
       .cancel
         +sassy-button("flat", 3px, $fz-s, darken($c-ctrl_board, 15%), $btn-primary, #fff, "inset")
       .follow
         +sassy-button("flat", 3px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
-
+    .wish-unit, .event-unit
+      +span(6)
+      padding: 10px
+    .wish-info, .event-info
+      background-color: #fff
+      min-height: 150px
+      padding-bottom: 1em
+      +box-shadow(0 0 5px #ccc)
+      &:hover
+        +box-shadow(0 0 8px #999)
+      .numbers
+        margin: 0.5em 0
+      .date
+        background-color: lighten($c-landing, 5%)
+        color: #fff
+        +text-shadow(0 -1px 1px #aaa)
+        text-align: center
+        padding: 0.5em
+      .wish-content, .event-content
+        font-size: $fz-s
+        padding: 0.5em
+        padding-bottom: 1em
+        +clearfix
+        .wraper
+          background-color: #eee
+          padding: 1em
+          color: #777
+        .wish-category, .wish-location, .event-category, .event-location
+          margin-top: 0.5em
+          color: darken($c-ctrl_board, 40%)
+        .wish-category, .event-category
+          +span(3)
+        .wish-location, .event-location
+          +span(9)
+          text-align: right
