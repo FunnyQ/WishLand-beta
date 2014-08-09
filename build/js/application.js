@@ -5,17 +5,13 @@
 ////////////////////
  */
 
-/*
-2014/08/04 Paul edited
-Facebook login fuunction
-*/
-
 
 /*
 定義變數
 ////////////////////
  */
 
+(function() {
   var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showHostForm, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
@@ -32,11 +28,11 @@ Facebook login fuunction
 
   makeWishForm = mainUI.find('.make-wish');
 
+  shareForm = mainUI.find('.share-form');
+
   hostForm = mainUI.find('.host-form');
 
   commentForm = mainUI.find('.view-comments');
-
-  shareForm = mainUI.find('.share-form');
 
   infoPanel = mainUI.find('.info-panel');
 
@@ -86,6 +82,12 @@ Facebook login fuunction
 
   shareToTwitterBtn = shareForm.find('.share-twitter');
 
+  shareToWeiboBtn = shareForm.find('.share-weibo');
+
+  shareToEmailBtn = shareForm.find('.share-email');
+
+  shareCancelBtn = shareForm.find('.form-cancel');
+
   cancelHostBtn = hostForm.find('.form-cancel');
 
   submitHostBtn = hostForm.find('.form-submit');
@@ -93,12 +95,6 @@ Facebook login fuunction
   cancelCommentBtn = commentForm.find('.form-cancel');
 
   submitCommentBtn = commentForm.find('.form-submit');
-
-  shareToWeiboBtn = shareForm.find('.share-weibo');
-
-  shareToEmailBtn = shareForm.find('.share-email');
-
-  shareCancelBtn = shareForm.find('.form-cancel');
 
   viewHeight = $(window).height();
 
@@ -109,51 +105,6 @@ Facebook login fuunction
   定義 function
   ////////////////////
    */
-
-
-FBLogin = function()
-{
-	FB.login(function(response)
-	{
-		if (response.authResponse)
-		{
-			var uid = response.authResponse.userID;
-			FB.api('/me',
-				function(response)
-				{
-					var name 			= response.name;
-					var first_name 		= response.first_name;
-					var last_name 		= response.last_name;
-					var email 			= response.email;
-					var gender 			= response.gender;
-					var link 			= response.link;
-					var locale			= response.locale;
-					var timezone 		= response.timezone;
-					var updated_time 	= response.updated_time;
-					rrr(uid,name,first_name,last_name,email,gender,link,locale,timezone,updated_time);
-				}
-			);
-			showMap();
-			loadCtrlBoard();
-		}
-		else
-		{
-				alert('登入失敗');
-		}
-		},{scope: 'email,public_profile'});
-};
-rrr = function(uid,name,first_name,last_name,email,gender,link,locale,timezone,updated_time)
-{
-	document.getElementById('status').innerHTML =
-		'<form method="post" action="main.php" id="rrr" style="display:none;">id:<input type="text" id="uid" name="uid" value="'+ uid +'"><br>name:<input type="text" id="name" name="name" value="'+ name +'"><br>first_name:<input type="text" id="first_name" name="first_name" value="'+ first_name +'"><br>	last_name:<input type="text" id="last_name" name="last_name" value="'+ last_name +'"><br>mail:<input type="text" id="email" name="email" value="'+ email +'"><br>gender:<input type="text" id="gender" name="gender" value="'+ gender +'"><br>	link:<input type="text" id="link" name="link" value="'+ link +'"><br>	locale:<input type="text" id="locale" name="locale" value="'+ locale +'"><br>	timezone:<input type="text" id="timezone" name="timezone" value="'+ timezone +'"><br>updated_time:<input type="text" id="updated_time" name="updated_time" value="'+ updated_time +'"><br><input type="submit" value="ok"></form>';
-	document.getElementById('rrr').submit();
-};
-
-FBLoginOut = function(){
-	FB.logout(function(response)
-	{
-	});
-};
 
   showMap = function() {
     return landingPage.fadeOut();
@@ -171,12 +122,11 @@ FBLoginOut = function(){
     return ctrlBoard.find('.is_user').fadeOut();
   };
 
-  loadWishDetail = function(wishId) {
+  loadWishDetail = function() {
     return $.ajax({
-	  data: "wishId="+wishId,
-      type: "POST",
-      url: './wish_detail.php',
-      dataType: 'text',
+      url: './wish_detail.html',
+      type: 'GET',
+      dataType: 'html',
       success: function(respond) {
         wishDetail.fadeIn(0);
         wishInfoSection.html(respond);
@@ -234,7 +184,6 @@ FBLoginOut = function(){
   };
 
   showSharePanel = function() {
-    closeLv2UI(0);
     shareForm.addClass("animated bounceInUp");
     shareForm.add(siteOverlayLv2).fadeIn();
     setTimeout((function() {
@@ -304,7 +253,6 @@ FBLoginOut = function(){
     return null;
   };
 
-
   closeUI = function(speed) {
     if (speed == null) {
       speed = "500";
@@ -317,7 +265,7 @@ FBLoginOut = function(){
     if (speed == null) {
       speed = "500";
     }
-    shareForm.add(siteOverlayLv2).fadeOut(speed);
+    shareForm.add(siteOverlayLv2).add(hostForm).add(commentForm).fadeOut(speed);
     return null;
   };
 
@@ -342,14 +290,14 @@ FBLoginOut = function(){
     固定切換類別按鈕在主介面中間
      */
     changeCategoryBtn.css({
-      "margin-top": (viewHeight / 2) - 20,
+      "margin-top": (viewHeight / 2) - 100,
       "left": (viewWidth / 2) - 50
     });
     return $(window).resize(function() {
       viewHeight = $(window).height();
       viewWidth = $(window).width();
       return changeCategoryBtn.css({
-        "margin-top": (viewHeight / 2) - 20,
+        "margin-top": (viewHeight / 2) - 100,
         "left": (viewWidth / 2) - 50
       });
     });
@@ -369,6 +317,13 @@ FBLoginOut = function(){
 
 
   /*
+  dropdown
+   */
+
+  $('#dropdown').dropdown();
+
+
+  /*
   載入地圖
    */
 
@@ -383,29 +338,16 @@ FBLoginOut = function(){
   });
 
 
-
   /*
   Facebook 登入成功後 call showMap() & loadCtrlBoard()
    */
 
   fbLoginBtn.on("click", function() {
-
-	FBLogin();
+    showMap();
+    loadCtrlBoard();
     return null;
   });
 
-  /*
-  登出，登出使用者然後關閉地圖畫面
-   */
-
-  signOutBtn.on("click", function() {
-
-    /*
-    logout user
-     */
-	FBLoginOut();
-	return null;
-  });
 
   /*
   按下許願按鈕，顯示許願表單
@@ -425,98 +367,13 @@ FBLoginOut = function(){
     closeUI();
     return null;
   });
-	/*
-		按下改變類別按鈕
-	*/
-	changeCategoryBtn.on("click", function() {
-			var URLs= "php/getWishs.php";
-			$.ajax({
-			url: URLs,
-			data: $('#makeWish').serialize(),
-			type:"POST",
-			dataType:'text',
-			success: function(msg){
-			if(msg!=""){
-				//alert(msg);
-				var arrayMsg = msg.split(";");
-				var wishId = arrayMsg[0];
-				var latlng = arrayMsg[1];
-				//alert(latlng);
-				$('#map').tinyMap('modify', {
-						zoom: 4 ,
-						marker: [
-							{	addr: latlng,
-								event: function (e) {
-									$('#map').tinyMap('panto', latlng);﻿
-									loadWishDetail(wishId);
-									showInfoPanel();
-								}}
-							]
-						}
-				);
-				//alert(latlng);
-				$('#map').tinyMap('panto', latlng);﻿
 
-			}else{
-				//alert(msg);
-			}
-		},
-         error:function(xhr, ajaxOptions, thrownError){
-            alert(xhr.status);
-            alert(thrownError);
-         }
-	});
-		return null;
-	});
+
   /*
   送出願望後關閉視窗
    */
 
   submitWishBtn.on("click", function() {
-	//確認資料都存在
-	var t = $('#wish-title').val();
-	var c = $('#wish-cate').val();
-	var l = $('#wish-local').val();
-
-	var URLs= "php/makeWish.php";
-	$.ajax({
-        url: URLs,
-        data: $('#makeWish').serialize(),
-        type:"POST",
-        dataType:'text',
-        success: function(msg){
-			if(msg!=""){
-				//alert(msg);
-				var arrayMsg = msg.split(";");
-				var wishId = arrayMsg[0];
-				var latlng = arrayMsg[1];
-				//alert(latlng);
-				$('#map').tinyMap('modify', {
-						zoom: 4 ,
-						marker: [
-							{	addr: latlng,
-								event: function (e) {
-									$('#map').tinyMap('panto', latlng);﻿
-									loadWishDetail(wishId);
-									showInfoPanel();
-								}}
-							]
-						}
-				);
-				//alert(latlng);
-				$('#map').tinyMap('panto', latlng);﻿
-
-			}else{
-				//alert(msg);
-			}
-		},
-         error:function(xhr, ajaxOptions, thrownError){
-            alert(xhr.status);
-            alert(thrownError);
-         }
-    });
-
-	//否則不執行效果
     submitWishEffect();
     return null;
   });
@@ -524,6 +381,11 @@ FBLoginOut = function(){
 
   /*
   詳細活動面板按鈕動作
+   */
+
+
+  /*
+  ///////////////////分享///////////////////
    */
 
 
@@ -571,6 +433,7 @@ FBLoginOut = function(){
   });
 
   shareToTwitterBtn.on("click", function() {
+
     /*
     do something here
      */
@@ -596,6 +459,8 @@ FBLoginOut = function(){
     return null;
   });
 
+
+  /*
   ///////////////////實現願望（建立活動）///////////////////
    */
 
@@ -677,8 +542,6 @@ FBLoginOut = function(){
   });
 
 
-
-
   /*
   黑色 overlay 區域可以關閉視窗
    */
@@ -698,6 +561,22 @@ FBLoginOut = function(){
     return null;
   });
 
+
+  /*
+  登出，登出使用者然後關閉地圖畫面
+   */
+
+  signOutBtn.on("click", function() {
+
+    /*
+    logout user
+     */
+    unLoadCtrlBoard();
+    closeMap();
+    return null;
+  });
+
+
   /* TEST AREA */
 
   ctrlBoard.find('.marker-wish').on("click", function() {
@@ -712,4 +591,4 @@ FBLoginOut = function(){
     return null;
   });
 
-
+}).call(this);

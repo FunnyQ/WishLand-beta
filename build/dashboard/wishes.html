@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Use title if it's in the page YAML frontmatter -->
+        <title>Po Wish || 會員資料管理</title>
+        <meta name="description" content="">
+        <!-- <meta name="viewport" content="width=device-width"> -->
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link href="../css/application.css" rel="stylesheet" type="text/css" />
+        <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+
+<!-- Navi Bar -->
+<nav class="dash-nav">
+
+  <div class="dash-wraper">
+    <div class="left">
+      <img src="../img/ctrl-logo.png" alt="" class="img-responsive">
+    </div>
+
+    <div class="center">
+      <p>會員資料管理</p>
+    </div>
+
+    <div class="right">
+      <a href="../" class="back"><i class="fa fa-angle-double-left fa-lg"></i> 返回 Powish</a>
+    </div>
+  </div>
+
+</nav>
+
+
+<!-- 主要內容（index.html.erb） -->
+<div class="dash-main">
+  <div class="dash-wraper">
+    <div class="sub-navi">
+
+      <!-- 使用者個人資料 -->
+      <div class="personal-info">
+        <div class="basic">
+          <!-- 頭像 -->
+          <div class="avatar">
+            <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+          </div>
+          <!-- 名字 -->
+          <div class="name">
+            <span>Takeshi Kaneshiro</span>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="left">
+            <span class="title">願望數</span><br/>
+            <span class="num">12K</span>
+          </div>
+          <div class="center">
+            <span class="title">關注人數</span><br/>
+            <span class="num">148</span>
+          </div>
+          <div class="right">
+            <span class="title">粉絲人數</span><br/>
+            <span class="num">6K</span>
+          </div>
+        </div>
+      </div><!-- end of personal-info -->
+
+      <!-- 管理界面選單 -->
+      <div class="navi-list">
+        <ul>
+          <!-- <a class="active" href="#"><li>最新動態<span><i class="fa fa-chevron-right"></i></span></li></a> -->
+          <a href="./"><li>我關注的人<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+          <a href="./fans.html"><li>我的粉絲<span class="chevron"><i class="fa fa-chevron-right"></i></span><span class="badge">3</span></li></a>
+          <a class="active" href="./wishes.html"><li>我的願望<span class="chevron"><i class="fa fa-chevron-right"></i></span><span class="badge">1</span></li></a>
+          <a href="./events.html"><li>我的活動<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+          <a href="./comments.html"><li>我的留言<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="info-panel">
+
+      <!-- 我的願望 -->
+      <h3>我的願望</h3>
+      <div class="inner">
+        
+        <!-- 願望 unit -->
+        <div class="wish-unit">
+
+          <div class="wish-info">
+
+            <!-- 願望日期 -->
+            <div class="date">
+              <span><i class="fa fa-calendar"></i> Mon Mar 09, 2009</span>
+            </div>
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">曝光次數</span><br/>
+                <span class="num">664</span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num">319</span>
+              </div>
+              <div class="right">
+                <span class="title">剩餘天數</span><br/>
+                <span class="num">8</span>
+              </div>
+            </div>
+
+            <!-- 願望內容 -->
+            <div class="wish-content">
+              <div class="wraper">
+                <span>想和不認識的你慢慢喝杯奶茶...</span>
+              </div>
+              <div class="wish-category">
+                <span><i class="fa fa-dribbble"></i> 運動</span>
+              </div>
+              <div class="wish-location">
+                <span><i class="fa fa-map-marker"></i> 華納威秀廣場</span>
+              </div>
+            </div><!-- e/o wish-content -->
+
+            <!-- 刪除願望 -->
+            <div class="button">
+              <button class="cancel" type="button"><i class="fa fa-trash-o fa-lg"></i> 刪除願望</button>
+            </div>
+
+          </div>
+
+        </div><!-- e/o wish-unit -->
+
+
+        <!-- 願望 unit -->
+        <div class="wish-unit">
+
+          <div class="wish-info">
+
+            <!-- 願望日期 -->
+            <div class="date">
+              <span><i class="fa fa-calendar"></i> Mon Mar 07, 1994</span>
+            </div>
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">曝光次數</span><br/>
+                <span class="num">212</span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num">393</span>
+              </div>
+              <div class="right">
+                <span class="title">剩餘天數</span><br/>
+                <span class="num">4</span>
+              </div>
+            </div>
+
+            <!-- 願望內容 -->
+            <div class="wish-content">
+              <div class="wraper">
+                <span>想和不認識的你慢慢喝杯奶茶...</span>
+              </div>
+              <div class="wish-category">
+                <span><i class="fa fa-dribbble"></i> 運動</span>
+              </div>
+              <div class="wish-location">
+                <span><i class="fa fa-map-marker"></i> 華納威秀廣場</span>
+              </div>
+            </div><!-- e/o wish-content -->
+
+            <!-- 刪除願望 -->
+            <div class="button">
+              <button class="cancel" type="button"><i class="fa fa-trash-o fa-lg"></i> 刪除願望</button>
+            </div>
+
+          </div>
+
+        </div><!-- e/o wish-unit -->
+
+
+        <!-- 願望 unit -->
+        <div class="wish-unit">
+
+          <div class="wish-info">
+
+            <!-- 願望日期 -->
+            <div class="date">
+              <span><i class="fa fa-calendar"></i> Wed Feb 14, 2007</span>
+            </div>
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">曝光次數</span><br/>
+                <span class="num">541</span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num">355</span>
+              </div>
+              <div class="right">
+                <span class="title">剩餘天數</span><br/>
+                <span class="num">2</span>
+              </div>
+            </div>
+
+            <!-- 願望內容 -->
+            <div class="wish-content">
+              <div class="wraper">
+                <span>想和不認識的你慢慢喝杯奶茶...</span>
+              </div>
+              <div class="wish-category">
+                <span><i class="fa fa-dribbble"></i> 運動</span>
+              </div>
+              <div class="wish-location">
+                <span><i class="fa fa-map-marker"></i> 華納威秀廣場</span>
+              </div>
+            </div><!-- e/o wish-content -->
+
+            <!-- 刪除願望 -->
+            <div class="button">
+              <button class="cancel" type="button"><i class="fa fa-trash-o fa-lg"></i> 刪除願望</button>
+            </div>
+
+          </div>
+
+        </div><!-- e/o wish-unit -->
+
+
+        <!-- 願望 unit -->
+        <div class="wish-unit">
+
+          <div class="wish-info">
+
+            <!-- 願望日期 -->
+            <div class="date">
+              <span><i class="fa fa-calendar"></i> Sun Nov 12, 2006</span>
+            </div>
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">曝光次數</span><br/>
+                <span class="num">572</span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num">302</span>
+              </div>
+              <div class="right">
+                <span class="title">剩餘天數</span><br/>
+                <span class="num">4</span>
+              </div>
+            </div>
+
+            <!-- 願望內容 -->
+            <div class="wish-content">
+              <div class="wraper">
+                <span>想和不認識的你慢慢喝杯奶茶...</span>
+              </div>
+              <div class="wish-category">
+                <span><i class="fa fa-dribbble"></i> 運動</span>
+              </div>
+              <div class="wish-location">
+                <span><i class="fa fa-map-marker"></i> 華納威秀廣場</span>
+              </div>
+            </div><!-- e/o wish-content -->
+
+            <!-- 刪除願望 -->
+            <div class="button">
+              <button class="cancel" type="button"><i class="fa fa-trash-o fa-lg"></i> 刪除願望</button>
+            </div>
+
+          </div>
+
+        </div><!-- e/o wish-unit -->
+
+
+        <!-- 願望 unit -->
+        <div class="wish-unit">
+
+          <div class="wish-info">
+
+            <!-- 願望日期 -->
+            <div class="date">
+              <span><i class="fa fa-calendar"></i> Mon Mar 08, 1993</span>
+            </div>
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">曝光次數</span><br/>
+                <span class="num">885</span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num">348</span>
+              </div>
+              <div class="right">
+                <span class="title">剩餘天數</span><br/>
+                <span class="num">2</span>
+              </div>
+            </div>
+
+            <!-- 願望內容 -->
+            <div class="wish-content">
+              <div class="wraper">
+                <span>想和不認識的你慢慢喝杯奶茶...</span>
+              </div>
+              <div class="wish-category">
+                <span><i class="fa fa-dribbble"></i> 運動</span>
+              </div>
+              <div class="wish-location">
+                <span><i class="fa fa-map-marker"></i> 華納威秀廣場</span>
+              </div>
+            </div><!-- e/o wish-content -->
+
+            <!-- 刪除願望 -->
+            <div class="button">
+              <button class="cancel" type="button"><i class="fa fa-trash-o fa-lg"></i> 刪除願望</button>
+            </div>
+
+          </div>
+
+        </div><!-- e/o wish-unit -->
+
+
+      </div><!-- e/o inner -->
+
+    </div><!-- e/o info-panel -->
+  </div>
+</div>
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="../js/plugins.js" type="text/javascript"></script>
+        <script src="../js/application.js" type="text/javascript"></script>
+
+<!-- Google Analystics -->
+
+    </body>
+</html>
