@@ -185,14 +185,17 @@
         +sassy-button("flat", 3px, $fz-s, darken($c-ctrl_board, 15%), $btn-primary, #fff, "inset")
       .follow
         +sassy-button("flat", 3px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
-    .wish-unit, .event-unit
+
+
+    .wish-unit, .event-unit, .comment-unit
       +span(6)
       padding: 10px
-    .wish-info, .event-info
+    .wish-info, .event-info, .comment-info
       background-color: #fff
       min-height: 150px
       padding-bottom: 1em
       +box-shadow(0 0 5px #ccc)
+      +transition(0.3s)
       &:hover
         +box-shadow(0 0 8px #999)
       .numbers
@@ -203,7 +206,7 @@
         +text-shadow(0 -1px 1px #aaa)
         text-align: center
         padding: 0.5em
-      .wish-content, .event-content
+      .wish-content, .event-content, .comment-content
         font-size: $fz-s
         padding: 0.5em
         padding-bottom: 1em
@@ -220,3 +223,16 @@
         .wish-location, .event-location
           +span(9)
           text-align: right
+      .target
+        color: #aaa
+      .comment-content
+        margin-top: 0.5em
+        span
+          color: #777
+          overflow: scroll
+          display: block
+          width: 100%
+          height: 5em
+          +border-radius(8px)
+          padding: 0.5em
+          border: 1px solid #ddd
