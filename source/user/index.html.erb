@@ -1,0 +1,60 @@
+---
+layout: user
+title: Po Wish || 會員資料查詢
+---
+
+<div class="dash-main">
+  <div class="dash-wraper">
+    <div class="sub-navi">
+
+      <!-- 使用者個人資料 -->
+      <div class="personal-info">
+        <div class="basic">
+          <!-- 頭像 -->
+          <div class="avatar">
+            <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+          </div>
+          <!-- 名字 -->
+          <div class="name">
+            <span><%= data.member.firstname %> <%= data.member.lastname %></span>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="left">
+            <span class="title">願望數</span><br/>
+            <span class="num">12K</span>
+          </div>
+          <div class="center">
+            <span class="title">關注人數</span><br/>
+            <span class="num">148</span>
+          </div>
+          <div class="right">
+            <span class="title">粉絲人數</span><br/>
+            <span class="num">6K</span>
+          </div>
+        </div>
+      </div><!-- end of personal-info -->
+
+      <!-- 管理界面選單 -->
+      <div class="navi-list">
+        <ul>
+          <a class="active" href="./"><li>查看願望<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+          <a href="./events.html"><li>查看活動<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="info-panel">
+
+      <!-- 我關注的人 -->
+      <h3><%= data.member.firstname %> 的願望</h3>
+      <div class="inner">
+
+        <%= partial "partials/user/wishes" %>
+
+      </div><!-- e/o inner -->
+
+    </div><!-- e/o info-panel -->
+  </div>
+</div>

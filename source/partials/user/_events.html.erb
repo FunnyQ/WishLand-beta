@@ -1,0 +1,51 @@
+<% 2.times do |f| %>
+
+        <!-- 活動 unit -->
+        <div class="event-unit">
+
+          <div class="event-info">
+
+            <!-- 願望日期 -->
+            <div class="date">
+              <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
+            </div>
+
+            <!-- 數據 -->
+            <div class="numbers">
+              <div class="left">
+                <span class="title">曝光次數</span><br/>
+                <span class="num"><%= rand(1000) %></span>
+              </div>
+              <div class="center">
+                <span class="title">關注人數</span><br/>
+                <span class="num"><%= rand(500) %></span>
+              </div>
+              <div class="right">
+                <span class="title">參加人數</span><br/>
+                <span class="num"><%= rand(20) %></span>
+              </div>
+            </div>
+
+            <!-- 願望內容 -->
+            <div class="event-content">
+              <div class="wraper">
+                <span><%= data.event.title %></span>
+              </div>
+              <div class="event-category">
+                <span><i class="fa fa-cutlery"></i> 美食</span>
+              </div>
+              <div class="event-location">
+                <span><i class="fa fa-map-marker"></i> 春水堂人文茶館 慶城街1號2F</span>
+              </div>
+            </div><!-- e/o event-content -->
+
+            <!-- 刪除願望 -->
+            <div class="button">
+              <button class="follow" type="button"><i class="fa fa-star-o fa-lg"></i> 關注活動</button>
+            </div>
+
+          </div>
+
+        </div><!-- e/o event-unit -->
+
+<% end %>

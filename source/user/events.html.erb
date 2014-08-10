@@ -1,6 +1,6 @@
 ---
-layout: dashboard
-title: Po Wish || 個人資料管理
+layout: user
+title: Po Wish || 會員動態查詢
 ---
 
 <div class="dash-main">
@@ -38,12 +38,8 @@ title: Po Wish || 個人資料管理
       <!-- 管理界面選單 -->
       <div class="navi-list">
         <ul>
-          <!-- <a class="active" href="#"><li>最新動態<span><i class="fa fa-chevron-right"></i></span></li></a> -->
-          <a class="active" href="./"><li>我關注的人<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
-          <a href="./fans.html"><li>我的粉絲<span class="chevron"><i class="fa fa-chevron-right"></i></span><span class="badge">3</span></li></a>
-          <a href="./wishes.html"><li>我的願望<span class="chevron"><i class="fa fa-chevron-right"></i></span><span class="badge">1</span></li></a>
-          <a href="./events.html"><li>我的活動<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
-          <a href="./comments.html"><li>我的留言<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+          <a href="./"><li>查看願望<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
+          <a class="active" href="./events.html"><li>查看活動<span class="chevron"><i class="fa fa-chevron-right"></i></span></li></a>
         </ul>
 
       </div>
@@ -52,10 +48,10 @@ title: Po Wish || 個人資料管理
     <div class="info-panel">
 
       <!-- 我關注的人 -->
-      <h3>我關注的人</h3>
+      <h3><%= data.member.firstname %> 的願望</h3>
       <div class="inner">
 
-        <%= partial "partials/dashboard/follow" %>
+        <%= partial "partials/user/events" %>
 
       </div><!-- e/o inner -->
 
