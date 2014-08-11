@@ -1,0 +1,40 @@
+.show-main
+  padding-top: 70px
+  min-height: 100%
+  background-image: url("../img/wood2.png")
+  .show-wraper
+    width: 400px
+    @extend %m0auto
+    min-height: 500px
+    background-color: $c-ctrl_board
+    +box-shadow(0 0 15px #888)
+    +border-radius(10px)
+  h3
+    @extend %panelTitle
+    margin: 0
+  .owner
+    background-color: darken($c-ctrl_board, 10%)
+    padding: 0.5em
+    border-bottom: 2px solid darken($c-ctrl_board, 20%)
+    padding-top: 1em
+    h4
+      color: darken($c-yellow, 50%)
+      font-size: $fz-m
+      margin: 0
+      padding: 1em 0
+    .owner-avatar
+      display: inline-block
+      margin-left: 1em
+      height: 50px
+      width: 50px
+      @extend %circle
+      border: 5px solid #fff
+    .owner-name
+      color: darken($c-yellow, 50%)
+      margin-left: 75px
+      margin-top: -40px
+      padding-bottom: 1em
+    button
+      +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+      margin-top: -4px
+      float: right

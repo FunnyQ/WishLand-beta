@@ -1,0 +1,40 @@
+---
+layout: show
+title: Po Wish || 詳細內容
+---
+
+<div class="show-main">
+
+  <div class="show-wraper">
+    <!-- 標題，需判斷此 event 是活動還是願望 -->
+    <h3><i class="fa fa-lightbulb-o fa-lg"></i> 詳細活動內容</h3>
+    <!-- <h3><i class="fa fa-list-alt fa-lg"></i> 詳細願望內容</h3> -->
+
+
+    <!-- event owner 欄位，可 follow 人 -->
+    <div class="owner">
+      <div class="owner-inner">
+        <!-- avatar -->
+        <div class="owner-avatar">
+          <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+        </div>
+        <!-- name -->
+        <div class="owner-name">
+          <span><%= data.member.firstname %> <%= data.member.lastname %></span>
+          <!-- follow button -->
+          <button><i class="fa fa-heart-o"></i> Follow </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- event 詳細內容 -->
+    <div class="wish-title">
+      <div class="inner">
+        <p><i><%= data.event.content %></i></p><br />
+        <p class="signature">by <span><%= data.member.firstname %></span></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
