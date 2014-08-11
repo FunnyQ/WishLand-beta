@@ -1,0 +1,98 @@
+---
+layout: show
+title: Po Wish || 詳細內容
+---
+
+<div class="show-main">
+
+  <div class="show-wraper">
+    <!-- 標題，需判斷此 event 是活動還是願望 -->
+    <h3><i class="fa fa-lightbulb-o fa-lg"></i> 詳細活動內容</h3>
+    <!-- <h3><i class="fa fa-list-alt fa-lg"></i> 詳細願望內容</h3> -->
+
+
+    <!-- event owner 欄位，可 follow 人 -->
+    <div class="owner">
+      <div class="owner-inner">
+        <!-- avatar -->
+        <div class="owner-avatar">
+          <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+        </div>
+        <!-- name -->
+        <div class="owner-name">
+          <span><%= data.member.firstname %> <%= data.member.lastname %></span>
+          <!-- follow button -->
+          <button type="button"><i class="fa fa-heart-o"></i> Follow </button>
+        </div>
+      </div>
+    </div><!-- e/o owner -->
+
+    <!-- event 詳細內容 -->
+    <div class="content">
+      <!-- 日期 -->
+      <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-10（2 天前）</span>
+      <!-- 願望（content）或活動（title）標題 -->
+      <div class="inner">
+        <p><i><%= data.event.content %></i></p><br />
+        <!-- 類別 -->
+        <span class="category"><i class="fa fa-cutlery fa-lg"></i> 美食</span>
+        <!-- 地點 -->
+        <span class="location"><i class="fa fa-map-marker fa-lg"></i> 公館 The wall</span>
+      </div>
+      <!-- 與我的距離 -->
+      <span class="distance"><i class="fa fa-compress fa-lg"></i> 距離我 3.9 公里遠</span>
+    </div><!-- e/o content -->
+
+    <!-- 留言板 -->
+    <div class="comments">
+
+      <div class="timeline">
+        <div class="divider-up"></div>
+        <% 5.times do |f| %>
+
+        <!-- 留言內容 unit -->
+        <div class="comments-unit">
+          <div class="left">
+            <!-- 使用者頭像 -->
+            <div class="avatar">
+              <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+            </div>
+            <!-- 留言時間 -->
+            <div class="time">
+              <span><%= rand(60) %> 分鐘前</span>
+            </div>
+          </div>
+          <div class="right">
+            <!-- 使用者名字 -->
+            <div class="name">
+              <span><%= data.member.firstname %> 說：</span>
+            </div>
+            <!-- 留言內容 -->
+            <div class="say">
+              <span><%= data.comment.content %></span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="divider-down"></div>
+
+    </div><!-- e/o comments -->
+
+    <form class="form-horizontal" role="form">
+      <div class="comment-form">
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <div class="buttons">
+        <div class="form-submit"><button type="button">送出留言</button></div>
+        <div class="follow"><button type="button"><i class="fa fa-star-o fa-lg"></i> 關注</button></div>
+        <div class="share"><button type="button"><i class="fa fa-share-alt fa-lg"></i> 分享</button></div>
+        <div class="join"><button type="button"><i class="fa fa-hand-o-up fa-lg"></i> 參加</button></div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
