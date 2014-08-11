@@ -5367,16 +5367,16 @@ Copyright (c) 2014 Daniel Eden
   padding-left: 0.83333%;
   padding-right: 0.83333%; }
 
-body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .info-panel, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner {
+body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .info-panel, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .show-main .content .inner {
   height: 100%; }
 
-.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .mainUI .view-comments .comment-divider, .mainUI .view-comments .comment-form, .ctrl_board, .dash-nav {
+.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .mainUI .view-comments .comment-divider, .mainUI .view-comments .comment-form, .ctrl_board, .dash-nav, .show-main .content, .show-main .content .inner {
   width: 100%; }
 
-.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form, .mainUI .view-comments, .mainUI .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar, .dash-wraper {
+.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form, .mainUI .view-comments, .mainUI .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar, .dash-wraper, .show-main .show-wraper, .show-main .comments .left .avatar, .show-main .comments .right .say {
   margin: 0 auto; }
 
-.mainUI .make-wish h3, .mainUI .share-form h3, .mainUI .host-form h3, .mainUI .view-comments h3, .mainUI .info-panel h3, .dash-main .info-panel h3 {
+.mainUI .make-wish h3, .mainUI .share-form h3, .mainUI .host-form h3, .mainUI .view-comments h3, .mainUI .info-panel h3, .dash-main .info-panel h3, .show-main h3 {
   text-align: center;
   font-size: 1.25em;
   padding: 0.5em;
@@ -6470,6 +6470,282 @@ button:focus {
           padding: 0.5em;
           border: 1px solid #dddddd; }
 
+.show-main {
+  padding-top: 70px;
+  padding-bottom: 50px;
+  min-height: 100%;
+  background-image: url("../img/wood2.png"); }
+  .show-main .show-wraper {
+    width: 400px;
+    min-height: 500px;
+    background-color: #f2ede9;
+    -webkit-box-shadow: 0 0 15px #888888;
+    box-shadow: 0 0 15px #888888;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; }
+  .show-main h3 {
+    margin: 0; }
+  .show-main .owner {
+    background-color: #dfd3c9;
+    padding: 0.5em;
+    border-bottom: 2px solid #ccb9a9;
+    padding-top: 1em; }
+    .show-main .owner h4 {
+      color: #6a3f01;
+      font-size: 1em;
+      margin: 0;
+      padding: 1em 0; }
+    .show-main .owner .owner-avatar {
+      display: inline-block;
+      margin-left: 1em;
+      height: 50px;
+      width: 50px;
+      border: 5px solid white; }
+    .show-main .owner .owner-name {
+      color: #6a3f01;
+      margin-left: 75px;
+      margin-top: -40px;
+      padding-bottom: 1em; }
+    .show-main .owner button {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFD9807', endColorstr='#FF9D5D01');
+      background-color: #fd9807;
+      border: 0;
+      color: white;
+      text-shadow: #844e01 0 -1px 0;
+      margin-top: -4px;
+      float: right; }
+      .show-main .owner button:hover {
+        text-decoration: none; }
+      .show-main .owner button:hover {
+        background-color: #e98a02; }
+      .show-main .owner button:active {
+        background-color: #da8101; }
+      .show-main .owner button.disabled, .show-main .owner button[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .show-main .owner button::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+  .show-main .content {
+    margin: 0.5em 0;
+    padding: 1em; }
+    .show-main .content .date {
+      display: block;
+      font-size: 0.8125em;
+      color: #8a6b52;
+      margin-bottom: 1em; }
+    .show-main .content .inner {
+      margin: 0;
+      color: #6a523f;
+      background-color: white;
+      -webkit-box-shadow: 0 0 2px #aaaaaa;
+      box-shadow: 0 0 2px #aaaaaa;
+      padding: 1em;
+      font-weight: bold; }
+      .show-main .content .inner:before, .show-main .content .inner:after {
+        content: " ";
+        display: table; }
+      .show-main .content .inner:after {
+        clear: both; }
+    .show-main .content .category, .show-main .content .location, .show-main .content .distance {
+      display: block;
+      font-size: 0.8125em;
+      color: #a68469; }
+    .show-main .content .category {
+      width: 25%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%; }
+    .show-main .content .location {
+      width: 75%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      text-align: right; }
+    .show-main .content .distance {
+      width: 100%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      text-align: right;
+      margin-top: 0.5em;
+      color: #b99e89; }
+  .show-main .divider-up, .show-main .divider-down {
+    width: 100%;
+    height: 14px; }
+  .show-main .divider-up {
+    background-image: url("../img/comment-divider-up.png");
+    position: absolute;
+    top: 0; }
+  .show-main .divider-down {
+    position: absolute;
+    background-image: url("../img/comment-divider-down.png");
+    bottom: 0; }
+  .show-main .comments {
+    padding: 0 0.5em;
+    font-size: 0.8125em;
+    position: relative; }
+    .show-main .comments .timeline {
+      width: 100%;
+      height: 250px;
+      overflow: scroll;
+      background: url("../img/timeline.png") 0 0 repeat-y; }
+    .show-main .comments .comments-unit {
+      min-height: 50px;
+      margin-bottom: 2em; }
+      .show-main .comments .comments-unit:before, .show-main .comments .comments-unit:after {
+        content: " ";
+        display: table; }
+      .show-main .comments .comments-unit:after {
+        clear: both; }
+      .show-main .comments .comments-unit:last-child {
+        margin-bottom: 0;
+        background-color: #f2ede9;
+        padding-bottom: 2em; }
+    .show-main .comments .left {
+      width: 25%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%; }
+      .show-main .comments .left .avatar {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background-color: white; }
+      .show-main .comments .left .time {
+        margin-top: 1em;
+        text-align: center;
+        font-size: 0.75em;
+        color: white;
+        background-color: #8a6b52;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px; }
+    .show-main .comments .right {
+      width: 75%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%; }
+      .show-main .comments .right .name {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 22px;
+        margin-bottom: 8px; }
+        .show-main .comments .right .name:after {
+          content: " ";
+          display: block;
+          clear: both; }
+      .show-main .comments .right .say {
+        width: 270px;
+        background-color: white;
+        color: #555555;
+        padding: 1em;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; }
+  .show-main .comment-form {
+    padding: 0.5em 1em; }
+    .show-main .comment-form textarea {
+      font-size: 0.8125em; }
+  .show-main .buttons {
+    padding: 0 1em; }
+    .show-main .buttons:before, .show-main .buttons:after {
+      content: " ";
+      display: table; }
+    .show-main .buttons:after {
+      clear: both; }
+    .show-main .buttons .form-submit {
+      width: 100%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      margin-bottom: 1em; }
+      .show-main .buttons .form-submit button {
+        width: 100%;
+        font-size: 0.8125em;
+        padding: 0.5em 1.5em;
+        display: inline-block;
+        cursor: pointer;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        *zoom: 1;
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7DB500', endColorstr='#FF374F00');
+        background-color: #7db500;
+        border: 0;
+        color: white;
+        text-shadow: #253600 0 -1px 0; }
+        .show-main .buttons .form-submit button:hover {
+          text-decoration: none; }
+        .show-main .buttons .form-submit button:hover {
+          background-color: #6b9c00; }
+        .show-main .buttons .form-submit button:active {
+          background-color: #618c00; }
+        .show-main .buttons .form-submit button.disabled, .show-main .buttons .form-submit button[disabled] {
+          opacity: 0.6;
+          filter: alpha(opacity=60);
+          background: false;
+          cursor: default;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+        .show-main .buttons .form-submit button::-moz-focus-inner {
+          padding: 0 !important;
+          margin: -1px !important; }
+    .show-main .buttons .follow, .show-main .buttons .share, .show-main .buttons .join {
+      width: 33.33333%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      margin-bottom: 1em; }
+      .show-main .buttons .follow button, .show-main .buttons .share button, .show-main .buttons .join button {
+        width: 100%;
+        font-size: 0.8125em;
+        padding: 0.5em 1.5em;
+        display: inline-block;
+        cursor: pointer;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        *zoom: 1;
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7DB500', endColorstr='#FF374F00');
+        background-color: #7db500;
+        border: 0;
+        color: white;
+        text-shadow: #253600 0 -1px 0; }
+        .show-main .buttons .follow button:hover, .show-main .buttons .share button:hover, .show-main .buttons .join button:hover {
+          text-decoration: none; }
+        .show-main .buttons .follow button:hover, .show-main .buttons .share button:hover, .show-main .buttons .join button:hover {
+          background-color: #6b9c00; }
+        .show-main .buttons .follow button:active, .show-main .buttons .share button:active, .show-main .buttons .join button:active {
+          background-color: #618c00; }
+        .show-main .buttons .follow button.disabled, .show-main .buttons .follow button[disabled], .show-main .buttons .share button.disabled, .show-main .buttons .share button[disabled], .show-main .buttons .join button.disabled, .show-main .buttons .join button[disabled] {
+          opacity: 0.6;
+          filter: alpha(opacity=60);
+          background: false;
+          cursor: default;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+        .show-main .buttons .follow button::-moz-focus-inner, .show-main .buttons .share button::-moz-focus-inner, .show-main .buttons .join button::-moz-focus-inner {
+          padding: 0 !important;
+          margin: -1px !important; }
+
 .blur {
   -webkit-filter: blur(6px);
   filter: blur(6px); }
@@ -6494,7 +6770,7 @@ button:focus {
 .cant-touch {
   pointer-events: none; }
 
-.mainUI .avatar, .mainUI .info-panel .wish-owner .owner-avatar, .mainUI .info-panel .event-owner .owner-avatar {
+.mainUI .avatar, .mainUI .info-panel .wish-owner .owner-avatar, .mainUI .info-panel .event-owner .owner-avatar, .show-main .owner .owner-avatar {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
