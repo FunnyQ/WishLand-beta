@@ -6,10 +6,18 @@
 
       <!-- 分享內容-->
       <div class="form-wraper">
-        <h4>
-          <i class="fa fa-comment-o fa-lg"></i>
-          分享內容
-        </h4>
+        <div class="content">
+          <!-- 日期 -->
+          <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-25（13 天後）</span>
+          <!-- 願望（content）或活動（title）標題 -->
+          <div class="inner">
+            <p><i><%= data.event.title %></i></p><br />
+            <!-- 類別 -->
+            <span class="category"><i class="fa fa-cutlery fa-lg"></i> 美食</span>
+            <!-- 地點 -->
+            <span class="location"><i class="fa fa-map-marker fa-lg"></i> 公館 The wall</span>
+          </div>
+        </div><!-- e/o content -->
       </div>
 
       <div class="button-wraper">

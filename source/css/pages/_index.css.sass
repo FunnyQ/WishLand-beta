@@ -31,6 +31,7 @@ button:focus
   background-color: $c-landing
   position: relative
   z-index: +index($elements, landing)
+  display: none
 
   .lp-content
     padding-top: 33vh
@@ -233,6 +234,39 @@ button:focus
 .share-form
   @extend %make-wish
   z-index: +index($elements, share-form)
+  display: block
+  .content
+    margin: 0.5em 0
+    @extend %w100p
+    .date
+      display: block
+      font-size: $fz-s
+      color: darken($c-ctrl_board, 50%)
+      margin-bottom: 1em
+    .inner
+      @extend %w100p
+      @extend %h100p
+      +clearfix
+      margin: 0
+      color: darken($c-ctrl_board, 60%)
+      background-color: #FFF
+      +box-shadow(0 0 2px #aaa)
+      padding: 1em
+      font-weight: bold
+    .category, .location, .distance
+      display: block
+      font-size: $fz-s
+      color: darken($c-ctrl_board, 40%)
+    .category
+      +span(3)
+    .location
+      +span(9)
+      text-align: right
+    .distance
+      +span(12)
+      text-align: right
+      margin-top: 0.5em
+      color: darken($c-ctrl_board, 30%)
   .button-wraper
     padding: 0 2em 2em 2em
     .share-fb
