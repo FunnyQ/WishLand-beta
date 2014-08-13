@@ -99,266 +99,273 @@ button:focus
     +transition(color, 1s)
     z-index: +index($elements, change_category)
 
-  .wish-detail, .event-detail
-    display: none
-  .info-panel
-    @extend %h100p
-    position: relative
-    overflow: scroll
-    width: 400px
-    background-color: $c-ctrl_board
-    z-index: +index($elements, test)
-    float: right
-    +box-shadow(0 0 15px #000)
-    display: none
-    z-index: index($elements, info-panel)
-    h3
-      @extend %panelTitle
+
+// panel 類界面
+.wish-detail, .event-detail
+  display: none
+.info-panel
+  @extend %h100p
+  position: relative
+  overflow: scroll
+  width: 400px
+  background-color: $c-ctrl_board
+  z-index: +index($elements, test)
+  float: right
+  +box-shadow(0 0 15px #000)
+  display: none
+  z-index: index($elements, info-panel)
+  h3
+    @extend %panelTitle
+    margin: 0
+
+  .wish-owner, .event-owner
+    background-color: darken($c-ctrl_board, 10%)
+    padding: 0.5em
+    border-bottom: 2px solid darken($c-ctrl_board, 20%)
+    h4
+      color: darken($c-yellow, 50%)
+      font-size: $fz-m
       margin: 0
+      padding: 1em 0
+    .owner-avatar
+      display: inline-block
+      margin-left: 1em
+      height: 50px
+      width: 50px
+      @extend %circle
+      border: 5px solid #fff
+    .owner-name
+      color: darken($c-yellow, 50%)
+      margin-left: 75px
+      margin-top: -40px
+      padding-bottom: 1em
+    button
+      +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+      margin-top: -4px
+      float: right
 
-    .wish-owner, .event-owner
-      background-color: darken($c-ctrl_board, 10%)
-      padding: 0.5em
-      border-bottom: 2px solid darken($c-ctrl_board, 20%)
-      h4
-        color: darken($c-yellow, 50%)
-        font-size: $fz-m
-        margin: 0
-        padding: 1em 0
-      .owner-avatar
-        display: inline-block
-        margin-left: 1em
-        height: 50px
-        width: 50px
-        @extend %circle
-        border: 5px solid #fff
-      .owner-name
-        color: darken($c-yellow, 50%)
-        margin-left: 75px
-        margin-top: -40px
-        padding-bottom: 1em
-      button
-        +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
-        margin-top: -4px
-        float: right
-
-    .wish-title, .event-title
-      margin: 0.5em 0
+  .wish-title, .event-title
+    margin: 0.5em 0
+    @extend %w100p
+    padding: 1em
+    .inner
       @extend %w100p
-      padding: 1em
-      .inner
-        @extend %w100p
-        @extend %h100p
-        margin: 0
-        background-color: #FFF
-        +box-shadow(0 0 2px #aaa)
-        padding: 1.4em
-        font-weight: bold
-      .signature
-        margin: 0
-        text-align: right
-        font-size: $fz-xs
-        color: darken(#fff, 40%)
-
-    .other-info
-      @extend .wish-title
-      padding-top: 0
-      margin-bottom: 0
-      .detail
-        background-color: lighten($c-ctrl_board, 3%)
-        margin-bottom: 0.5em
-        padding: 0.5em 1em
-        &:hover
-          background-color: lighten($c-ctrl_board, 5%)
-          +box-shadow(0 0 3px darken($c-ctrl_board, 15%))
-      h4
-        font-size: $fz-m
-        color: darken($c-ctrl_board, 70%)
-      p
-        margin: 1em 0 0 37px
-        padding-bottom: 0.5em
-        color: darken($c-ctrl_board, 60%)
-        font-size: $fz-s
-        border-bottom: 1px solid darken($c-ctrl_board, 30%)
-
-    .option-buttons
-      font-weight: bold
-      @extend .wish-title
-      padding-top: 0
-      .observe
-        @extend %w100p
-        padding: 0 0.3em
-        button
-          @extend %w100p
-          +sassy-button("flat", 5px, $fz-m, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
-          margin-bottom: 0.6em
-      .share, .host, .comment, .join
-        +span(4)
-        padding: 0 0.3em
-        button
-          @extend %w100p
-          +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
-          margin-bottom: 1em
-
-
-
-
-
-
-  .make-wish
-    @extend %make-wish
-    z-index: +index($elements, make-wish)
-
-
-  .form-wraper
-    padding: 0 2em
-    margin-bottom: 2em
-  .button-wraper
-    padding: 2em 0
-    text-align: center
-    font-weight: bold
-  .form-cancel
-    +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
-  .form-submit
-    +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
-
-
-  .share-form
-    @extend %make-wish
-    z-index: +index($elements, share-form)
-    .button-wraper
-      padding: 0 2em 2em 2em
-      .share-fb
-        @extend %w100p
-        margin-bottom: 0.5em
-        +sassy-button("flat", 5px, $fz-s, $c-facebook, $btn-primary, #fff, "inset")
-      .share-twitter
-        @extend .share-fb
-        +sassy-button("flat", 5px, $fz-s, $c-twitter, $btn-primary, #fff, "inset")
-      .share-weibo
-        @extend .share-fb
-        +sassy-button("flat", 5px, $fz-s, $c-weibo, $btn-primary, #fff, "inset")
-      .share-email
-        @extend .share-fb
-        +sassy-button("flat", 5px, $fz-s, $c-email, $btn-primary, #fff, "inset")
-      .form-cancel
-        margin-top: 1.5em
-        font-size: $fz-s
-
-
-  .host-form
-    @extend %make-wish
-    z-index: +index($elements, host-form) !important
-    margin-top: 0
-    h3
-      margin-bottom: 1em
-    .original-wish
-      margin: 1em
-      padding: 1em
-      background-color: lighten($c-ctrl_board, 3%)
+      @extend %h100p
+      margin: 0
+      background-color: #FFF
       +box-shadow(0 0 2px #aaa)
-      .owner-avatar
-        float: left
-        width: 38px
-        height: 38px
-        +border-radius(50%)
-        background-color: #fff
-        padding: 3px
-      .owner-name
-        float: left
-        font-size: $fz-s
-        margin: 0.8em 0 0 0.5em
-        color: darken($c-yellow, 50%)
-      .wish-title
-        clear: left
-        font-weight: bold
-        margin-top: 0.5em
-        padding: 0 3em
-        color: lighten(#000, 30%)
-    .form-wraper
-      margin-bottom: 1em
-    .button-wraper
-      padding-top: 1em
-
-
-  .view-comments
-    @extend %make-wish
-    z-index: +index($elements, view-comments)
-    margin-top: 0
-    width: 480px
-    height: 680px
-    h3
+      padding: 1.4em
+      font-weight: bold
+    .signature
       margin: 0
-    .everyones-comments
-      height: 475px /* height of .view-comments - (.view-comments h3) - .comment-form */
-      overflow-y: scroll
-      overflow-x: hidden
-      .timeline
-        border-left: 5px solid darken($c-ctrl_board, 30%)
-        margin: 50px 0 50px 58px
-        +clearfix
-      .comment-unit
-        width: 450px
+      text-align: right
+      font-size: $fz-xs
+      color: darken(#fff, 40%)
+
+  .other-info
+    @extend .wish-title
+    padding-top: 0
+    margin-bottom: 0
+    .detail
+      background-color: lighten($c-ctrl_board, 3%)
+      margin-bottom: 0.5em
+      padding: 0.5em 1em
+      &:hover
+        background-color: lighten($c-ctrl_board, 5%)
+        +box-shadow(0 0 3px darken($c-ctrl_board, 15%))
+    h4
+      font-size: $fz-m
+      color: darken($c-ctrl_board, 70%)
+    p
+      margin: 1em 0 0 37px
+      padding-bottom: 0.5em
+      color: darken($c-ctrl_board, 60%)
+      font-size: $fz-s
+      border-bottom: 1px solid darken($c-ctrl_board, 30%)
+
+  .option-buttons
+    font-weight: bold
+    @extend .wish-title
+    padding-top: 0
+    .observe
+      @extend %w100p
+      padding: 0 0.3em
+      button
+        @extend %w100p
+        +sassy-button("flat", 5px, $fz-m, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+        margin-bottom: 0.6em
+    .share, .host, .comment, .join
+      +span(4)
+      padding: 0 0.3em
+      button
+        @extend %w100p
+        +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
         margin-bottom: 1em
-        margin-left: -54px
-        font-size: $fz-s
-        &:last-child
-          margin-bottom: 0
-          background-color: $c-ctrl_board
 
-        +clearfix
-        .comment-time
-          +span(3)
-          text-align: center
-          margin-left: -5px
-          .commenter-avatar
-            display: block
-            @extend %m0auto
-            height: 50px
-            width: 50px
-            background-color: #FFF
-            padding: 5px
-            margin-bottom: 0.5em
-            +border-radius(50%)
-          .time
-            background-color: darken($c-ctrl_board, 50%)
-            +border-radius(50px)
-            padding: 0 1em
-            font-size: $fz-xs
-            color: #fff
-        .comment-info
-          +span(9)
-          margin-left: -10px
-          .commenter-name
-            +span(12)
-            margin-top: 16px
-          .comment-content
-            +span(12)
-            padding: 1em
-            margin-top: 11px
-            p
-              background-color: #FFF
-              padding: 0.5em
-              margin: 0
-              +border-radius(10px)
 
-    .comment-divider
+
+
+// window 類界面
+.windows
+  @extend %w100p
+  @extend %h100p
+  position: absolute
+  top: 0
+
+.make-wish
+  @extend %make-wish
+  z-index: +index($elements, make-wish)
+
+
+.form-wraper
+  padding: 0 2em
+  margin-bottom: 2em
+.button-wraper
+  padding: 2em 0
+  text-align: center
+  font-weight: bold
+.form-cancel
+  +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
+.form-submit
+  +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
+
+
+.share-form
+  @extend %make-wish
+  z-index: +index($elements, share-form)
+  .button-wraper
+    padding: 0 2em 2em 2em
+    .share-fb
       @extend %w100p
-      height: 17px
-      background: url(../img/comment-divider.png) 0 0 no-repeat
-      margin-top: -17px
-    .comment-form
-      +border-bottom-radius(10px)
-      background-color: $c-ctrl_board
-      position: absolute
-      bottom: 0
-      @extend %w100p
-      height: 10em
-      .comment, .buttons
-        padding: 1em
-      .buttons
-        padding-top: 0
+      margin-bottom: 0.5em
+      +sassy-button("flat", 5px, $fz-s, $c-facebook, $btn-primary, #fff, "inset")
+    .share-twitter
+      @extend .share-fb
+      +sassy-button("flat", 5px, $fz-s, $c-twitter, $btn-primary, #fff, "inset")
+    .share-weibo
+      @extend .share-fb
+      +sassy-button("flat", 5px, $fz-s, $c-weibo, $btn-primary, #fff, "inset")
+    .share-email
+      @extend .share-fb
+      +sassy-button("flat", 5px, $fz-s, $c-email, $btn-primary, #fff, "inset")
+    .form-cancel
+      margin-top: 1.5em
+      font-size: $fz-s
+
+
+.host-form
+  @extend %make-wish
+  z-index: +index($elements, host-form) !important
+  margin-top: 0
+  h3
+    margin-bottom: 1em
+  .original-wish
+    margin: 1em
+    padding: 1em
+    background-color: lighten($c-ctrl_board, 3%)
+    +box-shadow(0 0 2px #aaa)
+    .owner-avatar
+      float: left
+      width: 38px
+      height: 38px
+      +border-radius(50%)
+      background-color: #fff
+      padding: 3px
+    .owner-name
+      float: left
+      font-size: $fz-s
+      margin: 0.8em 0 0 0.5em
+      color: darken($c-yellow, 50%)
+    .wish-title
+      clear: left
+      font-weight: bold
+      margin-top: 0.5em
+      padding: 0 3em
+      color: lighten(#000, 30%)
+  .form-wraper
+    margin-bottom: 1em
+  .button-wraper
+    padding-top: 1em
+
+
+.view-comments
+  @extend %make-wish
+  z-index: +index($elements, view-comments)
+  margin-top: 0
+  width: 480px
+  height: 680px
+  h3
+    margin: 0
+  .everyones-comments
+    height: 475px /* height of .view-comments - (.view-comments h3) - .comment-form */
+    overflow-y: scroll
+    overflow-x: hidden
+    .timeline
+      border-left: 5px solid darken($c-ctrl_board, 30%)
+      margin: 50px 0 50px 58px
+      +clearfix
+    .comment-unit
+      width: 450px
+      margin-bottom: 1em
+      margin-left: -54px
+      font-size: $fz-s
+      &:last-child
+        margin-bottom: 0
+        background-color: $c-ctrl_board
+
+      +clearfix
+      .comment-time
+        +span(3)
         text-align: center
+        margin-left: -5px
+        .commenter-avatar
+          display: block
+          @extend %m0auto
+          height: 50px
+          width: 50px
+          background-color: #FFF
+          padding: 5px
+          margin-bottom: 0.5em
+          +border-radius(50%)
+        .time
+          background-color: darken($c-ctrl_board, 50%)
+          +border-radius(50px)
+          padding: 0 1em
+          font-size: $fz-xs
+          color: #fff
+      .comment-info
+        +span(9)
+        margin-left: -10px
+        .commenter-name
+          +span(12)
+          margin-top: 16px
+        .comment-content
+          +span(12)
+          padding: 1em
+          margin-top: 11px
+          p
+            background-color: #FFF
+            padding: 0.5em
+            margin: 0
+            +border-radius(10px)
+
+  .comment-divider
+    @extend %w100p
+    height: 17px
+    background: url(../img/comment-divider.png) 0 0 no-repeat
+    margin-top: -17px
+  .comment-form
+    +border-bottom-radius(10px)
+    background-color: $c-ctrl_board
+    position: absolute
+    bottom: 0
+    @extend %w100p
+    height: 10em
+    .comment, .buttons
+      padding: 1em
+    .buttons
+      padding-top: 0
+      text-align: center
 
 
 ///////////////////////////////

@@ -19,6 +19,9 @@ siteOverlayLv2 = $('.overlay-lv2')
 mainUI = $('.mainUI')
 mapCanvas = $('#map')
 
+#視窗界面
+windows = $('.windows')
+
 # landing
 landingPage = $('.landing')
 ################################################################################
@@ -28,16 +31,16 @@ ctrlBoard = $('.ctrl_board')
 ################################################################################
 
 # make-wish 表單
-makeWishForm = mainUI.find('.make-wish')
+makeWishForm = windows.find('.make-wish')
 
 # 分享視窗 表單
-shareForm = mainUI.find('.share-form')
+shareForm = windows.find('.share-form')
 
 # 建立活動 表單
-hostForm = mainUI.find('.host-form')
+hostForm = windows.find('.host-form')
 
 # 留言查看與輸入表單
-commentForm = mainUI.find('.view-comments')
+commentForm = windows.find('.view-comments')
 ################################################################################
 
 # infoPanel 活動或願望的詳細內容顯示區
