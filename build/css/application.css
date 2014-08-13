@@ -5367,16 +5367,16 @@ Copyright (c) 2014 Daniel Eden
   padding-left: 0.83333%;
   padding-right: 0.83333%; }
 
-body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .info-panel, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .show-main .content .inner {
+body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .info-panel, .info-panel .wish-title .inner, .info-panel .other-info .inner, .info-panel .option-buttons .inner, .info-panel .event-title .inner, .windows, .share-form .content .inner, .show-main .content .inner {
   height: 100%; }
 
-.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title, .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner, .mainUI .info-panel .option-buttons .observe, .mainUI .info-panel .option-buttons .observe button, .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button, .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email, .mainUI .view-comments .comment-divider, .mainUI .view-comments .comment-form, .ctrl_board, .dash-nav, .show-main .content, .show-main .content .inner {
+.mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .info-panel .wish-title, .info-panel .other-info, .info-panel .option-buttons, .info-panel .event-title, .info-panel .wish-title .inner, .info-panel .other-info .inner, .info-panel .option-buttons .inner, .info-panel .event-title .inner, .info-panel .option-buttons .observe, .info-panel .option-buttons .observe button, .info-panel .option-buttons .share button, .info-panel .option-buttons .host button, .info-panel .option-buttons .comment button, .info-panel .option-buttons .join button, .windows, .share-form .content, .share-form .content .inner, .share-form .button-wraper .share-fb, .share-form .button-wraper .share-twitter, .share-form .button-wraper .share-weibo, .share-form .button-wraper .share-email, .view-comments .comment-divider, .view-comments .comment-form, .ctrl_board, .dash-nav, .show-main .content, .show-main .content .inner {
   width: 100%; }
 
-.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form, .mainUI .view-comments, .mainUI .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar, .dash-wraper, .show-main .show-wraper, .show-main .comments .left .avatar, .show-main .comments .right .say {
+.make-wish, .share-form, .host-form, .view-comments, .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar, .dash-wraper, .show-main .show-wraper, .show-main .comments .left .avatar, .show-main .comments .right .say {
   margin: 0 auto; }
 
-.mainUI .make-wish h3, .mainUI .share-form h3, .mainUI .host-form h3, .mainUI .view-comments h3, .mainUI .info-panel h3, .dash-main .info-panel h3, .show-main h3 {
+.make-wish h3, .share-form h3, .host-form h3, .view-comments h3, .info-panel h3, .dash-main .main-panel h3, .show-main h3 {
   text-align: center;
   font-size: 1.25em;
   padding: 0.5em;
@@ -5386,7 +5386,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
   margin-bottom: 2em;
   text-shadow: 0 -1px 0 #c72307; }
 
-.mainUI .make-wish, .mainUI .share-form, .mainUI .host-form, .mainUI .view-comments {
+.make-wish, .share-form, .host-form, .view-comments {
   position: relative;
   margin-top: 80px;
   width: 400px;
@@ -5397,7 +5397,7 @@ body, html, .main_content, .landing, .mainUI .overlay, .mainUI .overlay-lv2, .ma
   -webkit-box-shadow: 0 0 15px black;
   box-shadow: 0 0 15px black;
   display: none; }
-  .mainUI .make-wish h4, .mainUI .share-form h4, .mainUI .host-form h4, .mainUI .view-comments h4 {
+  .make-wish h4, .share-form h4, .host-form h4, .view-comments h4 {
     font-size: 1em; }
 
 textarea {
@@ -5444,13 +5444,13 @@ button:focus {
       margin: 1em 0 0 0;
       color: #feece8; }
   .landing .login-button {
-    font-size: 1em;
+    font-size: 1.25em;
     padding: 0.5em 1.5em;
     display: inline-block;
     cursor: pointer;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
     *zoom: 1;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3F5C9A', endColorstr='#FF213152');
     background-color: #3f5c9a;
@@ -5483,7 +5483,7 @@ button:focus {
   .mainUI .overlay, .mainUI .overlay-lv2 {
     position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 3;
     display: none; }
   .mainUI .overlay-lv2 {
@@ -5500,49 +5500,123 @@ button:focus {
     left: calc(50% - 50px);
     width: 100px;
     height: 100px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    background-color: rgba(244, 78, 78, 0.9);
     -webkit-transition: color, 1s;
     -o-transition: color, 1s;
     transition: color, 1s;
     z-index: 4; }
-  .mainUI .wish-detail, .mainUI .event-detail {
-    display: none; }
-  .mainUI .info-panel {
-    position: relative;
-    overflow: scroll;
-    width: 400px;
-    background-color: #f2ede9;
-    z-index: +false;
-    float: right;
-    -webkit-box-shadow: 0 0 15px black;
-    box-shadow: 0 0 15px black;
-    display: none;
-    z-index: 5; }
-    .mainUI .info-panel h3 {
-      margin: 0; }
-    .mainUI .info-panel .wish-owner, .mainUI .info-panel .event-owner {
-      background-color: #dfd3c9;
-      padding: 0.5em;
-      border-bottom: 2px solid #ccb9a9; }
-      .mainUI .info-panel .wish-owner h4, .mainUI .info-panel .event-owner h4 {
-        color: #6a3f01;
+
+.wish-detail, .event-detail {
+  display: none; }
+
+.info-panel {
+  position: relative;
+  overflow: scroll;
+  width: 400px;
+  background-color: #f2ede9;
+  z-index: +false;
+  float: right;
+  -webkit-box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px black;
+  display: none;
+  z-index: 5; }
+  .info-panel h3 {
+    margin: 0; }
+  .info-panel .wish-owner, .info-panel .event-owner {
+    background-color: #dfd3c9;
+    padding: 0.5em;
+    border-bottom: 2px solid #ccb9a9; }
+    .info-panel .wish-owner h4, .info-panel .event-owner h4 {
+      color: #6a3f01;
+      font-size: 1em;
+      margin: 0;
+      padding: 1em 0; }
+    .info-panel .wish-owner .owner-avatar, .info-panel .event-owner .owner-avatar {
+      display: inline-block;
+      margin-left: 1em;
+      height: 50px;
+      width: 50px;
+      border: 5px solid white; }
+    .info-panel .wish-owner .owner-name, .info-panel .event-owner .owner-name {
+      color: #6a3f01;
+      margin-left: 75px;
+      margin-top: -40px;
+      padding-bottom: 1em; }
+    .info-panel .wish-owner button, .info-panel .event-owner button {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFD9807', endColorstr='#FF9D5D01');
+      background-color: #fd9807;
+      border: 0;
+      color: white;
+      text-shadow: #844e01 0 -1px 0;
+      margin-top: -4px;
+      float: right; }
+      .info-panel .wish-owner button:hover, .info-panel .event-owner button:hover {
+        text-decoration: none; }
+      .info-panel .wish-owner button:hover, .info-panel .event-owner button:hover {
+        background-color: #e98a02; }
+      .info-panel .wish-owner button:active, .info-panel .event-owner button:active {
+        background-color: #da8101; }
+      .info-panel .wish-owner button.disabled, .info-panel .wish-owner button[disabled], .info-panel .event-owner button.disabled, .info-panel .event-owner button[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .info-panel .wish-owner button::-moz-focus-inner, .info-panel .event-owner button::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+  .info-panel .wish-title, .info-panel .other-info, .info-panel .option-buttons, .info-panel .event-title {
+    margin: 0.5em 0;
+    padding: 1em; }
+    .info-panel .wish-title .inner, .info-panel .other-info .inner, .info-panel .option-buttons .inner, .info-panel .event-title .inner {
+      margin: 0;
+      background-color: white;
+      -webkit-box-shadow: 0 0 2px #aaaaaa;
+      box-shadow: 0 0 2px #aaaaaa;
+      padding: 1.4em;
+      font-weight: bold; }
+    .info-panel .wish-title .signature, .info-panel .other-info .signature, .info-panel .option-buttons .signature, .info-panel .event-title .signature {
+      margin: 0;
+      text-align: right;
+      font-size: 0.75em;
+      color: #999999; }
+  .info-panel .other-info {
+    padding-top: 0;
+    margin-bottom: 0; }
+    .info-panel .other-info .detail {
+      background-color: #f8f5f3;
+      margin-bottom: 0.5em;
+      padding: 0.5em 1em; }
+      .info-panel .other-info .detail:hover {
+        background-color: #fbfaf9;
+        -webkit-box-shadow: 0 0 3px #d6c6b9;
+        box-shadow: 0 0 3px #d6c6b9; }
+    .info-panel .other-info h4 {
+      font-size: 1em;
+      color: #4a392c; }
+    .info-panel .other-info p {
+      margin: 1em 0 0 37px;
+      padding-bottom: 0.5em;
+      color: #6a523f;
+      font-size: 0.8125em;
+      border-bottom: 1px solid #b99e89; }
+  .info-panel .option-buttons {
+    font-weight: bold;
+    padding-top: 0; }
+    .info-panel .option-buttons .observe {
+      padding: 0 0.3em; }
+      .info-panel .option-buttons .observe button {
         font-size: 1em;
-        margin: 0;
-        padding: 1em 0; }
-      .mainUI .info-panel .wish-owner .owner-avatar, .mainUI .info-panel .event-owner .owner-avatar {
-        display: inline-block;
-        margin-left: 1em;
-        height: 50px;
-        width: 50px;
-        border: 5px solid white; }
-      .mainUI .info-panel .wish-owner .owner-name, .mainUI .info-panel .event-owner .owner-name {
-        color: #6a3f01;
-        margin-left: 75px;
-        margin-top: -40px;
-        padding-bottom: 1em; }
-      .mainUI .info-panel .wish-owner button, .mainUI .info-panel .event-owner button {
-        font-size: 0.8125em;
         padding: 0.5em 1.5em;
         display: inline-block;
         cursor: pointer;
@@ -5555,463 +5629,446 @@ button:focus {
         border: 0;
         color: white;
         text-shadow: #844e01 0 -1px 0;
-        margin-top: -4px;
-        float: right; }
-        .mainUI .info-panel .wish-owner button:hover, .mainUI .info-panel .event-owner button:hover {
+        margin-bottom: 0.6em; }
+        .info-panel .option-buttons .observe button:hover {
           text-decoration: none; }
-        .mainUI .info-panel .wish-owner button:hover, .mainUI .info-panel .event-owner button:hover {
+        .info-panel .option-buttons .observe button:hover {
           background-color: #e98a02; }
-        .mainUI .info-panel .wish-owner button:active, .mainUI .info-panel .event-owner button:active {
+        .info-panel .option-buttons .observe button:active {
           background-color: #da8101; }
-        .mainUI .info-panel .wish-owner button.disabled, .mainUI .info-panel .wish-owner button[disabled], .mainUI .info-panel .event-owner button.disabled, .mainUI .info-panel .event-owner button[disabled] {
+        .info-panel .option-buttons .observe button.disabled, .info-panel .option-buttons .observe button[disabled] {
           opacity: 0.6;
           filter: alpha(opacity=60);
           background: false;
           cursor: default;
           -webkit-box-shadow: none;
           box-shadow: none; }
-        .mainUI .info-panel .wish-owner button::-moz-focus-inner, .mainUI .info-panel .event-owner button::-moz-focus-inner {
+        .info-panel .option-buttons .observe button::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
-    .mainUI .info-panel .wish-title, .mainUI .info-panel .other-info, .mainUI .info-panel .option-buttons, .mainUI .info-panel .event-title {
-      margin: 0.5em 0;
-      padding: 1em; }
-      .mainUI .info-panel .wish-title .inner, .mainUI .info-panel .other-info .inner, .mainUI .info-panel .option-buttons .inner, .mainUI .info-panel .event-title .inner {
-        margin: 0;
-        background-color: white;
-        -webkit-box-shadow: 0 0 2px #aaaaaa;
-        box-shadow: 0 0 2px #aaaaaa;
-        padding: 1.4em;
-        font-weight: bold; }
-      .mainUI .info-panel .wish-title .signature, .mainUI .info-panel .other-info .signature, .mainUI .info-panel .option-buttons .signature, .mainUI .info-panel .event-title .signature {
-        margin: 0;
-        text-align: right;
-        font-size: 0.75em;
-        color: #999999; }
-    .mainUI .info-panel .other-info {
-      padding-top: 0;
-      margin-bottom: 0; }
-      .mainUI .info-panel .other-info .detail {
-        background-color: #f8f5f3;
-        margin-bottom: 0.5em;
-        padding: 0.5em 1em; }
-        .mainUI .info-panel .other-info .detail:hover {
-          background-color: #fbfaf9;
-          -webkit-box-shadow: 0 0 3px #d6c6b9;
-          box-shadow: 0 0 3px #d6c6b9; }
-      .mainUI .info-panel .other-info h4 {
+    .info-panel .option-buttons .share, .info-panel .option-buttons .host, .info-panel .option-buttons .comment, .info-panel .option-buttons .join {
+      width: 33.33333%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      padding: 0 0.3em; }
+      .info-panel .option-buttons .share button, .info-panel .option-buttons .host button, .info-panel .option-buttons .comment button, .info-panel .option-buttons .join button {
         font-size: 1em;
-        color: #4a392c; }
-      .mainUI .info-panel .other-info p {
-        margin: 1em 0 0 37px;
-        padding-bottom: 0.5em;
-        color: #6a523f;
-        font-size: 0.8125em;
-        border-bottom: 1px solid #b99e89; }
-    .mainUI .info-panel .option-buttons {
+        padding: 0.5em 1.5em;
+        display: inline-block;
+        cursor: pointer;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        *zoom: 1;
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7DB500', endColorstr='#FF374F00');
+        background-color: #7db500;
+        border: 0;
+        color: white;
+        text-shadow: #253600 0 -1px 0;
+        margin-bottom: 1em; }
+        .info-panel .option-buttons .share button:hover, .info-panel .option-buttons .host button:hover, .info-panel .option-buttons .comment button:hover, .info-panel .option-buttons .join button:hover {
+          text-decoration: none; }
+        .info-panel .option-buttons .share button:hover, .info-panel .option-buttons .host button:hover, .info-panel .option-buttons .comment button:hover, .info-panel .option-buttons .join button:hover {
+          background-color: #6b9c00; }
+        .info-panel .option-buttons .share button:active, .info-panel .option-buttons .host button:active, .info-panel .option-buttons .comment button:active, .info-panel .option-buttons .join button:active {
+          background-color: #618c00; }
+        .info-panel .option-buttons .share button.disabled, .info-panel .option-buttons .share button[disabled], .info-panel .option-buttons .host button.disabled, .info-panel .option-buttons .host button[disabled], .info-panel .option-buttons .comment button.disabled, .info-panel .option-buttons .comment button[disabled], .info-panel .option-buttons .join button.disabled, .info-panel .option-buttons .join button[disabled] {
+          opacity: 0.6;
+          filter: alpha(opacity=60);
+          background: false;
+          cursor: default;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+        .info-panel .option-buttons .share button::-moz-focus-inner, .info-panel .option-buttons .host button::-moz-focus-inner, .info-panel .option-buttons .comment button::-moz-focus-inner, .info-panel .option-buttons .join button::-moz-focus-inner {
+          padding: 0 !important;
+          margin: -1px !important; }
+
+.windows {
+  position: absolute;
+  top: 0; }
+
+.make-wish {
+  z-index: 11; }
+
+.form-wraper {
+  padding: 0 2em;
+  margin-bottom: 2em; }
+
+.button-wraper {
+  padding: 2em 0;
+  text-align: center;
+  font-weight: bold; }
+
+.form-cancel {
+  font-size: 1em;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB99E89', endColorstr='#FF8A6B52');
+  background-color: #b99e89;
+  border: 0;
+  color: white;
+  text-shadow: #7a5e48 0 -1px 0; }
+  .form-cancel:hover {
+    text-decoration: none; }
+  .form-cancel:hover {
+    background-color: #b09179; }
+  .form-cancel:active {
+    background-color: #aa896f; }
+  .form-cancel.disabled, .form-cancel[disabled] {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    background: false;
+    cursor: default;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .form-cancel::-moz-focus-inner {
+    padding: 0 !important;
+    margin: -1px !important; }
+
+.form-submit {
+  font-size: 1em;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7DB500', endColorstr='#FF374F00');
+  background-color: #7db500;
+  border: 0;
+  color: white;
+  text-shadow: #253600 0 -1px 0; }
+  .form-submit:hover {
+    text-decoration: none; }
+  .form-submit:hover {
+    background-color: #6b9c00; }
+  .form-submit:active {
+    background-color: #618c00; }
+  .form-submit.disabled, .form-submit[disabled] {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    background: false;
+    cursor: default;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .form-submit::-moz-focus-inner {
+    padding: 0 !important;
+    margin: -1px !important; }
+
+.share-form {
+  z-index: 10; }
+  .share-form .content {
+    margin: 0.5em 0; }
+    .share-form .content .date {
+      display: block;
+      font-size: 0.8125em;
+      color: #8a6b52;
+      margin-bottom: 1em; }
+    .share-form .content .inner {
+      margin: 0;
+      color: #6a523f;
+      background-color: white;
+      -webkit-box-shadow: 0 0 2px #aaaaaa;
+      box-shadow: 0 0 2px #aaaaaa;
+      padding: 1em;
+      font-weight: bold; }
+      .share-form .content .inner:before, .share-form .content .inner:after {
+        content: " ";
+        display: table; }
+      .share-form .content .inner:after {
+        clear: both; }
+    .share-form .content .category, .share-form .content .location, .share-form .content .distance {
+      display: block;
+      font-size: 0.8125em;
+      color: #a68469; }
+    .share-form .content .category {
+      width: 25%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%; }
+    .share-form .content .location {
+      width: 75%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      text-align: right; }
+    .share-form .content .distance {
+      width: 100%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      text-align: right;
+      margin-top: 0.5em;
+      color: #b99e89; }
+  .share-form .button-wraper {
+    padding: 0 2em 2em 2em; }
+    .share-form .button-wraper .share-fb, .share-form .button-wraper .share-twitter, .share-form .button-wraper .share-weibo, .share-form .button-wraper .share-email {
+      margin-bottom: 0.5em;
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3F5C9A', endColorstr='#FF213152');
+      background-color: #3f5c9a;
+      border: 0;
+      color: white;
+      text-shadow: #1a2640 0 -1px 0; }
+      .share-form .button-wraper .share-fb:hover, .share-form .button-wraper .share-twitter:hover, .share-form .button-wraper .share-weibo:hover, .share-form .button-wraper .share-email:hover {
+        text-decoration: none; }
+      .share-form .button-wraper .share-fb:hover, .share-form .button-wraper .share-twitter:hover, .share-form .button-wraper .share-weibo:hover, .share-form .button-wraper .share-email:hover {
+        background-color: #385188; }
+      .share-form .button-wraper .share-fb:active, .share-form .button-wraper .share-twitter:active, .share-form .button-wraper .share-weibo:active, .share-form .button-wraper .share-email:active {
+        background-color: #334b7d; }
+      .share-form .button-wraper .share-fb.disabled, .share-form .button-wraper .disabled.share-twitter, .share-form .button-wraper .disabled.share-weibo, .share-form .button-wraper .disabled.share-email, .share-form .button-wraper .share-fb[disabled], .share-form .button-wraper [disabled].share-twitter, .share-form .button-wraper [disabled].share-weibo, .share-form .button-wraper [disabled].share-email {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .share-form .button-wraper .share-fb::-moz-focus-inner, .share-form .button-wraper .share-twitter::-moz-focus-inner, .share-form .button-wraper .share-weibo::-moz-focus-inner, .share-form .button-wraper .share-email::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .share-form .button-wraper .share-twitter {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00ABF0', endColorstr='#FF00628A');
+      background-color: #00abf0;
+      border: 0;
+      color: white;
+      text-shadow: #005070 0 -1px 0; }
+      .share-form .button-wraper .share-twitter:hover {
+        text-decoration: none; }
+      .share-form .button-wraper .share-twitter:hover {
+        background-color: #0099d6; }
+      .share-form .button-wraper .share-twitter:active {
+        background-color: #008ec7; }
+      .share-form .button-wraper .share-twitter.disabled, .share-form .button-wraper .share-twitter[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .share-form .button-wraper .share-twitter::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .share-form .button-wraper .share-weibo {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF94553', endColorstr='#FFD10716');
+      background-color: #f94553;
+      border: 0;
+      color: white;
+      text-shadow: #b90614 0 -1px 0; }
+      .share-form .button-wraper .share-weibo:hover {
+        text-decoration: none; }
+      .share-form .button-wraper .share-weibo:hover {
+        background-color: #f82c3c; }
+      .share-form .button-wraper .share-weibo:active {
+        background-color: #f81d2e; }
+      .share-form .button-wraper .share-weibo.disabled, .share-form .button-wraper .share-weibo[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .share-form .button-wraper .share-weibo::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .share-form .button-wraper .share-email {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF40CC6C', endColorstr='#FF238341');
+      background-color: #40cc6c;
+      border: 0;
+      color: white;
+      text-shadow: #1e6f37 0 -1px 0; }
+      .share-form .button-wraper .share-email:hover {
+        text-decoration: none; }
+      .share-form .button-wraper .share-email:hover {
+        background-color: #33bf5f; }
+      .share-form .button-wraper .share-email:active {
+        background-color: #30b359; }
+      .share-form .button-wraper .share-email.disabled, .share-form .button-wraper .share-email[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .share-form .button-wraper .share-email::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .share-form .button-wraper .form-cancel {
+      margin-top: 1.5em;
+      font-size: 0.8125em; }
+
+.host-form {
+  z-index: 8 !important;
+  margin-top: 0; }
+  .host-form h3 {
+    margin-bottom: 1em; }
+  .host-form .original-wish {
+    margin: 1em;
+    padding: 1em;
+    background-color: #f8f5f3;
+    -webkit-box-shadow: 0 0 2px #aaaaaa;
+    box-shadow: 0 0 2px #aaaaaa; }
+    .host-form .original-wish .owner-avatar {
+      float: left;
+      width: 38px;
+      height: 38px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-color: white;
+      padding: 3px; }
+    .host-form .original-wish .owner-name {
+      float: left;
+      font-size: 0.8125em;
+      margin: 0.8em 0 0 0.5em;
+      color: #6a3f01; }
+    .host-form .original-wish .wish-title, .host-form .original-wish .info-panel .other-info, .info-panel .host-form .original-wish .other-info, .host-form .original-wish .info-panel .option-buttons, .info-panel .host-form .original-wish .option-buttons {
+      clear: left;
       font-weight: bold;
-      padding-top: 0; }
-      .mainUI .info-panel .option-buttons .observe {
-        padding: 0 0.3em; }
-        .mainUI .info-panel .option-buttons .observe button {
-          font-size: 1em;
-          padding: 0.5em 1.5em;
-          display: inline-block;
-          cursor: pointer;
-          -moz-border-radius: 5px;
-          -webkit-border-radius: 5px;
-          border-radius: 5px;
-          *zoom: 1;
-          filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFD9807', endColorstr='#FF9D5D01');
-          background-color: #fd9807;
-          border: 0;
-          color: white;
-          text-shadow: #844e01 0 -1px 0;
-          margin-bottom: 0.6em; }
-          .mainUI .info-panel .option-buttons .observe button:hover {
-            text-decoration: none; }
-          .mainUI .info-panel .option-buttons .observe button:hover {
-            background-color: #e98a02; }
-          .mainUI .info-panel .option-buttons .observe button:active {
-            background-color: #da8101; }
-          .mainUI .info-panel .option-buttons .observe button.disabled, .mainUI .info-panel .option-buttons .observe button[disabled] {
-            opacity: 0.6;
-            filter: alpha(opacity=60);
-            background: false;
-            cursor: default;
-            -webkit-box-shadow: none;
-            box-shadow: none; }
-          .mainUI .info-panel .option-buttons .observe button::-moz-focus-inner {
-            padding: 0 !important;
-            margin: -1px !important; }
-      .mainUI .info-panel .option-buttons .share, .mainUI .info-panel .option-buttons .host, .mainUI .info-panel .option-buttons .comment, .mainUI .info-panel .option-buttons .join {
-        width: 33.33333%;
+      margin-top: 0.5em;
+      padding: 0 3em;
+      color: #4d4d4d; }
+  .host-form .form-wraper {
+    margin-bottom: 1em; }
+  .host-form .button-wraper {
+    padding-top: 1em; }
+
+.view-comments {
+  z-index: 9;
+  margin-top: 0;
+  width: 480px;
+  height: 680px; }
+  .view-comments h3 {
+    margin: 0; }
+  .view-comments .everyones-comments {
+    height: 475px;
+    overflow-y: scroll;
+    overflow-x: hidden; }
+    .view-comments .everyones-comments .timeline {
+      border-left: 5px solid #b99e89;
+      margin: 50px 0 50px 58px; }
+      .view-comments .everyones-comments .timeline:before, .view-comments .everyones-comments .timeline:after {
+        content: " ";
+        display: table; }
+      .view-comments .everyones-comments .timeline:after {
+        clear: both; }
+    .view-comments .everyones-comments .comment-unit {
+      width: 450px;
+      margin-bottom: 1em;
+      margin-left: -54px;
+      font-size: 0.8125em; }
+      .view-comments .everyones-comments .comment-unit:last-child {
+        margin-bottom: 0;
+        background-color: #f2ede9; }
+      .view-comments .everyones-comments .comment-unit:before, .view-comments .everyones-comments .comment-unit:after {
+        content: " ";
+        display: table; }
+      .view-comments .everyones-comments .comment-unit:after {
+        clear: both; }
+      .view-comments .everyones-comments .comment-unit .comment-time {
+        width: 25%;
         float: left;
         padding-left: 0.83333%;
         padding-right: 0.83333%;
-        padding: 0 0.3em; }
-        .mainUI .info-panel .option-buttons .share button, .mainUI .info-panel .option-buttons .host button, .mainUI .info-panel .option-buttons .comment button, .mainUI .info-panel .option-buttons .join button {
-          font-size: 1em;
-          padding: 0.5em 1.5em;
-          display: inline-block;
-          cursor: pointer;
-          -moz-border-radius: 5px;
-          -webkit-border-radius: 5px;
-          border-radius: 5px;
-          *zoom: 1;
-          filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7DB500', endColorstr='#FF374F00');
-          background-color: #7db500;
-          border: 0;
-          color: white;
-          text-shadow: #253600 0 -1px 0;
-          margin-bottom: 1em; }
-          .mainUI .info-panel .option-buttons .share button:hover, .mainUI .info-panel .option-buttons .host button:hover, .mainUI .info-panel .option-buttons .comment button:hover, .mainUI .info-panel .option-buttons .join button:hover {
-            text-decoration: none; }
-          .mainUI .info-panel .option-buttons .share button:hover, .mainUI .info-panel .option-buttons .host button:hover, .mainUI .info-panel .option-buttons .comment button:hover, .mainUI .info-panel .option-buttons .join button:hover {
-            background-color: #6b9c00; }
-          .mainUI .info-panel .option-buttons .share button:active, .mainUI .info-panel .option-buttons .host button:active, .mainUI .info-panel .option-buttons .comment button:active, .mainUI .info-panel .option-buttons .join button:active {
-            background-color: #618c00; }
-          .mainUI .info-panel .option-buttons .share button.disabled, .mainUI .info-panel .option-buttons .share button[disabled], .mainUI .info-panel .option-buttons .host button.disabled, .mainUI .info-panel .option-buttons .host button[disabled], .mainUI .info-panel .option-buttons .comment button.disabled, .mainUI .info-panel .option-buttons .comment button[disabled], .mainUI .info-panel .option-buttons .join button.disabled, .mainUI .info-panel .option-buttons .join button[disabled] {
-            opacity: 0.6;
-            filter: alpha(opacity=60);
-            background: false;
-            cursor: default;
-            -webkit-box-shadow: none;
-            box-shadow: none; }
-          .mainUI .info-panel .option-buttons .share button::-moz-focus-inner, .mainUI .info-panel .option-buttons .host button::-moz-focus-inner, .mainUI .info-panel .option-buttons .comment button::-moz-focus-inner, .mainUI .info-panel .option-buttons .join button::-moz-focus-inner {
-            padding: 0 !important;
-            margin: -1px !important; }
-  .mainUI .make-wish {
-    z-index: 11; }
-  .mainUI .form-wraper {
-    padding: 0 2em;
-    margin-bottom: 2em; }
-  .mainUI .button-wraper {
-    padding: 2em 0;
-    text-align: center;
-    font-weight: bold; }
-  .mainUI .form-cancel {
-    font-size: 1em;
-    padding: 0.5em 1.5em;
-    display: inline-block;
-    cursor: pointer;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    *zoom: 1;
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB99E89', endColorstr='#FF8A6B52');
-    background-color: #b99e89;
-    border: 0;
-    color: white;
-    text-shadow: #7a5e48 0 -1px 0; }
-    .mainUI .form-cancel:hover {
-      text-decoration: none; }
-    .mainUI .form-cancel:hover {
-      background-color: #b09179; }
-    .mainUI .form-cancel:active {
-      background-color: #aa896f; }
-    .mainUI .form-cancel.disabled, .mainUI .form-cancel[disabled] {
-      opacity: 0.6;
-      filter: alpha(opacity=60);
-      background: false;
-      cursor: default;
-      -webkit-box-shadow: none;
-      box-shadow: none; }
-    .mainUI .form-cancel::-moz-focus-inner {
-      padding: 0 !important;
-      margin: -1px !important; }
-  .mainUI .form-submit {
-    font-size: 1em;
-    padding: 0.5em 1.5em;
-    display: inline-block;
-    cursor: pointer;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    *zoom: 1;
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7DB500', endColorstr='#FF374F00');
-    background-color: #7db500;
-    border: 0;
-    color: white;
-    text-shadow: #253600 0 -1px 0; }
-    .mainUI .form-submit:hover {
-      text-decoration: none; }
-    .mainUI .form-submit:hover {
-      background-color: #6b9c00; }
-    .mainUI .form-submit:active {
-      background-color: #618c00; }
-    .mainUI .form-submit.disabled, .mainUI .form-submit[disabled] {
-      opacity: 0.6;
-      filter: alpha(opacity=60);
-      background: false;
-      cursor: default;
-      -webkit-box-shadow: none;
-      box-shadow: none; }
-    .mainUI .form-submit::-moz-focus-inner {
-      padding: 0 !important;
-      margin: -1px !important; }
-  .mainUI .share-form {
-    z-index: 10; }
-    .mainUI .share-form .button-wraper {
-      padding: 0 2em 2em 2em; }
-      .mainUI .share-form .button-wraper .share-fb, .mainUI .share-form .button-wraper .share-twitter, .mainUI .share-form .button-wraper .share-weibo, .mainUI .share-form .button-wraper .share-email {
-        margin-bottom: 0.5em;
-        font-size: 0.8125em;
-        padding: 0.5em 1.5em;
-        display: inline-block;
-        cursor: pointer;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        *zoom: 1;
-        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3F5C9A', endColorstr='#FF213152');
-        background-color: #3f5c9a;
-        border: 0;
-        color: white;
-        text-shadow: #1a2640 0 -1px 0; }
-        .mainUI .share-form .button-wraper .share-fb:hover, .mainUI .share-form .button-wraper .share-twitter:hover, .mainUI .share-form .button-wraper .share-weibo:hover, .mainUI .share-form .button-wraper .share-email:hover {
-          text-decoration: none; }
-        .mainUI .share-form .button-wraper .share-fb:hover, .mainUI .share-form .button-wraper .share-twitter:hover, .mainUI .share-form .button-wraper .share-weibo:hover, .mainUI .share-form .button-wraper .share-email:hover {
-          background-color: #385188; }
-        .mainUI .share-form .button-wraper .share-fb:active, .mainUI .share-form .button-wraper .share-twitter:active, .mainUI .share-form .button-wraper .share-weibo:active, .mainUI .share-form .button-wraper .share-email:active {
-          background-color: #334b7d; }
-        .mainUI .share-form .button-wraper .share-fb.disabled, .mainUI .share-form .button-wraper .disabled.share-twitter, .mainUI .share-form .button-wraper .disabled.share-weibo, .mainUI .share-form .button-wraper .disabled.share-email, .mainUI .share-form .button-wraper .share-fb[disabled], .mainUI .share-form .button-wraper [disabled].share-twitter, .mainUI .share-form .button-wraper [disabled].share-weibo, .mainUI .share-form .button-wraper [disabled].share-email {
-          opacity: 0.6;
-          filter: alpha(opacity=60);
-          background: false;
-          cursor: default;
-          -webkit-box-shadow: none;
-          box-shadow: none; }
-        .mainUI .share-form .button-wraper .share-fb::-moz-focus-inner, .mainUI .share-form .button-wraper .share-twitter::-moz-focus-inner, .mainUI .share-form .button-wraper .share-weibo::-moz-focus-inner, .mainUI .share-form .button-wraper .share-email::-moz-focus-inner {
-          padding: 0 !important;
-          margin: -1px !important; }
-      .mainUI .share-form .button-wraper .share-twitter {
-        font-size: 0.8125em;
-        padding: 0.5em 1.5em;
-        display: inline-block;
-        cursor: pointer;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        *zoom: 1;
-        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00ABF0', endColorstr='#FF00628A');
-        background-color: #00abf0;
-        border: 0;
-        color: white;
-        text-shadow: #005070 0 -1px 0; }
-        .mainUI .share-form .button-wraper .share-twitter:hover {
-          text-decoration: none; }
-        .mainUI .share-form .button-wraper .share-twitter:hover {
-          background-color: #0099d6; }
-        .mainUI .share-form .button-wraper .share-twitter:active {
-          background-color: #008ec7; }
-        .mainUI .share-form .button-wraper .share-twitter.disabled, .mainUI .share-form .button-wraper .share-twitter[disabled] {
-          opacity: 0.6;
-          filter: alpha(opacity=60);
-          background: false;
-          cursor: default;
-          -webkit-box-shadow: none;
-          box-shadow: none; }
-        .mainUI .share-form .button-wraper .share-twitter::-moz-focus-inner {
-          padding: 0 !important;
-          margin: -1px !important; }
-      .mainUI .share-form .button-wraper .share-weibo {
-        font-size: 0.8125em;
-        padding: 0.5em 1.5em;
-        display: inline-block;
-        cursor: pointer;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        *zoom: 1;
-        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF94553', endColorstr='#FFD10716');
-        background-color: #f94553;
-        border: 0;
-        color: white;
-        text-shadow: #b90614 0 -1px 0; }
-        .mainUI .share-form .button-wraper .share-weibo:hover {
-          text-decoration: none; }
-        .mainUI .share-form .button-wraper .share-weibo:hover {
-          background-color: #f82c3c; }
-        .mainUI .share-form .button-wraper .share-weibo:active {
-          background-color: #f81d2e; }
-        .mainUI .share-form .button-wraper .share-weibo.disabled, .mainUI .share-form .button-wraper .share-weibo[disabled] {
-          opacity: 0.6;
-          filter: alpha(opacity=60);
-          background: false;
-          cursor: default;
-          -webkit-box-shadow: none;
-          box-shadow: none; }
-        .mainUI .share-form .button-wraper .share-weibo::-moz-focus-inner {
-          padding: 0 !important;
-          margin: -1px !important; }
-      .mainUI .share-form .button-wraper .share-email {
-        font-size: 0.8125em;
-        padding: 0.5em 1.5em;
-        display: inline-block;
-        cursor: pointer;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        *zoom: 1;
-        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF40CC6C', endColorstr='#FF238341');
-        background-color: #40cc6c;
-        border: 0;
-        color: white;
-        text-shadow: #1e6f37 0 -1px 0; }
-        .mainUI .share-form .button-wraper .share-email:hover {
-          text-decoration: none; }
-        .mainUI .share-form .button-wraper .share-email:hover {
-          background-color: #33bf5f; }
-        .mainUI .share-form .button-wraper .share-email:active {
-          background-color: #30b359; }
-        .mainUI .share-form .button-wraper .share-email.disabled, .mainUI .share-form .button-wraper .share-email[disabled] {
-          opacity: 0.6;
-          filter: alpha(opacity=60);
-          background: false;
-          cursor: default;
-          -webkit-box-shadow: none;
-          box-shadow: none; }
-        .mainUI .share-form .button-wraper .share-email::-moz-focus-inner {
-          padding: 0 !important;
-          margin: -1px !important; }
-      .mainUI .share-form .button-wraper .form-cancel {
-        margin-top: 1.5em;
-        font-size: 0.8125em; }
-  .mainUI .host-form {
-    z-index: 8 !important;
-    margin-top: 0; }
-    .mainUI .host-form h3 {
-      margin-bottom: 1em; }
-    .mainUI .host-form .original-wish {
-      margin: 1em;
-      padding: 1em;
-      background-color: #f8f5f3;
-      -webkit-box-shadow: 0 0 2px #aaaaaa;
-      box-shadow: 0 0 2px #aaaaaa; }
-      .mainUI .host-form .original-wish .owner-avatar {
+        text-align: center;
+        margin-left: -5px; }
+        .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar {
+          display: block;
+          height: 50px;
+          width: 50px;
+          background-color: white;
+          padding: 5px;
+          margin-bottom: 0.5em;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%; }
+        .view-comments .everyones-comments .comment-unit .comment-time .time {
+          background-color: #8a6b52;
+          -moz-border-radius: 50px;
+          -webkit-border-radius: 50px;
+          border-radius: 50px;
+          padding: 0 1em;
+          font-size: 0.75em;
+          color: white; }
+      .view-comments .everyones-comments .comment-unit .comment-info {
+        width: 75%;
         float: left;
-        width: 38px;
-        height: 38px;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-        background-color: white;
-        padding: 3px; }
-      .mainUI .host-form .original-wish .owner-name {
-        float: left;
-        font-size: 0.8125em;
-        margin: 0.8em 0 0 0.5em;
-        color: #6a3f01; }
-      .mainUI .host-form .original-wish .wish-title, .mainUI .host-form .original-wish .info-panel .other-info, .mainUI .info-panel .host-form .original-wish .other-info, .mainUI .host-form .original-wish .info-panel .option-buttons, .mainUI .info-panel .host-form .original-wish .option-buttons {
-        clear: left;
-        font-weight: bold;
-        margin-top: 0.5em;
-        padding: 0 3em;
-        color: #4d4d4d; }
-    .mainUI .host-form .form-wraper {
-      margin-bottom: 1em; }
-    .mainUI .host-form .button-wraper {
-      padding-top: 1em; }
-  .mainUI .view-comments {
-    z-index: 9;
-    margin-top: 0;
-    width: 480px;
-    height: 680px; }
-    .mainUI .view-comments h3 {
-      margin: 0; }
-    .mainUI .view-comments .everyones-comments {
-      height: 475px;
-      overflow-y: scroll;
-      overflow-x: hidden; }
-      .mainUI .view-comments .everyones-comments .timeline {
-        border-left: 5px solid #b99e89;
-        margin: 50px 0 50px 58px; }
-        .mainUI .view-comments .everyones-comments .timeline:before, .mainUI .view-comments .everyones-comments .timeline:after {
-          content: " ";
-          display: table; }
-        .mainUI .view-comments .everyones-comments .timeline:after {
-          clear: both; }
-      .mainUI .view-comments .everyones-comments .comment-unit {
-        width: 450px;
-        margin-bottom: 1em;
-        margin-left: -54px;
-        font-size: 0.8125em; }
-        .mainUI .view-comments .everyones-comments .comment-unit:last-child {
-          margin-bottom: 0;
-          background-color: #f2ede9; }
-        .mainUI .view-comments .everyones-comments .comment-unit:before, .mainUI .view-comments .everyones-comments .comment-unit:after {
-          content: " ";
-          display: table; }
-        .mainUI .view-comments .everyones-comments .comment-unit:after {
-          clear: both; }
-        .mainUI .view-comments .everyones-comments .comment-unit .comment-time {
-          width: 25%;
+        padding-left: 0.83333%;
+        padding-right: 0.83333%;
+        margin-left: -10px; }
+        .view-comments .everyones-comments .comment-unit .comment-info .commenter-name {
+          width: 100%;
           float: left;
           padding-left: 0.83333%;
           padding-right: 0.83333%;
-          text-align: center;
-          margin-left: -5px; }
-          .mainUI .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar {
-            display: block;
-            height: 50px;
-            width: 50px;
+          margin-top: 16px; }
+        .view-comments .everyones-comments .comment-unit .comment-info .comment-content {
+          width: 100%;
+          float: left;
+          padding-left: 0.83333%;
+          padding-right: 0.83333%;
+          padding: 1em;
+          margin-top: 11px; }
+          .view-comments .everyones-comments .comment-unit .comment-info .comment-content p {
             background-color: white;
-            padding: 5px;
-            margin-bottom: 0.5em;
-            -moz-border-radius: 50%;
-            -webkit-border-radius: 50%;
-            border-radius: 50%; }
-          .mainUI .view-comments .everyones-comments .comment-unit .comment-time .time {
-            background-color: #8a6b52;
-            -moz-border-radius: 50px;
-            -webkit-border-radius: 50px;
-            border-radius: 50px;
-            padding: 0 1em;
-            font-size: 0.75em;
-            color: white; }
-        .mainUI .view-comments .everyones-comments .comment-unit .comment-info {
-          width: 75%;
-          float: left;
-          padding-left: 0.83333%;
-          padding-right: 0.83333%;
-          margin-left: -10px; }
-          .mainUI .view-comments .everyones-comments .comment-unit .comment-info .commenter-name {
-            width: 100%;
-            float: left;
-            padding-left: 0.83333%;
-            padding-right: 0.83333%;
-            margin-top: 16px; }
-          .mainUI .view-comments .everyones-comments .comment-unit .comment-info .comment-content {
-            width: 100%;
-            float: left;
-            padding-left: 0.83333%;
-            padding-right: 0.83333%;
-            padding: 1em;
-            margin-top: 11px; }
-            .mainUI .view-comments .everyones-comments .comment-unit .comment-info .comment-content p {
-              background-color: white;
-              padding: 0.5em;
-              margin: 0;
-              -moz-border-radius: 10px;
-              -webkit-border-radius: 10px;
-              border-radius: 10px; }
-    .mainUI .view-comments .comment-divider {
-      height: 17px;
-      background: url(../img/comment-divider.png) 0 0 no-repeat;
-      margin-top: -17px; }
-    .mainUI .view-comments .comment-form {
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-      background-color: #f2ede9;
-      position: absolute;
-      bottom: 0;
-      height: 10em; }
-      .mainUI .view-comments .comment-form .comment, .mainUI .view-comments .comment-form .buttons {
-        padding: 1em; }
-      .mainUI .view-comments .comment-form .buttons {
-        padding-top: 0;
-        text-align: center; }
+            padding: 0.5em;
+            margin: 0;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px; }
+  .view-comments .comment-divider {
+    height: 17px;
+    background: url(../img/comment-divider.png) 0 0 no-repeat;
+    margin-top: -17px; }
+  .view-comments .comment-form {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #f2ede9;
+    position: absolute;
+    bottom: 0;
+    height: 10em; }
+    .view-comments .comment-form .comment, .view-comments .comment-form .buttons {
+      padding: 1em; }
+    .view-comments .comment-form .buttons {
+      padding-top: 0;
+      text-align: center; }
 
 .ctrl_board {
   height: 160px;
@@ -6261,7 +6318,7 @@ button:focus {
         margin-right: 8px; }
   .dash-main .navi-list .active {
     background-color: rgba(0, 0, 0, 0.1); }
-  .dash-main .info-panel {
+  .dash-main .main-panel {
     width: 66.66667%;
     float: left;
     padding-left: 0.83333%;
@@ -6277,20 +6334,20 @@ button:focus {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; }
-    .dash-main .info-panel h3 {
+    .dash-main .main-panel h3 {
       margin: 0 0 20px 0;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
       width: 100%; }
-    .dash-main .info-panel .inner {
+    .dash-main .main-panel .inner {
       padding: 0 10px; }
-    .dash-main .info-panel .follow-unit {
+    .dash-main .main-panel .follow-unit {
       width: 50%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%;
       padding: 10px; }
-    .dash-main .info-panel .follow-info {
+    .dash-main .main-panel .follow-info {
       background-color: white;
       padding-bottom: 1em;
       -webkit-box-shadow: 0 0 5px #cccccc;
@@ -6298,20 +6355,20 @@ button:focus {
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s; }
-      .dash-main .info-panel .follow-info:hover {
+      .dash-main .main-panel .follow-info:hover {
         -webkit-box-shadow: 0 0 8px #999999;
         box-shadow: 0 0 8px #999999; }
-    .dash-main .info-panel .pic-and-name {
+    .dash-main .main-panel .pic-and-name {
       padding: 8px;
       margin-bottom: 8px;
       background-color: #dfd3c9;
       border-bottom: 3px solid #ccb9a9; }
-      .dash-main .info-panel .pic-and-name:before, .dash-main .info-panel .pic-and-name:after {
+      .dash-main .main-panel .pic-and-name:before, .dash-main .main-panel .pic-and-name:after {
         content: " ";
         display: table; }
-      .dash-main .info-panel .pic-and-name:after {
+      .dash-main .main-panel .pic-and-name:after {
         clear: both; }
-      .dash-main .info-panel .pic-and-name .pic {
+      .dash-main .main-panel .pic-and-name .pic {
         width: 44px;
         height: 44px;
         padding: 3px;
@@ -6320,28 +6377,28 @@ button:focus {
         border-radius: 50%;
         background-color: white;
         float: left; }
-      .dash-main .info-panel .pic-and-name .name {
+      .dash-main .main-panel .pic-and-name .name {
         float: left;
         width: 180px;
         font-size: 0.8125em;
         font-weight: bold;
         margin: 14px 0 0 8px;
         color: #8a6b52; }
-    .dash-main .info-panel .news {
+    .dash-main .main-panel .news {
       padding: 0.5em;
       font-size: 0.8125em;
       color: #777777; }
-    .dash-main .info-panel .latest-content {
+    .dash-main .main-panel .latest-content {
       background-color: #eeeeee;
       padding: 1em;
       max-height: 4em;
       overflow: scroll; }
-    .dash-main .info-panel .button {
+    .dash-main .main-panel .button {
       padding: 0 0.5em; }
-      .dash-main .info-panel .button button {
+      .dash-main .main-panel .button button {
         width: 100%;
         font-weight: bold; }
-      .dash-main .info-panel .button .cancel {
+      .dash-main .main-panel .button .cancel {
         font-size: 0.8125em;
         padding: 0.5em 1.5em;
         display: inline-block;
@@ -6355,23 +6412,23 @@ button:focus {
         border: 0;
         color: white;
         text-shadow: #a68469 0 -1px 0; }
-        .dash-main .info-panel .button .cancel:hover {
+        .dash-main .main-panel .button .cancel:hover {
           text-decoration: none; }
-        .dash-main .info-panel .button .cancel:hover {
+        .dash-main .main-panel .button .cancel:hover {
           background-color: #ccb9a9; }
-        .dash-main .info-panel .button .cancel:active {
+        .dash-main .main-panel .button .cancel:active {
           background-color: #c6b19f; }
-        .dash-main .info-panel .button .cancel.disabled, .dash-main .info-panel .button .cancel[disabled] {
+        .dash-main .main-panel .button .cancel.disabled, .dash-main .main-panel .button .cancel[disabled] {
           opacity: 0.6;
           filter: alpha(opacity=60);
           background: false;
           cursor: default;
           -webkit-box-shadow: none;
           box-shadow: none; }
-        .dash-main .info-panel .button .cancel::-moz-focus-inner {
+        .dash-main .main-panel .button .cancel::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
-      .dash-main .info-panel .button .follow {
+      .dash-main .main-panel .button .follow {
         font-size: 0.8125em;
         padding: 0.5em 1.5em;
         display: inline-block;
@@ -6385,29 +6442,29 @@ button:focus {
         border: 0;
         color: white;
         text-shadow: #844e01 0 -1px 0; }
-        .dash-main .info-panel .button .follow:hover {
+        .dash-main .main-panel .button .follow:hover {
           text-decoration: none; }
-        .dash-main .info-panel .button .follow:hover {
+        .dash-main .main-panel .button .follow:hover {
           background-color: #e98a02; }
-        .dash-main .info-panel .button .follow:active {
+        .dash-main .main-panel .button .follow:active {
           background-color: #da8101; }
-        .dash-main .info-panel .button .follow.disabled, .dash-main .info-panel .button .follow[disabled] {
+        .dash-main .main-panel .button .follow.disabled, .dash-main .main-panel .button .follow[disabled] {
           opacity: 0.6;
           filter: alpha(opacity=60);
           background: false;
           cursor: default;
           -webkit-box-shadow: none;
           box-shadow: none; }
-        .dash-main .info-panel .button .follow::-moz-focus-inner {
+        .dash-main .main-panel .button .follow::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
-    .dash-main .info-panel .wish-unit, .dash-main .info-panel .event-unit, .dash-main .info-panel .comment-unit {
+    .dash-main .main-panel .wish-unit, .dash-main .main-panel .event-unit, .dash-main .main-panel .comment-unit {
       width: 50%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%;
       padding: 10px; }
-    .dash-main .info-panel .wish-info, .dash-main .info-panel .event-info, .dash-main .info-panel .comment-info {
+    .dash-main .main-panel .wish-info, .dash-main .main-panel .event-info, .dash-main .main-panel .comment-info {
       background-color: white;
       min-height: 150px;
       padding-bottom: 1em;
@@ -6416,49 +6473,49 @@ button:focus {
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s; }
-      .dash-main .info-panel .wish-info:hover, .dash-main .info-panel .event-info:hover, .dash-main .info-panel .comment-info:hover {
+      .dash-main .main-panel .wish-info:hover, .dash-main .main-panel .event-info:hover, .dash-main .main-panel .comment-info:hover {
         -webkit-box-shadow: 0 0 8px #999999;
         box-shadow: 0 0 8px #999999; }
-      .dash-main .info-panel .wish-info .numbers, .dash-main .info-panel .event-info .numbers, .dash-main .info-panel .comment-info .numbers {
+      .dash-main .main-panel .wish-info .numbers, .dash-main .main-panel .event-info .numbers, .dash-main .main-panel .comment-info .numbers {
         margin: 0.5em 0; }
-      .dash-main .info-panel .wish-info .date, .dash-main .info-panel .event-info .date, .dash-main .info-panel .comment-info .date {
+      .dash-main .main-panel .wish-info .date, .dash-main .main-panel .event-info .date, .dash-main .main-panel .comment-info .date {
         background-color: #fb9786;
         color: white;
         text-shadow: 0 -1px 1px #aaaaaa;
         text-align: center;
         padding: 0.5em; }
-      .dash-main .info-panel .wish-info .wish-content, .dash-main .info-panel .wish-info .event-content, .dash-main .info-panel .wish-info .comment-content, .dash-main .info-panel .event-info .wish-content, .dash-main .info-panel .event-info .event-content, .dash-main .info-panel .event-info .comment-content, .dash-main .info-panel .comment-info .wish-content, .dash-main .info-panel .comment-info .event-content, .dash-main .info-panel .comment-info .comment-content {
+      .dash-main .main-panel .wish-info .wish-content, .dash-main .main-panel .wish-info .event-content, .dash-main .main-panel .wish-info .comment-content, .dash-main .main-panel .event-info .wish-content, .dash-main .main-panel .event-info .event-content, .dash-main .main-panel .event-info .comment-content, .dash-main .main-panel .comment-info .wish-content, .dash-main .main-panel .comment-info .event-content, .dash-main .main-panel .comment-info .comment-content {
         font-size: 0.8125em;
         padding: 0.5em;
         padding-bottom: 1em; }
-        .dash-main .info-panel .wish-info .wish-content:before, .dash-main .info-panel .wish-info .wish-content:after, .dash-main .info-panel .wish-info .event-content:before, .dash-main .info-panel .wish-info .event-content:after, .dash-main .info-panel .wish-info .comment-content:before, .dash-main .info-panel .wish-info .comment-content:after, .dash-main .info-panel .event-info .wish-content:before, .dash-main .info-panel .event-info .wish-content:after, .dash-main .info-panel .event-info .event-content:before, .dash-main .info-panel .event-info .event-content:after, .dash-main .info-panel .event-info .comment-content:before, .dash-main .info-panel .event-info .comment-content:after, .dash-main .info-panel .comment-info .wish-content:before, .dash-main .info-panel .comment-info .wish-content:after, .dash-main .info-panel .comment-info .event-content:before, .dash-main .info-panel .comment-info .event-content:after, .dash-main .info-panel .comment-info .comment-content:before, .dash-main .info-panel .comment-info .comment-content:after {
+        .dash-main .main-panel .wish-info .wish-content:before, .dash-main .main-panel .wish-info .wish-content:after, .dash-main .main-panel .wish-info .event-content:before, .dash-main .main-panel .wish-info .event-content:after, .dash-main .main-panel .wish-info .comment-content:before, .dash-main .main-panel .wish-info .comment-content:after, .dash-main .main-panel .event-info .wish-content:before, .dash-main .main-panel .event-info .wish-content:after, .dash-main .main-panel .event-info .event-content:before, .dash-main .main-panel .event-info .event-content:after, .dash-main .main-panel .event-info .comment-content:before, .dash-main .main-panel .event-info .comment-content:after, .dash-main .main-panel .comment-info .wish-content:before, .dash-main .main-panel .comment-info .wish-content:after, .dash-main .main-panel .comment-info .event-content:before, .dash-main .main-panel .comment-info .event-content:after, .dash-main .main-panel .comment-info .comment-content:before, .dash-main .main-panel .comment-info .comment-content:after {
           content: " ";
           display: table; }
-        .dash-main .info-panel .wish-info .wish-content:after, .dash-main .info-panel .wish-info .event-content:after, .dash-main .info-panel .wish-info .comment-content:after, .dash-main .info-panel .event-info .wish-content:after, .dash-main .info-panel .event-info .event-content:after, .dash-main .info-panel .event-info .comment-content:after, .dash-main .info-panel .comment-info .wish-content:after, .dash-main .info-panel .comment-info .event-content:after, .dash-main .info-panel .comment-info .comment-content:after {
+        .dash-main .main-panel .wish-info .wish-content:after, .dash-main .main-panel .wish-info .event-content:after, .dash-main .main-panel .wish-info .comment-content:after, .dash-main .main-panel .event-info .wish-content:after, .dash-main .main-panel .event-info .event-content:after, .dash-main .main-panel .event-info .comment-content:after, .dash-main .main-panel .comment-info .wish-content:after, .dash-main .main-panel .comment-info .event-content:after, .dash-main .main-panel .comment-info .comment-content:after {
           clear: both; }
-        .dash-main .info-panel .wish-info .wish-content .wraper, .dash-main .info-panel .wish-info .event-content .wraper, .dash-main .info-panel .wish-info .comment-content .wraper, .dash-main .info-panel .event-info .wish-content .wraper, .dash-main .info-panel .event-info .event-content .wraper, .dash-main .info-panel .event-info .comment-content .wraper, .dash-main .info-panel .comment-info .wish-content .wraper, .dash-main .info-panel .comment-info .event-content .wraper, .dash-main .info-panel .comment-info .comment-content .wraper {
+        .dash-main .main-panel .wish-info .wish-content .wraper, .dash-main .main-panel .wish-info .event-content .wraper, .dash-main .main-panel .wish-info .comment-content .wraper, .dash-main .main-panel .event-info .wish-content .wraper, .dash-main .main-panel .event-info .event-content .wraper, .dash-main .main-panel .event-info .comment-content .wraper, .dash-main .main-panel .comment-info .wish-content .wraper, .dash-main .main-panel .comment-info .event-content .wraper, .dash-main .main-panel .comment-info .comment-content .wraper {
           background-color: #eeeeee;
           padding: 1em;
           color: #777777; }
-        .dash-main .info-panel .wish-info .wish-content .wish-category, .dash-main .info-panel .wish-info .wish-content .wish-location, .dash-main .info-panel .wish-info .wish-content .event-category, .dash-main .info-panel .wish-info .wish-content .event-location, .dash-main .info-panel .wish-info .event-content .wish-category, .dash-main .info-panel .wish-info .event-content .wish-location, .dash-main .info-panel .wish-info .event-content .event-category, .dash-main .info-panel .wish-info .event-content .event-location, .dash-main .info-panel .wish-info .comment-content .wish-category, .dash-main .info-panel .wish-info .comment-content .wish-location, .dash-main .info-panel .wish-info .comment-content .event-category, .dash-main .info-panel .wish-info .comment-content .event-location, .dash-main .info-panel .event-info .wish-content .wish-category, .dash-main .info-panel .event-info .wish-content .wish-location, .dash-main .info-panel .event-info .wish-content .event-category, .dash-main .info-panel .event-info .wish-content .event-location, .dash-main .info-panel .event-info .event-content .wish-category, .dash-main .info-panel .event-info .event-content .wish-location, .dash-main .info-panel .event-info .event-content .event-category, .dash-main .info-panel .event-info .event-content .event-location, .dash-main .info-panel .event-info .comment-content .wish-category, .dash-main .info-panel .event-info .comment-content .wish-location, .dash-main .info-panel .event-info .comment-content .event-category, .dash-main .info-panel .event-info .comment-content .event-location, .dash-main .info-panel .comment-info .wish-content .wish-category, .dash-main .info-panel .comment-info .wish-content .wish-location, .dash-main .info-panel .comment-info .wish-content .event-category, .dash-main .info-panel .comment-info .wish-content .event-location, .dash-main .info-panel .comment-info .event-content .wish-category, .dash-main .info-panel .comment-info .event-content .wish-location, .dash-main .info-panel .comment-info .event-content .event-category, .dash-main .info-panel .comment-info .event-content .event-location, .dash-main .info-panel .comment-info .comment-content .wish-category, .dash-main .info-panel .comment-info .comment-content .wish-location, .dash-main .info-panel .comment-info .comment-content .event-category, .dash-main .info-panel .comment-info .comment-content .event-location {
+        .dash-main .main-panel .wish-info .wish-content .wish-category, .dash-main .main-panel .wish-info .wish-content .wish-location, .dash-main .main-panel .wish-info .wish-content .event-category, .dash-main .main-panel .wish-info .wish-content .event-location, .dash-main .main-panel .wish-info .event-content .wish-category, .dash-main .main-panel .wish-info .event-content .wish-location, .dash-main .main-panel .wish-info .event-content .event-category, .dash-main .main-panel .wish-info .event-content .event-location, .dash-main .main-panel .wish-info .comment-content .wish-category, .dash-main .main-panel .wish-info .comment-content .wish-location, .dash-main .main-panel .wish-info .comment-content .event-category, .dash-main .main-panel .wish-info .comment-content .event-location, .dash-main .main-panel .event-info .wish-content .wish-category, .dash-main .main-panel .event-info .wish-content .wish-location, .dash-main .main-panel .event-info .wish-content .event-category, .dash-main .main-panel .event-info .wish-content .event-location, .dash-main .main-panel .event-info .event-content .wish-category, .dash-main .main-panel .event-info .event-content .wish-location, .dash-main .main-panel .event-info .event-content .event-category, .dash-main .main-panel .event-info .event-content .event-location, .dash-main .main-panel .event-info .comment-content .wish-category, .dash-main .main-panel .event-info .comment-content .wish-location, .dash-main .main-panel .event-info .comment-content .event-category, .dash-main .main-panel .event-info .comment-content .event-location, .dash-main .main-panel .comment-info .wish-content .wish-category, .dash-main .main-panel .comment-info .wish-content .wish-location, .dash-main .main-panel .comment-info .wish-content .event-category, .dash-main .main-panel .comment-info .wish-content .event-location, .dash-main .main-panel .comment-info .event-content .wish-category, .dash-main .main-panel .comment-info .event-content .wish-location, .dash-main .main-panel .comment-info .event-content .event-category, .dash-main .main-panel .comment-info .event-content .event-location, .dash-main .main-panel .comment-info .comment-content .wish-category, .dash-main .main-panel .comment-info .comment-content .wish-location, .dash-main .main-panel .comment-info .comment-content .event-category, .dash-main .main-panel .comment-info .comment-content .event-location {
           margin-top: 0.5em;
           color: #a68469; }
-        .dash-main .info-panel .wish-info .wish-content .wish-category, .dash-main .info-panel .wish-info .wish-content .event-category, .dash-main .info-panel .wish-info .event-content .wish-category, .dash-main .info-panel .wish-info .event-content .event-category, .dash-main .info-panel .wish-info .comment-content .wish-category, .dash-main .info-panel .wish-info .comment-content .event-category, .dash-main .info-panel .event-info .wish-content .wish-category, .dash-main .info-panel .event-info .wish-content .event-category, .dash-main .info-panel .event-info .event-content .wish-category, .dash-main .info-panel .event-info .event-content .event-category, .dash-main .info-panel .event-info .comment-content .wish-category, .dash-main .info-panel .event-info .comment-content .event-category, .dash-main .info-panel .comment-info .wish-content .wish-category, .dash-main .info-panel .comment-info .wish-content .event-category, .dash-main .info-panel .comment-info .event-content .wish-category, .dash-main .info-panel .comment-info .event-content .event-category, .dash-main .info-panel .comment-info .comment-content .wish-category, .dash-main .info-panel .comment-info .comment-content .event-category {
+        .dash-main .main-panel .wish-info .wish-content .wish-category, .dash-main .main-panel .wish-info .wish-content .event-category, .dash-main .main-panel .wish-info .event-content .wish-category, .dash-main .main-panel .wish-info .event-content .event-category, .dash-main .main-panel .wish-info .comment-content .wish-category, .dash-main .main-panel .wish-info .comment-content .event-category, .dash-main .main-panel .event-info .wish-content .wish-category, .dash-main .main-panel .event-info .wish-content .event-category, .dash-main .main-panel .event-info .event-content .wish-category, .dash-main .main-panel .event-info .event-content .event-category, .dash-main .main-panel .event-info .comment-content .wish-category, .dash-main .main-panel .event-info .comment-content .event-category, .dash-main .main-panel .comment-info .wish-content .wish-category, .dash-main .main-panel .comment-info .wish-content .event-category, .dash-main .main-panel .comment-info .event-content .wish-category, .dash-main .main-panel .comment-info .event-content .event-category, .dash-main .main-panel .comment-info .comment-content .wish-category, .dash-main .main-panel .comment-info .comment-content .event-category {
           width: 25%;
           float: left;
           padding-left: 0.83333%;
           padding-right: 0.83333%; }
-        .dash-main .info-panel .wish-info .wish-content .wish-location, .dash-main .info-panel .wish-info .wish-content .event-location, .dash-main .info-panel .wish-info .event-content .wish-location, .dash-main .info-panel .wish-info .event-content .event-location, .dash-main .info-panel .wish-info .comment-content .wish-location, .dash-main .info-panel .wish-info .comment-content .event-location, .dash-main .info-panel .event-info .wish-content .wish-location, .dash-main .info-panel .event-info .wish-content .event-location, .dash-main .info-panel .event-info .event-content .wish-location, .dash-main .info-panel .event-info .event-content .event-location, .dash-main .info-panel .event-info .comment-content .wish-location, .dash-main .info-panel .event-info .comment-content .event-location, .dash-main .info-panel .comment-info .wish-content .wish-location, .dash-main .info-panel .comment-info .wish-content .event-location, .dash-main .info-panel .comment-info .event-content .wish-location, .dash-main .info-panel .comment-info .event-content .event-location, .dash-main .info-panel .comment-info .comment-content .wish-location, .dash-main .info-panel .comment-info .comment-content .event-location {
+        .dash-main .main-panel .wish-info .wish-content .wish-location, .dash-main .main-panel .wish-info .wish-content .event-location, .dash-main .main-panel .wish-info .event-content .wish-location, .dash-main .main-panel .wish-info .event-content .event-location, .dash-main .main-panel .wish-info .comment-content .wish-location, .dash-main .main-panel .wish-info .comment-content .event-location, .dash-main .main-panel .event-info .wish-content .wish-location, .dash-main .main-panel .event-info .wish-content .event-location, .dash-main .main-panel .event-info .event-content .wish-location, .dash-main .main-panel .event-info .event-content .event-location, .dash-main .main-panel .event-info .comment-content .wish-location, .dash-main .main-panel .event-info .comment-content .event-location, .dash-main .main-panel .comment-info .wish-content .wish-location, .dash-main .main-panel .comment-info .wish-content .event-location, .dash-main .main-panel .comment-info .event-content .wish-location, .dash-main .main-panel .comment-info .event-content .event-location, .dash-main .main-panel .comment-info .comment-content .wish-location, .dash-main .main-panel .comment-info .comment-content .event-location {
           width: 75%;
           float: left;
           padding-left: 0.83333%;
           padding-right: 0.83333%;
           text-align: right; }
-      .dash-main .info-panel .wish-info .target, .dash-main .info-panel .event-info .target, .dash-main .info-panel .comment-info .target {
+      .dash-main .main-panel .wish-info .target, .dash-main .main-panel .event-info .target, .dash-main .main-panel .comment-info .target {
         color: #aaaaaa; }
-      .dash-main .info-panel .wish-info .comment-content, .dash-main .info-panel .event-info .comment-content, .dash-main .info-panel .comment-info .comment-content {
+      .dash-main .main-panel .wish-info .comment-content, .dash-main .main-panel .event-info .comment-content, .dash-main .main-panel .comment-info .comment-content {
         margin-top: 0.5em; }
-        .dash-main .info-panel .wish-info .comment-content span, .dash-main .info-panel .event-info .comment-content span, .dash-main .info-panel .comment-info .comment-content span {
+        .dash-main .main-panel .wish-info .comment-content span, .dash-main .main-panel .event-info .comment-content span, .dash-main .main-panel .comment-info .comment-content span {
           color: #777777;
           overflow: scroll;
           display: block;
@@ -6671,13 +6728,13 @@ button:focus {
       display: table; }
     .show-main .buttons:after {
       clear: both; }
-    .show-main .buttons .form-submit {
+    .show-main .buttons .submit-comment {
       width: 100%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%;
       margin-bottom: 1em; }
-      .show-main .buttons .form-submit button {
+      .show-main .buttons .submit-comment button {
         width: 100%;
         font-size: 0.8125em;
         padding: 0.5em 1.5em;
@@ -6692,20 +6749,20 @@ button:focus {
         border: 0;
         color: white;
         text-shadow: #253600 0 -1px 0; }
-        .show-main .buttons .form-submit button:hover {
+        .show-main .buttons .submit-comment button:hover {
           text-decoration: none; }
-        .show-main .buttons .form-submit button:hover {
+        .show-main .buttons .submit-comment button:hover {
           background-color: #6b9c00; }
-        .show-main .buttons .form-submit button:active {
+        .show-main .buttons .submit-comment button:active {
           background-color: #618c00; }
-        .show-main .buttons .form-submit button.disabled, .show-main .buttons .form-submit button[disabled] {
+        .show-main .buttons .submit-comment button.disabled, .show-main .buttons .submit-comment button[disabled] {
           opacity: 0.6;
           filter: alpha(opacity=60);
           background: false;
           cursor: default;
           -webkit-box-shadow: none;
           box-shadow: none; }
-        .show-main .buttons .form-submit button::-moz-focus-inner {
+        .show-main .buttons .submit-comment button::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
     .show-main .buttons .follow, .show-main .buttons .share, .show-main .buttons .join {
@@ -6770,7 +6827,7 @@ button:focus {
 .cant-touch {
   pointer-events: none; }
 
-.mainUI .avatar, .mainUI .info-panel .wish-owner .owner-avatar, .mainUI .info-panel .event-owner .owner-avatar, .show-main .owner .owner-avatar {
+.mainUI .avatar, .info-panel .wish-owner .owner-avatar, .info-panel .event-owner .owner-avatar, .show-main .owner .owner-avatar {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
