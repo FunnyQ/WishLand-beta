@@ -1,6 +1,7 @@
 <!-- 主要界面, js -> mainUI -->
 <div class="mainUI">
 
+  <!-- 黑幕 -->
   <div class="overlay"></div>
   <div class="overlay-lv2"></div>
 
@@ -17,14 +18,16 @@
 
   <!-- 許願表單視窗， js -> makeWishForm -->
   <div class="make-wish">
-<%= partial "partials/make_wish_form" %>
-  </div>
+
+    <%= partial "partials/make_wish_form" %>
+
+  </div><!-- e/o make-wish -->
 
 
   <!-- 熱門活動與願望、附近活動與願望，列表界面 -->
   <div class="list-view">
 
-  </div>
+  </div><!-- e/o list-view -->
 
 
   <!-- 詳細資料面板，願望或活動詳細內容顯示區， js -> infoPanel -->
@@ -76,24 +79,24 @@
 
     </div>
 
-  </div>
+  </div><!-- e/o info-panel -->
 
 
   <!-- 分享表單視窗 -->
   <div class="share-form">
-<%= partial "partials/share_form" %>
-  </div>
+    <%= partial "partials/share_form" %>
+  </div><!-- e/o share-form -->
 
 
   <!-- 實現願望表單視窗 -->
   <div class="host-form">
-<%= partial "partials/host_form" %>
+    <%= partial "partials/host_form" %>
   </div><!-- e/o host-form -->
 
 
   <!-- 留言討論視窗 -->
   <div class="view-comments">
-<%= partial "partials/view_comments" %>
-  </div>
+    <%= partial "partials/view_comments" %>
+  </div><!-- e/o view-comments -->
 
-</div>
+</div><!-- e/o mainUI -->

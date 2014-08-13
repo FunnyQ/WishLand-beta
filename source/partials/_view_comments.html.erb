@@ -1,46 +1,46 @@
 <h3><i class="fa fa-comments-o fa-lg"></i> 留言牆</h3>
 
-<!-- 目前 event 上的留言 -->
-<div class="everyones-comments">
-  <div class="timeline">
+    <!-- 目前 event 上的留言 -->
+    <div class="everyones-comments">
+      <div class="timeline">
 
-    <!-- comment unit -->
-    <% 5.times do |d| %>
-    <div class="comment-unit">
+        <!-- comment unit -->
+        <% 5.times do |d| %>
+        <div class="comment-unit">
 
-      <div class="comment-time">
-        <span class="commenter-avatar">
-          <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
-        </span>
-        <span class="time">
-          <%= rand(60) %> 分鐘前
-        </span>
-      </div>
+          <div class="comment-time">
+            <span class="commenter-avatar">
+              <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+            </span>
+            <span class="time">
+              <%= rand(60) %> 分鐘前
+            </span>
+          </div>
 
-      <div class="comment-info">
-        <div class="commenter-name">
-          <span><%= data.member.firstname %></span> 說：
+          <div class="comment-info">
+            <div class="commenter-name">
+              <span><%= data.member.firstname %></span> 說：
+            </div>
+            <div class="comment-content">
+              <p><%= data.comment.content %></p>
+            </div>
+          </div>
+
         </div>
-        <div class="comment-content">
-          <p><%= data.comment.content %></p>
-        </div>
+        <% end %>
       </div>
+    </div>
 
+    <!-- 留言表單 -->
+    <div class="comment-form">
+      <div class="comment-divider"></div>
+      <form class="form-horizontal" role="form">
+        <div class="comment">
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="buttons">
+          <button type="button" class="form-cancel">關閉視窗</button>
+          <button type="submit" class="form-submit">送出留言</button>
+        </div>
+      </form>
     </div>
-    <% end %>
-  </div>
-</div>
-
-<!-- 留言表單 -->
-<div class="comment-form">
-  <div class="comment-divider"></div>
-  <form class="form-horizontal" role="form">
-    <div class="comment">
-      <textarea class="form-control" rows="3"></textarea>
-    </div>
-    <div class="buttons">
-      <button type="button" class="form-cancel">關閉視窗</button>
-      <button type="submit" class="form-submit">送出留言</button>
-    </div>
-  </form>
-</div>
