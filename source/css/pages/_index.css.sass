@@ -31,7 +31,7 @@ button:focus
   background-color: $c-landing
   position: relative
   z-index: +index($elements, landing)
-  display: none
+  // display: none
 
   .lp-content
     padding-top: 33vh
@@ -123,7 +123,7 @@ button:focus
 
   .wish-owner, .event-owner
     background-color: darken($c-ctrl_board, 10%)
-    padding: 0.5em
+    padding: 1em 0.5em 0.5em 0.5em
     border-bottom: 2px solid darken($c-ctrl_board, 20%)
     h4
       color: darken($c-yellow, 50%)
@@ -147,44 +147,156 @@ button:focus
       margin-top: -4px
       float: right
 
-  .wish-title, .event-title
+  // .wish-title, .event-title
+  //   margin: 0.5em 0
+  //   @extend %w100p
+  //   padding: 1em
+  //   .inner
+  //     @extend %w100p
+  //     @extend %h100p
+  //     margin: 0
+  //     background-color: #FFF
+  //     +box-shadow(0 0 2px #aaa)
+  //     padding: 1.4em
+  //     font-weight: bold
+  //   .signature
+  //     margin: 0
+  //     text-align: right
+  //     font-size: $fz-xs
+  //     color: darken(#fff, 40%)
+
+  // .other-info
+  //   @extend .wish-title
+  //   padding-top: 0
+  //   margin-bottom: 0
+  //   .detail
+  //     background-color: lighten($c-ctrl_board, 3%)
+  //     margin-bottom: 0.5em
+  //     padding: 0.5em 1em
+  //     &:hover
+  //       background-color: lighten($c-ctrl_board, 5%)
+  //       +box-shadow(0 0 3px darken($c-ctrl_board, 15%))
+  //   h4
+  //     font-size: $fz-m
+  //     color: darken($c-ctrl_board, 70%)
+  //   p
+  //     margin: 1em 0 0 37px
+  //     padding-bottom: 0.5em
+  //     color: darken($c-ctrl_board, 60%)
+  //     font-size: $fz-s
+  //     border-bottom: 1px solid darken($c-ctrl_board, 30%)
+
+  .content
     margin: 0.5em 0
     @extend %w100p
     padding: 1em
+    .date
+      display: block
+      font-size: $fz-s
+      color: darken($c-ctrl_board, 50%)
+      margin-bottom: 1em
     .inner
       @extend %w100p
       @extend %h100p
+      +clearfix
       margin: 0
+      color: darken($c-ctrl_board, 60%)
       background-color: #FFF
       +box-shadow(0 0 2px #aaa)
-      padding: 1.4em
+      padding: 1em
       font-weight: bold
-    .signature
-      margin: 0
-      text-align: right
-      font-size: $fz-xs
-      color: darken(#fff, 40%)
-
-  .other-info
-    @extend .wish-title
-    padding-top: 0
-    margin-bottom: 0
-    .detail
-      background-color: lighten($c-ctrl_board, 3%)
-      margin-bottom: 0.5em
-      padding: 0.5em 1em
-      &:hover
-        background-color: lighten($c-ctrl_board, 5%)
-        +box-shadow(0 0 3px darken($c-ctrl_board, 15%))
-    h4
-      font-size: $fz-m
-      color: darken($c-ctrl_board, 70%)
-    p
-      margin: 1em 0 0 37px
-      padding-bottom: 0.5em
-      color: darken($c-ctrl_board, 60%)
+    .category, .location, .distance
+      display: block
       font-size: $fz-s
-      border-bottom: 1px solid darken($c-ctrl_board, 30%)
+      color: darken($c-ctrl_board, 40%)
+    .category
+      +span(3)
+    .location
+      +span(9)
+      text-align: right
+    .distance
+      +span(12)
+      text-align: right
+      margin-top: 0.5em
+      color: darken($c-ctrl_board, 30%)
+
+  .divider-up, .divider-down
+    width: 100%
+    height: 14px
+  .divider-up
+    background-image: url("../img/comment-divider-up.png")
+    position: absolute
+    top: 0
+  .divider-down
+    position: absolute
+    background-image: url("../img/comment-divider-down.png")
+    bottom: 0
+  .comments
+    padding: 0 0.5em
+    font-size: $fz-s
+    position: relative
+    .timeline
+      width: 100%
+      height: 250px
+      overflow: scroll
+      background: url("../img/timeline.png") 0 0 repeat-y
+    .comments-unit
+      +clearfix
+      min-height: 50px
+      margin-bottom: 2em
+      &:last-child
+        margin-bottom: 0
+        background-color: $c-ctrl_board
+        padding-bottom: 2em
+    .left
+      +span(3)
+      .commenter-avatar
+        @extend %m0auto
+        width: 60px
+        height: 60px
+        padding: 5px
+        +border-radius(50%)
+        background-color: #FFF
+      .time
+        margin-top: 1em
+        text-align: center
+        font-size: $fz-xs
+        color: #fff
+        background-color: darken($c-ctrl_board, 50%)
+        +border-radius(50px)
+    .right
+      +span(9)
+      .name
+        +container(12)
+        margin-top: 22px
+        margin-bottom: 8px
+      .say
+        width: 270px
+        @extend %m0auto
+        background-color: #FFF
+        color: #555
+        padding: 1em
+        +border-radius(10px)
+
+  .comment-form
+    padding: 0.5em 1em
+    textarea
+      font-size: $fz-s
+  .buttons
+    padding: 0 1em
+    +clearfix
+    .submit-comment
+      +span(12)
+      margin-bottom: 1em
+      button
+        width: 100%
+        +sassy-button("flat", 3px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+    .follow, .share, .join, .host
+      +span(4)
+      margin-bottom: 1em
+      button
+        width: 100%
+        +sassy-button("flat", 3px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
 
   .option-buttons
     font-weight: bold
