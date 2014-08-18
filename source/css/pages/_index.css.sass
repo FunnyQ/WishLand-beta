@@ -31,6 +31,7 @@ button:focus
   background-color: $c-landing
   position: relative
   z-index: +index($elements, landing)
+  display: none
 
   .lp-content
     padding-top: 33vh
@@ -103,6 +104,8 @@ button:focus
 // panel 類界面
 .wish-detail, .event-detail
   display: none
+.wish-detail
+  display: block
 .info-panel
   @extend %h100p
   position: relative
@@ -112,7 +115,7 @@ button:focus
   z-index: +index($elements, test)
   float: right
   +box-shadow(0 0 15px #000)
-  display: none
+  // display: none
   z-index: index($elements, info-panel)
   h3
     @extend %panelTitle
@@ -214,7 +217,6 @@ button:focus
 
 .make-wish
   @extend %make-wish
-  display: block
   z-index: +index($elements, make-wish)
   .make-wish-switch
     +clearfix

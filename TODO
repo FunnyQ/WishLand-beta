@@ -1,3 +1,5 @@
 開發時更動的項目
   .landing 增加了 display: none
-  .make-wish 增加了 display: block
+  .info-panel 拿掉 display: none
+  .wish-detail or .event-detail 加入 display: block
+  _panels.html.erb 加入 <%= partial "partials/wish_detail" %> or <%= partial "partials/event_detail" %>
