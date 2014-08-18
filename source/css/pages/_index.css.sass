@@ -216,13 +216,18 @@ button:focus
   @extend %make-wish
   display: block
   z-index: +index($elements, make-wish)
+  .location
+    +span(12)
+    color: $c-subinfo
+    font-size: $fz-s
+    text-align: right
 
 
 .form-wraper
   padding: 0 2em
   margin-bottom: 2em
 .button-wraper
-  padding: 2em
+  padding: 1em 2em 2em 2em
   text-align: center
   font-weight: bold
 .form-cancel
