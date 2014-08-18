@@ -13,6 +13,8 @@
       <div class="info-section">
       <!-- ajax 讀入詳細內容 -->
       </div>
+
+      <!-- 留言表單 -->
       <form class="form-horizontal" role="form">
         <div class="comment-form">
           <textarea class="form-control" rows="3"></textarea>
@@ -31,21 +33,21 @@
 
       <div class="info-section">
       <!-- ajax 讀入詳細內容 -->
+      <%= partial "partials/event_detail" %>
       </div>
 
-      <!-- 按鈕們 -->
-      <div class="option-buttons">
-        <div class="row">
-          <div class="observe">
-            <button><i class="fa fa-star fa-lg"></i> 關注活動</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="share"><button><i class="fa fa-share-alt fa-lg"></i> 分享</button></div>
-          <div class="join"><button><i class="fa fa-hand-o-up fa-lg"></i> 參加</button></div>
-          <div class="comment"><button><i class="fa fa-comment fa-lg"></i> 留言</button></div>
-        </div>
+      <!-- 留言表單 -->
+      <form class="form-horizontal" role="form">
+      <div class="comment-form">
+        <textarea class="form-control" rows="3"></textarea>
       </div>
+      <div class="buttons">
+        <div class="submit-comment"><button type="button">送出留言</button></div>
+        <div class="follow"><button type="button"><i class="fa fa-star-o fa-lg"></i> 關注</button></div>
+        <div class="share"><button type="button"><i class="fa fa-share-alt fa-lg"></i> 分享</button></div>
+        <div class="join"><button type="button"><i class="fa fa-hand-o-up fa-lg"></i> 參加</button></div>
+      </div>
+    </form>
 
     </div>
 
