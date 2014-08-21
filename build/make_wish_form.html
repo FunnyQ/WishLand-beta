@@ -1,52 +1,28 @@
-<h3><i class="fa fa-edit fa-lg"></i> 許願卡</h3>
+<!-- 請用 js 切換 class， category-social, category-art, category-eat, category-sport, category-event 備用 -->
+    <div class="make-wish-switch category-eat">
+      <div class="prev-wish-category ">
+        <a class="trans-05s" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
+      </div>
+      <h3><i class="fa fa-cutlery fa-lg"></i> <span>美食</span>許願卡</h3>
+      <div class="next-wish-category">
+        <a class="trans-05s" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+      </div>
+    </div>
+
 
     <form class="form-horizontal" role="form">
 
-      <!-- 願望 title -->
+      <!-- 願望內容表單 -->
       <div class="form-wraper">
-        <h4>
-          <span class="fa-stack">
-            <i class="fa fa-square fa-stack-2x"></i>
-            <i class="fa fa-comment fa-stack-1x fa-inverse"></i>
-          </span>
-          我想要...
-        </h4>
-        <input type="text" class="form-control" id="wish-title" placeholder="請寫下你的願望">
+        <h4><i class="fa fa-pencil fa-lg"></i> 我想要...</h4>
+        <textarea class="form-control" rows="3"></textarea>
+        <!-- 願望地點顯示欄位 -->
+        <span class="location"><i class="fa fa-location-arrow fa-lg"></i> 臺北火車站</span>
       </div>
 
-      <!-- 願望 category，會預設為使用者目前瀏覽的類別 -->
-      <div class="form-wraper">
-        <h4>
-          <span class="fa-stack">
-            <i class="fa fa-square fa-stack-2x"></i>
-            <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i>
-          </span>
-          願望類別
-        </h4>
-        <select class="form-control" value="2">
-          <option>藝文</option>
-          <option selected="selected">美食</option>
-          <option>運動</option>
-          <option>社交</option>
-        </select>
-      </div>
-
-      <!-- 願望 location，預設為使用者目前位置 -->
-      <div class="form-wraper">
-        <h4>
-          <span class="fa-stack">
-            <i class="fa fa-square fa-stack-2x"></i>
-            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-          </span>
-          願望地點
-        </h4>
-        <input type="text" class="form-control" id="wish-title" value="臺北火車站">
-      </div>
-
-
+      <!-- submit -->
       <div class="button-wraper">
-        <button type="button" class="form-cancel">取消</button>
-        <button type="button" class="form-submit">送出願望！</button>
+        <button type="button" class="form-submit w100p">送出願望！</button>
       </div>
 
 

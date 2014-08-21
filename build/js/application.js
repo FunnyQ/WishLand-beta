@@ -12,7 +12,7 @@
  */
 
 (function() {
-  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showHostForm, showInfoPanel, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, windows, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showHostForm, showInfoPanel, showListView, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, windows, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -45,6 +45,14 @@
   wishInfoSection = wishDetail.find('.info-section');
 
   eventInfoSection = eventDetail.find('.info-section');
+
+  listView = mainUI.find('.list-view');
+
+  listFollowBtn = listView.find('.follow');
+
+  listJoinBtn = listView.find('.join');
+
+  listHostBtn = listView.find('.host');
 
   newMessageNotifier = ctrlBoard.find('.label');
 
@@ -124,6 +132,26 @@
     return ctrlBoard.find('.is_user').fadeOut();
   };
 
+  showListView = function() {
+    listView.addClass('animated fadeInLeft');
+    listView.fadeIn();
+    setTimeout((function() {
+      infoPanel.removeClass('animated fadeInLeft');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  hideListView = function() {
+    listView.addClass('animated fadeOutLeft');
+    listView.fadeIn();
+    setTimeout((function() {
+      infoPanel.removeClass('animated fadeOutLeft');
+      return null;
+    }), 1000);
+    return null;
+  };
+
   loadWishDetail = function() {
     return $.ajax({
       url: './wish_detail.html',
@@ -182,6 +210,11 @@
       infoPanel.removeClass('animated fadeInRight');
       return null;
     }), 1000);
+    return null;
+  };
+
+  removeListUnit = function(button) {
+    button.parents('.listUnit').fadeOut();
     return null;
   };
 
@@ -377,6 +410,38 @@
 
   submitWishBtn.on("click", function() {
     submitWishEffect();
+    return null;
+  });
+
+
+  /*
+  List View 按下關注或加入按鈕移除元件
+   */
+
+  listFollowBtn.on("click", function() {
+    var button;
+    button = $(this);
+    removeListUnit(button);
+    return null;
+  });
+
+  listJoinBtn.on("click", function() {
+    var button;
+    button = $(this);
+    removeListUnit(button);
+    return null;
+  });
+
+
+  /*
+  List View 按下實現後移除元件並顯示實現視窗
+   */
+
+  listHostBtn.on("click", function() {
+    var button;
+    button = $(this);
+    removeListUnit(button);
+    showHostForm();
     return null;
   });
 
