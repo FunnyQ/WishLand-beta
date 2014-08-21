@@ -34,7 +34,7 @@
       display: block
       font-size: $fz-s
       color: darken($c-ctrl_board, 50%)
-      margin-bottom: 1em
+      margin-bottom: 0.5em
     .inner
       @extend %w100p
       @extend %h100p
@@ -59,3 +59,20 @@
       text-align: right
       margin-top: 0.5em
       color: darken($c-ctrl_board, 30%)
+
+%changeableBg
+  .category-event
+    background-color: $c-event
+    border-bottom: 3px solid darken($c-event, 10%)
+  .category-social
+    background-color: $c-social
+    border-bottom: 3px solid darken($c-social, 10%)
+  .category-art
+    background-color: $c-art
+    border-bottom: 3px solid darken($c-art, 10%)
+  .category-eat
+    background-color: $c-eat
+    border-bottom: 3px solid darken($c-eat, 10%)
+  .category-sport
+    background-color: $c-sport
+    border-bottom: 3px solid darken($c-sport, 10%)

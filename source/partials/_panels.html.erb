@@ -2,7 +2,24 @@
   <div class="list-view">
     <% 15.times do |f| %>
     <div class="event-unit">
-      123
+
+      <!-- event 詳細內容 -->
+      <div class="content">
+        <!-- 日期 -->
+        <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-20（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
+        <!-- 願望（content）或活動（title）標題 -->
+        <!-- 依不同類別加入 category class -->
+        <div class="inner category-event">
+          <p><i><%= data.event.title %></i></p>
+        </div>
+      </div><!-- e/o content -->
+
+      <!-- 按鈕 -->
+      <div class="buttons">
+        <div class="like"></div>
+        <div class="join"></div>
+      </div>
+
     </div>
     <% end %>
   </div><!-- e/o list-view -->

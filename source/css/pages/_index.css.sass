@@ -108,6 +108,8 @@ button:focus
 
 .list-view
   @extend %h100p
+  @extend %info-card
+  @extend %changeableBg
   position: relative
   overflow: scroll
   width: 350px
@@ -115,6 +117,13 @@ button:focus
   float: left
   z-index: +index($elements, list-view)
   padding: 0 0.5em
+  .content
+    padding: 0
+    p
+      margin: 0
+    .kilo
+      float: right
+
   .event-unit
     width: 100%
     background-color: rgba($c-ctrl_board, 0.9)
@@ -318,26 +327,12 @@ button:focus
 
 .make-wish
   @extend %make-wish
+  @extend %changeableBg
   z-index: +index($elements, make-wish)
   .make-wish-switch
     +clearfix
     @extend %panelTitle
     padding: 0
-  .category-event
-    background-color: $c-event
-    border-bottom: 3px solid darken($c-event, 10%)
-  .category-social
-    background-color: $c-social
-    border-bottom: 3px solid darken($c-social, 10%)
-  .category-art
-    background-color: $c-art
-    border-bottom: 3px solid darken($c-art, 10%)
-  .category-eat
-    background-color: $c-eat
-    border-bottom: 3px solid darken($c-eat, 10%)
-  .category-sport
-    background-color: $c-sport
-    border-bottom: 3px solid darken($c-sport, 10%)
 
   .prev-wish-category, .next-wish-category
     width: 45px
