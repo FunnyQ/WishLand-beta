@@ -1,0 +1,61 @@
+// panel title
+%panelTitle
+  text-align: center
+  font-size: $fz-l
+  padding: 0.5em
+  background-color: $c-landing
+  color: #fff
+  border-bottom: 3px solid darken($c-landing, 10%)
+  margin-bottom: 2em
+  +text-shadow(0 -1px 0 darken($c-landing, 30%))
+
+
+%make-wish
+  position: relative
+  @extend %m0auto
+  margin-top: 80px
+  width: 400px
+  background-color: $c-ctrl_board
+  +border-radius(10px)
+  +box-shadow(0 0 15px #000)
+  display: none
+  h3
+    @extend %panelTitle
+  h4
+    font-size: $fz-m
+
+// 活動或願望資訊卡(?)
+%info-card
+  .content
+    margin: 0.5em 0
+    @extend %w100p
+    padding: 1em
+    .date
+      display: block
+      font-size: $fz-s
+      color: darken($c-ctrl_board, 50%)
+      margin-bottom: 1em
+    .inner
+      @extend %w100p
+      @extend %h100p
+      +clearfix
+      margin: 0
+      color: darken($c-ctrl_board, 60%)
+      background-color: #FFF
+      +box-shadow(0 0 2px #aaa)
+      padding: 1em
+      font-weight: bold
+    .category, .location, .distance
+      display: block
+      font-size: $fz-s
+      color: darken($c-ctrl_board, 40%)
+    .category
+      +span(3)
+    .location
+      +span(9)
+      text-align: right
+    .distance
+      +span(12)
+      text-align: right
+      margin-top: 0.5em
+      color: darken($c-ctrl_board, 30%)
