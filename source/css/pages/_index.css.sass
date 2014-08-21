@@ -31,7 +31,7 @@ button:focus
   background-color: $c-landing
   position: relative
   z-index: +index($elements, landing)
-  // display: none
+  display: none
 
   .lp-content
     padding-top: 33vh
@@ -105,13 +105,32 @@ button:focus
 .wish-detail, .event-detail
   display: none
 
+
+.list-view
+  @extend %h100p
+  position: relative
+  overflow: scroll
+  width: 350px
+  background-color: rgba(#000, 0.5)
+  float: left
+  z-index: +index($elements, list-view)
+  padding: 0 0.5em
+  .event-unit
+    width: 100%
+    background-color: rgba($c-ctrl_board, 0.9)
+    height: 120px
+    margin-top: 0.5em
+    &:last-child
+      margin-bottom: 0.5em
+
+
 .info-panel
   @extend %h100p
   position: relative
   overflow: scroll
   width: 400px
   background-color: $c-ctrl_board
-  z-index: +index($elements, test)
+
   float: right
   +box-shadow(0 0 15px #000)
   display: none
@@ -355,9 +374,7 @@ button:focus
     height: 45px
     float: left
     padding-top: 0.6em
-  .prev-wish-category
-    &:hover
-  .next-wish-category
+
   h3
     margin: 0
     width: 310px
@@ -372,7 +389,8 @@ button:focus
     +span(12)
     color: $c-subinfo
     font-size: $fz-s
-    text-align: right
+    text-align: center
+    margin-top: 8px
 
 
 .form-wraper
