@@ -1,13 +1,13 @@
 <!-- 熱門活動與願望、附近活動與願望，列表界面 -->
   <div class="list-view">
-    <% 1.times do |f| %>
+    <% 10.times do |f| %>
     <!-- 活動列表元件 -->
-    <div class="event-unit">
+    <div class="event-unit listUnit">
 
       <!-- event 詳細內容 -->
       <div class="content">
         <!-- 日期 -->
-        <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-20（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
+        <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-<%= rand(31) %>（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
         <!-- 願望（content）或活動（title）標題 -->
         <!-- 依不同類別加入 category class -->
         <div class="inner category-event">
@@ -25,7 +25,7 @@
     <% end %>
 
     <!-- 願望列表元件 -->
-    <div class="wish-unit">
+    <div class="wish-unit listUnit trans-05s">
 
       <!-- event 詳細內容 -->
       <div class="content">
@@ -41,7 +41,7 @@
       <!-- 按鈕 -->
       <div class="buttons">
         <div class="follow"><button type="button"><i class="fa fa-star-o fa-lg"></i> 關注</button></div>
-        <div class="join"><button type="button"><i class="fa fa-hand-o-up fa-lg"></i> 實現</button></div>
+        <div class="host"><button type="button"><i class="fa fa-magic fa-lg"></i> 實現</button></div>
       </div>
 
     </div><!-- e/o 願望列表元件 -->

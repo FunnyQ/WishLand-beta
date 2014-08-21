@@ -51,6 +51,19 @@ wishInfoSection = wishDetail.find('.info-section')
 eventInfoSection = eventDetail.find('.info-section')
 ################################################################################
 
+# list view 列表
+listView = mainUI.find('.list-view')
+
+# 關注
+listFollowBtn = listView.find('.follow')
+# 加入
+listJoinBtn = listView.find('.join')
+# 實現
+listHostBtn = listView.find('.host')
+
+
+################################################################################
+
 # 訊息通知 lable
 newMessageNotifier = ctrlBoard.find('.label')
 
@@ -144,6 +157,26 @@ loadCtrlBoard = ->
 unLoadCtrlBoard = ->
   ctrlBoard.find('.is_user').fadeOut()
 
+# 顯示 list view
+showListView = ->
+  listView.addClass('animated fadeInLeft')
+  listView.fadeIn()
+  setTimeout (->
+    infoPanel.removeClass('animated fadeInLeft')
+    null
+  ), 1000
+  null
+
+# 移除 list view
+hideListView = ->
+  listView.addClass('animated fadeOutLeft')
+  listView.fadeIn()
+  setTimeout (->
+    infoPanel.removeClass('animated fadeOutLeft')
+    null
+  ), 1000
+  null
+
 
 # 載入願望詳細資訊
 loadWishDetail = ->
@@ -199,6 +232,11 @@ showInfoPanel = ->
     infoPanel.removeClass('animated fadeInRight')
     null
   ), 1000
+  null
+
+# 移除 listUnit 列表元件
+removeListUnit = (button) ->
+  button.parents('.listUnit').fadeOut()
   null
 
 # 顯示分享視窗
@@ -368,6 +406,26 @@ submitWishBtn.on "click", ->
   submitWishEffect()
   null
 
+
+###
+List View 按下關注或加入按鈕移除元件
+###
+listFollowBtn.on "click", ->
+  button = $(this)
+  removeListUnit(button)
+  null
+listJoinBtn.on "click", ->
+  button = $(this)
+  removeListUnit(button)
+  null
+###
+List View 按下實現後移除元件並顯示實現視窗
+###
+listHostBtn.on "click", ->
+  button = $(this)
+  removeListUnit(button)
+  showHostForm()
+  null
 
 ###
 詳細活動面板按鈕動作
