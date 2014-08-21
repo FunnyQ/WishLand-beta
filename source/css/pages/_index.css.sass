@@ -31,7 +31,7 @@ button:focus
   background-color: $c-landing
   position: relative
   z-index: +index($elements, landing)
-  display: none
+  // display: none
 
   .lp-content
     padding-top: 33vh
@@ -102,7 +102,7 @@ button:focus
 
 
 // panel 類界面
-.wish-detail, .event-detail
+.wish-detail, .event-detail, .list-view
   display: none
 
 
@@ -117,14 +117,9 @@ button:focus
   float: left
   z-index: +index($elements, list-view)
   padding: 0 0.5em
-  .content
-    padding: 0
-    p
-      margin: 0
-    .kilo
-      float: right
 
-  .event-unit
+  .event-unit, .wish-unit
+    +clearfix
     width: 100%
     background-color: rgba($c-ctrl_board, 0.9)
     min-height: 120px
@@ -134,6 +129,22 @@ button:focus
       margin-bottom: 0.5em
     h5
       margin: 0
+
+  .content
+    padding: 0
+    p
+      margin: 0
+    .kilo
+      float: right
+  .buttons
+    +span(12)
+    .follow
+      +span(6)
+    .join
+      +span(6)
+    button
+      width: 100%
+      +sassy-button("flat", 5px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
 
 
 .info-panel
