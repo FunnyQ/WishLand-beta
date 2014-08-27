@@ -379,6 +379,12 @@ button:focus
     margin-top: 8px
 
 
+.confirm-dialog
+  @extend %make-wish
+  display: block
+  z-index: +index($elements, confirm-dialog)
+
+
 .form-wraper
   padding: 0 2em
   margin-bottom: 2em
@@ -390,7 +396,8 @@ button:focus
   +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 .form-submit
   +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
-
+.form-change
+  +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 
 .share-form
   @extend %make-wish
