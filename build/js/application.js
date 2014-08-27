@@ -12,11 +12,15 @@
  */
 
 (function() {
-  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showHostForm, showInfoPanel, showListView, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, windows, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
   siteOverlayLv2 = $('.overlay-lv2');
+
+  // Welcome splash screen 歡迎畫面;
+
+  welcomeSplash = $('.welcome_splash');
 
   mainUI = $('.mainUI');
 
@@ -29,6 +33,10 @@
   ctrlBoard = $('.ctrl_board');
 
   makeWishForm = windows.find('.make-wish');
+
+  // 確認視窗;
+
+  confirmDialog = windows.find('.confirm-dialog');
 
   shareForm = windows.find('.share-form');
 
@@ -65,6 +73,14 @@
   cencelWishBtn = makeWishForm.find('.form-cancel');
 
   submitWishBtn = makeWishForm.find('.form-submit');
+
+  // 更改地點按鈕;
+
+  confirmChangeLocationBtn = confirmDialog.find('.form-change');
+
+  // 送出願望按鈕;
+
+  confirmSubmitWishBtn = confirmDialog.find('.form-submit');
 
   ctrlBtns = ctrlBoard.find('a');
 
@@ -136,7 +152,7 @@
     listView.addClass('animated fadeInLeft');
     listView.fadeIn();
     setTimeout((function() {
-      infoPanel.removeClass('animated fadeInLeft');
+      listView.removeClass('animated fadeInLeft');
       return null;
     }), 1000);
     return null;
@@ -144,9 +160,9 @@
 
   hideListView = function() {
     listView.addClass('animated fadeOutLeft');
-    listView.fadeIn();
+    listView.fadeOut();
     setTimeout((function() {
-      infoPanel.removeClass('animated fadeOutLeft');
+      listView.removeClass('animated fadeOutLeft');
       return null;
     }), 1000);
     return null;
@@ -197,6 +213,35 @@
     }), 500);
     setTimeout((function() {
       makeWishForm.removeClass("animated zoomOutUp");
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  // 顯示確認視窗;
+
+  showConfirmDialog = function() {
+    closeUI(0);
+    confirmDialog.addClass('animated bounceInUp');
+    confirmDialog.add(siteOverlay).fadeIn();
+    setTimeout((function() {
+      confirmDialog.removeClass('animated bounceInUp');
+      return null;
+    }), 1000);
+    return null;
+  };
+
+  // 確認送出願望;
+
+  confirmSubmitWish = function() {
+    confirmDialog.addClass("animated zoomOutUp");
+    setTimeout((function() {
+      closeUI();
+      confirmDialog.fadeOut();
+      return null;
+    }), 500);
+    setTimeout((function() {
+      confirmDialog.removeClass("animated zoomOutUp");
       return null;
     }), 1000);
     return null;
@@ -292,7 +337,7 @@
     if (speed == null) {
       speed = "500";
     }
-    makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed);
+    makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(welcomeSplash).add(confirmDialog).fadeOut(speed);
     return null;
   };
 
@@ -328,12 +373,18 @@
       "margin-top": (viewHeight / 2) - 100,
       "left": (viewWidth / 2) - 50
     });
+    welcomeSplash.find('h3').css({
+      "margin-top": (viewHeight / 2) - 150
+    });
     return $(window).resize(function() {
       viewHeight = $(window).height();
       viewWidth = $(window).width();
-      return changeCategoryBtn.css({
+      changeCategoryBtn.css({
         "margin-top": (viewHeight / 2) - 100,
         "left": (viewWidth / 2) - 50
+      });
+      return welcomeSplash.find('h3').css({
+        "margin-top": (viewHeight / 2) - 150
       });
     });
   });
@@ -385,6 +436,16 @@
 
 
   /*
+  點擊任意位置關閉 splash screen
+   */
+
+  welcomeSplash.on("click", function() {
+    $(this).fadeOut();
+    return null;
+  });
+
+
+  /*
   按下許願按鈕，顯示許願表單
    */
 
@@ -410,6 +471,26 @@
 
   submitWishBtn.on("click", function() {
     submitWishEffect();
+    return null;
+  });
+
+
+  /*
+  按下更改地點後，移除 disabled 屬性、清除目前的 value，並 focus on input element
+   */
+
+  confirmChangeLocationBtn.on("click", function() {
+    confirmDialog.find('input').prop('disabled', false).prop('value', '').focus();
+    return null;
+  });
+
+
+  /*
+  確認送出願望後關閉視窗
+   */
+
+  confirmSubmitWishBtn.on("click", function() {
+    confirmSubmitWish();
     return null;
   });
 
@@ -647,8 +728,7 @@
   /* TEST AREA */
 
   ctrlBoard.find('.marker-wish').on("click", function() {
-    loadWishDetail();
-    showInfoPanel();
+    showConfirmDialog();
     return null;
   });
 
