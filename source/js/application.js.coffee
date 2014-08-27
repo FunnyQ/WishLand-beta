@@ -351,7 +351,7 @@ closeCommentEffect = ->
 
 # 關閉 LV1 UI
 closeUI = ( speed = "500" ) ->
-  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(welcomeSplash).fadeOut(speed)
+  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(welcomeSplash).add(confirmDialog).fadeOut(speed)
   null
 
 # 關閉 LV2 UI
