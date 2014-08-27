@@ -183,8 +183,12 @@ button:focus
       margin-left: 75px
       margin-top: -40px
       padding-bottom: 1em
-    button
+    .follow
       +sassy-button("flat", 5px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+      margin-top: -4px
+      float: right
+    .unfollow
+      +sassy-button("flat", 5px, $fz-s, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
       margin-top: -4px
       float: right
 
@@ -298,12 +302,15 @@ button:focus
       button
         width: 100%
         +sassy-button("flat", 3px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
-    .follow, .share, .join, .host
+    .follow, .share, .join, .host, .unfollow
       +span(4)
       margin-bottom: 1em
       button
         width: 100%
         +sassy-button("flat", 3px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+    .unfollow
+      button
+        +sassy-button("flat", 3px, $fz-s, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 
   .option-buttons
     font-weight: bold
@@ -323,8 +330,6 @@ button:focus
         @extend %w100p
         +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
         margin-bottom: 1em
-
-
 
 // welcome splash screen
 .welcome_splash
