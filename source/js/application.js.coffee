@@ -162,7 +162,7 @@ showListView = ->
   listView.addClass('animated fadeInLeft')
   listView.fadeIn()
   setTimeout (->
-    infoPanel.removeClass('animated fadeInLeft')
+    listView.removeClass('animated fadeInLeft')
     null
   ), 1000
   null
@@ -170,9 +170,9 @@ showListView = ->
 # 移除 list view
 hideListView = ->
   listView.addClass('animated fadeOutLeft')
-  listView.fadeIn()
+  listView.fadeOut()
   setTimeout (->
-    infoPanel.removeClass('animated fadeOutLeft')
+    listView.removeClass('animated fadeOutLeft')
     null
   ), 1000
   null
