@@ -325,6 +325,17 @@ button:focus
 
 
 
+// welcome splash screen
+.welcome_splash
+  @extend %w100p
+  @extend %h100p
+  position: absolute
+  top: 0
+  z-index: +index($elements, splash)
+  background-color: rgba(#000, 0.8)
+  h3, p
+    text-align: center
+    color: #fff
 
 // window 類界面
 .windows

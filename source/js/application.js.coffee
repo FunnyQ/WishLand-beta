@@ -14,6 +14,9 @@ siteOverlay = $('.overlay')
 siteOverlayLv2 = $('.overlay-lv2')
 ################################################################################
 
+`// Welcome splash screen 歡迎畫面`
+# 歡迎畫面
+welcomeSplash = $('.welcome_splash')
 
 # 地圖 canvas
 mainUI = $('.mainUI')
@@ -308,7 +311,7 @@ closeCommentEffect = ->
 
 # 關閉 LV1 UI
 closeUI = ( speed = "500" ) ->
-  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).fadeOut(speed)
+  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(welcomeSplash).fadeOut(speed)
   null
 
 # 關閉 LV2 UI
@@ -339,12 +342,16 @@ $( document ).ready ->
   changeCategoryBtn.css
     "margin-top": ( viewHeight / 2 ) - 100
     "left": (viewWidth / 2) - 50
+  welcomeSplash.find('h3').css
+    "margin-top": ( viewHeight / 2 ) - 150
   $( window ).resize ->
     viewHeight = $( window ).height()
     viewWidth = $( window ).width()
     changeCategoryBtn.css
       "margin-top": ( viewHeight / 2 ) - 100
       "left": (viewWidth / 2) - 50
+    welcomeSplash.find('h3').css
+      "margin-top": ( viewHeight / 2 ) - 150
 
 ################################################################################
 
@@ -384,6 +391,15 @@ fbLoginBtn.on "click", ->
   showMap()
   loadCtrlBoard()
   null
+
+
+###
+點擊任意位置關閉 splash screen
+###
+welcomeSplash.on "click", ->
+  $(this).fadeOut()
+  null
+
 
 
 ###
