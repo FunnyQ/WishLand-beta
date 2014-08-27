@@ -36,6 +36,10 @@ ctrlBoard = $('.ctrl_board')
 # make-wish 表單
 makeWishForm = windows.find('.make-wish')
 
+# 確認視窗
+`// 確認視窗`
+confirmDialog = windows.find('.confirm-dialog')
+
 # 分享視窗 表單
 shareForm = windows.find('.share-form')
 
@@ -82,6 +86,15 @@ makeWishBtn = $('#makeWishBtn')
 cencelWishBtn = makeWishForm.find('.form-cancel')
 # 送出願望按鈕
 submitWishBtn = makeWishForm.find('.form-submit')
+
+
+# 更改地點按鈕
+`// 更改地點按鈕`
+confirmChangeLocationBtn = confirmDialog.find('.form-change')
+# 送出願望按鈕
+`// 送出願望按鈕`
+confirmSubmitWishBtn = confirmDialog.find('.form-submit')
+
 
 # 控制區的按鈕們
 ctrlBtns = ctrlBoard.find('a')
@@ -222,6 +235,33 @@ submitWishEffect = ->
   ), 500
   setTimeout (->
     makeWishForm.removeClass "animated zoomOutUp"
+    null
+  ), 1000
+  null
+
+# 顯示確認視窗
+`// 顯示確認視窗`
+showConfirmDialog = ->
+  closeUI(0)
+  confirmDialog.addClass('animated bounceInUp')
+  confirmDialog.add(siteOverlay).fadeIn()
+  setTimeout (->
+    confirmDialog.removeClass('animated bounceInUp')
+    null
+  ), 1000
+  null
+
+# 確認送出願望
+`// 確認送出願望`
+confirmSubmitWish = ->
+  confirmDialog.addClass "animated zoomOutUp"
+  setTimeout (->
+    closeUI()
+    confirmDialog.fadeOut()
+    null
+  ), 500
+  setTimeout (->
+    confirmDialog.removeClass "animated zoomOutUp"
     null
   ), 1000
   null
@@ -401,7 +441,6 @@ welcomeSplash.on "click", ->
   null
 
 
-
 ###
 按下許願按鈕，顯示許願表單
 ###
@@ -422,6 +461,20 @@ submitWishBtn.on "click", ->
   submitWishEffect()
   null
 
+
+###
+按下更改地點後，移除 disabled 屬性、清除目前的 value，並 focus on input element
+###
+confirmChangeLocationBtn.on "click", ->
+  confirmDialog.find('input').prop('disabled', false).prop('value', '').focus()
+  null
+###
+確認送出願望後關閉視窗
+###
+confirmSubmitWishBtn.on "click", ->
+  # do something
+  confirmSubmitWish()
+  null
 
 ###
 List View 按下關注或加入按鈕移除元件
@@ -589,8 +642,7 @@ signOutBtn.on "click", ->
 #################
 ctrlBoard.find('.marker-wish').on "click", ->
   # 先 ajax 讀入表單再顯示面板
-  loadWishDetail()
-  showInfoPanel()
+  showConfirmDialog()
   null
 
 ctrlBoard.find('.marker-event').on "click", ->
