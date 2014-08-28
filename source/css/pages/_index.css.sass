@@ -598,13 +598,13 @@ button:focus
 
   // 左半部，logo 欄位
   .ctrl-logo
-    +span(2)
+    +span(4)
     padding-top: 27px
 
 
   // 中央應用控制區
   .ctrl-main
-    +span(8)
+    +span(4)
     padding-top: 20px
     .options
       +container($w-mobile)
@@ -625,7 +625,7 @@ button:focus
 
   // 右半部帳號控制區
   .ctrl-right
-    +span(2)
+    +span(4)
     padding-top: 25px
     text-align: right
     a
@@ -638,5 +638,10 @@ button:focus
     .notifier
       +animation-iteration-count(2)
       +animation-duration(1s)
+    h6
+      display: inline
+      margin: 0 1em 0 0
+      font-size: $fz-m
+      +text-shadow(0 -1px 0 #fff)
 
 ///////////////////////////////
