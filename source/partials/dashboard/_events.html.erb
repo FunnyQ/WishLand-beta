@@ -5,10 +5,13 @@
 
           <div class="event-info">
 
-            <!-- 願望日期 -->
-            <div class="date">
-              <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
-            </div>
+            <!-- a link 連結到此活動的詳細頁面 -->
+            <a href="../show/event.html">
+              <!-- 願望日期 -->
+              <div class="date">
+                <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
+              </div>
+            </a>
 
             <!-- 數據 -->
             <div class="numbers">
@@ -28,9 +31,14 @@
 
             <!-- 願望內容 -->
             <div class="event-content">
-              <div class="wraper">
-                <span><%= data.event.title %></span>
-              </div>
+
+              <!-- a link 連結到此活動的詳細頁面 -->
+              <a href="../show/event.html">
+                <div class="wraper">
+                  <span><%= data.event.title %></span>
+                </div>
+              </a>
+
               <div class="event-category">
                 <span><i class="fa fa-cutlery"></i> 美食</span>
               </div>

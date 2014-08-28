@@ -161,6 +161,8 @@
       background-color: darken($c-ctrl_board, 10%)
       border-bottom: 3px solid darken($c-ctrl_board, 20%)
       +clearfix
+      &:hover
+        background-color: darken($c-ctrl_board, 6%)
       .pic
         width: 44px
         height: 44px
@@ -207,6 +209,8 @@
       +transition(0.3s)
       &:hover
         +box-shadow(0 0 8px #999)
+      a:hover
+        text-decoration: none
       .numbers
         margin: 0.5em 0
       .date
@@ -215,6 +219,8 @@
         +text-shadow(0 -1px 1px #aaa)
         text-align: center
         padding: 0.5em
+        &:hover
+          background-color: lighten($c-landing, 10%)
       .wish-content, .event-content, .comment-content
         font-size: $fz-s
         padding: 0.5em
@@ -225,6 +231,8 @@
           padding: 1em
           color: #777
           margin-top: 5px
+          &:hover
+            background-color: lighten(#eee, 2%)
         .wish-category, .wish-location, .event-category, .event-location
           margin-top: 0.5em
           color: $c-subinfo
