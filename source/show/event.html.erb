@@ -58,18 +58,15 @@ title: Po Wish || 活動詳細內容
               <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </div>
             <!-- 留言時間 -->
-            <div class="time">
-              <span>50 分鐘前</span>
+            <div class="name">
+              <span><%= data.member.firstname %></span>
             </div>
           </div>
           <div class="right">
-            <!-- 使用者名字 -->
-            <div class="name">
-              <span><%= data.member.firstname %> 說：</span>
-            </div>
             <!-- 留言內容 -->
             <div class="say">
-              <span><%= data.comment.content %></span>
+              <span><%= data.comment.content %><%= data.comment.content %><%= data.comment.content %></span>
+              <span class="time">50 分鐘前</span>
             </div>
           </div>
         </div>
