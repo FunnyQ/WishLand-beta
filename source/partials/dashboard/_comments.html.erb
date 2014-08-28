@@ -1,39 +1,6 @@
 <% 6.times do |f| %>
-        <!-- 留言 unit -->
-        <div class="comment-unit">
+        d
 
-          <!-- 留言詳細資訊 -->
-          <div class="comment-info">
 
-            <!-- 留言日期 -->
-            <div class="date">
-              <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
-            </div>
 
-            <div class="comment-content">
-              <span><%= data.comment.content %></span>
-            </div>
-
-            <!-- 留言對象內容 -->
-            <div class="event-content">
-              <span class="target">留言給 @<%= data.member.firstname %> 的活動：</span>
-              <div class="wraper">
-                <span><%= data.event.title %></span>
-              </div>
-              <div class="event-category">
-                <span><i class="fa fa-dribbble"></i> 運動</span>
-              </div>
-              <div class="event-location">
-                <span><i class="fa fa-map-marker"></i> 春水堂人文茶館 慶城街1號2F</span>
-              </div>
-            </div><!-- e/o event-content -->
-
-            <!-- 刪除留言 -->
-            <div class="button">
-              <button class="cancel" type="button"><i class="fa fa-trash-o fa-lg"></i> 刪除留言</button>
-            </div>
-
-          </div>
-
-        </div><!-- e/o comment-unit -->
 <% end %>

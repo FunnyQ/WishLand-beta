@@ -198,10 +198,10 @@
         +sassy-button("flat", 3px, $fz-s, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
 
 
-    .wish-unit, .event-unit, .comment-unit
+    .wish-unit, .event-unit
       +span(6)
       padding: 10px
-    .wish-info, .event-info, .comment-info
+    .wish-info, .event-info
       background-color: #fff
       min-height: 150px
       padding-bottom: 1em
@@ -221,7 +221,7 @@
         padding: 0.5em
         &:hover
           background-color: lighten($c-landing, 10%)
-      .wish-content, .event-content, .comment-content
+      .wish-content, .event-content
         font-size: $fz-s
         padding: 0.5em
         padding-bottom: 1em
@@ -243,14 +243,4 @@
           text-align: right
       .target
         color: #aaa
-      .comment-content
-        margin-top: 0.5em
-        span
-          color: #777
-          overflow: scroll
-          display: block
-          width: 100%
-          height: 5em
-          +border-radius(8px)
-          padding: 0.5em
-          border: 1px solid #ddd
+
