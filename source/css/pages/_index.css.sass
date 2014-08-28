@@ -243,51 +243,59 @@ button:focus
     background-image: url("../img/comment-divider-down.png")
     bottom: 0
   .comments
-    padding: 0 0.5em
     font-size: $fz-s
     position: relative
     .timeline
       width: 100%
-      height: 250px
+      padding-top: 1em
+      max-height: 250px
+      max-height: 26vh
       overflow: scroll
-      background: url("../img/timeline.png") 0 0 repeat-y
     .comments-unit
       +clearfix
       min-height: 50px
-      margin-bottom: 2em
+      padding: 0 1em
+      padding-bottom: 2em
+      background: url("../img/timeline.png") 20px 0 repeat-y
       &:last-child
         margin-bottom: 0
-        background-color: $c-ctrl_board
+        background: none
         padding-bottom: 2em
     .left
-      +span(3)
-      .commenter-avatar
+      +span(3.5)
+      .comment-avatar
         @extend %m0auto
         width: 60px
         height: 60px
         padding: 5px
         +border-radius(50%)
         background-color: #FFF
-      .time
+      .name
+        +span(12)
+        word-break: break-all
+        padding: 0 1em
         margin-top: 1em
-        text-align: center
         font-size: $fz-xs
+        text-align: center
         color: #fff
         background-color: darken($c-ctrl_board, 50%)
-        +border-radius(50px)
+        +border-radius(5px)
+        span
+          display: block
     .right
-      +span(9)
-      .name
-        +container(12)
-        margin-top: 22px
-        margin-bottom: 8px
+      +span(8.5)
       .say
-        width: 270px
+        width: 100%
         @extend %m0auto
         background-color: #FFF
         color: #555
         padding: 1em
         +border-radius(10px)
+      .time
+        display: block
+        text-align: right
+        margin-top: 1em
+        color: #bbb
 
   .comment-form
     padding: 0.5em 1em
