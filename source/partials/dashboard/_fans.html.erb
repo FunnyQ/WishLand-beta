@@ -3,17 +3,21 @@
         <!-- 關注的人 unit -->
         <div class="follow-unit">
           <div class="follow-info">
-            <!-- 頭像與名字 -->
-            <div class="pic-and-name">
 
-              <div class="pic">
-                <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
-              </div>
-              <div class="name">
-                <span><%= data.member.firstname %> <%= data.member.lastname %></span>
-              </div>
+            <!-- a tag link 到此人的詳細頁面 -->
+            <a href="../user/">
+              <!-- 頭像與名字 -->
+              <div class="pic-and-name">
 
-            </div><!-- e/o pic-and-name -->
+                <div class="pic">
+                  <img src="../img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
+                </div>
+                <div class="name">
+                  <span><%= data.member.firstname %> <%= data.member.lastname %></span>
+                </div>
+
+              </div><!-- e/o pic-and-name -->
+            </a>
 
             <!-- 數據 -->
             <div class="numbers">
