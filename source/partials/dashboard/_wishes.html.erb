@@ -5,10 +5,13 @@
 
           <div class="wish-info">
 
-            <!-- 願望日期 -->
-            <div class="date">
-              <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
-            </div>
+            <!-- a link 連結到此願望的詳細頁面 -->
+            <a href="../show/wish.html">
+              <!-- 願望日期 -->
+              <div class="date">
+                <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
+              </div>
+            </a>
 
             <!-- 數據 -->
             <div class="numbers">
@@ -28,9 +31,13 @@
 
             <!-- 願望內容 -->
             <div class="wish-content">
-              <div class="wraper">
-                <span><%= data.event.content %></span>
-              </div>
+              <!-- a link 連結到此願望的詳細頁面 -->
+              <a href="../show/wish.html">
+                <div class="wraper">
+                  <span><%= data.event.content %></span>
+                </div>
+              </a>
+
               <div class="wish-category">
                 <span><i class="fa fa-dribbble"></i> 運動</span>
               </div>
