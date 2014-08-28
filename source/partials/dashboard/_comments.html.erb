@@ -1,6 +1,38 @@
 <% 6.times do |f| %>
-        d
 
+        <!-- 留言 unit -->
+        <div class="comment-unit trans-05s">
+          <!-- 留言日期 -->
+          <!-- <div class="date">
+            <span><i class="fa fa-calendar"></i> <%= lorem.date %></span>
+          </div> -->
 
+          <!-- 詳細資訊 -->
+          <div class="comment-info">
+
+            <!-- 留言內容 -->
+            <div class="comment-content">
+              <div class="wrapper">
+                <div class="content">
+                  <%= data.comment.content %>
+                </div>
+                <div class="date">
+                  <i class="fa fa-calendar"></i> <%= lorem.date %>
+                </div>
+              </div>
+            </div>
+            <!-- 留言對象資訊 -->
+            <div class="target-info">
+              <span>@<%= data.member.firstname %> 的活動</span>
+              <a class="target-content trans-05s" href="#">
+                <%= data.event.title %>
+              </a>
+              <div class="buttons">
+                <button class="delete-comment"><i class="fa fa-trash-o"></i> 刪除留言</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
 <% end %>
