@@ -68,7 +68,7 @@
 
   changeCategoryBtn = $('#change_category');
 
-  makeWishBtn = $('#makeWishBtn');
+  makeWishBtn = ctrlBoard.find('.is_user');
 
   cencelWishBtn = makeWishForm.find('.form-cancel');
 

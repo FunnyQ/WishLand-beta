@@ -65,6 +65,30 @@
   <div class="overlay-lv2"></div>
 
 
+  <div class="top-bar navbar navbar-default" role="navigation">
+
+      <div class="left">
+        &nbsp;
+      </div>
+
+      <div class="center">
+        <div class="top-logo">
+          <img src="./img/ctrl-logo.png" alt="" class="img-responsive">
+        </div>
+      </div>
+
+      <ul class="nav navbar-nav right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello, Takeshi <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="./dashboard/"><i class="fa fa-dashboard fa-lg"></i> Dashboard</a></li>
+            <li class="divider"></li>
+            <li><a id="sign_out" href="#"><i class="fa fa-sign-out fa-lg"></i> 登出</a></li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+
   <!-- GoogleMap, js -> mapCanvas -->
   <div id="map" class="map"></div>
 
@@ -82,7 +106,7 @@
       <!-- event 詳細內容 -->
       <div class="content">
         <!-- 日期 -->
-        <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-0（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
+        <span class="date"><i class="fa fa-calendar fa-lg"></i> 2014-08-12（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
         <!-- 願望（content）或活動（title）標題 -->
         <!-- 依不同類別加入 category class -->
         <div class="inner category-event">
@@ -145,6 +169,7 @@
         </div>
         <div class="buttons">
           <div class="submit-comment"><button type="button">送出留言</button></div>
+          <!-- <div class="unfollow"><button type="button"><i class="fa fa-star-o fa-lg"></i> 取消關注</button></div> -->
           <div class="follow"><button type="button"><i class="fa fa-star-o fa-lg"></i> 關注</button></div>
           <div class="share"><button type="button"><i class="fa fa-share-alt fa-lg"></i> 分享</button></div>
           <div class="host"><button type="button"><i class="fa fa-magic fa-lg"></i> 實現</button></div>
@@ -193,88 +218,7 @@
 <!-- 如果是登入使用者，或成功登入後 ajax 讀入 is_user.html -->
 <div class="is_user">
 
-  <!-- 左半部的 Logo -->
-  <div class="ctrl-logo">
-
-    <div class="wraper">
-
-      <img src="./img/ctrl-logo.png" alt="" class="img-responsive">
-
-    </div>
-
-  </div><!-- e/o .ctrl-logo -->
-
-  <!-- 中央應用控制區 -->
-  <div class="ctrl-main">
-
-    <div class="wraper">
-
-      <div class="options">
-
-        <!-- 測試用按鈕，實際應該由地圖上的 wish marker 觸發 -->
-        <a href="#" class="marker-wish" title="wish 測試用" data-toggle="tooltip" data-placement="top">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-comment-o fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-
-        <a href="#" id="makeWishBtn" title="許下願望" data-toggle="tooltip" data-placement="top">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-
-        <!-- 測試用按鈕，實際應該由地圖上的 event marker 觸發 -->
-        <a href="#" class="marker-event" title="event 測試用" data-toggle="tooltip" data-placement="top">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-
-        <!-- <a href="#" title="我的位置" data-toggle="tooltip" data-placement="top">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
- -->
-
-      </div>
-
-    </div>
-
-  </div><!-- e/o .ctrl-main -->
-
-  <!-- 右半部 帳號控制區 -->
-  <div class="ctrl-right">
-
-    <div class="wraper">
-
-      <h6>Takeshi</h6>
-
-      <a id="sign_out" href="#" data-toggle="tooltip" data-placement="top" title="登出">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-
-      <a id="accountManage" href="./dashboard/" data-toggle="tooltip" data-placement="top" title="帳號管理">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-user fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-
-      <!-- 訊息通知欄位 -->
-      <span class="notifier label label-danger rubberBand">New</span>
-
-    </div>
-
-  </div><!-- e/o .ctrl-right -->
+  <p><i class="fa fa-edit fa-lg"></i> 許下願望</p>
 
 </div><!-- e/o .not_user -->
 
@@ -485,7 +429,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              21 分鐘前
+              17 分鐘前
             </span>
           </div>
 
@@ -506,7 +450,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              0 分鐘前
+              27 分鐘前
             </span>
           </div>
 
@@ -527,7 +471,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              43 分鐘前
+              42 分鐘前
             </span>
           </div>
 
@@ -548,7 +492,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              57 分鐘前
+              33 分鐘前
             </span>
           </div>
 
@@ -569,7 +513,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              55 分鐘前
+              6 分鐘前
             </span>
           </div>
 
