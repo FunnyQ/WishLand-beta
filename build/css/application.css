@@ -5373,7 +5373,7 @@ Copyright (c) 2014 Daniel Eden
 .w100p, .list-view .content, .info-panel .content, .show-main .content, .list-view .content .inner, .info-panel .content .inner, .show-main .content .inner, .mainUI, .mainUI .overlay, .mainUI .overlay-lv2, .mainUI .map, .info-panel .option-buttons .observe, .info-panel .option-buttons .observe button, .info-panel .option-buttons .share button, .info-panel .option-buttons .host button, .info-panel .option-buttons .comment button, .info-panel .option-buttons .join button, .welcome_splash, .windows, .share-form .content, .share-form .content .inner, .share-form .button-wraper .share-fb, .share-form .button-wraper .share-twitter, .share-form .button-wraper .share-weibo, .share-form .button-wraper .share-email, .view-comments .comment-divider, .view-comments .comment-form, .ctrl_board, .dash-nav {
   width: 100%; }
 
-.make-wish, .confirm-dialog, .share-form, .host-form, .view-comments, .info-panel .comments .left .commenter-avatar, .info-panel .comments .right .say, .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar, .dash-wraper, .show-main .show-wraper, .show-main .comments .left .avatar, .show-main .comments .right .say {
+.make-wish, .confirm-dialog, .share-form, .host-form, .view-comments, .info-panel .comments .left .comment-avatar, .info-panel .comments .right .say, .view-comments .everyones-comments .comment-unit .comment-time .commenter-avatar, .dash-wraper, .show-main .show-wraper, .show-main .comments .left .avatar, .show-main .comments .right .say {
   margin: 0 auto; }
 
 .make-wish h3, .confirm-dialog h3, .share-form h3, .host-form h3, .view-comments h3, .info-panel h3, .make-wish .make-wish-switch, .dash-main .main-panel h3, .show-main h3 {
@@ -5585,13 +5585,15 @@ button:focus {
     width: 100%;
     background-color: rgba(242, 237, 233, 0.9);
     min-height: 120px;
-    margin-top: 0.5em;
+    border-bottom: 1px solid #aaaaaa;
     padding: 0.5em; }
     .list-view .event-unit:before, .list-view .event-unit:after, .list-view .wish-unit:before, .list-view .wish-unit:after {
       content: " ";
       display: table; }
     .list-view .event-unit:after, .list-view .wish-unit:after {
       clear: both; }
+    .list-view .event-unit:first-child, .list-view .wish-unit:first-child {
+      margin-top: 0.5em; }
     .list-view .event-unit:last-child, .list-view .wish-unit:last-child {
       margin-bottom: 0.5em; }
     .list-view .event-unit h5, .list-view .wish-unit h5 {
@@ -5643,6 +5645,39 @@ button:focus {
       .list-view .buttons button::-moz-focus-inner {
         padding: 0 !important;
         margin: -1px !important; }
+  .list-view .listview-reload {
+    margin-top: 0.5em; }
+    .list-view .listview-reload .reloadBtn {
+      width: 100%;
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF18D05', endColorstr='#FF8D5303');
+      background-color: #f18d05;
+      border: 0;
+      color: white;
+      text-shadow: #744402 0 -1px 0; }
+      .list-view .listview-reload .reloadBtn:hover {
+        text-decoration: none; }
+      .list-view .listview-reload .reloadBtn:hover {
+        background-color: #d87e04; }
+      .list-view .listview-reload .reloadBtn:active {
+        background-color: #c97604; }
+      .list-view .listview-reload .reloadBtn.disabled, .list-view .listview-reload .reloadBtn[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .list-view .listview-reload .reloadBtn::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
 
 .info-panel {
   position: relative;
@@ -5676,7 +5711,7 @@ button:focus {
       margin-left: 75px;
       margin-top: -40px;
       padding-bottom: 1em; }
-    .info-panel .wish-owner button, .info-panel .event-owner button {
+    .info-panel .wish-owner .follow, .info-panel .event-owner .follow {
       font-size: 0.8125em;
       padding: 0.5em 1.5em;
       display: inline-block;
@@ -5692,20 +5727,52 @@ button:focus {
       text-shadow: #844e01 0 -1px 0;
       margin-top: -4px;
       float: right; }
-      .info-panel .wish-owner button:hover, .info-panel .event-owner button:hover {
+      .info-panel .wish-owner .follow:hover, .info-panel .event-owner .follow:hover {
         text-decoration: none; }
-      .info-panel .wish-owner button:hover, .info-panel .event-owner button:hover {
+      .info-panel .wish-owner .follow:hover, .info-panel .event-owner .follow:hover {
         background-color: #e98a02; }
-      .info-panel .wish-owner button:active, .info-panel .event-owner button:active {
+      .info-panel .wish-owner .follow:active, .info-panel .event-owner .follow:active {
         background-color: #da8101; }
-      .info-panel .wish-owner button.disabled, .info-panel .wish-owner button[disabled], .info-panel .event-owner button.disabled, .info-panel .event-owner button[disabled] {
+      .info-panel .wish-owner .follow.disabled, .info-panel .wish-owner .follow[disabled], .info-panel .event-owner .follow.disabled, .info-panel .event-owner .follow[disabled] {
         opacity: 0.6;
         filter: alpha(opacity=60);
         background: false;
         cursor: default;
         -webkit-box-shadow: none;
         box-shadow: none; }
-      .info-panel .wish-owner button::-moz-focus-inner, .info-panel .event-owner button::-moz-focus-inner {
+      .info-panel .wish-owner .follow::-moz-focus-inner, .info-panel .event-owner .follow::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .info-panel .wish-owner .unfollow, .info-panel .event-owner .unfollow {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB99E89', endColorstr='#FF8A6B52');
+      background-color: #b99e89;
+      border: 0;
+      color: white;
+      text-shadow: #7a5e48 0 -1px 0;
+      margin-top: -4px;
+      float: right; }
+      .info-panel .wish-owner .unfollow:hover, .info-panel .event-owner .unfollow:hover {
+        text-decoration: none; }
+      .info-panel .wish-owner .unfollow:hover, .info-panel .event-owner .unfollow:hover {
+        background-color: #b09179; }
+      .info-panel .wish-owner .unfollow:active, .info-panel .event-owner .unfollow:active {
+        background-color: #aa896f; }
+      .info-panel .wish-owner .unfollow.disabled, .info-panel .wish-owner .unfollow[disabled], .info-panel .event-owner .unfollow.disabled, .info-panel .event-owner .unfollow[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .info-panel .wish-owner .unfollow::-moz-focus-inner, .info-panel .event-owner .unfollow::-moz-focus-inner {
         padding: 0 !important;
         margin: -1px !important; }
   .info-panel .divider-up, .info-panel .divider-down {
@@ -5720,17 +5787,19 @@ button:focus {
     background-image: url("../img/comment-divider-down.png");
     bottom: 0; }
   .info-panel .comments {
-    padding: 0 0.5em;
     font-size: 0.8125em;
     position: relative; }
     .info-panel .comments .timeline {
       width: 100%;
-      height: 250px;
-      overflow: scroll;
-      background: url("../img/timeline.png") 0 0 repeat-y; }
+      padding-top: 1em;
+      max-height: 250px;
+      max-height: 26vh;
+      overflow: scroll; }
     .info-panel .comments .comments-unit {
       min-height: 50px;
-      margin-bottom: 2em; }
+      padding: 0 1em;
+      padding-bottom: 2em;
+      background: url("../img/timeline.png") 20px 0 repeat-y; }
       .info-panel .comments .comments-unit:before, .info-panel .comments .comments-unit:after {
         content: " ";
         display: table; }
@@ -5738,14 +5807,14 @@ button:focus {
         clear: both; }
       .info-panel .comments .comments-unit:last-child {
         margin-bottom: 0;
-        background-color: #f2ede9;
+        background: none;
         padding-bottom: 2em; }
     .info-panel .comments .left {
-      width: 25%;
+      width: 29.16667%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%; }
-      .info-panel .comments .left .commenter-avatar {
+      .info-panel .comments .left .comment-avatar {
         width: 60px;
         height: 60px;
         padding: 5px;
@@ -5753,38 +5822,41 @@ button:focus {
         -webkit-border-radius: 50%;
         border-radius: 50%;
         background-color: white; }
-      .info-panel .comments .left .time {
+      .info-panel .comments .left .name {
+        width: 100%;
+        float: left;
+        padding-left: 0.83333%;
+        padding-right: 0.83333%;
+        word-break: break-all;
+        padding: 0 1em;
         margin-top: 1em;
-        text-align: center;
         font-size: 0.75em;
+        text-align: center;
         color: white;
         background-color: #8a6b52;
-        -moz-border-radius: 50px;
-        -webkit-border-radius: 50px;
-        border-radius: 50px; }
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px; }
+        .info-panel .comments .left .name span {
+          display: block; }
     .info-panel .comments .right {
-      width: 75%;
+      width: 70.83333%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%; }
-      .info-panel .comments .right .name {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 22px;
-        margin-bottom: 8px; }
-        .info-panel .comments .right .name:after {
-          content: " ";
-          display: block;
-          clear: both; }
       .info-panel .comments .right .say {
-        width: 270px;
+        width: 100%;
         background-color: white;
         color: #555555;
         padding: 1em;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
         border-radius: 10px; }
+      .info-panel .comments .right .time {
+        display: block;
+        text-align: right;
+        margin-top: 1em;
+        color: #bbbbbb; }
   .info-panel .comment-form {
     padding: 0.5em 1em; }
     .info-panel .comment-form textarea {
@@ -5833,13 +5905,13 @@ button:focus {
         .info-panel .buttons .submit-comment button::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
-    .info-panel .buttons .follow, .info-panel .buttons .share, .info-panel .buttons .join, .info-panel .buttons .host {
+    .info-panel .buttons .follow, .info-panel .buttons .share, .info-panel .buttons .join, .info-panel .buttons .host, .info-panel .buttons .unfollow {
       width: 33.33333%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%;
       margin-bottom: 1em; }
-      .info-panel .buttons .follow button, .info-panel .buttons .share button, .info-panel .buttons .join button, .info-panel .buttons .host button {
+      .info-panel .buttons .follow button, .info-panel .buttons .share button, .info-panel .buttons .join button, .info-panel .buttons .host button, .info-panel .buttons .unfollow button {
         width: 100%;
         font-size: 0.8125em;
         padding: 0.5em 1.5em;
@@ -5854,22 +5926,52 @@ button:focus {
         border: 0;
         color: white;
         text-shadow: #253600 0 -1px 0; }
-        .info-panel .buttons .follow button:hover, .info-panel .buttons .share button:hover, .info-panel .buttons .join button:hover, .info-panel .buttons .host button:hover {
+        .info-panel .buttons .follow button:hover, .info-panel .buttons .share button:hover, .info-panel .buttons .join button:hover, .info-panel .buttons .host button:hover, .info-panel .buttons .unfollow button:hover {
           text-decoration: none; }
-        .info-panel .buttons .follow button:hover, .info-panel .buttons .share button:hover, .info-panel .buttons .join button:hover, .info-panel .buttons .host button:hover {
+        .info-panel .buttons .follow button:hover, .info-panel .buttons .share button:hover, .info-panel .buttons .join button:hover, .info-panel .buttons .host button:hover, .info-panel .buttons .unfollow button:hover {
           background-color: #6b9c00; }
-        .info-panel .buttons .follow button:active, .info-panel .buttons .share button:active, .info-panel .buttons .join button:active, .info-panel .buttons .host button:active {
+        .info-panel .buttons .follow button:active, .info-panel .buttons .share button:active, .info-panel .buttons .join button:active, .info-panel .buttons .host button:active, .info-panel .buttons .unfollow button:active {
           background-color: #618c00; }
-        .info-panel .buttons .follow button.disabled, .info-panel .buttons .follow button[disabled], .info-panel .buttons .share button.disabled, .info-panel .buttons .share button[disabled], .info-panel .buttons .join button.disabled, .info-panel .buttons .join button[disabled], .info-panel .buttons .host button.disabled, .info-panel .buttons .host button[disabled] {
+        .info-panel .buttons .follow button.disabled, .info-panel .buttons .follow button[disabled], .info-panel .buttons .share button.disabled, .info-panel .buttons .share button[disabled], .info-panel .buttons .join button.disabled, .info-panel .buttons .join button[disabled], .info-panel .buttons .host button.disabled, .info-panel .buttons .host button[disabled], .info-panel .buttons .unfollow button.disabled, .info-panel .buttons .unfollow button[disabled] {
           opacity: 0.6;
           filter: alpha(opacity=60);
           background: false;
           cursor: default;
           -webkit-box-shadow: none;
           box-shadow: none; }
-        .info-panel .buttons .follow button::-moz-focus-inner, .info-panel .buttons .share button::-moz-focus-inner, .info-panel .buttons .join button::-moz-focus-inner, .info-panel .buttons .host button::-moz-focus-inner {
+        .info-panel .buttons .follow button::-moz-focus-inner, .info-panel .buttons .share button::-moz-focus-inner, .info-panel .buttons .join button::-moz-focus-inner, .info-panel .buttons .host button::-moz-focus-inner, .info-panel .buttons .unfollow button::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
+    .info-panel .buttons .unfollow button {
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB99E89', endColorstr='#FF8A6B52');
+      background-color: #b99e89;
+      border: 0;
+      color: white;
+      text-shadow: #7a5e48 0 -1px 0; }
+      .info-panel .buttons .unfollow button:hover {
+        text-decoration: none; }
+      .info-panel .buttons .unfollow button:hover {
+        background-color: #b09179; }
+      .info-panel .buttons .unfollow button:active {
+        background-color: #aa896f; }
+      .info-panel .buttons .unfollow button.disabled, .info-panel .buttons .unfollow button[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .info-panel .buttons .unfollow button::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
   .info-panel .option-buttons {
     font-weight: bold;
     padding-top: 0; }
@@ -5994,10 +6096,27 @@ button:focus {
 
 .confirm-dialog {
   z-index: 14; }
+  .confirm-dialog input {
+    width: 75%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%; }
+  .confirm-dialog .form-change {
+    width: 20.83333%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    margin-left: 4.16667%;
+    margin-top: 2px; }
 
 .form-wraper {
   padding: 0 2em;
   margin-bottom: 2em; }
+  .form-wraper:before, .form-wraper:after {
+    content: " ";
+    display: table; }
+  .form-wraper:after {
+    clear: both; }
 
 .button-wraper {
   padding: 1em 2em 2em 2em;
@@ -6067,7 +6186,7 @@ button:focus {
     margin: -1px !important; }
 
 .form-change {
-  font-size: 1em;
+  font-size: 0.8125em;
   padding: 0.5em 1.5em;
   display: inline-block;
   cursor: pointer;
@@ -6409,25 +6528,29 @@ button:focus {
   height: 160px;
   margin-bottom: -80px;
   background-color: #f2ede9;
-  background-image: url("../img/wood.png");
+  background-image: url("../img/brushed.jpg");
   border-top: 1px solid white;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
   z-index: 8; }
+  @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+    .ctrl_board {
+      background-image: url("../img/brushed.jpg");
+      background-size: 512px 512px; } }
 
 .is_user {
   display: none; }
 
 .not_user .ctrl-logo, .is_user .ctrl-logo {
-  width: 16.66667%;
+  width: 33.33333%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   padding-top: 27px; }
 .not_user .ctrl-main, .is_user .ctrl-main {
-  width: 66.66667%;
+  width: 33.33333%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
@@ -6450,7 +6573,7 @@ button:focus {
       .not_user .ctrl-main .options .fa-inverse:hover, .is_user .ctrl-main .options .fa-inverse:hover {
         color: #555555; }
 .not_user .ctrl-right, .is_user .ctrl-right {
-  width: 16.66667%;
+  width: 33.33333%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
@@ -6470,6 +6593,11 @@ button:focus {
     animation-iteration-count: 2;
     -webkit-animation-duration: 1s;
     animation-duration: 1s; }
+  .not_user .ctrl-right h6, .is_user .ctrl-right h6 {
+    display: inline;
+    margin: 0 1em 0 0;
+    font-size: 1em;
+    text-shadow: 0 -1px 0 white; }
 
 .dash-wraper {
   width: 960px; }
@@ -6619,6 +6747,70 @@ button:focus {
     font-size: 1.25em;
     font-weight: bold;
     color: #e02808; }
+  .dash-main .buttons {
+    margin-top: 0.5em; }
+    .dash-main .buttons .follow {
+      width: 100%;
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFD9807', endColorstr='#FF9D5D01');
+      background-color: #fd9807;
+      border: 0;
+      color: white;
+      text-shadow: #844e01 0 -1px 0; }
+      .dash-main .buttons .follow:hover {
+        text-decoration: none; }
+      .dash-main .buttons .follow:hover {
+        background-color: #e98a02; }
+      .dash-main .buttons .follow:active {
+        background-color: #da8101; }
+      .dash-main .buttons .follow.disabled, .dash-main .buttons .follow[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .dash-main .buttons .follow::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
+    .dash-main .buttons .unfollow {
+      width: 100%;
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD6C6B9', endColorstr='#FFB09179');
+      background-color: #d6c6b9;
+      border: 0;
+      color: white;
+      text-shadow: #a68469 0 -1px 0; }
+      .dash-main .buttons .unfollow:hover {
+        text-decoration: none; }
+      .dash-main .buttons .unfollow:hover {
+        background-color: #ccb9a9; }
+      .dash-main .buttons .unfollow:active {
+        background-color: #c6b19f; }
+      .dash-main .buttons .unfollow.disabled, .dash-main .buttons .unfollow[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .dash-main .buttons .unfollow::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
   .dash-main .navi-list:before, .dash-main .navi-list:after {
     content: " ";
     display: table; }
@@ -6703,6 +6895,8 @@ button:focus {
         display: table; }
       .dash-main .main-panel .pic-and-name:after {
         clear: both; }
+      .dash-main .main-panel .pic-and-name:hover {
+        background-color: #e7ddd6; }
       .dash-main .main-panel .pic-and-name .pic {
         width: 44px;
         height: 44px;
@@ -6717,12 +6911,13 @@ button:focus {
         width: 180px;
         font-size: 0.8125em;
         font-weight: bold;
-        margin: 14px 0 0 8px;
+        margin: 15px 0 0 10px;
         color: #8a6b52; }
     .dash-main .main-panel .news {
       padding: 0.5em;
       font-size: 0.8125em;
-      color: #777777; }
+      color: #777777;
+      padding-bottom: 1.3em; }
     .dash-main .main-panel .latest-content {
       background-color: #eeeeee;
       padding: 1em;
@@ -6793,13 +6988,13 @@ button:focus {
         .dash-main .main-panel .button .follow::-moz-focus-inner {
           padding: 0 !important;
           margin: -1px !important; }
-    .dash-main .main-panel .wish-unit, .dash-main .main-panel .event-unit, .dash-main .main-panel .comment-unit {
+    .dash-main .main-panel .wish-unit, .dash-main .main-panel .event-unit {
       width: 50%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%;
       padding: 10px; }
-    .dash-main .main-panel .wish-info, .dash-main .main-panel .event-info, .dash-main .main-panel .comment-info {
+    .dash-main .main-panel .wish-info, .dash-main .main-panel .event-info {
       background-color: white;
       min-height: 150px;
       padding-bottom: 1em;
@@ -6808,59 +7003,143 @@ button:focus {
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s; }
-      .dash-main .main-panel .wish-info:hover, .dash-main .main-panel .event-info:hover, .dash-main .main-panel .comment-info:hover {
+      .dash-main .main-panel .wish-info:hover, .dash-main .main-panel .event-info:hover {
         -webkit-box-shadow: 0 0 8px #999999;
         box-shadow: 0 0 8px #999999; }
-      .dash-main .main-panel .wish-info .numbers, .dash-main .main-panel .event-info .numbers, .dash-main .main-panel .comment-info .numbers {
+      .dash-main .main-panel .wish-info a:hover, .dash-main .main-panel .event-info a:hover {
+        text-decoration: none; }
+      .dash-main .main-panel .wish-info .numbers, .dash-main .main-panel .event-info .numbers {
         margin: 0.5em 0; }
-      .dash-main .main-panel .wish-info .date, .dash-main .main-panel .event-info .date, .dash-main .main-panel .comment-info .date {
+      .dash-main .main-panel .wish-info .date, .dash-main .main-panel .event-info .date {
         background-color: #fb9786;
         color: white;
         text-shadow: 0 -1px 1px #aaaaaa;
         text-align: center;
         padding: 0.5em; }
-      .dash-main .main-panel .wish-info .wish-content, .dash-main .main-panel .wish-info .event-content, .dash-main .main-panel .wish-info .comment-content, .dash-main .main-panel .event-info .wish-content, .dash-main .main-panel .event-info .event-content, .dash-main .main-panel .event-info .comment-content, .dash-main .main-panel .comment-info .wish-content, .dash-main .main-panel .comment-info .event-content, .dash-main .main-panel .comment-info .comment-content {
+        .dash-main .main-panel .wish-info .date:hover, .dash-main .main-panel .event-info .date:hover {
+          background-color: #fcac9e; }
+      .dash-main .main-panel .wish-info .wish-content, .dash-main .main-panel .wish-info .event-content, .dash-main .main-panel .event-info .wish-content, .dash-main .main-panel .event-info .event-content {
         font-size: 0.8125em;
         padding: 0.5em;
         padding-bottom: 1em; }
-        .dash-main .main-panel .wish-info .wish-content:before, .dash-main .main-panel .wish-info .wish-content:after, .dash-main .main-panel .wish-info .event-content:before, .dash-main .main-panel .wish-info .event-content:after, .dash-main .main-panel .wish-info .comment-content:before, .dash-main .main-panel .wish-info .comment-content:after, .dash-main .main-panel .event-info .wish-content:before, .dash-main .main-panel .event-info .wish-content:after, .dash-main .main-panel .event-info .event-content:before, .dash-main .main-panel .event-info .event-content:after, .dash-main .main-panel .event-info .comment-content:before, .dash-main .main-panel .event-info .comment-content:after, .dash-main .main-panel .comment-info .wish-content:before, .dash-main .main-panel .comment-info .wish-content:after, .dash-main .main-panel .comment-info .event-content:before, .dash-main .main-panel .comment-info .event-content:after, .dash-main .main-panel .comment-info .comment-content:before, .dash-main .main-panel .comment-info .comment-content:after {
+        .dash-main .main-panel .wish-info .wish-content:before, .dash-main .main-panel .wish-info .wish-content:after, .dash-main .main-panel .wish-info .event-content:before, .dash-main .main-panel .wish-info .event-content:after, .dash-main .main-panel .event-info .wish-content:before, .dash-main .main-panel .event-info .wish-content:after, .dash-main .main-panel .event-info .event-content:before, .dash-main .main-panel .event-info .event-content:after {
           content: " ";
           display: table; }
-        .dash-main .main-panel .wish-info .wish-content:after, .dash-main .main-panel .wish-info .event-content:after, .dash-main .main-panel .wish-info .comment-content:after, .dash-main .main-panel .event-info .wish-content:after, .dash-main .main-panel .event-info .event-content:after, .dash-main .main-panel .event-info .comment-content:after, .dash-main .main-panel .comment-info .wish-content:after, .dash-main .main-panel .comment-info .event-content:after, .dash-main .main-panel .comment-info .comment-content:after {
+        .dash-main .main-panel .wish-info .wish-content:after, .dash-main .main-panel .wish-info .event-content:after, .dash-main .main-panel .event-info .wish-content:after, .dash-main .main-panel .event-info .event-content:after {
           clear: both; }
-        .dash-main .main-panel .wish-info .wish-content .wraper, .dash-main .main-panel .wish-info .event-content .wraper, .dash-main .main-panel .wish-info .comment-content .wraper, .dash-main .main-panel .event-info .wish-content .wraper, .dash-main .main-panel .event-info .event-content .wraper, .dash-main .main-panel .event-info .comment-content .wraper, .dash-main .main-panel .comment-info .wish-content .wraper, .dash-main .main-panel .comment-info .event-content .wraper, .dash-main .main-panel .comment-info .comment-content .wraper {
+        .dash-main .main-panel .wish-info .wish-content .wraper, .dash-main .main-panel .wish-info .event-content .wraper, .dash-main .main-panel .event-info .wish-content .wraper, .dash-main .main-panel .event-info .event-content .wraper {
           background-color: #eeeeee;
           padding: 1em;
-          color: #777777; }
-        .dash-main .main-panel .wish-info .wish-content .wish-category, .dash-main .main-panel .wish-info .wish-content .wish-location, .dash-main .main-panel .wish-info .wish-content .event-category, .dash-main .main-panel .wish-info .wish-content .event-location, .dash-main .main-panel .wish-info .event-content .wish-category, .dash-main .main-panel .wish-info .event-content .wish-location, .dash-main .main-panel .wish-info .event-content .event-category, .dash-main .main-panel .wish-info .event-content .event-location, .dash-main .main-panel .wish-info .comment-content .wish-category, .dash-main .main-panel .wish-info .comment-content .wish-location, .dash-main .main-panel .wish-info .comment-content .event-category, .dash-main .main-panel .wish-info .comment-content .event-location, .dash-main .main-panel .event-info .wish-content .wish-category, .dash-main .main-panel .event-info .wish-content .wish-location, .dash-main .main-panel .event-info .wish-content .event-category, .dash-main .main-panel .event-info .wish-content .event-location, .dash-main .main-panel .event-info .event-content .wish-category, .dash-main .main-panel .event-info .event-content .wish-location, .dash-main .main-panel .event-info .event-content .event-category, .dash-main .main-panel .event-info .event-content .event-location, .dash-main .main-panel .event-info .comment-content .wish-category, .dash-main .main-panel .event-info .comment-content .wish-location, .dash-main .main-panel .event-info .comment-content .event-category, .dash-main .main-panel .event-info .comment-content .event-location, .dash-main .main-panel .comment-info .wish-content .wish-category, .dash-main .main-panel .comment-info .wish-content .wish-location, .dash-main .main-panel .comment-info .wish-content .event-category, .dash-main .main-panel .comment-info .wish-content .event-location, .dash-main .main-panel .comment-info .event-content .wish-category, .dash-main .main-panel .comment-info .event-content .wish-location, .dash-main .main-panel .comment-info .event-content .event-category, .dash-main .main-panel .comment-info .event-content .event-location, .dash-main .main-panel .comment-info .comment-content .wish-category, .dash-main .main-panel .comment-info .comment-content .wish-location, .dash-main .main-panel .comment-info .comment-content .event-category, .dash-main .main-panel .comment-info .comment-content .event-location {
+          color: #777777;
+          margin-top: 5px; }
+          .dash-main .main-panel .wish-info .wish-content .wraper:hover, .dash-main .main-panel .wish-info .event-content .wraper:hover, .dash-main .main-panel .event-info .wish-content .wraper:hover, .dash-main .main-panel .event-info .event-content .wraper:hover {
+            background-color: #f3f3f3; }
+        .dash-main .main-panel .wish-info .wish-content .wish-category, .dash-main .main-panel .wish-info .wish-content .wish-location, .dash-main .main-panel .wish-info .wish-content .event-category, .dash-main .main-panel .wish-info .wish-content .event-location, .dash-main .main-panel .wish-info .event-content .wish-category, .dash-main .main-panel .wish-info .event-content .wish-location, .dash-main .main-panel .wish-info .event-content .event-category, .dash-main .main-panel .wish-info .event-content .event-location, .dash-main .main-panel .event-info .wish-content .wish-category, .dash-main .main-panel .event-info .wish-content .wish-location, .dash-main .main-panel .event-info .wish-content .event-category, .dash-main .main-panel .event-info .wish-content .event-location, .dash-main .main-panel .event-info .event-content .wish-category, .dash-main .main-panel .event-info .event-content .wish-location, .dash-main .main-panel .event-info .event-content .event-category, .dash-main .main-panel .event-info .event-content .event-location {
           margin-top: 0.5em;
           color: #a68469; }
-        .dash-main .main-panel .wish-info .wish-content .wish-category, .dash-main .main-panel .wish-info .wish-content .event-category, .dash-main .main-panel .wish-info .event-content .wish-category, .dash-main .main-panel .wish-info .event-content .event-category, .dash-main .main-panel .wish-info .comment-content .wish-category, .dash-main .main-panel .wish-info .comment-content .event-category, .dash-main .main-panel .event-info .wish-content .wish-category, .dash-main .main-panel .event-info .wish-content .event-category, .dash-main .main-panel .event-info .event-content .wish-category, .dash-main .main-panel .event-info .event-content .event-category, .dash-main .main-panel .event-info .comment-content .wish-category, .dash-main .main-panel .event-info .comment-content .event-category, .dash-main .main-panel .comment-info .wish-content .wish-category, .dash-main .main-panel .comment-info .wish-content .event-category, .dash-main .main-panel .comment-info .event-content .wish-category, .dash-main .main-panel .comment-info .event-content .event-category, .dash-main .main-panel .comment-info .comment-content .wish-category, .dash-main .main-panel .comment-info .comment-content .event-category {
+        .dash-main .main-panel .wish-info .wish-content .wish-category, .dash-main .main-panel .wish-info .wish-content .event-category, .dash-main .main-panel .wish-info .event-content .wish-category, .dash-main .main-panel .wish-info .event-content .event-category, .dash-main .main-panel .event-info .wish-content .wish-category, .dash-main .main-panel .event-info .wish-content .event-category, .dash-main .main-panel .event-info .event-content .wish-category, .dash-main .main-panel .event-info .event-content .event-category {
           width: 25%;
           float: left;
           padding-left: 0.83333%;
           padding-right: 0.83333%; }
-        .dash-main .main-panel .wish-info .wish-content .wish-location, .dash-main .main-panel .wish-info .wish-content .event-location, .dash-main .main-panel .wish-info .event-content .wish-location, .dash-main .main-panel .wish-info .event-content .event-location, .dash-main .main-panel .wish-info .comment-content .wish-location, .dash-main .main-panel .wish-info .comment-content .event-location, .dash-main .main-panel .event-info .wish-content .wish-location, .dash-main .main-panel .event-info .wish-content .event-location, .dash-main .main-panel .event-info .event-content .wish-location, .dash-main .main-panel .event-info .event-content .event-location, .dash-main .main-panel .event-info .comment-content .wish-location, .dash-main .main-panel .event-info .comment-content .event-location, .dash-main .main-panel .comment-info .wish-content .wish-location, .dash-main .main-panel .comment-info .wish-content .event-location, .dash-main .main-panel .comment-info .event-content .wish-location, .dash-main .main-panel .comment-info .event-content .event-location, .dash-main .main-panel .comment-info .comment-content .wish-location, .dash-main .main-panel .comment-info .comment-content .event-location {
+        .dash-main .main-panel .wish-info .wish-content .wish-location, .dash-main .main-panel .wish-info .wish-content .event-location, .dash-main .main-panel .wish-info .event-content .wish-location, .dash-main .main-panel .wish-info .event-content .event-location, .dash-main .main-panel .event-info .wish-content .wish-location, .dash-main .main-panel .event-info .wish-content .event-location, .dash-main .main-panel .event-info .event-content .wish-location, .dash-main .main-panel .event-info .event-content .event-location {
           width: 75%;
           float: left;
           padding-left: 0.83333%;
           padding-right: 0.83333%;
           text-align: right; }
-      .dash-main .main-panel .wish-info .target, .dash-main .main-panel .event-info .target, .dash-main .main-panel .comment-info .target {
+      .dash-main .main-panel .wish-info .target, .dash-main .main-panel .event-info .target {
         color: #aaaaaa; }
-      .dash-main .main-panel .wish-info .comment-content, .dash-main .main-panel .event-info .comment-content, .dash-main .main-panel .comment-info .comment-content {
-        margin-top: 0.5em; }
-        .dash-main .main-panel .wish-info .comment-content span, .dash-main .main-panel .event-info .comment-content span, .dash-main .main-panel .comment-info .comment-content span {
-          color: #777777;
-          overflow: scroll;
-          display: block;
-          width: 100%;
-          height: 5em;
-          -moz-border-radius: 8px;
-          -webkit-border-radius: 8px;
-          border-radius: 8px;
-          padding: 0.5em;
-          border: 1px solid #dddddd; }
+  .dash-main .comment-unit {
+    width: 100%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    background-color: whitesmoke;
+    margin-bottom: 1em;
+    border-top: 10px solid #ccb9a9;
+    padding: 0;
+    color: #888888;
+    font-size: 0.8125em; }
+    .dash-main .comment-unit:hover {
+      -webkit-box-shadow: 0 0 5px #999999;
+      box-shadow: 0 0 5px #999999; }
+    .dash-main .comment-unit .comment-info:before, .dash-main .comment-unit .comment-info:after {
+      content: " ";
+      display: table; }
+    .dash-main .comment-unit .comment-info:after {
+      clear: both; }
+    .dash-main .comment-unit .comment-info .comment-content {
+      width: 58.33333%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      padding: 0.5em;
+      border-right: 1px solid #cccccc; }
+    .dash-main .comment-unit .comment-info .wrapper {
+      border: 1px dotted #cccccc;
+      padding: 0.5em;
+      background-color: white;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
+      .dash-main .comment-unit .comment-info .wrapper .date {
+        text-align: right;
+        color: #aaaaaa;
+        margin-top: 1em; }
+    .dash-main .comment-unit .comment-info .target-info {
+      width: 41.66667%;
+      float: left;
+      padding-left: 0.83333%;
+      padding-right: 0.83333%;
+      padding: 0.5em; }
+    .dash-main .comment-unit .comment-info .target-content {
+      display: block;
+      background-color: white;
+      padding: 0.5em;
+      margin-top: 3px;
+      color: #888888; }
+      .dash-main .comment-unit .comment-info .target-content:hover {
+        -webkit-box-shadow: 0 0 3px #999999;
+        box-shadow: 0 0 3px #999999;
+        text-decoration: none; }
+      .dash-main .comment-unit .comment-info .target-content .owner {
+        text-align: right;
+        margin-top: 1em; }
+      .dash-main .comment-unit .comment-info .target-content span:hover {
+        text-decoration: none; }
+    .dash-main .comment-unit .buttons .delete-comment {
+      width: 100%;
+      margin-top: 0.5em;
+      font-size: 0.8125em;
+      padding: 0.5em 1.5em;
+      display: inline-block;
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFCCB9A9', endColorstr='#FFA68469');
+      background-color: #ccb9a9;
+      border: 0;
+      color: white;
+      text-shadow: #9a775b 0 -1px 0; }
+      .dash-main .comment-unit .buttons .delete-comment:hover {
+        text-decoration: none; }
+      .dash-main .comment-unit .buttons .delete-comment:hover {
+        background-color: #c3ab99; }
+      .dash-main .comment-unit .buttons .delete-comment:active {
+        background-color: #bda48f; }
+      .dash-main .comment-unit .buttons .delete-comment.disabled, .dash-main .comment-unit .buttons .delete-comment[disabled] {
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        background: false;
+        cursor: default;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .dash-main .comment-unit .buttons .delete-comment::-moz-focus-inner {
+        padding: 0 !important;
+        margin: -1px !important; }
 
 .show-main {
   padding-top: 70px;
@@ -6896,7 +7175,7 @@ button:focus {
       border: 5px solid white; }
     .show-main .owner .owner-name {
       color: #6a3f01;
-      margin-left: 75px;
+      margin-left: 80px;
       margin-top: -40px;
       padding-bottom: 1em; }
     .show-main .owner button {
@@ -6943,17 +7222,18 @@ button:focus {
     background-image: url("../img/comment-divider-down.png");
     bottom: 0; }
   .show-main .comments {
-    padding: 0 0.5em;
     font-size: 0.8125em;
     position: relative; }
     .show-main .comments .timeline {
       width: 100%;
-      height: 250px;
-      overflow: scroll;
-      background: url("../img/timeline.png") 0 0 repeat-y; }
+      padding-top: 1em;
+      max-height: 250px;
+      overflow: scroll; }
     .show-main .comments .comments-unit {
       min-height: 50px;
-      margin-bottom: 2em; }
+      padding: 0 1em;
+      padding-bottom: 2em;
+      background: url("../img/timeline.png") 20px 0 repeat-y; }
       .show-main .comments .comments-unit:before, .show-main .comments .comments-unit:after {
         content: " ";
         display: table; }
@@ -6961,10 +7241,10 @@ button:focus {
         clear: both; }
       .show-main .comments .comments-unit:last-child {
         margin-bottom: 0;
-        background-color: #f2ede9;
+        background: none;
         padding-bottom: 2em; }
     .show-main .comments .left {
-      width: 25%;
+      width: 29.16667%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%; }
@@ -6976,38 +7256,41 @@ button:focus {
         -webkit-border-radius: 50%;
         border-radius: 50%;
         background-color: white; }
-      .show-main .comments .left .time {
+      .show-main .comments .left .name {
+        width: 100%;
+        float: left;
+        padding-left: 0.83333%;
+        padding-right: 0.83333%;
+        word-break: break-all;
+        padding: 0 1em;
         margin-top: 1em;
-        text-align: center;
         font-size: 0.75em;
+        text-align: center;
         color: white;
         background-color: #8a6b52;
-        -moz-border-radius: 50px;
-        -webkit-border-radius: 50px;
-        border-radius: 50px; }
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px; }
+        .show-main .comments .left .name span {
+          display: block; }
     .show-main .comments .right {
-      width: 75%;
+      width: 70.83333%;
       float: left;
       padding-left: 0.83333%;
       padding-right: 0.83333%; }
-      .show-main .comments .right .name {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 22px;
-        margin-bottom: 8px; }
-        .show-main .comments .right .name:after {
-          content: " ";
-          display: block;
-          clear: both; }
       .show-main .comments .right .say {
-        width: 270px;
+        width: 100%;
         background-color: white;
         color: #555555;
         padding: 1em;
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
         border-radius: 10px; }
+      .show-main .comments .right .time {
+        display: block;
+        text-align: right;
+        margin-top: 1em;
+        color: #bbbbbb; }
   .show-main .comment-form {
     padding: 0.5em 1em; }
     .show-main .comment-form textarea {
