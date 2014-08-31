@@ -103,7 +103,7 @@ button:focus
 
 
 // panel 類界面
-.wish-detail, .event-detail//, .list-view
+.wish-detail, .event-detail, .list-view
   display: none
 
 
@@ -403,9 +403,16 @@ button:focus
 .confirm-dialog
   @extend %make-wish
   z-index: +index($elements, confirm-dialog)
+  input
+    +span(9)
+  .form-change
+    +span(2.5)
+    +push(0.5)
+    margin-top: 2px
 
 
 .form-wraper
+  +clearfix
   padding: 0 2em
   margin-bottom: 2em
 .button-wraper
@@ -417,7 +424,7 @@ button:focus
 .form-submit
   +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
 .form-change
-  +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
+  +sassy-button("flat", 5px, $fz-s, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 
 .share-form
   @extend %make-wish
