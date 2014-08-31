@@ -103,7 +103,7 @@ button:focus
 
 
 // panel 類界面
-.wish-detail, .event-detail, .list-view
+.wish-detail, .event-detail//, .list-view
   display: none
 
 
@@ -124,8 +124,10 @@ button:focus
     width: 100%
     background-color: rgba($c-ctrl_board, 0.9)
     min-height: 120px
-    margin-top: 0.5em
+    border-bottom: 1px solid #aaa
     padding: 0.5em
+    &:first-child
+      margin-top: 0.5em
     &:last-child
       margin-bottom: 0.5em
     h5
