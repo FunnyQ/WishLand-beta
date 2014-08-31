@@ -77,6 +77,33 @@ button:focus
     z-index: +index($elements, overlay-lv2)
     background-color: rgba(black, 0.4)
 
+  .top-bar
+    +clearfix
+    border-radius: 0
+    margin-bottom: 0
+    background-image: url("../img/brushed.jpg")
+    border-bottom: 1px solid #fff
+    +box-shadow(0 0 3px rgba(#000, 0.5))
+
+    .right, .center, .left
+      +span(4)
+
+    .center
+      .top-logo
+        width: 88px
+        margin: 0.7em auto 0 auto
+
+    .right
+      padding-right: 1.5em
+      .dropdown
+        float: right
+        margin-right: -15px
+      .dropdown-menu
+        font-size: $fz-s
+
+
+
+
 
   // map canvas
   .map
@@ -613,58 +640,69 @@ button:focus
   bottom: 0
   z-index: index($elements, ctrl_board)
 
+
 .is_user
   display: none
+
+  height: 90px
+  padding-top: 1em
+  text-align: center
+  font-size: $fz-xl
+  color: #000
+  cursor: pointer
+
+
+    +text-shadow(0 -1px 0 #fff)
 // 設定 is_user, not_user 全寬
-.not_user, .is_user
-  @extend %span12
+// .not_user, .is_user
+//   @extend %span12
 
-  // 左半部，logo 欄位
-  .ctrl-logo
-    +span(4)
-    padding-top: 27px
-
-
-  // 中央應用控制區
-  .ctrl-main
-    +span(4)
-    padding-top: 20px
-    .options
-      +container($w-mobile)
-      text-align: center
-      a
-        color: #fff
-        @extend .trans-05s
-        &:hover
-          color: #eee
-          // +text-shadow(0 0 2px darken($c-ctrl_board, 30%))
-      .fa-inverse
-        color: #888
-        @extend .trans-05s
-        &:hover
-          color: darken(#888, 20%)
+//   // 左半部，logo 欄位
+//   .ctrl-logo
+//     +span(4)
+//     padding-top: 27px
 
 
+//   // 中央應用控制區
+//   .ctrl-main
+//     +span(4)
+//     padding-top: 20px
+//     .options
+//       +container($w-mobile)
+//       text-align: center
+//       a
+//         color: #fff
+//         @extend .trans-05s
+//         &:hover
+//           color: #eee
+//           // +text-shadow(0 0 2px darken($c-ctrl_board, 30%))
+//       .fa-inverse
+//         color: #888
+//         @extend .trans-05s
+//         &:hover
+//           color: darken(#888, 20%)
 
-  // 右半部帳號控制區
-  .ctrl-right
-    +span(4)
-    padding-top: 25px
-    text-align: right
-    a
-      font-size: $fz-s
-      color: darken($c-ctrl_board, 30%)
-      +transition(color 0.5s)
-      &:hover
-        color: darken($c-ctrl_board, 50%)
-        text-decoration: none
-    .notifier
-      +animation-iteration-count(2)
-      +animation-duration(1s)
-    h6
-      display: inline
-      margin: 0 1em 0 0
-      font-size: $fz-m
-      +text-shadow(0 -1px 0 #fff)
+
+
+//   // 右半部帳號控制區
+//   .ctrl-right
+//     +span(4)
+//     padding-top: 25px
+//     text-align: right
+//     a
+//       font-size: $fz-s
+//       color: darken($c-ctrl_board, 30%)
+//       +transition(color 0.5s)
+//       &:hover
+//         color: darken($c-ctrl_board, 50%)
+//         text-decoration: none
+//     .notifier
+//       +animation-iteration-count(2)
+//       +animation-duration(1s)
+//     h6
+//       display: inline
+//       margin: 0 1em 0 0
+//       font-size: $fz-m
+//       +text-shadow(0 -1px 0 #fff)
 
 ///////////////////////////////

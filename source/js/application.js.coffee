@@ -81,7 +81,7 @@ fbLoginBtn = $('a.login-button')
 changeCategoryBtn = $('#change_category')
 
 # 許願按鈕
-makeWishBtn = $('#makeWishBtn')
+makeWishBtn = ctrlBoard.find('.is_user')
 # 取消許願按鈕
 cencelWishBtn = makeWishForm.find('.form-cancel')
 # 送出願望按鈕
