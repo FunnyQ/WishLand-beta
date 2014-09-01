@@ -175,7 +175,7 @@ unLoadCtrlBoard = ->
 
 # 顯示 list view
 showListView = ->
-  listView.addClass('animated fadeInLeft')
+  listView.addClass('animated fadeInLeft active')
   listView.fadeIn()
   setTimeout (->
     listView.removeClass('animated fadeInLeft')
@@ -188,7 +188,7 @@ hideListView = ->
   listView.addClass('animated fadeOutLeft')
   listView.fadeOut()
   setTimeout (->
-    listView.removeClass('animated fadeOutLeft')
+    listView.removeClass('animated fadeOutLeft active')
     null
   ), 1000
   null
@@ -640,15 +640,17 @@ signOutBtn.on "click", ->
 ### TEST AREA ###
 ## 實際 trigger 應該是地圖上的 markers
 #################
-ctrlBoard.find('.marker-wish').on "click", ->
+$('.test-listView').on "click", ->
   # 先 ajax 讀入表單再顯示面板
-  showConfirmDialog()
+  if listView.hasClass('active')
+    hideListView()
+  else
+    showListView()
   null
 
-ctrlBoard.find('.marker-event').on "click", ->
+$('.test-confirmDialog').on "click", ->
   # 先 ajax 讀入表單再顯示面板
-  loadEventDetail()
-  showInfoPanel()
+  showConfirmDialog()
   null
 
 ################################################################################
