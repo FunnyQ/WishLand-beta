@@ -149,7 +149,7 @@
   };
 
   showListView = function() {
-    listView.addClass('animated fadeInLeft');
+    listView.addClass('animated fadeInLeft active');
     listView.fadeIn();
     setTimeout((function() {
       listView.removeClass('animated fadeInLeft');
@@ -162,7 +162,7 @@
     listView.addClass('animated fadeOutLeft');
     listView.fadeOut();
     setTimeout((function() {
-      listView.removeClass('animated fadeOutLeft');
+      listView.removeClass('animated fadeOutLeft active');
       return null;
     }), 1000);
     return null;
@@ -727,14 +727,17 @@
 
   /* TEST AREA */
 
-  ctrlBoard.find('.marker-wish').on("click", function() {
-    showConfirmDialog();
+  $('.test-listView').on("click", function() {
+    if (listView.hasClass('active')) {
+      hideListView();
+    } else {
+      showListView();
+    }
     return null;
   });
 
-  ctrlBoard.find('.marker-event').on("click", function() {
-    loadEventDetail();
-    showInfoPanel();
+  $('.test-confirmDialog').on("click", function() {
+    showConfirmDialog();
     return null;
   });
 
