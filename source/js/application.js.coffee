@@ -458,7 +458,10 @@ cencelWishBtn.on "click", ->
 ###
 submitWishBtn.on "click", ->
   # do something
-  submitWishEffect()
+
+  # submitWishEffect()
+  `// 只有第一次會 showConfirmDialog(), 第二次之後使用 submitWishEffect()`
+  showConfirmDialog()
   null
 
 
