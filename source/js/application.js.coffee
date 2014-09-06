@@ -186,9 +186,9 @@ showListView = ->
 # 移除 list view
 hideListView = ->
   listView.addClass('animated fadeOutLeft')
-  listView.fadeOut()
+  # listView.fadeOut()
   setTimeout (->
-    listView.removeClass('animated fadeOutLeft active')
+    listView.removeClass('animated fadeOutLeft active').hide()
     null
   ), 1000
   null
@@ -651,6 +651,18 @@ $('.test-listView').on "click", ->
 $('.test-confirmDialog').on "click", ->
   # 先 ajax 讀入表單再顯示面板
   showConfirmDialog()
+  null
+
+$('.test-wishDetail').on "click", ->
+  # 先 ajax 讀入表單再顯示面板
+  showInfoPanel()
+  loadWishDetail()
+  null
+
+$('.test-eventDetail').on "click", ->
+  # 先 ajax 讀入表單再顯示面板
+  showInfoPanel()
+  loadEventDetail()
   null
 
 ################################################################################
