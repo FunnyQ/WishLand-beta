@@ -39,14 +39,8 @@
       </div>
 
       <ul class="nav navbar-nav right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello, <%= data.member.firstname %> <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="./dashboard/"><i class="fa fa-dashboard fa-lg"></i> Dashboard</a></li>
-            <li class="divider"></li>
-            <li><a id="sign_out" href="#"><i class="fa fa-sign-out fa-lg"></i> 登出</a></li>
-          </ul>
-        </li>
+        <li class="navbar-right"><a id="sign_out" href="#"><i class="fa fa-sign-out fa-lg"></i> 登出</a></li>
+        <li class="navbar-right"><a href="./dashboard/"><i class="fa fa-user fa-lg"></i> <%= data.member.firstname %></a></li>
       </ul>
   </div>
 
