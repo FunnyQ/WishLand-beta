@@ -193,6 +193,13 @@ hideListView = ->
   ), 1000
   null
 
+# ListView 開關
+swithcListView = ->
+  if listView.hasClass('active')
+    hideListView()
+  else
+    showListView()
+  null
 
 # 載入願望詳細資訊
 loadWishDetail = ->
@@ -243,10 +250,10 @@ submitWishEffect = ->
 `// 顯示確認視窗`
 showConfirmDialog = ->
   closeUI(0)
-  confirmDialog.addClass('animated bounceInUp')
+  confirmDialog.addClass('animated bounceInDown')
   confirmDialog.add(siteOverlay).fadeIn()
   setTimeout (->
-    confirmDialog.removeClass('animated bounceInUp')
+    confirmDialog.removeClass('animated bounceInDown')
     null
   ), 1000
   null
