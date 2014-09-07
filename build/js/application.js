@@ -160,9 +160,8 @@
 
   hideListView = function() {
     listView.addClass('animated fadeOutLeft');
-    listView.fadeOut();
     setTimeout((function() {
-      listView.removeClass('animated fadeOutLeft active');
+      listView.removeClass('animated fadeOutLeft active').hide();
       return null;
     }), 1000);
     return null;
@@ -470,7 +469,8 @@
    */
 
   submitWishBtn.on("click", function() {
-    submitWishEffect();
+    // 只有第一次會 showConfirmDialog(), 第二次之後使用 submitWishEffect();
+    showConfirmDialog();
     return null;
   });
 
@@ -738,6 +738,18 @@
 
   $('.test-confirmDialog').on("click", function() {
     showConfirmDialog();
+    return null;
+  });
+
+  $('.test-wishDetail').on("click", function() {
+    showInfoPanel();
+    loadWishDetail();
+    return null;
+  });
+
+  $('.test-eventDetail').on("click", function() {
+    showInfoPanel();
+    loadEventDetail();
     return null;
   });
 
