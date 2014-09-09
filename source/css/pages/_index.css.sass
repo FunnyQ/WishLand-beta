@@ -32,7 +32,8 @@ a:focus
 // 第一層基本頁面
 .landing
   @extend %h100p
-  background-color: $c-landing
+  background-color: $c-landing-bg
+  border: 8px solid $c-landing-border
   position: relative
   z-index: +index($elements, landing)
   // display: none
@@ -43,9 +44,8 @@ a:focus
     text-align: center
 
   .lp-logo
-    margin-bottom: 20px
     .logo
-      +container(200px)
+      +container(250px)
 
   .lp-slogan
     +container($w-pad)
@@ -56,7 +56,7 @@ a:focus
       margin: 1em 0 0 0
       color: lighten($c-landing, 25%)
   .login-button
-    +sassy-button("flat", 4px, $fz-l, $c-facebook, $c-facebook, #fff, "inset")
+    +sassy-button("flat", 4px, $fz-l, $c-landing-border, $c-facebook, #fff, "inset")
     margin-top: 30px
 ///////////////////////////////
 
@@ -93,13 +93,19 @@ a:focus
     .right, .center, .left
       +span(4)
 
+    .left
+      margin-top: 1em
+      a
+        color: #c30d23
+
     .center
       .top-logo
-        width: 88px
-        margin: 0.7em auto 0 auto
+        width: 135px
+        margin: 8px auto
 
     .right
       text-align: right
+      margin-top: 1em
 
 
 
@@ -191,7 +197,7 @@ a:focus
     margin-top: 0.5em
     .reloadBtn
       width: 100%
-      +sassy-button("flat", 0, $fz-s, $btn-highlight, $btn-primary, #fff, "inset")
+      +sassy-button("flat", 0, $fz-s, $c-listview-reload-btn, $btn-primary, #fff, "inset")
 
 
 .info-panel
