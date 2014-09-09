@@ -140,7 +140,7 @@ a:focus
   position: relative
   overflow: scroll
   width: 350px
-  background-color: rgba(#000, 0.5)
+  background-color: #fff
   float: left
   z-index: +index($elements, list-view)
   padding: 0 0.5em
@@ -148,10 +148,11 @@ a:focus
   .event-unit, .wish-unit
     +clearfix
     width: 100%
-    background-color: rgba($c-ctrl_board, 0.9)
+    background-color: $c-listview-unit-bg
     min-height: 120px
-    border-bottom: 1px solid #aaa
+    border-bottom: 1px solid #ddd
     padding: 0.5em
+    margin-bottom: 0.5em
     &:first-child
       margin-top: 0.5em
     &:last-child
@@ -173,17 +174,23 @@ a:focus
 
   .buttons
     +span(12)
-    .follow, .join, .host
+    .listview-btn
       +span(6)
-    button
+    .follow, .join, .host
       width: 100%
-      +sassy-button("flat", 5px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+    .follow
+      +sassy-button("flat", 0, $fz-s, $btn-listview-follow, $btn-listview-follow, #fff, "inset")
+    .join
+      +sassy-button("flat", 0, $fz-s, $btn-listview-join, $btn-listview-follow, #fff, "inset")
+    .host
+      +sassy-button("flat", 0, $fz-s, $btn-listview-host, $btn-listview-follow, #fff, "inset")
+
 
   .listview-reload
     margin-top: 0.5em
     .reloadBtn
       width: 100%
-      +sassy-button("flat", 5px, $fz-s, $btn-highlight, $btn-primary, #fff, "inset")
+      +sassy-button("flat", 0, $fz-s, $btn-highlight, $btn-primary, #fff, "inset")
 
 
 .info-panel

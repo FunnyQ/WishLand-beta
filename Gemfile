@@ -32,3 +32,5 @@ gem "sassy-buttons"
 
 # image optimizer for build
 gem "middleman-imageoptim", "~> 0.1.4"
+
+gem "middleman-favicon-maker", "~> 3.7"

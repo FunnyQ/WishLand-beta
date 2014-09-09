@@ -34,7 +34,7 @@
     .date
       display: block
       font-size: $fz-s
-      color: darken($c-ctrl_board, 50%)
+      color: $c-listview-text
       margin-bottom: 0.5em
     .inner
       @extend %w100p
@@ -43,13 +43,13 @@
       margin: 0
       color: darken($c-ctrl_board, 60%)
       background-color: #FFF
-      +box-shadow(0 0 2px #aaa)
+      border: 1px solid #ddd
       padding: 1em
       font-weight: bold
     .category, .location, .distance
       display: block
       font-size: $fz-s
-      color: darken($c-ctrl_board, 40%)
+      color: $c-listview-text
     .category
       +span(3)
     .location

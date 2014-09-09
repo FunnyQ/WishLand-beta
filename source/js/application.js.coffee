@@ -194,7 +194,7 @@ hideListView = ->
   null
 
 # ListView 開關
-swithcListView = ->
+switchListView = ->
   if listView.hasClass('active')
     hideListView()
   else
