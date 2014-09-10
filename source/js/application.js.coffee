@@ -18,6 +18,15 @@ siteOverlayLv2 = $('.overlay-lv2')
 # 歡迎畫面
 powishBasic = $('.powish-basic')
 welcomeSplash = $('.welcome_splash')
+powishBtn = powishBasic.find('.btn-mode')
+powishForm = powishBasic.find('.form-mode')
+
+powishEatBtn = powishForm.find('.eat')
+powishSocialBtn = powishForm.find('.social')
+powishSportBtn = powishForm.find('.sport')
+powishArtBtn = powishForm.find('.art')
+powishCategoryBtn = powishEatBtn.add(powishArtBtn).add(powishSocialBtn).add(powishSportBtn)
+powishSubmit = powishForm.find('.form-submit')
 
 # 地圖 canvas
 mainUI = $('.mainUI')
@@ -392,6 +401,8 @@ $( document ).ready ->
     "left": (viewWidth / 2) - 50
   powishBasic.find('.slogan').css
     "margin-top": ( viewHeight / 2 ) - 150
+  powishForm.css
+    "margin-top": ( viewHeight / 2 ) - 250
   $( window ).resize ->
     viewHeight = $( window ).height()
     viewWidth = $( window ).width()
@@ -400,6 +411,8 @@ $( document ).ready ->
       "left": (viewWidth / 2) - 50
     powishBasic.find('.slogan').css
       "margin-top": ( viewHeight / 2 ) - 150
+    powishForm.css
+      "margin-top": ( viewHeight / 2 ) - 250
 
 ################################################################################
 
@@ -444,12 +457,33 @@ fbLoginBtn.on "click", ->
 ###
 點擊任意位置關閉 splash screen
 ###
-welcomeSplash.on "click", ->
-  $(this).find('.slogan').fadeOut()
-  $(this).removeClass("welcome_splash").css
-    "height": "80px"
+powishBasic.on "click", ->
+  if $(@).hasClass('welcome_splash')
+    $(@).find('.slogan').fadeOut ->
+      powishBasic.removeClass("welcome_splash").addClass("powish-form-mode")
+      powishForm.fadeIn()
+      console.log('test')
   null
 
+###
+選擇願望類別
+###
+powishCategoryBtn.on "click", ->
+  powishCategoryBtn.removeClass('selected')
+  $(@).addClass('selected')
+
+###
+送出願望
+###
+powishSubmit.on "click", ->
+  powishForm.fadeOut ->
+    powishBasic.removeClass("powish-form-mode").addClass("powish-btn-mode")
+    powishBtn.fadeIn()
+
+powishBtn.on "click", ->
+  $(@).fadeOut ->
+    powishBasic.removeClass("powish-btn-mode").addClass("powish-form-mode")
+    powishForm.fadeIn()
 
 ###
 按下許願按鈕，顯示許願表單

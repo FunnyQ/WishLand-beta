@@ -36,7 +36,7 @@ a:focus
   border: 8px solid $c-landing-border
   position: relative
   z-index: +index($elements, landing)
-  // display: none
+  display: none
 
   .lp-content
     padding-top: 33vh
@@ -401,17 +401,59 @@ a:focus
   bottom: 0
   z-index: +index($elements, splash)
   background-color: rgba(#000, 0.8)
-  h3, p, .powish-btn
+  h3, p, .plus-sign
     text-align: center
     color: #fff
 
   .slogan
-  .powish-btn
+  .plus-sign
     font-family: $typo-thin100
     font-size: 10em
     line-height: 0.8
     cursor: pointer
+.powish-form-mode
+  .form-mode
+    +container(450px)
+    display: none
+  .btn-wrapper
+    +clearfix
+  .category-btn
+    +span(3)
+    height: 90px
+    .eat
+      +sassy-button("flat", 50%, 19px, $c-eat)
+    .social
+      +sassy-button("flat", 50%, 19px, $c-social)
+    .sport
+      +sassy-button("flat", 50%, 19px, $c-sport)
+    .art
+      +sassy-button("flat", 50%, 19px, $c-art)
+    .eat, .social, .sport, .art
+      width: 80px
+      height: 80px
+      margin: 0 5px
+      padding: 26px
+    .selected
+      border: 5px solid #fff
+      padding: 22px 0 0 22px
 
+  h4
+    color: #fff
+    font-size: $fz-m
+
+.powish-btn-mode
+  height: 80px
+  background-color: $c-ctrl-board-bg
+  border-top: 5px solid $c-ctrl-board-border-top
+  +box-shadow(0 0 8px rgba(#000, 0.8))
+  .btn-mode
+    display: none
+    font-family: $typo-thin100
+    width: 100%
+    height: 80px
+    text-align: center
+    font-size: 3em
+    cursor: pointer
 
 // window 類界面
 .windows
