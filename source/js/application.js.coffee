@@ -379,10 +379,10 @@ $( document ).ready ->
   ###
   主界面區塊隨視窗高度變動
   ###
-  mapCanvas.add(mainUI).height( viewHeight - 80 )
+  mapCanvas.add(mainUI).height( viewHeight )
   $( window ).resize ->
     viewHeight = $( window ).height()
-    mapCanvas.add(mainUI).height( viewHeight - 80 )
+    mapCanvas.add(mainUI).height( viewHeight )
   ###
   固定切換類別按鈕在主介面中間
   ###

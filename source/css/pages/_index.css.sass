@@ -87,7 +87,7 @@ a:focus
     // background-image: url("../img/brushed.jpg")
     background-color: $c-topbar-bg
     border-bottom: 5px solid $c-topbar-border-bottom
-    +box-shadow(0 0 3px rgba(#000, 0.5))
+    +box-shadow(0 0 8px rgba(#000, 0.8))
     z-index: +index($elements, top-bar)
 
     .right, .center, .left
@@ -650,11 +650,9 @@ a:focus
   @extend %w100p
   height: 160px
   margin-bottom: -80px
-  background-color: $c-ctrl_board
-  background-image: url("../img/brushed.jpg")
-  +image-2x('../img/brushed.jpg', 512px, 512px)
-  border-top: 1px solid #fff
-  +box-shadow(0 0 3px rgba(#000, 0.5))
+  background-color: $c-ctrl-board-bg
+  border-top: 5px solid $c-ctrl-board-border-top
+  +box-shadow(0 0 8px rgba(#000, 0.8))
   position: fixed
   bottom: 0
   z-index: index($elements, ctrl_board)
