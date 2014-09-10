@@ -112,7 +112,7 @@
       <!-- event 詳細內容 -->
       <div class="content">
         <!-- 日期 -->
-        <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-7（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
+        <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-20（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
         <!-- 願望（content）或活動（title）標題 -->
         <!-- 依不同類別加入 category class -->
         <div class="inner category-event">
@@ -220,26 +220,67 @@
 
 
 <!-- 控制列（ctrl_board.html.erb） -->
-<div class="ctrl_board">
-
-<!-- 非登入使用者，先看到 not_user -->
-
-<!-- 如果是登入使用者，或成功登入後 ajax 讀入 is_user.html -->
-<div class="is_user">
-
-  <p><i class="fa fa-edit fa-lg"></i> 許下願望</p>
-
-</div><!-- e/o .not_user -->
-
-
-</div>
-
 
 
 <!-- Welcome splash screen 歡迎視窗 -->
-<div class="welcome_splash">
-  <h3>歡迎來到 Po Wish</h3>
-  <p>快來許下你的願望，或幫助別人實現願望吧！</p>
+<div class="welcome_splash powish-basic trans-07s powish-form-mode">
+  <div class="slogan">
+    <h3>歡迎來到 Po wish</h3>
+    <p>快來許下你的願望，或幫助別人實現願望吧！</p>
+    <div class="plus-sign">
+      +
+    </div>
+  </div>
+  <div class="form-mode">
+
+    <form class="form-horizontal" role="form">
+
+      <!-- 願望內容表單 -->
+      <div class="form-wraper">
+
+        <div class="btn-wrapper">
+          <div class="category-btn">
+
+            <!-- 加入 selected class 為選擇狀態 -->
+            <div class="eat">
+              <i class="fa fa-cutlery fa-lg"></i>
+            </div>
+          </div>
+          <div class="category-btn">
+            <div class="social">
+              <i class="fa fa-users fa-lg"></i>
+            </div>
+          </div>
+          <div class="category-btn">
+            <div class="sport">
+              <i class="fa fa-dribbble fa-lg"></i>
+            </div>
+          </div>
+          <div class="category-btn">
+            <div class="art">
+              <i class="fa fa-photo fa-lg"></i>
+            </div>
+          </div>
+        </div>
+
+        <h4><i class="fa fa-pencil fa-lg"></i> 我想要...</h4>
+        <textarea class="form-control" rows="3"></textarea>
+        <!-- 願望地點顯示欄位 -->
+        <h4><i class="fa fa-map-marker fa-lg"></i> 目前的許願地點是：</h4>
+        <input type="text" class="form-control" rows="3" placeholder="隨機地點許願">
+      </div>
+
+      <!-- submit -->
+      <div class="button-wraper">
+        <button type="button" class="form-submit w100p">送出願望！</button>
+      </div>
+
+    </form>
+
+  </div>
+  <div class="btn-mode">
+    +
+  </div>
 </div>
 
 <!-- 視窗類界面 -->
@@ -438,7 +479,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              36 分鐘前
+              4 分鐘前
             </span>
           </div>
 
@@ -459,7 +500,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              29 分鐘前
+              17 分鐘前
             </span>
           </div>
 
@@ -480,7 +521,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              45 分鐘前
+              43 分鐘前
             </span>
           </div>
 
@@ -501,7 +542,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              32 分鐘前
+              17 分鐘前
             </span>
           </div>
 
@@ -522,7 +563,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              0 分鐘前
+              30 分鐘前
             </span>
           </div>
 

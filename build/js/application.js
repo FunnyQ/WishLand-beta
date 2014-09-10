@@ -12,7 +12,7 @@
  */
 
 (function() {
-  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, switchListView, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, powishArtBtn, powishBasic, powishBtn, powishCategoryBtn, powishEatBtn, powishForm, powishSocialBtn, powishSportBtn, powishSubmit, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, switchListView, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -20,7 +20,25 @@
 
   // Welcome splash screen 歡迎畫面;
 
+  powishBasic = $('.powish-basic');
+
   welcomeSplash = $('.welcome_splash');
+
+  powishBtn = powishBasic.find('.btn-mode');
+
+  powishForm = powishBasic.find('.form-mode');
+
+  powishEatBtn = powishForm.find('.eat');
+
+  powishSocialBtn = powishForm.find('.social');
+
+  powishSportBtn = powishForm.find('.sport');
+
+  powishArtBtn = powishForm.find('.art');
+
+  powishCategoryBtn = powishEatBtn.add(powishArtBtn).add(powishSocialBtn).add(powishSportBtn);
+
+  powishSubmit = powishForm.find('.form-submit');
 
   mainUI = $('.mainUI');
 
@@ -345,7 +363,7 @@
     if (speed == null) {
       speed = "500";
     }
-    makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(welcomeSplash).add(confirmDialog).fadeOut(speed);
+    makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(confirmDialog).fadeOut(speed);
     return null;
   };
 
@@ -368,10 +386,10 @@
     /*
     主界面區塊隨視窗高度變動
      */
-    mapCanvas.add(mainUI).height(viewHeight - 80);
+    mapCanvas.add(mainUI).height(viewHeight);
     $(window).resize(function() {
       viewHeight = $(window).height();
-      return mapCanvas.add(mainUI).height(viewHeight - 80);
+      return mapCanvas.add(mainUI).height(viewHeight);
     });
 
     /*
@@ -381,8 +399,11 @@
       "margin-top": (viewHeight / 2) - 100,
       "left": (viewWidth / 2) - 50
     });
-    welcomeSplash.find('h3').css({
+    powishBasic.find('.slogan').css({
       "margin-top": (viewHeight / 2) - 150
+    });
+    powishForm.css({
+      "margin-top": (viewHeight / 2) - 250
     });
     return $(window).resize(function() {
       viewHeight = $(window).height();
@@ -391,8 +412,11 @@
         "margin-top": (viewHeight / 2) - 100,
         "left": (viewWidth / 2) - 50
       });
-      return welcomeSplash.find('h3').css({
+      powishBasic.find('.slogan').css({
         "margin-top": (viewHeight / 2) - 150
+      });
+      return powishForm.css({
+        "margin-top": (viewHeight / 2) - 250
       });
     });
   });
@@ -447,9 +471,44 @@
   點擊任意位置關閉 splash screen
    */
 
-  welcomeSplash.on("click", function() {
-    $(this).fadeOut();
+  powishBasic.on("click", function() {
+    if ($(this).hasClass('welcome_splash')) {
+      $(this).find('.slogan').fadeOut(function() {
+        powishBasic.removeClass("welcome_splash").addClass("powish-form-mode");
+        powishForm.fadeIn();
+        return console.log('test');
+      });
+    }
     return null;
+  });
+
+
+  /*
+  選擇願望類別
+   */
+
+  powishCategoryBtn.on("click", function() {
+    powishCategoryBtn.removeClass('selected');
+    return $(this).addClass('selected');
+  });
+
+
+  /*
+  送出願望
+   */
+
+  powishSubmit.on("click", function() {
+    return powishForm.fadeOut(function() {
+      powishBasic.removeClass("powish-form-mode").addClass("powish-btn-mode");
+      return powishBtn.fadeIn();
+    });
+  });
+
+  powishBtn.on("click", function() {
+    return $(this).fadeOut(function() {
+      powishBasic.removeClass("powish-btn-mode").addClass("powish-form-mode");
+      return powishForm.fadeIn();
+    });
   });
 
 
