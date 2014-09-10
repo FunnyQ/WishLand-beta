@@ -394,16 +394,24 @@ a:focus
         margin-bottom: 1em
 
 // welcome splash screen
-.welcome_splash
+.powish-basic
   @extend %w100p
   @extend %h100p
   position: absolute
-  top: 0
+  bottom: 0
   z-index: +index($elements, splash)
   background-color: rgba(#000, 0.8)
-  h3, p
+  h3, p, .powish-btn
     text-align: center
     color: #fff
+
+  .slogan
+  .powish-btn
+    font-family: $typo-thin100
+    font-size: 10em
+    line-height: 0.8
+    cursor: pointer
+
 
 // window 類界面
 .windows

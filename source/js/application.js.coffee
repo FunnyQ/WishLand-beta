@@ -16,6 +16,7 @@ siteOverlayLv2 = $('.overlay-lv2')
 
 `// Welcome splash screen 歡迎畫面`
 # 歡迎畫面
+powishBasic = $('.powish-basic')
 welcomeSplash = $('.welcome_splash')
 
 # 地圖 canvas
@@ -358,7 +359,7 @@ closeCommentEffect = ->
 
 # 關閉 LV1 UI
 closeUI = ( speed = "500" ) ->
-  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(welcomeSplash).add(confirmDialog).fadeOut(speed)
+  makeWishForm.add(siteOverlay).add(infoPanel).add(wishDetail).add(eventDetail).add(powishBasic).add(confirmDialog).fadeOut(speed)
   null
 
 # 關閉 LV2 UI
@@ -389,7 +390,7 @@ $( document ).ready ->
   changeCategoryBtn.css
     "margin-top": ( viewHeight / 2 ) - 100
     "left": (viewWidth / 2) - 50
-  welcomeSplash.find('h3').css
+  powishBasic.find('.slogan').css
     "margin-top": ( viewHeight / 2 ) - 150
   $( window ).resize ->
     viewHeight = $( window ).height()
@@ -397,7 +398,7 @@ $( document ).ready ->
     changeCategoryBtn.css
       "margin-top": ( viewHeight / 2 ) - 100
       "left": (viewWidth / 2) - 50
-    welcomeSplash.find('h3').css
+    powishBasic.find('.slogan').css
       "margin-top": ( viewHeight / 2 ) - 150
 
 ################################################################################
@@ -444,7 +445,9 @@ fbLoginBtn.on "click", ->
 點擊任意位置關閉 splash screen
 ###
 welcomeSplash.on "click", ->
-  $(this).fadeOut()
+  $(this).find('.slogan').fadeOut()
+  $(this).removeClass("welcome_splash").css
+    "height": "80px"
   null
 
 
