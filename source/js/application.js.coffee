@@ -21,6 +21,7 @@ welcomeSplash = $('.welcome_splash')
 powishBtn = powishBasic.find('.btn-mode')
 powishForm = powishBasic.find('.form-mode')
 
+powishCloseBtn = powishForm.find('.powish-close-btn')
 powishEatBtn = powishForm.find('.eat')
 powishSocialBtn = powishForm.find('.social')
 powishSportBtn = powishForm.find('.sport')
@@ -233,28 +234,16 @@ loadEventDetail = ->
       null
 
 # 顯示許願卡
-showMakeWishForm = ->
-  closeUI(0)
-  makeWishForm.addClass('animated bounceInUp')
-  makeWishForm.add(siteOverlay).fadeIn()
-  setTimeout (->
-    makeWishForm.removeClass('animated bounceInUp')
-    null
-  ), 1000
-  null
+showPowishForm = ->
+  powishBtn.fadeOut ->
+    powishBasic.removeClass("powish-btn-mode").addClass("powish-form-mode")
+    powishForm.fadeIn()
 
 # 送出許願卡
-submitWishEffect = ->
-  makeWishForm.addClass "animated zoomOutUp"
-  setTimeout (->
-    closeUI()
-    null
-  ), 500
-  setTimeout (->
-    makeWishForm.removeClass "animated zoomOutUp"
-    null
-  ), 1000
-  null
+closePowishForm = ->
+  powishForm.fadeOut ->
+    powishBasic.removeClass("powish-form-mode").addClass("powish-btn-mode")
+    powishBtn.fadeIn()
 
 # 顯示確認視窗
 `// 顯示確認視窗`
@@ -466,6 +455,12 @@ powishBasic.on "click", ->
   null
 
 ###
+取消許願
+###
+powishCloseBtn.on "click", ->
+  closePowishForm()
+  null
+###
 選擇願望類別
 ###
 powishCategoryBtn.on "click", ->
@@ -476,14 +471,15 @@ powishCategoryBtn.on "click", ->
 送出願望
 ###
 powishSubmit.on "click", ->
-  powishForm.fadeOut ->
-    powishBasic.removeClass("powish-form-mode").addClass("powish-btn-mode")
-    powishBtn.fadeIn()
+  closePowishForm()
+  null
 
+###
+按下 powish 按鈕，打開表單
+###
 powishBtn.on "click", ->
-  $(@).fadeOut ->
-    powishBasic.removeClass("powish-btn-mode").addClass("powish-form-mode")
-    powishForm.fadeIn()
+  showPowishForm()
+  null
 
 ###
 按下許願按鈕，顯示許願表單
