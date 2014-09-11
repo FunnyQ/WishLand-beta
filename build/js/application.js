@@ -12,7 +12,7 @@
  */
 
 (function() {
-  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, powishArtBtn, powishBasic, powishBtn, powishCategoryBtn, powishEatBtn, powishForm, powishSocialBtn, powishSportBtn, powishSubmit, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMakeWishForm, showMap, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, submitWishEffect, switchListView, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closePowishForm, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, powishArtBtn, powishBasic, powishBtn, powishCategoryBtn, powishCloseBtn, powishEatBtn, powishForm, powishSocialBtn, powishSportBtn, powishSubmit, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMap, showPowishForm, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, switchListView, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -27,6 +27,8 @@
   powishBtn = powishBasic.find('.btn-mode');
 
   powishForm = powishBasic.find('.form-mode');
+
+  powishCloseBtn = powishForm.find('.powish-close-btn');
 
   powishEatBtn = powishForm.find('.eat');
 
@@ -220,28 +222,18 @@
     });
   };
 
-  showMakeWishForm = function() {
-    closeUI(0);
-    makeWishForm.addClass('animated bounceInUp');
-    makeWishForm.add(siteOverlay).fadeIn();
-    setTimeout((function() {
-      makeWishForm.removeClass('animated bounceInUp');
-      return null;
-    }), 1000);
-    return null;
+  showPowishForm = function() {
+    return powishBtn.fadeOut(function() {
+      powishBasic.removeClass("powish-btn-mode").addClass("powish-form-mode");
+      return powishForm.fadeIn();
+    });
   };
 
-  submitWishEffect = function() {
-    makeWishForm.addClass("animated zoomOutUp");
-    setTimeout((function() {
-      closeUI();
-      return null;
-    }), 500);
-    setTimeout((function() {
-      makeWishForm.removeClass("animated zoomOutUp");
-      return null;
-    }), 1000);
-    return null;
+  closePowishForm = function() {
+    return powishForm.fadeOut(function() {
+      powishBasic.removeClass("powish-form-mode").addClass("powish-btn-mode");
+      return powishBtn.fadeIn();
+    });
   };
 
   // 顯示確認視窗;
@@ -484,6 +476,16 @@
 
 
   /*
+  取消許願
+   */
+
+  powishCloseBtn.on("click", function() {
+    closePowishForm();
+    return null;
+  });
+
+
+  /*
   選擇願望類別
    */
 
@@ -498,17 +500,18 @@
    */
 
   powishSubmit.on("click", function() {
-    return powishForm.fadeOut(function() {
-      powishBasic.removeClass("powish-form-mode").addClass("powish-btn-mode");
-      return powishBtn.fadeIn();
-    });
+    closePowishForm();
+    return null;
   });
 
+
+  /*
+  按下 powish 按鈕，打開表單
+   */
+
   powishBtn.on("click", function() {
-    return $(this).fadeOut(function() {
-      powishBasic.removeClass("powish-btn-mode").addClass("powish-form-mode");
-      return powishForm.fadeIn();
-    });
+    showPowishForm();
+    return null;
   });
 
 

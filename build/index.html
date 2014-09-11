@@ -107,15 +107,16 @@
   <!-- 熱門活動與願望、附近活動與願望，列表界面 -->
   <div class="list-view">
     <!-- 活動列表元件 -->
-    <div class="event-unit listUnit">
+
+    <!-- 依類別塞入 class： category-event -->
+    <div class="event-unit listUnit category-event">
 
       <!-- event 詳細內容 -->
       <div class="content">
         <!-- 日期 -->
-        <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-20（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
+        <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-26（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
         <!-- 願望（content）或活動（title）標題 -->
-        <!-- 依不同類別加入 category class -->
-        <div class="inner category-event">
+        <div class="inner">
           <p><i>珍珠奶茶慢喝大賽</i></p>
           <p class="time-range"><i class="fa fa-calendar fa-lg"></i> <span>2014-09-02</span> ~ <span>2014-09-05</span></p>
         </div>
@@ -131,15 +132,16 @@
     </div><!-- e/o 活動列表元件 -->
 
     <!-- 願望列表元件 -->
-    <div class="wish-unit listUnit">
+
+    <!-- 依類別塞入 class： category-social category-art category-eat category-sport -->
+    <div class="wish-unit listUnit category-social">
 
       <!-- event 詳細內容 -->
       <div class="content">
         <!-- 日期 -->
         <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-20（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
         <!-- 願望（content）或活動（title）標題 -->
-        <!-- 依不同類別加入 category class -->
-        <div class="inner category-eat">
+        <div class="inner">
           <p><i>想和不認識的你慢慢喝杯奶茶...</i></p>
         </div>
         <span class="location"><i class="fa fa-map-marker fa-lg"></i> 臺北火車站</span>
@@ -224,6 +226,7 @@
 
 <!-- Welcome splash screen 歡迎視窗 -->
 <div class="welcome_splash powish-basic trans-07s powish-form-mode">
+
   <div class="slogan">
     <h3>歡迎來到 Po wish</h3>
     <p>快來許下你的願望，或幫助別人實現願望吧！</p>
@@ -231,7 +234,13 @@
       +
     </div>
   </div>
+
   <div class="form-mode">
+
+    <!-- 取消按鈕 -->
+    <div class="powish-close-btn" title="取消">
+      ×
+    </div>
 
     <form class="form-horizontal" role="form">
 
@@ -239,6 +248,7 @@
       <div class="form-wraper">
 
         <div class="btn-wrapper">
+          <h4><i class="fa fa-question-circle fa-lg"></i> 選擇願望類別</h4>
           <div class="category-btn">
 
             <!-- 加入 selected class 為選擇狀態 -->
@@ -278,10 +288,12 @@
     </form>
 
   </div>
+
   <div class="btn-mode">
     +
   </div>
 </div>
+
 
 <!-- 視窗類界面 -->
 <div class="windows">
@@ -479,7 +491,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              4 分鐘前
+              0 分鐘前
             </span>
           </div>
 
@@ -500,7 +512,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              17 分鐘前
+              3 分鐘前
             </span>
           </div>
 
@@ -521,7 +533,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              43 分鐘前
+              2 分鐘前
             </span>
           </div>
 
@@ -542,7 +554,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              17 分鐘前
+              11 分鐘前
             </span>
           </div>
 
@@ -563,7 +575,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              30 分鐘前
+              35 分鐘前
             </span>
           </div>
 
