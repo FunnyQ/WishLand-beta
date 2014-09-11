@@ -3,9 +3,9 @@
   text-align: center
   font-size: $fz-l
   padding: 0.5em
-  background-color: $c-landing
+  background-color: $c-infopanel-header-bg
   color: #fff
-  border-bottom: 3px solid darken($c-landing, 10%)
+  border-bottom: 3px solid darken($c-infopanel-header-bg, 10%)
   margin-bottom: 2em
   +text-shadow(0 -1px 0 darken($c-landing, 30%))
 
@@ -79,3 +79,15 @@
   .category-sport
     background-color: $c-sport
     border-bottom: 3px solid darken($c-sport, 10%)
+
+%changeableBorderTop
+  .category-event
+    border-top: 16px solid $c-event
+  .category-social
+    border-top: 16px solid $c-social
+  .category-art
+    border-top: 16px solid $c-art
+  .category-eat
+    border-top: 16px solid $c-eat
+  .category-sport
+    border-top: 16px solid $c-sport

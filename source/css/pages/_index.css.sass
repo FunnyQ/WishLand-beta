@@ -166,6 +166,7 @@ a:focus
       margin-bottom: 0.5em
     h5
       margin: 0
+  @extend %changeableBorderTop
 
   .content
     padding: 0
@@ -206,7 +207,7 @@ a:focus
   position: relative
   overflow: scroll
   width: 400px
-  background-color: $c-ctrl_board
+  background-color: $c-infopanel-bg
   padding-bottom: 80px
 
   float: right
@@ -218,9 +219,9 @@ a:focus
     margin: 0
 
   .wish-owner, .event-owner
-    background-color: darken($c-ctrl_board, 10%)
+    background-color: $c-infopanel-owner-bg
     padding: 1em 0.5em 0.5em 0.5em
-    border-bottom: 2px solid darken($c-ctrl_board, 20%)
+    border-bottom: 2px solid darken($c-infopanel-owner-bg, 20%)
     h4
       color: darken($c-yellow, 50%)
       font-size: $fz-m
@@ -364,16 +365,19 @@ a:focus
       margin-bottom: 1em
       button
         width: 100%
-        +sassy-button("flat", 3px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+        +sassy-button("flat", 0, $fz-s, $cs-secondary-red, $btn-primary, #fff, "inset")
     .follow, .share, .join, .host, .unfollow
       +span(4)
       margin-bottom: 1em
       button
         width: 100%
-        +sassy-button("flat", 3px, $fz-s, $btn-action, $btn-primary, #fff, "inset")
+        +sassy-button("flat", 0, $fz-s, $cs-secondary-red, $btn-primary, #fff, "inset")
+    .join, .host
+      button
+        +sassy-button("flat", 0, $fz-s, $cs-primary-red, $btn-primary, #fff, "inset")
     .unfollow
       button
-        +sassy-button("flat", 3px, $fz-s, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
+        +sassy-button("flat", 0, $fz-s, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 
   .option-buttons
     font-weight: bold
@@ -384,14 +388,14 @@ a:focus
       padding: 0 0.3em
       button
         @extend %w100p
-        +sassy-button("flat", 5px, $fz-m, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
+        +sassy-button("flat", 0, $fz-m, darken($c-yellow, 20%), $btn-primary, #fff, "inset")
         margin-bottom: 0.6em
     .share, .host, .comment, .join
       +span(4)
       padding: 0 0.3em
       button
         @extend %w100p
-        +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
+        +sassy-button("flat", 0, $fz-m, $cs-secondary-red, $btn-primary, #fff, "inset")
         margin-bottom: 1em
 
 // welcome splash screen

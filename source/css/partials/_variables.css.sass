@@ -73,6 +73,8 @@ $cs-2: #788e42
 $cs-3: #959947
 $cs-4: #997347
 $cs-5: #8e5842
+$cs-primary-red: #ca1936
+$cs-secondary-red: #ec4b5e
 
 
 // buttons color
@@ -81,9 +83,9 @@ $btn-action   : #7db500
 $btn-highlight: #f18d05
 $btn-danger   : #e54028
 $btn-royal    : #87318c
-$btn-listview-follow: #ec4b5e
-$btn-listview-join: #f02a42
-$btn-listview-host: #ca1936
+$btn-listview-follow: $cs-secondary-red
+$btn-listview-join: $cs-primary-red
+$btn-listview-host: $cs-primary-red
 
 // basic color
 $c-tooltipColor: rgba(black, 0.5)
@@ -106,7 +108,9 @@ $c-landing-border: #c30d23
 $c-ctrl-board-bg: $c-topbar-border-bottom
 $c-ctrl-board-border-top: $c-topbar-border-bottom
 
-
+$c-infopanel-bg: #f2f2f2
+$c-infopanel-header-bg: lighten($c-topbar-border-bottom, 10%)
+$c-infopanel-owner-bg: #f2f2f2
 
 // 文字顏色
 $c-subinfo: darken($c-ctrl_board, 40%) // 分類、地點等資訊
