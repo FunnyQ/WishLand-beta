@@ -397,7 +397,7 @@ $( document ).ready ->
   powishBasic.find('.slogan').css
     "margin-top": ( viewHeight / 2 ) - 150
   powishForm.css
-    "margin-top": ( viewHeight / 2 ) - 250
+    "margin-top": ( viewHeight / 2 ) - 330
   $( window ).resize ->
     viewHeight = $( window ).height()
     viewWidth = $( window ).width()
@@ -407,7 +407,7 @@ $( document ).ready ->
     powishBasic.find('.slogan').css
       "margin-top": ( viewHeight / 2 ) - 150
     powishForm.css
-      "margin-top": ( viewHeight / 2 ) - 250
+      "margin-top": ( viewHeight / 2 ) - 330
 
 ################################################################################
 

@@ -121,7 +121,7 @@ a:focus
       img
         width: 48px
         display: inline-block
-        border: 3px solid #fff
+        border: 5px solid #fff
 
 
 
@@ -421,13 +421,16 @@ a:focus
   position: absolute
   bottom: 0
   z-index: +index($elements, splash)
-  background-color: rgba(#fff, 0.95)
+  background-color: $c-welcome-bg
   // display: none
   h3, p, .plus-sign
     text-align: center
-    color: #555
+    color: $c-welcome-slogan-text
+  .btn-mode
+    display: none
 
   .slogan
+    // display: none
   .plus-sign
     font-family: $typo-thin100
     font-size: 10em
@@ -439,15 +442,23 @@ a:focus
     display: none
   .btn-wrapper
     +clearfix
+  .form-mode-logo
+    +container(200px)
+    margin-bottom: 35px
   .powish-close-btn
+    width: 80px
+    height: 80px
+    color: $cs-powish-red
+    +border-radius(50%)
+    border: 1px solid lighten($c-welcome-slogan-text, 20%)
+    margin: 0 auto
     font-family: $typo-thin100
-    position: absolute
-    top: 0
-    right: 10px
-    color: #fff
-    font-size: $fz-fl
-    line-height: 0.8
+    text-align: center
+    font-size: 6em
+    line-height: 0.7
     cursor: pointer
+  .form-submit
+    padding: 1em 1.5em
   .category-btn
     +span(3)
     height: 90px
@@ -469,9 +480,12 @@ a:focus
       padding: 22px 0 0 22px
 
 
+
+
   h4
-    color: #fff
+    color: $c-welcome-form-h4
     font-size: $fz-m
+    font-weight: bolder
 
 .powish-btn-mode
   height: 60px
@@ -479,7 +493,6 @@ a:focus
   border-top: 5px solid $c-ctrl-board-border-top
   +box-shadow(0 0 8px rgba(#000, 0.8))
   .btn-mode
-    display: none
     font-family: $typo-thin100
     color: $c-ctrl-board-border-top
     width: 100%
@@ -553,7 +566,7 @@ a:focus
 .form-cancel
   +sassy-button("flat", 5px, $fz-m, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 .form-submit
-  +sassy-button("flat", 5px, $fz-m, $btn-action, $btn-primary, #fff, "inset")
+  +sassy-button("flat", 5px, $fz-m, $cs-powish-red, $btn-primary, #fff, "inset")
 .form-change
   +sassy-button("flat", 5px, $fz-s, darken($c-ctrl_board, 30%), $btn-primary, #fff, "inset")
 

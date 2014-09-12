@@ -10,18 +10,16 @@
 
   <div class="form-mode">
 
-    <!-- 取消按鈕 -->
-    <div class="powish-close-btn" title="取消">
-      ×
+    <div class="form-mode-logo">
+      <img class="img-responsive" src="./img/powish-form-logo.png" alt="Po Wish">
     </div>
-
     <form class="form-horizontal" role="form">
 
       <!-- 願望內容表單 -->
       <div class="form-wraper">
 
         <div class="btn-wrapper">
-          <h4><i class="fa fa-question-circle fa-lg"></i> 選擇願望類別</h4>
+          <h4><!-- <i class="fa fa-question-circle fa-lg"></i> --> 選擇你的興趣</h4>
           <div class="category-btn">
 
             <!-- 加入 selected class 為選擇狀態 -->
@@ -46,16 +44,21 @@
           </div>
         </div>
 
-        <h4><i class="fa fa-pencil fa-lg"></i> 我想要...</h4>
+        <h4><!-- <i class="fa fa-pencil fa-lg"></i> --> 許下你的願望！</h4>
         <textarea class="form-control" rows="3"></textarea>
         <!-- 願望地點顯示欄位 -->
-        <h4><i class="fa fa-map-marker fa-lg"></i> 目前的許願地點是：</h4>
+        <h4><!-- <i class="fa fa-map-marker fa-lg"></i> --> 目前的許願地點是：</h4>
         <input type="text" class="form-control" rows="3" placeholder="隨機地點許願">
       </div>
 
       <!-- submit -->
       <div class="button-wraper">
-        <button type="button" class="form-submit w100p">送出願望！</button>
+        <button type="button" class="form-submit w100p">Po your wish</button>
+      </div>
+
+      <!-- 取消按鈕 -->
+      <div class="powish-close-btn" title="取消">
+        ×
       </div>
 
     </form>
