@@ -86,7 +86,8 @@ a:focus
     margin-bottom: 0
     // background-image: url("../img/brushed.jpg")
     background-color: $c-topbar-bg
-    border-bottom: 5px solid $c-topbar-border-bottom
+    border: 0
+    border-bottom: 3px solid $c-topbar-border-bottom
     +box-shadow(0 0 8px rgba(#000, 0.8))
     z-index: +index($elements, top-bar)
 
@@ -96,7 +97,9 @@ a:focus
     .left
       margin-top: 1em
       a
-        color: #c30d23
+        color: #fff
+      .fa-inverse
+        color: $c-topbar-bg
 
     .center
       .top-logo
@@ -106,6 +109,17 @@ a:focus
     .right
       text-align: right
       margin-top: 1em
+      a
+        color: #fff
+        margin: 0
+        padding: 0 1em
+      #sign_out
+        border-left: 1px solid #fff
+        margin-top: 10px
+      img
+        width: 48px
+        display: inline-block
+        border: 3px solid #fff
 
 
 
@@ -405,7 +419,8 @@ a:focus
   position: absolute
   bottom: 0
   z-index: +index($elements, splash)
-  background-color: rgba(#fff, 0.8)
+  background-color: rgba(#fff, 0.95)
+  // display: none
   h3, p, .plus-sign
     text-align: center
     color: #555

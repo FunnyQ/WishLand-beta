@@ -69,13 +69,13 @@ $fz-fl  : 4em
 
 // ----- color swatches ----- //
 $cs-white: #f2ede9
-$cs-powish-red: #e33124
+$cs-powish-red: #e62f17
 $cs-2: #788e42
 $cs-3: #959947
 $cs-4: #997347
 $cs-5: #8e5842
 $cs-primary-red: #ca1936
-$cs-secondary-red: #e33124
+$cs-secondary-red: $cs-powish-red
 
 
 // buttons color
@@ -85,7 +85,7 @@ $btn-highlight: #f18d05
 $btn-danger   : #e54028
 $btn-royal    : #87318c
 $btn-facebook-login-bg: #fff
-$btn-facebook-login-text: #3a3434
+$btn-facebook-login-text: #393434
 $btn-listview-follow: $cs-secondary-red
 $btn-listview-join: $cs-primary-red
 $btn-listview-host: $cs-primary-red
@@ -104,8 +104,8 @@ $c-email: #40cc6c
 $c-listview-unit-bg: #f2f2f2
 $c-listview-text: #494949
 $c-listview-reload-btn: #c0c0c0
-$c-topbar-bg: #fff
-$c-topbar-border-bottom: #c11229
+$c-topbar-bg: $cs-powish-red
+$c-topbar-border-bottom: darken($c-topbar-bg, 15%)
 $c-landing-bg: $cs-powish-red
 $c-landing-border: #c30d23
 $c-ctrl-board-bg: #e33124

@@ -47,6 +47,12 @@ ctrlBoard = $('.ctrl_board')
 # make-wish 表單
 makeWishForm = windows.find('.make-wish')
 
+# top-bar
+`// top-bar`
+topbar = mainUI.find('.top-bar')
+`// 手動開關 listview`
+topbarToggleListviewBtn = topbar.find('.toggle-listview')
+
 # 確認視窗
 `// 確認視窗`
 confirmDialog = windows.find('.confirm-dialog')
@@ -538,6 +544,13 @@ listHostBtn.on "click", ->
   removeListUnit(button)
   showHostForm()
   null
+
+# 手動開關 listview
+`// 手動開關 listview`
+topbarToggleListviewBtn.on "click", ->
+  switchListView()
+  null
+
 
 ###
 詳細活動面板按鈕動作
