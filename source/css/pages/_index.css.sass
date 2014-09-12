@@ -113,6 +113,8 @@ a:focus
         color: #fff
         margin: 0
         padding: 0 1em
+        &:hover
+          color: #eee
       #sign_out
         border-left: 1px solid #fff
         margin-top: 10px
@@ -474,16 +476,18 @@ a:focus
 .powish-btn-mode
   height: 60px
   background-color: $c-ctrl-board-bg
+  border-top: 5px solid $c-ctrl-board-border-top
   +box-shadow(0 0 8px rgba(#000, 0.8))
   .btn-mode
     display: none
     font-family: $typo-thin100
-    color: #fff
+    color: $c-ctrl-board-border-top
     width: 100%
     height: 60px
     text-align: center
     font-size: 4em
-    line-height: 0.9
+    line-height: 0.8
+    font-weight: bold
     cursor: pointer
 
 // window 類界面
