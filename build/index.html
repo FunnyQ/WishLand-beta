@@ -40,7 +40,7 @@
 
     <!-- facebook 登入按鈕，js -> fbLoginBtn，登入成功後 call showMap() & loadCtrlBoard() -->
     <a class="login-button" href="#">
-      <i class="fa fa-facebook-square fa-lg"></i> 馬上登入許下願望
+      <i class="fa fa-facebook-square fa-lg"></i> <span>立即登入分享願望</span>
     </a>
 
   </div><!-- e/o .lp-content -->
@@ -61,24 +61,24 @@
 
       <div class="left">
 
-        <a href=# class="fa-stack fa-lg test-listView">
+        <a href="#" class="fa-stack fa-lg toggle-listview">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-list fa-stack-1x fa-inverse"></i>
         </a>
 
         <a href=# class="fa-stack fa-lg test-confirmDialog">
           <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+          <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
         </a>
 
         <a href=# class="fa-stack fa-lg test-wishDetail">
           <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+          <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
         </a>
 
         <a href=# class="fa-stack fa-lg test-eventDetail">
           <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+          <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
         </a>
 
       </div>
@@ -91,7 +91,7 @@
 
       <ul class="nav navbar-nav right">
         <li class="navbar-right"><a id="sign_out" href="#"><i class="fa fa-sign-out fa-lg"></i> 登出</a></li>
-        <li class="navbar-right"><a href="./dashboard/"><i class="fa fa-user fa-lg"></i> Takeshi</a></li>
+        <li class="navbar-right"><a href="./dashboard/"><img class="img-responsive img-circle" src="./img/dummy-avatar.jpg" alt=""> Takeshi</a></li>
       </ul>
   </div>
 
@@ -114,7 +114,7 @@
       <!-- event 詳細內容 -->
       <div class="content">
         <!-- 日期 -->
-        <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-26（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
+        <span class="date"><i class="fa fa-clock-o fa-lg"></i> 2014-08-11（1 天前）<span class="kilo"><i class="fa fa-compress fa-lg"></i> 3.9 公里遠</span></span>
         <!-- 願望（content）或活動（title）標題 -->
         <div class="inner">
           <p><i>珍珠奶茶慢喝大賽</i></p>
@@ -237,18 +237,16 @@
 
   <div class="form-mode">
 
-    <!-- 取消按鈕 -->
-    <div class="powish-close-btn" title="取消">
-      ×
+    <div class="form-mode-logo">
+      <img class="img-responsive" src="./img/powish-form-logo.png" alt="Po Wish">
     </div>
-
     <form class="form-horizontal" role="form">
 
       <!-- 願望內容表單 -->
       <div class="form-wraper">
 
         <div class="btn-wrapper">
-          <h4><i class="fa fa-question-circle fa-lg"></i> 選擇願望類別</h4>
+          <h4><!-- <i class="fa fa-question-circle fa-lg"></i> --> 選擇你的興趣</h4>
           <div class="category-btn">
 
             <!-- 加入 selected class 為選擇狀態 -->
@@ -273,16 +271,21 @@
           </div>
         </div>
 
-        <h4><i class="fa fa-pencil fa-lg"></i> 我想要...</h4>
+        <h4><!-- <i class="fa fa-pencil fa-lg"></i> --> 許下你的願望！</h4>
         <textarea class="form-control" rows="3"></textarea>
         <!-- 願望地點顯示欄位 -->
-        <h4><i class="fa fa-map-marker fa-lg"></i> 目前的許願地點是：</h4>
+        <h4><!-- <i class="fa fa-map-marker fa-lg"></i> --> 目前的許願地點是：</h4>
         <input type="text" class="form-control" rows="3" placeholder="隨機地點許願">
       </div>
 
       <!-- submit -->
       <div class="button-wraper">
-        <button type="button" class="form-submit w100p">送出願望！</button>
+        <button type="button" class="form-submit w100p">Po your wish</button>
+      </div>
+
+      <!-- 取消按鈕 -->
+      <div class="powish-close-btn" title="取消">
+        ×
       </div>
 
     </form>
@@ -491,7 +494,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              0 分鐘前
+              25 分鐘前
             </span>
           </div>
 
@@ -512,7 +515,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              3 分鐘前
+              36 分鐘前
             </span>
           </div>
 
@@ -533,7 +536,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              2 分鐘前
+              53 分鐘前
             </span>
           </div>
 
@@ -554,7 +557,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              11 分鐘前
+              59 分鐘前
             </span>
           </div>
 
@@ -575,7 +578,7 @@
               <img src="./img/dummy-avatar.jpg" alt="" class="img-circle img-responsive">
             </span>
             <span class="time">
-              35 分鐘前
+              40 分鐘前
             </span>
           </div>
 

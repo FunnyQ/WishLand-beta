@@ -12,7 +12,7 @@
  */
 
 (function() {
-  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closePowishForm, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, powishArtBtn, powishBasic, powishBtn, powishCategoryBtn, powishCloseBtn, powishEatBtn, powishForm, powishSocialBtn, powishSportBtn, powishSubmit, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMap, showPowishForm, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, switchListView, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
+  var accountManageBtn, cancelCommentBtn, cancelHostBtn, cencelWishBtn, changeCategoryBtn, closeCommentEffect, closeLv2UI, closeMap, closePowishForm, closeUI, commentEventBtn, commentForm, commentWishBtn, confirmChangeLocationBtn, confirmDialog, confirmSubmitWish, confirmSubmitWishBtn, ctrlBoard, ctrlBtns, eventDetail, eventInfoSection, fbLoginBtn, followEventBtn, followWishBtn, hideListView, hostForm, hostWishBtn, infoPanel, joinEventBtn, landingPage, listFollowBtn, listHostBtn, listJoinBtn, listView, loadCtrlBoard, loadEventDetail, loadWishDetail, mainUI, makeWishBtn, makeWishForm, mapCanvas, newMessageNotifier, powishArtBtn, powishBasic, powishBtn, powishCategoryBtn, powishCloseBtn, powishEatBtn, powishForm, powishSocialBtn, powishSportBtn, powishSubmit, removeListUnit, sendShareEffect, shareCancelBtn, shareEventBtn, shareForm, shareToEmailBtn, shareToFbBtn, shareToTwitterBtn, shareToWeiboBtn, shareWishBtn, showCommentForm, showConfirmDialog, showHostForm, showInfoPanel, showListView, showMap, showPowishForm, showSharePanel, signOutBtn, siteOverlay, siteOverlayLv2, submitCommentBtn, submitHostBtn, submitHostEffect, submitWishBtn, switchListView, topbar, topbarToggleListviewBtn, unLoadCtrlBoard, viewHeight, viewWidth, welcomeSplash, windows, wishDetail, wishInfoSection;
 
   siteOverlay = $('.overlay');
 
@@ -53,6 +53,14 @@
   ctrlBoard = $('.ctrl_board');
 
   makeWishForm = windows.find('.make-wish');
+
+  // top-bar;
+
+  topbar = mainUI.find('.top-bar');
+
+  // 手動開關 listview;
+
+  topbarToggleListviewBtn = topbar.find('.toggle-listview');
 
   // 確認視窗;
 
@@ -395,7 +403,7 @@
       "margin-top": (viewHeight / 2) - 150
     });
     powishForm.css({
-      "margin-top": (viewHeight / 2) - 250
+      "margin-top": (viewHeight / 2) - 330
     });
     return $(window).resize(function() {
       viewHeight = $(window).height();
@@ -408,7 +416,7 @@
         "margin-top": (viewHeight / 2) - 150
       });
       return powishForm.css({
-        "margin-top": (viewHeight / 2) - 250
+        "margin-top": (viewHeight / 2) - 330
       });
     });
   });
@@ -594,6 +602,13 @@
     button = $(this);
     removeListUnit(button);
     showHostForm();
+    return null;
+  });
+
+  // 手動開關 listview;
+
+  topbarToggleListviewBtn.on("click", function() {
+    switchListView();
     return null;
   });
 
