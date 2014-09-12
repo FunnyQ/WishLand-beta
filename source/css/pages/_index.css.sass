@@ -167,6 +167,7 @@ a:focus
   float: left
   z-index: +index($elements, list-view)
   padding: 0 0.5em
+  padding-bottom: 160px
 
   .event-unit, .wish-unit
     +clearfix
@@ -224,10 +225,11 @@ a:focus
   overflow: scroll
   width: 400px
   background-color: $c-infopanel-bg
-  padding-bottom: 80px
+  padding-bottom: 160px
 
   float: right
-  +box-shadow(0 0 15px #000)
+  // +box-shadow(0 0 15px #000)
+  border: 5px solid #fff
   display: none
   z-index: index($elements, info-panel)
   h3
@@ -488,7 +490,7 @@ a:focus
     font-weight: bolder
 
 .powish-btn-mode
-  height: 60px
+  height: 70px
   background-color: $c-ctrl-board-bg
   border-top: 5px solid $c-ctrl-board-border-top
   +box-shadow(0 0 8px rgba(#000, 0.8))
