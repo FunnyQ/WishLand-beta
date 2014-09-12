@@ -33,14 +33,12 @@ a:focus
 .landing
   @extend %h100p
   background-color: $c-landing-bg
-  border: 8px solid $c-landing-border
   position: relative
   z-index: +index($elements, landing)
   // display: none
 
   .lp-content
     padding-top: 33vh
-    color: $cs-white
     text-align: center
 
   .lp-logo
@@ -56,8 +54,10 @@ a:focus
       margin: 1em 0 0 0
       color: lighten($c-landing, 25%)
   .login-button
-    +sassy-button("flat", 4px, $fz-l, $c-landing-border, $c-facebook, #fff, "inset")
+    +sassy-button("flat", 8px, $fz-l, $btn-facebook-login-bg, $btn-facebook-login-bg, $btn-facebook-login-text, "inset")
     margin-top: 30px
+    border: 5px solid rgba($c-landing-bg, 0.5)
+
 ///////////////////////////////
 
 // 主介面區塊
